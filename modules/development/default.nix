@@ -11,7 +11,7 @@
     rustc
     cargo
     go
-    jdk17
+    # jdk17
     
     # Build tools
     gcc
@@ -19,37 +19,31 @@
     cmake
     pkg-config
     
-    # Version control
-    git
+    # Version control (git is in home-manager)
     gh
     gitui
     
     # Editors and IDEs
     vscode
-    vim
-    neovim
+    # vim and neovim are in home-manager
     
     # Terminal tools
     tmux
-    alacritty
+    # alacritty is in home-manager
     kitty
     
-    # Development utilities
-    curl
-    wget
+    # Development utilities (curl/wget are in common)
     jq
     httpie
     postman
     
     # Database tools
-    sqlite
-    postgresql
+    # sqlite
+    # postgresql
     
-    # Container tools
-    docker-compose
+    # Container tools (docker-compose is in docker module)
     
     # System tools
-    htop
     btop
     tree
     fd
@@ -59,16 +53,15 @@
     fzf
     
     # Network tools
-    nmap
-    wireshark
-    tcpdump
+    # nmap
+    # wireshark
+    # tcpdump
   ];
   
   # Enable development services
   programs.git.enable = true;
   
   # Shell improvements
-  programs.zsh.enable = true;
   programs.fish.enable = true;
   
   # Enable direnv for project environments

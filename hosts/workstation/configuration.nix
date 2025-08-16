@@ -7,23 +7,11 @@
     ../../modules/services/docker.nix
   ];
 
-  # Desktop environment
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-  };
-
-  # Niri window manager
-  programs.niri.enable = true;
+  # Enable X11 for compatibility (some apps may need it)
+  services.xserver.enable = true;
   
   # Additional workstation packages
   environment.systemPackages = with pkgs; [
-    # Development tools
-    vscode
-    docker-compose
-    nodejs
-    python3
-    
     # Desktop applications
     firefox
     thunderbird
@@ -36,14 +24,12 @@
     
     # System tools
     gparted
-    wireshark
     
     # Your custom packages
     zen-browser
   ];
 
-  # Enable Docker
-  virtualisation.docker.enable = true;
+  # Docker is enabled via modules/services/docker.nix
   
   # Enable Bluetooth
   hardware.bluetooth.enable = true;

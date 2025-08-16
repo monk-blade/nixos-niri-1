@@ -2,46 +2,38 @@
 
 {
   home.packages = with pkgs; [
-    # Web browsers
-    # firefox
-    # chromium
+    # Web browsers (firefox is in system packages)
+    chromium
     
     # Communication
-    # discord
-    # telegram-desktop
-    # slack
+    discord
+    telegram-desktop
     
-    # Media
-    # vlc
-    # mpv
-    # spotify
+    # Media (vlc/spotify are in system packages)
+    mpv
     
-    # Graphics
-    # gimp
-    # inkscape
-    # krita
+    # Graphics (gimp is in system packages)
+    inkscape
+    krita
     
-    # Office
-    # libreoffice
+    # Office (libreoffice is in system packages)
     
-    # Development
-    # vscode
-    # zed-editor
+    # Development (vscode is in development module)
+    zed-editor
     
-    # System tools
-    # gparted
-    # filelight
-    # baobab
+    # System tools (gparted is in system packages)
+    filelight
+    baobab
     
     # File managers
-    # nautilus
-    # thunar
+    nautilus
+    thunar
     
     # Archive tools
-    # file-roller
+    file-roller
     
     # PDF viewer
-    # evince
+    evince
 
     ghostty
     
@@ -55,25 +47,19 @@
   ];
   
   # Configure applications
-  # programs.firefox = {
-  #   enable = true;
-  #   
-  #   profiles.default = {
-  #     settings = {
-  #       "browser.startup.homepage" = "https://start.duckduckgo.com";
-  #       "privacy.trackingprotection.enabled" = true;
-  #       "dom.security.https_only_mode" = true;
-  #     };
-  #     
-  #     extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-  #       ublock-origin
-  #       privacy-badger
-  #       decentraleyes
-  #       clearurls
-  #       bitwarden
-  #     ];
-  #   };
-  # };
+  programs.firefox = {
+    enable = true;
+    
+    profiles.default = {
+      settings = {
+        "browser.startup.homepage" = "https://start.duckduckgo.com";
+        "privacy.trackingprotection.enabled" = true;
+        "dom.security.https_only_mode" = true;
+        "browser.newtabpage.activity-stream.showSponsored" = false;
+        "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+      };
+    };
+  };
   
   programs.alacritty = {
     enable = true;

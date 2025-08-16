@@ -29,7 +29,7 @@
     vim
     wget
     curl
-    git
+    # git is configured in home-manager with user settings
     htop
     tree
     unzip
@@ -39,7 +39,7 @@
     networkmanager
     openssh
     
-    # Build tools
+    # Build tools (gcc/gnumake also in development module)
     gcc
     gnumake
   ];
