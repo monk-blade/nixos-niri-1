@@ -73,7 +73,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.abbes = import ./home/workstation.nix;
-                extraSpecialArgs = specialArgs;
+                extraSpecialArgs = specialArgs // { isVM = false; };
               };
             }
           ];

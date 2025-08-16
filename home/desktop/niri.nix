@@ -1,8 +1,10 @@
-{ config, pkgs, lib, dotfiles, ... }:
+{ config, pkgs, lib, dotfiles ? null, ... }:
 
 {
-  # Niri configuration
-  home.file.".config/niri/config.kdl".source = "${dotfiles}/niri/config.kdl";
+  # Niri configuration (only if dotfiles are provided)
+  home.file = lib.optionalAttrs (dotfiles != null) {
+    ".config/niri/config.kdl".source = "${dotfiles}/niri/config.kdl";
+  };
   
   # Waybar configuration
   programs.waybar = {

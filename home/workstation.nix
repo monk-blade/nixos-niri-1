@@ -1,4 +1,4 @@
-{ config, pkgs, lib, dotfiles, isVM ? false, ... }:
+{ config, pkgs, lib, dotfiles ? null, isVM ? false, ... }:
 
 {
   imports = [
@@ -14,8 +14,8 @@
     stateVersion = "25.05";
   };
 
-  # Copy your existing dotfiles
-  home.file = {
+  # Copy your existing dotfiles (if dotfiles path is provided)
+  home.file = lib.optionalAttrs (dotfiles != null) {
     ".config/nvim" = {
       source = "${dotfiles}/nvim";
       recursive = true;
@@ -25,9 +25,7 @@
       source = "${dotfiles}/tmux";
       recursive = true;
     };
-    
-    # Add more dotfiles as needed
-  } // lib.optionalAttrs (!isVM) {
+  } // lib.optionalAttrs (dotfiles != null && !isVM) {
     # Physical machine specific dotfiles
     ".config/hardware-specific" = {
       source = "${dotfiles}/hardware-specific";
