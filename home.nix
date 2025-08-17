@@ -14,21 +14,30 @@
     # Terminal & Shell
     fish
     ghostty
+    alacritty
     starship
+    tmux
     
     # Essential Development
     neovim
     git
+    fnm  # Fast Node Manager
     
-    # Basic System Tools
-    htop
+    # System Monitoring & Info
+    btop
+    fastfetch
+    cava  # Audio visualizer
+    
+    # File Management
     tree
+    ranger
+    yazi  # Modern file manager
+    
+    # Search & Navigation
     fzf
     ripgrep
     fd
     bat
-    
-    # Add more packages gradually as needed...
   ];
 
   # Link your existing dotfiles
