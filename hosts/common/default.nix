@@ -44,8 +44,7 @@
     gnumake
   ];
 
-  # Enable sound
-  sound.enable = true;
+  # Modern audio with PipeWire (sound.enable is deprecated)
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

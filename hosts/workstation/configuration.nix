@@ -32,11 +32,10 @@
   # Audio is handled by common config (PipeWire)
   # No conflicting pulseaudio settings here
   
-  # Hardware support for Wayland
-  hardware.opengl = {
+  # Hardware support for Wayland (using modern graphics options)
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
   
   # Wayland support
