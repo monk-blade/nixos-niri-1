@@ -1,64 +1,50 @@
-{ config, pkgs, lib, dotfiles ? null, isVM ? false, ... }:
+{ config, pkgs, ... }:
 
 {
-  imports = [
-    ./common
-    ./desktop/niri.nix
-    ./desktop/applications.nix
-    ./programs/ghostty.nix
+  # Basic user info
+  home.username = "abbes";
+  home.homeDirectory = "/home/abbes";
+  home.stateVersion = "25.05";
+
+  # Install packages but use dotfiles for configuration
+  home.packages = with pkgs; [
+    ghostty
+    fish
+    starship
+    neovim
   ];
 
-  home = {
-    username = "abbes";
-    homeDirectory = "/home/abbes";
-    stateVersion = "25.05";
+  # Basic git configuration only
+  programs.git = {
+    enable = true;
+    userName = "Abbes";
+    userEmail = "your-email@example.com"; # Change this to your email
+    extraConfig = {
+      init.defaultBranch = "main";
+      core.editor = "nvim";
+    };
   };
-
-  # Copy your existing dotfiles (if dotfiles path is provided)
-  home.file = lib.optionalAttrs (dotfiles != null) {
-    ".config/nvim" = {
-      source = "${dotfiles}/nvim";
-      recursive = true;
+  
+  # Copy dotfiles - let existing configs handle everything
+  home.file = {
+    ".config/ghostty/config" = {
+      source = ../dotfiles/ghostty/config;
     };
     
-    ".config/tmux" = {
-      source = "${dotfiles}/tmux";
-      recursive = true;
+    ".config/fish/config.fish" = {
+      source = ../dotfiles/fish/config.fish;
     };
-  } // lib.optionalAttrs (dotfiles != null && !isVM) {
-    # Physical machine specific dotfiles
-    ".config/hardware-specific" = {
-      source = "${dotfiles}/hardware-specific";
+    
+    ".config/fish/fish_variables" = {
+      source = ../dotfiles/fish/fish_variables;
+    };
+    
+    ".config/nvim" = {
+      source = ../dotfiles/nvim;
       recursive = true;
     };
   };
 
-  # Programs managed by Home Manager
-  programs = {
-    git = {
-      enable = true;
-      userName = "Abbes";
-      userEmail = "your-email@example.com";
-      extraConfig = {
-        init.defaultBranch = "main";
-        core.editor = "nvim";
-      };
-    };
-
-    tmux = {
-      enable = true;
-      plugins = with pkgs.tmuxPlugins; [
-        sensible
-        resurrect
-        continuum
-      ];
-    };
-
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-    };
-  };
+  # Let home-manager manage itself
+  programs.home-manager.enable = true;
 }

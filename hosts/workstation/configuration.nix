@@ -1,44 +1,32 @@
-{ config, lib, pkgs, niri, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  imports = [
-    ../../modules/desktop/niri.nix
-    ../../modules/development
-    ../../modules/services/docker.nix
-  ];
-
-  # Enable X11 for compatibility (some apps may need it)
-  services.xserver.enable = true;
+  # System hostname
+  networking.hostName = "nixos-workstation";
   
-  # Additional workstation packages
-  environment.systemPackages = with pkgs; [
-    # Desktop applications
-    firefox
-    thunderbird
-    gimp
-    libreoffice
-    
-    # Media
-    vlc
-    spotify
-    
-    # System tools
-    gparted
-    
-    # Your custom packages
-    zen-browser
-  ];
-
-  # Docker is enabled via modules/services/docker.nix
-  
-  # Enable Bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-  
-  # Printing
-  services.printing.enable = true;
-  services.avahi = {
+  # Basic desktop environment - using GNOME for simplicity
+  services.xserver = {
     enable = true;
-    nssmdns = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };
+  
+  # Essential packages only (others handled by home-manager)
+  environment.systemPackages = with pkgs; [
+    # Basic applications
+    firefox
+    
+    # Basic system tools
+    curl
+    wget
+    tree
+    htop
+  ];
+  
+  # Audio
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+  
+  # Basic hardware support
+  hardware.opengl.enable = true;
 }
