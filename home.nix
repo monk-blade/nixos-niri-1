@@ -4,10 +4,10 @@
   # Basic info
   home.username = "abbes";
   home.homeDirectory = "/home/abbes";
-  home.stateVersion = "25.05";
+  home.stateVersion = "24.05";
 
   # Let Home Manager install and manage itself
-  programs.home-manager.enable = tsrue;
+  programs.home-manager.enable = true;
 
   # Install your packages here (keeping it minimal for fast setup)
   home.packages = with pkgs; [
