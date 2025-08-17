@@ -7,7 +7,7 @@
   home.stateVersion = "25.05";
 
   # Let Home Manager install and manage itself
-  programs.home-manager.enable = true;
+  programs.home-manager.enable = tsrue;
 
   # Install your packages here (keeping it minimal for fast setup)
   home.packages = with pkgs; [

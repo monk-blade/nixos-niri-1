@@ -11,14 +11,13 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/sda2/7d5b55bb-a233-43db-b337-00a885014ca0";
+    device = "/dev/disk/by-uuid/7d5b55bb-a233-43db-b337-00a885014ca0";
     fsType = "ext4";
   };
 
   swapDevices = [ ];
 
-  # VirtualBox specific
-  virtualisation.virtualbox.guest.enable = true;
+  # VirtualBox specific (handled in configuration.nix)
   
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
