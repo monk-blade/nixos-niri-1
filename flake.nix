@@ -44,7 +44,6 @@
             { nixpkgs.overlays = [ overlay ]; }
             ./hosts/common
             ./hosts/minimal/configuration.nix
-            ./hosts/minimal/hardware-configuration.nix
             
             home-manager.nixosModules.home-manager
             {
@@ -64,7 +63,6 @@
             { nixpkgs.overlays = [ overlay ]; }
             ./hosts/common
             ./hosts/workstation/configuration.nix
-            ./hosts/workstation/hardware-configuration.nix
             niri.nixosModules.niri
             
             home-manager.nixosModules.home-manager
