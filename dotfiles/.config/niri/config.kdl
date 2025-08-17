@@ -122,18 +122,33 @@ window-rule {
 }
 
 window-rule {
-    match app-id="code" | app-id="codium"
+    match app-id="code"
     default-column-width { proportion 0.75; }
 }
 
 window-rule {
-    match app-id="discord" | app-id="slack"
+    match app-id="codium"
+    default-column-width { proportion 0.75; }
+}
+
+window-rule {
+    match app-id="discord"
+    default-column-width { proportion 0.4; }
+}
+
+window-rule {
+    match app-id="slack"
     default-column-width { proportion 0.4; }
 }
 
 // Floating rules
 window-rule {
-    match app-id="pavucontrol" | app-id="blueman-manager"
+    match app-id="pavucontrol"
+    open-floating
+}
+
+window-rule {
+    match app-id="blueman-manager"
     open-floating
 }
 
