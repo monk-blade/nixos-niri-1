@@ -32,7 +32,7 @@
   services.xserver.desktopManager.xfce.enable = true;
 
   # Enable sound with PipeWire (modern audio system)
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -44,7 +44,7 @@
   # User account
   users.users.abbes = {
     isNormalUser = true;
-    description = "Your Name";
+    description = "abbes";
     extraGroups = [ "networkmanager" "wheel" "vboxsf" ];
     shell = pkgs.fish;  # Set fish as default shell
     packages = with pkgs; [];
