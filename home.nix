@@ -2,9 +2,9 @@
 
 {
   # Basic info
-  home.username = "yourusername";
-  home.homeDirectory = "/home/yourusername";
-  home.stateVersion = "24.05";
+  home.username = "abbes";
+  home.homeDirectory = "/home/abbes";
+  home.stateVersion = "25.05";
 
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
@@ -14,6 +14,7 @@
     # Terminal & Shell
     fish
     ghostty
+    starship
     
     # Essential Development
     neovim
@@ -38,13 +39,11 @@
     # Ghostty config
     ".config/ghostty".source = ./dotfiles/.config/ghostty;
     
-    # Neovim config (if you have it)
+    # Neovim config
     ".config/nvim".source = ./dotfiles/.config/nvim;
     
-    # Add more dotfile links as needed
-    # ".vimrc".source = ./dotfiles/.vimrc;
-    # ".config/i3".source = ./dotfiles/.config/i3;
-    # ".tmux.conf".source = ./dotfiles/.tmux.conf;
+    # Starship config
+    ".config/starship".source = ./dotfiles/.config/starship;
   };
 
   # Enable programs that need special handling
@@ -63,6 +62,12 @@
     
     # Direnv (if you use it)
     direnv = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    
+    # Starship prompt
+    starship = {
       enable = true;
       enableFishIntegration = true;
     };

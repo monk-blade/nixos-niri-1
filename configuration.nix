@@ -54,5 +54,5 @@
   # Enable fish system-wide
   programs.fish.enable = true;
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.05";
 }
