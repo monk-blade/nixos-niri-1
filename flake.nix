@@ -12,7 +12,7 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       # Replace "nixos-vm" with your hostname
-      nixos-vm = nixpkgs.lib.nixosSystem {
+      abbes = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
