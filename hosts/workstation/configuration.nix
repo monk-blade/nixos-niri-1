@@ -28,11 +28,21 @@
   
   # VirtualBox optimizations
   virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
   
   # Audio is handled by common config (PipeWire)
   # No conflicting pulseaudio settings here
   
-  # Basic hardware support
-  hardware.opengl.enable = true;
+  # Hardware support for Wayland
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+  
+  # Wayland support
+  environment.sessionVariables = {
+    # Enable Wayland for supported applications
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+  };
 }
