@@ -1,21 +1,33 @@
-// NIRI Configuration
+// NIRI Configuration - Optimized for Navigation & Overview
 
 input {
     keyboard {
         xkb {
             layout "us"
         }
+        // Improved repeat rates for better navigation
+        repeat-delay 400
+        repeat-rate 25
     }
     
     touchpad {
         tap
         natural-scroll
-        accel-speed 0.2
+        accel-speed 0.3
+        scroll-factor 1.0
+        // Enable better touchpad scrolling
+        click-method "clickfinger"
+        middle-emulation
     }
     
     mouse {
-        accel-speed 0.2
+        accel-speed 0.3
+        // Enable mouse scrolling for horizontal navigation
+        scroll-factor 1.0
     }
+    
+    // Enable focus follows mouse for better navigation
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 output "eDP-1" {
@@ -23,17 +35,34 @@ output "eDP-1" {
 }
 
 layout {
-    gaps 16
+    gaps 12
     
     center-focused-column "never"
     
     preset-column-widths {
+        proportion 0.25
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
+        proportion 0.75
     }
     
     default-column-width { proportion 0.5; }
+    
+    // Better struts for panels
+    struts {
+        left 0
+        right 0
+        top 0
+        bottom 0
+    }
+}
+
+// Overview mode configuration (new in v0.1.9+)
+overview {
+    // Overview mode settings
+    column-width { fixed 200; }
+    workspace-switch-gesture-threshold 150
 }
 
 prefer-no-csd
@@ -47,20 +76,26 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // Auto-start programs
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
 animations {
-    slowdown 1.0
+    // Smoother animations
+    slowdown 0.8
     
     workspace-switch {
-        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=1200 epsilon=0.0001
     }
     
     horizontal-view-movement {
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+    }
+    
+    window-movement {
         spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
     }
     
     window-open {
-        duration-ms 150
+        duration-ms 200
         curve "ease-out-expo"
     }
     
@@ -68,11 +103,17 @@ animations {
         duration-ms 150
         curve "ease-out-quad"
     }
+    
+    // Overview animations
+    config-notification-open-close {
+        duration-ms 250
+    }
 }
 
+// Enhanced window rules
 window-rule {
     match app-id="firefox"
-    default-column-width { proportion 0.75; }
+    default-column-width { proportion 0.7; }
 }
 
 window-rule {
@@ -80,16 +121,33 @@ window-rule {
     default-column-width { proportion 0.6; }
 }
 
+window-rule {
+    match app-id="code" | app-id="codium"
+    default-column-width { proportion 0.75; }
+}
+
+window-rule {
+    match app-id="discord" | app-id="slack"
+    default-column-width { proportion 0.4; }
+}
+
+// Floating rules
+window-rule {
+    match app-id="pavucontrol" | app-id="blueman-manager"
+    open-floating
+}
+
 binds {
     // Mod key is Super (Windows key)
     
     // Basic window management
-    Mod+Return { spawn "kitty"; }
+    Mod+Return { spawn "ghostty"; }
     Ctrl+Alt+Return { spawn "ghostty"; }
     Mod+D { spawn "wofi" "--show" "drun"; }
     Mod+Q { close-window; }
+    Mod+Alt+Q { quit; }
     
-    // Focus movement
+    // Enhanced focus movement with mouse support
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
     Mod+Up    { focus-window-up; }
@@ -98,6 +156,12 @@ binds {
     Mod+J     { focus-window-down; }
     Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
+    
+    // Scroll-based navigation (mouse wheel on focused window)
+    Mod+WheelScrollLeft  { focus-column-left; }
+    Mod+WheelScrollRight { focus-column-right; }
+    Mod+WheelScrollDown  { focus-window-down; }
+    Mod+WheelScrollUp    { focus-window-up; }
     
     // Move windows
     Mod+Shift+Left  { move-column-left; }
@@ -109,7 +173,13 @@ binds {
     Mod+Shift+K     { move-window-up; }
     Mod+Shift+L     { move-column-right; }
     
-    // Workspaces
+    // Overview mode (NEW!)
+    Mod+Tab { overview-toggle; }
+    Mod+Grave { overview-toggle; }  // Backtick key alternative
+    Alt+Tab { focus-window-or-workspace-down; }
+    Alt+Shift+Tab { focus-window-or-workspace-up; }
+    
+    // Enhanced workspace navigation
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
@@ -119,6 +189,12 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
+    
+    // Quick workspace switching
+    Mod+Ctrl+Left  { focus-workspace-down; }
+    Mod+Ctrl+Right { focus-workspace-up; }
+    Mod+Page_Down  { focus-workspace-down; }
+    Mod+Page_Up    { focus-workspace-up; }
     
     // Move windows to workspaces
     Mod+Shift+1 { move-column-to-workspace 1; }
@@ -131,35 +207,77 @@ binds {
     Mod+Shift+8 { move-column-to-workspace 8; }
     Mod+Shift+9 { move-column-to-workspace 9; }
     
+    // Move to workspace and follow
+    Mod+Ctrl+Shift+Left  { move-column-to-workspace-down; }
+    Mod+Ctrl+Shift+Right { move-column-to-workspace-up; }
+    
     // Column management
     Mod+Comma  { consume-window-into-column; }
     Mod+Period { expel-window-from-column; }
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
     
-    // Resize
+    // Enhanced resize controls
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
     
-    // Screenshots
+    // Fine-grained resizing
+    Mod+Ctrl+H { set-column-width "-10%"; }
+    Mod+Ctrl+L { set-column-width "+10%"; }
+    Mod+Ctrl+K { set-window-height "-10%"; }
+    Mod+Ctrl+J { set-window-height "+10%"; }
+    
+    // Center column (useful in overview mode)
+    Mod+C { center-column; }
+    
+    // Screenshots with selection
     Print { screenshot; }
     Mod+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
+    Shift+Print { spawn "grim" "-g" "$(slurp)" - | "wl-copy" "-t" "image/png"; }
     
-    // System
+    // System controls
     Mod+Shift+E { quit; }
     Mod+Shift+P { power-off-monitors; }
+    Mod+Escape { show-hotkey-overlay; }
     
-    // Media keys
+    // Lock screen
+    Mod+Shift+Escape { spawn "swaylock"; }
+    
+    // Clipboard history
+    Mod+V { spawn "cliphist" "list" | "wofi" "--dmenu" | "cliphist" "decode" | "wl-copy"; }
+    
+    // Quick app launchers
+    Mod+E { spawn "nautilus"; }
+    Mod+W { spawn "firefox"; }
+    Mod+T { spawn "ghostty"; }
+    
+    // Media keys (enhanced)
     XF86AudioRaiseVolume { spawn "pamixer" "-i" "5"; }
     XF86AudioLowerVolume { spawn "pamixer" "-d" "5"; }
     XF86AudioMute        { spawn "pamixer" "-t"; }
     XF86AudioMicMute     { spawn "pamixer" "--default-source" "-t"; }
     
+    // Brightness controls
     XF86MonBrightnessUp   { spawn "brightnessctl" "set" "10%+"; }
     XF86MonBrightnessDown { spawn "brightnessctl" "set" "10%-"; }
     
+    // Media player controls
     XF86AudioPlay { spawn "playerctl" "play-pause"; }
     XF86AudioNext { spawn "playerctl" "next"; }
     XF86AudioPrev { spawn "playerctl" "previous"; }
+    XF86AudioStop { spawn "playerctl" "stop"; }
+    
+    // Alternative media controls for keyboards without media keys
+    Mod+Shift+Space { spawn "playerctl" "play-pause"; }
+    Mod+Shift+Period { spawn "playerctl" "next"; }
+    Mod+Shift+Comma { spawn "playerctl" "previous"; }
+}
+
+// IPC configuration for external tools
+debug {
+    // Enable IPC for waybar integration
+    wait-for-frame-completion-before-queueing-redraws true
 }
