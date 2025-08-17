@@ -31,8 +31,15 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
 
-  # Enable sound
-  hardware.pulseaudio.enable = true;
+  # Enable sound with PipeWire (modern audio system)
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   # User account
   users.users.abbes = {
