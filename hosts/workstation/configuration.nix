@@ -21,11 +21,17 @@
     wget
     tree
     htop
+    
+    # VirtualBox guest additions
+    virtualbox-guest-utils
   ];
   
-  # Audio
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  # VirtualBox optimizations
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.x11 = true;
+  
+  # Audio is handled by common config (PipeWire)
+  # No conflicting pulseaudio settings here
   
   # Basic hardware support
   hardware.opengl.enable = true;
