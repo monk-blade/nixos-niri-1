@@ -82,12 +82,30 @@
   ];
 
   # Fonts
-  fonts.packages = with pkgs; [
+  # Fonts
+fonts = {
+  packages = with pkgs; [
     (nerdfonts.override { fonts = [ "SpaceMono" ]; })
     victor-mono
-    noto-fonts-emoji  # For emoji support
-    amiri  # Arabic font
+    noto-fonts-emoji
+    amiri
+    # Add some common fallbacks
+    noto-fonts
+    noto-fonts-cjk
+    liberation_ttf
+    dejavu_fonts
   ];
+  
+  fontconfig = {
+    enable = true;
+    defaultFonts = {
+      serif = [ "Noto Serif" "Amiri" ];
+      sansSerif = [ "Noto Sans" ];
+      monospace = [ "SpaceMono Nerd Font" "Victor Mono" ];
+      emoji = [ "Noto Color Emoji" ];
+    };
+  };
+};
 
   # Enable fish system-wide
   programs.fish.enable = true;
