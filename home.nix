@@ -17,7 +17,7 @@
     alacritty
     starship
     tmux
-    cliphost
+    cliphist
     
     # Wayland & Window Manager
     niri
