@@ -27,7 +27,7 @@ input {
     }
     
     // Enable focus follows mouse for better navigation
-    focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse
 }
 
 output "eDP-1" {
@@ -35,7 +35,7 @@ output "eDP-1" {
 }
 
 layout {
-    gaps 6
+    gaps 12
     
     center-focused-column "never"
     
@@ -157,9 +157,9 @@ binds {
     Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
     
-    // Scroll-based navigation (mouse wheel on focused window)
-    Mod+WheelScrollLeft  { focus-column-left; }
-    Mod+WheelScrollRight { focus-column-right; }
+    // Scroll-based navigation (mouse wheel on desktop)
+    Mod+WheelScrollLeft  { focus-workspace-down; }
+    Mod+WheelScrollRight { focus-workspace-up; }
     Mod+WheelScrollDown  { focus-window-down; }
     Mod+WheelScrollUp    { focus-window-up; }
     
@@ -176,8 +176,6 @@ binds {
     // Overview mode (NEW!)
     Mod+Tab { overview-toggle; }
     Mod+Grave { overview-toggle; }  // Backtick key alternative
-    Alt+Tab { focus-window-or-workspace-down; }
-    Alt+Shift+Tab { focus-window-or-workspace-up; }
     
     // Enhanced workspace navigation
     Mod+1 { focus-workspace 1; }
@@ -208,14 +206,12 @@ binds {
     Mod+Shift+9 { move-column-to-workspace 9; }
     
     // Move to workspace and follow
-    Mod+Ctrl+Shift+Left  { move-column-to-workspace-down; }
-    Mod+Ctrl+Shift+Right { move-column-to-workspace-up; }
+    Mod+Ctrl+Shift+Left  { move-column-to-workspace-down; switch-to-workspace-down; }
+    Mod+Ctrl+Shift+Right { move-column-to-workspace-up; switch-to-workspace-up; }
     
     // Column management
     Mod+Comma  { consume-window-into-column; }
     Mod+Period { expel-window-from-column; }
-    Mod+BracketLeft  { consume-or-expel-window-left; }
-    Mod+BracketRight { consume-or-expel-window-right; }
     
     // Enhanced resize controls
     Mod+R { switch-preset-column-width; }
@@ -229,7 +225,7 @@ binds {
     Mod+Ctrl+K { set-window-height "-10%"; }
     Mod+Ctrl+J { set-window-height "+10%"; }
     
-    // Center column (useful in overview mode)
+    // Center column
     Mod+C { center-column; }
     
     // Screenshots with selection
