@@ -23,6 +23,11 @@
     git
     fnm  # Fast Node Manager
     
+    # C/C++ Development (needed for Neovim plugins)
+    gcc
+    gnumake
+    cmake
+    
     # System Monitoring & Info
     btop
     fastfetch
@@ -38,6 +43,7 @@
     ripgrep
     fd
     bat
+    zoxide  # Smart directory jumper
   ];
 
   # Link your existing dotfiles
