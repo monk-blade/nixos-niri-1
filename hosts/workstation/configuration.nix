@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
+  imports = [
+    ./hardware-configuration.nix
+  ];
   # System hostname
   networking.hostName = "nixos-workstation";
   
