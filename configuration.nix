@@ -8,7 +8,12 @@
   # Bootloader for VirtualBox
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.configurationLimit = 5;
 
+  system.autoUpgrade = {
+    enable = false;  # Set to true if you want automatic updates
+  };
+  
   # Enable flakes and nix command
   nix = {
     settings = {
@@ -20,8 +25,8 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
+      options = "--delete-older-than 7d --max-freed 5G";  # Also limit by space freed
+    };  
   };
 
   # VirtualBox optimizations
