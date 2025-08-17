@@ -15,10 +15,9 @@
   # VirtualBox optimizations
   boot.initrd.checkJournalingFS = false;
   virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
 
   # Network
-  networking.hostName = "nixos-vm";
+  networking.hostName = "abbes";
   networking.networkmanager.enable = true;
 
   # Time zone
