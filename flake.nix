@@ -1,35 +1,35 @@
 {
-  description = "My NixOS configuration";
+  description = "NixOS configuration with existing dotfiles";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
-    let
-      system = "x86_64-linux";
-      lib = nixpkgs.lib;
-    in {
-      nixosConfigurations = {
-        workstation = lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./hosts/common
-            ./hosts/workstation/configuration.nix
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+    nixosConfigurations = {
+      # Replace "nixos-vm" with your hostname
+      nixos-vm = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+          ./hardware-configuration.nix
+          
+          # Home Manager integration
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.yourusername = import ./home.nix;
             
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                users.abbes = import ./home/workstation.nix;
-              };
-            }
-          ];
-        };
+            # Pass flake inputs to home-manager
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
+        ];
       };
     };
+  };
 }
