@@ -23,7 +23,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.yourusername = import ./home.nix;
+            home-manager.users.abbes = import ./home.nix;
             
             # Pass flake inputs to home-manager
             home-manager.extraSpecialArgs = { inherit inputs; };
