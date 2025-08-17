@@ -247,7 +247,6 @@ binds {
     Print { screenshot; }
     Mod+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
-    Shift+Print { spawn "grim" "-g" "$(slurp)" - | "wl-copy" "-t" "image/png"; }
     
     // System controls
     Mod+Shift+E { quit; }
@@ -256,9 +255,6 @@ binds {
     
     // Lock screen
     Mod+Shift+Escape { spawn "swaylock"; }
-    
-    // Clipboard history
-    Mod+V { spawn "cliphist" "list" | "wofi" "--dmenu" | "cliphist" "decode" | "wl-copy"; }
     
     // Quick app launchers
     Mod+E { spawn "nautilus"; }
