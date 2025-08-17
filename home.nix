@@ -18,6 +18,15 @@
     starship
     tmux
     
+    # Wayland & Window Manager
+    niri
+    waybar
+    mako  # Notification daemon
+    swaylock  # Screen locker
+    wl-clipboard  # Wayland clipboard utilities
+    grim  # Screenshot utility
+    slurp  # Screen area selection
+    
     # Essential Development
     neovim
     git
@@ -48,17 +57,28 @@
 
   # Link your existing dotfiles
   home.file = {
-    # Fish config
+    # Shell & Terminal configs
     ".config/fish".source = ./dotfiles/.config/fish;
-    
-    # Ghostty config
     ".config/ghostty".source = ./dotfiles/.config/ghostty;
+    ".config/alacritty".source = ./dotfiles/.config/alacritty;
+    ".config/tmux".source = ./dotfiles/.config/tmux;
+    ".config/starship".source = ./dotfiles/.config/starship;
     
-    # Neovim config
+    # Wayland & Window Manager configs
+    ".config/niri".source = ./dotfiles/.config/niri;
+    ".config/waybar".source = ./dotfiles/.config/waybar;
+    ".config/mako".source = ./dotfiles/.config/mako;
+    ".config/swaylock".source = ./dotfiles/.config/swaylock;
+    
+    # Development configs
     ".config/nvim".source = ./dotfiles/.config/nvim;
     
-    # Starship config
-    ".config/starship".source = ./dotfiles/.config/starship;
+    # System tools configs
+    ".config/btop".source = ./dotfiles/.config/btop;
+    ".config/cava".source = ./dotfiles/.config/cava;
+    ".config/fastfetch".source = ./dotfiles/.config/fastfetch;
+    ".config/ranger".source = ./dotfiles/.config/ranger;
+    ".config/yazi".source = ./dotfiles/.config/yazi;
   };
 
   # Enable programs that need special handling
