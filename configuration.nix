@@ -32,11 +32,10 @@
   services.xserver.desktopManager.xfce.enable = true;
 
   # Enable sound
-  sound.enable = true;
   hardware.pulseaudio.enable = true;
 
   # User account
-  users.users.yourusername = {
+  users.users.abbes = {
     isNormalUser = true;
     description = "Your Name";
     extraGroups = [ "networkmanager" "wheel" "vboxsf" ];
