@@ -41,7 +41,17 @@
   # X11 and Desktop Environment (adjust as needed)
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm.greeters.slick.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
+  programs.niri.enable = true;
+
+  # Enable Wayland protocols
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+    ];
+  };
 
   # Enable sound with PipeWire (modern audio system)
   services.pulseaudio.enable = false;
