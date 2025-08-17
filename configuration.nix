@@ -41,7 +41,7 @@
   # X11 and Desktop Environment (adjust as needed)
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.lightdm.greeters.slick.enable = true;
+  services.xserver.displayManager.lightdm.greeters.gtk.enable = true;  
   services.xserver.desktopManager.xfce.enable = true;
   programs.niri.enable = true;
 
