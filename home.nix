@@ -60,12 +60,6 @@
       # Let your fish config files handle the detailed configuration
     };
     
-    # Direnv (if you use it)
-    direnv = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-    
     # Starship prompt
     starship = {
       enable = true;
