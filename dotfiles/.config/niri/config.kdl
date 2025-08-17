@@ -84,7 +84,8 @@ binds {
     // Mod key is Super (Windows key)
     
     // Basic window management
-    Mod+Return { spawn "ghostty"; }
+    Mod+Return { spawn "kitty"; }
+    Ctrl+Alt+Return { spawn "ghostty"; }
     Mod+D { spawn "wofi" "--show" "drun"; }
     Mod+Q { close-window; }
     
