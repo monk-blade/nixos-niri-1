@@ -8,9 +8,9 @@
 
 # Font Configuration
 font-family = SpaceMono Nerd Font
-font-style-italic = VictorMono Italic
+font-style-italic = Victor Mono Italic
 font-style-bold = SpaceMono Nerd Font Bold
-font-style-bold-italic = VictorMono Nerd Font Italic Bold
+font-style-bold-italic = Victor Mono Nerd Font Italic Bold
 font-size = 14
 
 # Window Configuration
