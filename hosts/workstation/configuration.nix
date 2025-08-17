@@ -24,9 +24,6 @@
     wget
     tree
     htop
-    
-    # VirtualBox guest additions
-    virtualbox-guest-utils
   ];
   
   # VirtualBox optimizations
