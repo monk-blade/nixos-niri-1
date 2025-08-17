@@ -189,8 +189,8 @@ binds {
     Mod+Shift+L     { move-column-right; }
     
     // Overview mode (NEW!)
-    Mod+Tab { overview-toggle; }
-    Mod+Grave { overview-toggle; }  // Backtick key alternative
+    Mod+Tab { switch-preset-column-width; }
+    Mod+Grave { switch-preset-column-width; }  // Backtick key alternative
     
     // Enhanced workspace navigation
     Mod+1 { focus-workspace 1; }
@@ -221,8 +221,8 @@ binds {
     Mod+Shift+9 { move-column-to-workspace 9; }
     
     // Move to workspace and follow
-    Mod+Ctrl+Shift+Left  { move-column-to-workspace-down; switch-to-workspace-down; }
-    Mod+Ctrl+Shift+Right { move-column-to-workspace-up; switch-to-workspace-up; }
+    Mod+Ctrl+Shift+Left  { move-column-to-workspace-down; focus-workspace-down; }
+    Mod+Ctrl+Shift+Right { move-column-to-workspace-up; focus-workspace-up; }
     
     // Column management
     Mod+Comma  { consume-window-into-column; }
