@@ -81,6 +81,14 @@
     wget
   ];
 
+  # Fonts
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "SpaceMono" ]; })
+    victor-mono
+    noto-fonts-emoji  # For emoji support
+    amiri  # Arabic font
+  ];
+
   # Enable fish system-wide
   programs.fish.enable = true;
 

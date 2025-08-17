@@ -44,6 +44,10 @@ hotkey-overlay {
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
+// Auto-start programs
+spawn-at-startup "waybar"
+spawn-at-startup "mako"
+
 animations {
     slowdown 1.0
     
@@ -80,7 +84,7 @@ binds {
     // Mod key is Super (Windows key)
     
     // Basic window management
-    Mod+Return { spawn "kitty"; }
+    Mod+Return { spawn "ghostty"; }
     Mod+D { spawn "wofi" "--show" "drun"; }
     Mod+Q { close-window; }
     
