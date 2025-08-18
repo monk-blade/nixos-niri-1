@@ -18,34 +18,42 @@ window-save-state = never
 # window-padding-x = 10
 # window-padding-y = 10
 window-decoration = false
-# Colors from Old World theme
-background = #161617
-foreground = #FFFFFF
+# Custom color scheme
+background = #141415
+foreground = #cdcdcd
 
+# 16-color palette
+# Black (normal and bright)
+palette = 0=#141415
+palette = 8=#606079
 
-# Theme
-# theme = "Kanagawa Wave"
+# Red (normal and bright)
+palette = 1=#d8647e
+palette = 9=#d8647e
 
-# New theme => old world
-# Normal colors
-palette = 0=#161617
-palette = 1=#E29ECA
-palette = 2=#90B99F
-palette = 3=#E6B99D
-palette = 4=#92A2D5
-palette = 5=#ACA1CF
-palette = 6=#85B5BA
-palette = 7=#C9C7CD
+# Green (normal and bright)
+palette = 2=#7fa563
+palette = 10=#7fa563
 
-# Bright colors
-palette = 8=#161617
-palette = 9=#E29ECA
-palette = 10=#90B99F
-palette = 11=#E6B99D
-palette = 12=#92A2D5
-palette = 13=#ACA1CF
-palette = 14=#85B5BA
-palette = 15=#C9C7CD
+# Yellow (normal and bright)
+palette = 3=#f3be7c
+palette = 11=#f3be7c
+
+# Blue (normal and bright)
+palette = 4=#7e98e8
+palette = 12=#7e98e8
+
+# Magenta (normal and bright)
+palette = 5=#bb9dbd
+palette = 13=#bb9dbd
+
+# Cyan (normal and bright)
+palette = 6=#b4d4cf
+palette = 14=#b4d4cf
+
+# White (normal and bright)
+palette = 7=#cdcdcd
+palette = 15=#cdcdcd
 
 # Window settings
 window-inherit-working-directory = true
