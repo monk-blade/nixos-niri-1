@@ -4,7 +4,7 @@
   # Basic info
   home.username = "abbes";
   home.homeDirectory = "/home/abbes";
-  home.stateVersion = "25.05";
+  home.stateVersion = "24.05";
 
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
@@ -102,6 +102,18 @@
         core.editor = "nvim";
         pull.rebase = false;
         push.default = "simple";
+      };
+    };
+    
+    # SSH configuration for GitHub
+    ssh = {
+      enable = true;
+      matchBlocks = {
+        "github.com" = {
+          hostname = "github.com";
+          user = "git";
+          identityFile = "~/.ssh/github";
+        };
       };
     };
     
