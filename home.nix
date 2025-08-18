@@ -26,7 +26,7 @@
     # Wayland & Window Manager
     niri
     waybar
-    mako  # Notification daemon
+    mako  # Lightweight notification daemon
     swaylock  # Screen locker
     swww  # Wallpaper daemon
     wl-clipboard  # Wayland clipboard utilities
@@ -59,6 +59,7 @@
     fd
     bat
     zoxide  # Smart directory jumper
+    jq  # JSON processor for notification scripts
   ];
 
   # Link your existing dotfiles

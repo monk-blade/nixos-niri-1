@@ -176,6 +176,17 @@
       }
     },
   
+    "custom/notification": {
+      "tooltip": false,
+      "format": "{}",
+      "exec": "~/.config/waybar/scripts/mako-count.sh",
+      "exec-if": "which makoctl",
+      "on-click": "makoctl invoke",
+      "on-click-right": "makoctl dismiss --all",
+      "interval": 1,
+      "escape": true
+    },
+  
     "custom/power": {
       "format": " ⏻ ",
       "on-click": "~/.config/scripts/power-menu.sh",
