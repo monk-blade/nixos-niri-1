@@ -143,7 +143,7 @@ window-rule {
 
 // Floating rules
 window-rule {
-    match app-id="pavucontrol" | app-id="blueman-manager"
+    match (app-id="pavucontrol" | app-id="blueman-manager")
     open-floating true
 }
 
@@ -242,7 +242,7 @@ binds {
     Print { screenshot; }
     Mod+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
-        Shift+Print { spawn "sh" "-c" 'grim -g "$(slurp)" - | wl-copy -t image/png'; }
+        Shift+Print { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy -t image/png"; }
     
     // System controls
     Mod+Shift+C { reload-config; }
