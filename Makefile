@@ -8,16 +8,12 @@ help:
 	@echo "NixOS Flakes Management Commands:"
 	@echo ""
 	@echo "Build Commands:"
-	@echo "  build-workstation  - Build workstation configuration"
-	@echo "  build-minimal      - Build minimal configuration"
+	@echo "  build-abbes  - Build abbes configuration"
 	@echo ""
 	@echo "System Commands:"
-	@echo "  switch-workstation - Build and switch to workstation configuration"
-	@echo "  switch-minimal     - Build and switch to minimal configuration"
-	@echo "  boot-workstation   - Build and set workstation as next boot"
-	@echo "  boot-minimal       - Build and set minimal as next boot"
-	@echo "  test-workstation   - Test workstation configuration (temporary)"
-	@echo "  test-minimal       - Test minimal configuration (temporary)"
+	@echo "  switch-abbes - Build and switch to abbes configuration"
+	@echo "  boot-abbes   - Build and set abbes as next boot"
+	@echo "  test-abbes   - Test abbes configuration (temporary)"
 	@echo ""
 	@echo "Home Manager Commands:"
 	@echo "  home-switch        - Switch home-manager configuration"
@@ -34,36 +30,36 @@ help:
 	@echo ""
 
 # Build configurations
-build-workstation:
-	@echo "Building workstation configuration..."
-	sudo nixos-rebuild build --flake .#workstation
+build-abbes:
+	@echo "Building abbes configuration..."
+	sudo nixos-rebuild build --flake .#abbes
 
 build-minimal:
 	@echo "Building minimal configuration..."
 	sudo nixos-rebuild build --flake .#minimal
 
 # Switch configurations
-switch-workstation:
-	@echo "Switching to workstation configuration..."
-	sudo nixos-rebuild switch --flake .#workstation
+switch-abbes:
+	@echo "Switching to abbes configuration..."
+	sudo nixos-rebuild switch --flake .#abbes
 
 switch-minimal:
 	@echo "Switching to minimal configuration..."
 	sudo nixos-rebuild switch --flake .#minimal
 
 # Boot configurations
-boot-workstation:
-	@echo "Setting workstation as next boot configuration..."
-	sudo nixos-rebuild boot --flake .#workstation
+boot-abbes:
+	@echo "Setting abbes as next boot configuration..."
+	sudo nixos-rebuild boot --flake .#abbes
 
 boot-minimal:
 	@echo "Setting minimal as next boot configuration..."
 	sudo nixos-rebuild boot --flake .#minimal
 
 # Test configurations (temporary, reverts on reboot)
-test-workstation:
-	@echo "Testing workstation configuration (temporary)..."
-	sudo nixos-rebuild test --flake .#workstation
+test-abbes:
+	@echo "Testing abbes configuration (temporary)..."
+	sudo nixos-rebuild test --flake .#abbes
 
 test-minimal:
 	@echo "Testing minimal configuration (temporary)..."
@@ -79,13 +75,13 @@ update:
 	@echo "Updating flake inputs..."
 	nix flake update
 
-upgrade: update switch-workstation
+upgrade: update switch-abbes
 	@echo "System upgraded successfully!"
 
 clean:
 	@echo "Cleaning old generations and garbage collecting..."
 	sudo nix-collect-garbage -d
-	sudo nixos-rebuild switch --flake .#workstation
+	sudo nixos-rebuild switch --flake .#abbes
 	@echo "Cleanup completed!"
 
 check:
@@ -108,14 +104,6 @@ commit:
 	git add . && \
 	git commit -m "$$msg" && \
 	git push origin main
-
-# Hardware configuration helpers
-copy-hardware:
-	@echo "Copying hardware configuration from /etc/nixos/..."
-	@read -p "Enter host name (workstation/minimal): " host; \
-	sudo cp /etc/nixos/hardware-configuration.nix ./hosts/$$host/hardware-configuration.nix && \
-	sudo chown $(USER):$(USER) ./hosts/$$host/hardware-configuration.nix && \
-	echo "Hardware configuration copied to ./hosts/$$host/hardware-configuration.nix"
 
 # Show system info
 info:
