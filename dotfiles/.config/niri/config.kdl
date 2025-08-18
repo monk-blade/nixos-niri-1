@@ -67,6 +67,12 @@ overview {
 
 prefer-no-csd
 
+border {
+    width 1
+    active-color "#ffffff"
+    inactive-color "#808080"
+}
+
 hotkey-overlay {
     skip-at-startup
 }
