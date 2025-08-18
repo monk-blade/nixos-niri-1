@@ -8,12 +8,14 @@ help:
 	@echo "NixOS Flakes Management Commands:"
 	@echo ""
 	@echo "Build Commands:"
-	@echo "  build-abbes  - Build abbes configuration"
+	@echo "  build        - Build system configuration"
+	@echo "  build-min    - Build minimal configuration"
 	@echo ""
 	@echo "System Commands:"
-	@echo "  switch-abbes - Build and switch to abbes configuration"
-	@echo "  boot-abbes   - Build and set abbes as next boot"
-	@echo "  test-abbes   - Test abbes configuration (temporary)"
+	@echo "  switch       - Build and switch to system configuration"
+	@echo "  boot         - Build and set as next boot"
+	@echo "  test         - Test system configuration (temporary)"
+	@echo "  switch-min   - Switch to minimal configuration"
 	@echo ""
 	@echo "Home Manager Commands:"
 	@echo "  home-switch        - Switch home-manager configuration"
@@ -30,38 +32,38 @@ help:
 	@echo ""
 
 # Build configurations
-build-abbes:
-	@echo "Building abbes configuration..."
+build:
+	@echo "Building system configuration..."
 	sudo nixos-rebuild build --flake .#abbes
 
-build-minimal:
+build-min:
 	@echo "Building minimal configuration..."
 	sudo nixos-rebuild build --flake .#minimal
 
 # Switch configurations
-switch-abbes:
-	@echo "Switching to abbes configuration..."
+switch:
+	@echo "Switching to system configuration..."
 	sudo nixos-rebuild switch --flake .#abbes
 
-switch-minimal:
+switch-min:
 	@echo "Switching to minimal configuration..."
 	sudo nixos-rebuild switch --flake .#minimal
 
 # Boot configurations
-boot-abbes:
-	@echo "Setting abbes as next boot configuration..."
+boot:
+	@echo "Setting as next boot configuration..."
 	sudo nixos-rebuild boot --flake .#abbes
 
-boot-minimal:
+boot-min:
 	@echo "Setting minimal as next boot configuration..."
 	sudo nixos-rebuild boot --flake .#minimal
 
 # Test configurations (temporary, reverts on reboot)
-test-abbes:
-	@echo "Testing abbes configuration (temporary)..."
+test:
+	@echo "Testing system configuration (temporary)..."
 	sudo nixos-rebuild test --flake .#abbes
 
-test-minimal:
+test-min:
 	@echo "Testing minimal configuration (temporary)..."
 	sudo nixos-rebuild test --flake .#minimal
 
@@ -75,7 +77,7 @@ update:
 	@echo "Updating flake inputs..."
 	nix flake update
 
-upgrade: update switch-abbes
+upgrade: update switch
 	@echo "System upgraded successfully!"
 
 clean:
@@ -116,3 +118,11 @@ info:
 rollback:
 	@echo "Rolling back to previous generation..."
 	sudo nixos-rebuild switch --rollback
+
+# Convenient aliases
+s: switch
+b: build
+t: test
+u: update
+c: clean
+h: home-switch
