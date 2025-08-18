@@ -11,6 +11,9 @@
 
   # Install your packages here (keeping it minimal for fast setup)
   home.packages = with pkgs; [
+    # browser
+    brave
+    
     # Terminal & Shell
     fish
     ghostty
@@ -18,6 +21,7 @@
     starship
     tmux
     cliphist
+    lsd
     
     # Wayland & Window Manager
     niri
