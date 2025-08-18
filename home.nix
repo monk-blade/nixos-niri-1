@@ -28,6 +28,7 @@
     waybar
     mako  # Notification daemon
     swaylock  # Screen locker
+    swww  # Wallpaper daemon
     wl-clipboard  # Wayland clipboard utilities
     grim  # Screenshot utility
     slurp  # Screen area selection
@@ -84,14 +85,24 @@
     ".config/fastfetch".source = ./dotfiles/.config/fastfetch;
     ".config/ranger".source = ./dotfiles/.config/ranger;
     ".config/yazi".source = ./dotfiles/.config/yazi;
+    
+    # Backgrounds
+    ".config/backgrounds".source = ./dotfiles/.config/backgrounds;
   };
 
   # Enable programs that need special handling
   programs = {
-    # Git (you can still use your dotfiles for detailed config)
+    # Git configuration
     git = {
       enable = true;
-      # Basic config, detailed config can come from your dotfiles
+      userName = "abbesm0hamed";
+      userEmail = "abbesmohamed717@gmail.com";
+      extraConfig = {
+        init.defaultBranch = "main";
+        core.editor = "nvim";
+        pull.rebase = false;
+        push.default = "simple";
+      };
     };
     
     # Fish shell
@@ -110,6 +121,26 @@
   # Environment variables
   home.sessionVariables = {
     EDITOR = "nvim";
-    BROWSER = "firefox";
+    BROWSER = "brave";
+  };
+
+  # Systemd services
+  systemd.user.services = {
+    swww-wallpaper = {
+      Unit = {
+        Description = "Set wallpaper with swww";
+        After = [ "graphical-session-pre.target" ];
+        PartOf = [ "graphical-session.target" ];
+      };
+      Service = {
+        Type = "oneshot";
+        ExecStartPre = "/run/current-system/sw/bin/sleep 2";
+        ExecStart = "${pkgs.swww}/bin/swww img %h/.config/backgrounds/white-tree.jpeg --transition-type fade --transition-duration 1";
+        RemainAfterExit = true;
+      };
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
+    };
   };
 }
