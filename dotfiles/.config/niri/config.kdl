@@ -143,7 +143,12 @@ window-rule {
 
 // Floating rules
 window-rule {
-    match (app-id="pavucontrol" | app-id="blueman-manager")
+    match app-id="pavucontrol"
+    open-floating true
+}
+
+window-rule {
+    match app-id="blueman-manager"
     open-floating true
 }
 
