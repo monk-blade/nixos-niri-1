@@ -1,5 +1,8 @@
 { config, lib, pkgs, ... }:
 
+let
+  versions = import ./versions.nix;
+in
 {
   # Import modules
   imports = [
@@ -9,7 +12,7 @@
   # Basic info
   home.username = "abbes";
   home.homeDirectory = "/home/abbes";
-  home.stateVersion = "25.05";
+  home.stateVersion = versions.homeManager;
 
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
