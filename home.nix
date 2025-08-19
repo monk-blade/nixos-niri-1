@@ -16,8 +16,7 @@
     
     # Terminal & Shell
     fish
-    ghostty
-    alacritty
+    foot
     starship
     tmux
     cliphist
