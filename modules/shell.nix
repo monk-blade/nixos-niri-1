@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Fish shell configuration (temporarily disabled for testing)
+  # Fish shell configuration
   programs.fish = {
-    enable = false;
+    enable = true;
     
     # Basic Fish initialization
     interactiveShellInit = ''
