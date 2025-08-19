@@ -4,7 +4,7 @@
     border: none;
     border-radius: 0;
     font-family: "SpaceMono Nerd Font", "Victor Mono", monospace;
-    font-size: 13px;
+    font-size: 15px;
     min-height: 0;
 }
 
@@ -122,6 +122,35 @@ window#waybar.ghostty #window {
     border-radius: 4px;
 }
 
+/* Icon-specific improvements */
+#tray {
+    padding: 0 6px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Improve icon spacing and alignment */
+#pulseaudio,
+#battery,
+#backlight,
+#network {
+    font-weight: bold;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* Better icon rendering for nerd fonts */
+.module {
+    font-feature-settings: "liga" 1, "calt" 1;
+}
+
 #battery {
     color: #ffffff;
 }
@@ -219,6 +248,28 @@ window#waybar.ghostty #window {
 
 #custom-weather {
     color: #74b9ff;
+}
+
+#custom-notification {
+    color: #a0a0a0;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#custom-notification:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* Notification states */
+#custom-notification.has-notifications {
+    color: #ffd700;
+    background-color: rgba(255, 215, 0, 0.2);
+}
+
+#custom-notification.mako-not-running {
+    color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.2);
 }
 
 #custom-prayer {

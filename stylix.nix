@@ -6,8 +6,8 @@
   
   # Base16 color scheme - you can change this to any base16 theme
   # Popular options: "gruvbox-dark-hard", "nord", "dracula", "tokyo-night-dark", "catppuccin-mocha"
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
-  
+stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/spacemacs.yaml";
+
   # Set wallpaper (Stylix can generate colors from your wallpaper)
   stylix.image = ./dotfiles/.config/backgrounds/white-tree.jpeg;
   
