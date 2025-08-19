@@ -22,6 +22,7 @@
     tmux
     cliphist
     lsd
+    dysk
     
     # Wayland & Window Manager
     niri
@@ -158,13 +159,11 @@
     # Fish shell
     fish = {
       enable = true;
-      # Let your fish config files handle the detailed configuration
     };
     
     # Starship prompt
     starship = {
       enable = true;
-      enableFishIntegration = true;
     };
     
     # Direnv for project environments
@@ -176,7 +175,6 @@
     # Zoxide for smart directory jumping
     zoxide = {
       enable = true;
-      enableFishIntegration = true;
     };
     
     # Bat for syntax highlighting
@@ -191,7 +189,6 @@
     # FZF fuzzy finder
     fzf = {
       enable = true;
-      enableFishIntegration = true;
       defaultCommand = "fd --type f --hidden --follow --exclude .git";
       defaultOptions = [ "--height 40%" "--border" ];
     };

@@ -7,15 +7,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs: {
     nixosConfigurations = {
       # Replace "nixos-vm" with your hostname
       abbes = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+          stylix.nixosModules.stylix
           
           # Home Manager integration
           home-manager.nixosModules.home-manager

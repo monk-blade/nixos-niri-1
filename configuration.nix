@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./stylix.nix
   ];
 
   # Bootloader for VirtualBox
@@ -77,7 +78,7 @@
     isNormalUser = true;
     description = "abbes";
     extraGroups = [ "networkmanager" "wheel" "vboxsf" "docker" ];
-    shell = pkgs.fish;  # Set fish as default shell
+    shell = pkgs.fish;
     packages = with pkgs; [];
   };
 
