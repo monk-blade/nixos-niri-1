@@ -33,15 +33,10 @@
     };
   };
   
-  # Configure which applications to theme
+  # Configure which applications to theme (using only confirmed working targets)
   stylix.targets = {
-    # Terminal applications
-    foot.enable = true;
-    fish.enable = true;
-    
     # Desktop environment
     waybar.enable = true;
-    mako.enable = true;
     
     # Development tools
     neovim.enable = true;
