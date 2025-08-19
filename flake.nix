@@ -26,6 +26,9 @@
             home-manager.useUserPackages = true;
             home-manager.users.abbes = import ./home.nix;
             
+            # Backup existing files when they conflict
+            home-manager.backupFileExtension = "backup";
+            
             # Pass flake inputs to home-manager
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
