@@ -32,8 +32,7 @@
     niri
     waybar
     mako  # Lightweight notification daemon
-    swaylock  # Screen locker
-    swww  # Wallpaper daemon
+    hyprlock  # Screen locker
     wl-clipboard  # Wayland clipboard utilities
     grim  # Screenshot utility
     slurp  # Screen area selection
@@ -188,25 +187,5 @@
     
     # Path additions
     PATH = "$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH";
-  };
-
-  # Systemd services
-  systemd.user.services = {
-    swww-wallpaper = {
-      Unit = {
-        Description = "Set wallpaper with swww";
-        After = [ "graphical-session-pre.target" ];
-        PartOf = [ "graphical-session.target" ];
-      };
-      Service = {
-        Type = "oneshot";
-        ExecStartPre = "/run/current-system/sw/bin/sleep 2";
-        ExecStart = "${pkgs.swww}/bin/swww img %h/.config/backgrounds/white-tree.jpeg --transition-type fade --transition-duration 1";
-        RemainAfterExit = true;
-      };
-      Install = {
-        WantedBy = [ "graphical-session.target" ];
-      };
-    };
   };
 }
