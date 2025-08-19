@@ -73,9 +73,16 @@
   users.users.abbes = {
     isNormalUser = true;
     description = "abbes";
-    extraGroups = [ "networkmanager" "wheel" "vboxsf" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxsf" "docker" ];
     shell = pkgs.fish;  # Set fish as default shell
     packages = with pkgs; [];
+  };
+
+  # Docker support
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = true;
+    autoPrune.enable = true;
   };
 
   # System packages (minimal, let home-manager handle user packages)
@@ -87,19 +94,19 @@
   ];
 
   # Fonts
-fonts = {
-  packages = with pkgs; [
-    nerd-fonts.space-mono
-    victor-mono
-    noto-fonts-emoji
-    amiri
-    # Optional: add some common fallbacks
-    noto-fonts
-    liberation_ttf
-  ];
-  
-  fontconfig.enable = true;
-};
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.space-mono
+      victor-mono
+      noto-fonts-emoji
+      amiri
+      # Optional: add some common fallbacks
+      noto-fonts
+      liberation_ttf
+    ];
+    
+    fontconfig.enable = true;
+  };
 
   # Enable fish system-wide
   programs.fish.enable = true;

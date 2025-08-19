@@ -38,6 +38,42 @@
     git
     fnm  # Fast Node Manager
     
+    # Languages & Runtimes
+    nodejs_24  # Latest LTS Node.js
+    python3
+    python3Packages.pip
+    python3Packages.virtualenv
+    rustc
+    cargo
+    go
+    
+    # Container & Cloud tools
+    docker
+    docker-compose
+    kubectl
+    terraform
+    
+    # API & Network tools
+    curl
+    wget
+    httpie  # Better curl alternative
+    apidog  # API testing
+    
+    # Version control & collaboration
+    gh  # GitHub CLI
+    lazygit  # TUI for git
+    delta  # Better git diff
+    
+    # Code quality & formatting
+    shellcheck  # Shell script linting
+    shfmt  # Shell script formatting
+    
+    # Performance & debugging
+    hyperfine  # Benchmarking tool
+    tokei  # Code statistics
+    dust  # Better du
+    procs  # Better ps
+    
     # C/C++ Development (needed for Neovim plugins)
     gcc
     gnumake
@@ -47,6 +83,7 @@
     btop
     fastfetch
     cava  # Audio visualizer
+    nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
     
     # File Management
     tree
@@ -129,12 +166,70 @@
       enable = true;
       enableFishIntegration = true;
     };
+    
+    # Direnv for project environments
+    direnv = {
+      enable = true;
+      enableFishIntegration = true;
+      nix-direnv.enable = true;
+    };
+    
+    # Zoxide for smart directory jumping
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    
+    # Better ls with lsd
+    lsd = {
+      enable = true;
+      enableAliases = true;
+    };
+    
+    # Bat for syntax highlighting
+    bat = {
+      enable = true;
+      config = {
+        theme = "TwoDark";
+        style = "numbers,changes,header";
+      };
+    };
+    
+    # FZF fuzzy finder
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+      defaultCommand = "fd --type f --hidden --follow --exclude .git";
+      defaultOptions = [ "--height 40%" "--border" ];
+    };
   };
 
   # Environment variables
   home.sessionVariables = {
     EDITOR = "nvim";
     BROWSER = "brave";
+    
+    # Development environment
+    TERM = "xterm-256color";
+    COLORTERM = "truecolor";
+    
+    # Node.js and npm
+    NPM_CONFIG_PREFIX = "$HOME/.npm-global";
+    
+    # Python
+    PYTHONDONTWRITEBYTECODE = "1";
+    PYTHONUNBUFFERED = "1";
+    
+    # Rust
+    CARGO_HOME = "$HOME/.cargo";
+    RUSTUP_HOME = "$HOME/.rustup";
+    
+    # Go
+    GOPATH = "$HOME/go";
+    GOBIN = "$HOME/go/bin";
+    
+    # Path additions
+    PATH = "$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH";
   };
 
   # Systemd services
