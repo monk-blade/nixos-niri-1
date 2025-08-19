@@ -1,9 +1,22 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Fish shell configuration
+  # Fish shell configuration (temporarily disabled for testing)
   programs.fish = {
-    enable = true;
+    enable = false;
+    
+    # Basic Fish initialization
+    interactiveShellInit = ''
+      # Disable fish greeting
+      set fish_greeting ""
+      
+      # Vi keybindings
+      set fish_key_bindings fish_vi_key_bindings
+      
+      # Environment variables
+      set -gx EDITOR nvim
+      set -gx BROWSER firefox
+    '';
     
     # Shell aliases - migrated from Fish config
     shellAliases = {
