@@ -29,6 +29,9 @@
     };  
   };
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # VirtualBox optimizations
   boot.initrd.checkJournalingFS = false;
   virtualisation.virtualbox.guest.enable = true;
