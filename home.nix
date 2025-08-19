@@ -9,7 +9,7 @@
   # Basic info
   home.username = "abbes";
   home.homeDirectory = "/home/abbes";
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.05";
 
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
