@@ -180,12 +180,6 @@
       enableFishIntegration = true;
     };
     
-    # Better ls with lsd
-    lsd = {
-      enable = true;
-      enableAliases = true;
-    };
-    
     # Bat for syntax highlighting
     bat = {
       enable = true;
