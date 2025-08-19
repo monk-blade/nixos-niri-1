@@ -1,7 +1,7 @@
 {
     "layer": "bottom",
     "position": "bottom",
-    "height": 22,
+    "height": 32,
     "modules-left": ["niri/workspaces", "niri/window"],
     "modules-center": [""],
     "modules-right": [
@@ -16,6 +16,7 @@
       "pulseaudio#microphone",
       "backlight",
       "battery",
+      "custom/notification",
       "custom/weather",
       "custom/prayer",
       "clock",
@@ -177,14 +178,16 @@
     },
   
     "custom/notification": {
-      "tooltip": false,
+      "tooltip": true,
       "format": "{}",
       "exec": "~/.config/waybar/scripts/mako-count.sh",
       "exec-if": "which makoctl",
-      "on-click": "makoctl invoke",
+      "on-click": "~/.config/waybar/scripts/notification-center.sh",
+      "on-click-middle": "makoctl invoke",
       "on-click-right": "makoctl dismiss --all",
-      "interval": 1,
-      "escape": true
+      "interval": 2,
+      "escape": true,
+      "tooltip-format": "Left: Show history | Middle: Invoke | Right: Clear all"
     },
   
     "custom/power": {
@@ -194,8 +197,8 @@
     },
   
     "tray": {
-      "icon-size": 16,
-      "spacing": 10,
+      "icon-size": 20,
+      "spacing": 12,
       "show-passive-items": true
     }
   }
