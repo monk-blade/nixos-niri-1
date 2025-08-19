@@ -74,7 +74,7 @@ alias nix-list="nix-env -q"                 # list installed packages
 # ┌─ Quick Navigation ──────────────────────────────────────────────────────────┐
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias ~="cd ~"
+alias home="cd ~"
 alias nixcfg="cd ~/nixos-config"
 
 # ┌─ Docker Power Tools ────────────────────────────────────────────────────────┐
