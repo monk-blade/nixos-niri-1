@@ -25,10 +25,7 @@ in
     # Terminal & Shell
     ghostty
     foot
-    starship
-    tmux
     cliphist
-    lsd
     dysk
     
     # Wayland & Window Manager
@@ -41,8 +38,6 @@ in
     slurp  # Screen area selection
     
     # Essential Development
-    neovim
-    git
     fnm  # Fast Node Manager
     
     # Languages & Runtimes
@@ -87,23 +82,7 @@ in
     cmake
     
     # System Monitoring & Info
-    btop
-    fastfetch
-    cava  # Audio visualizer
     nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
-    
-    # File Management
-    tree
-    ranger
-    yazi  # Modern file manager
-    
-    # Search & Navigation
-    fzf
-    ripgrep
-    fd
-    bat
-    zoxide  # Smart directory jumper
-    jq  # JSON processor for notification scripts
   ];
 
   # Link your existing dotfiles
