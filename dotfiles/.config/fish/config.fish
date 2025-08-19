@@ -32,13 +32,50 @@ alias lg="lazygit"     # git TUI
 alias ff="fastfetch"   # system info
 alias ..="cd .."       # go up one directory
 
+# ┌─ Git Shortcuts ─────────────────────────────────────────────────────────────┐
+alias g="git"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gl="git pull"
+alias gd="git diff"
+alias gco="git checkout"
+alias gb="git branch"
+alias glog="git log --oneline --graph --decorate"
+
+# ┌─ Better CLI Defaults ───────────────────────────────────────────────────────┐
+alias ls="lsd"
+alias ll="lsd -la"
+alias tree="lsd --tree"
+alias cat="bat"
+alias grep="rg"
+alias find="fd"
+alias du="dust"
+alias ps="procs"
+
+# ┌─ Development Tools ─────────────────────────────────────────────────────────┐
+alias v="nvim"
+alias k="kubectl"
+alias tf="terraform"
+alias py="python3"
+alias pip="pip3"
+
 # ┌─ NixOS Package Management ──────────────────────────────────────────────────┐
 alias nix-search="nix search nixpkgs"
 alias nix-shell="nix-shell -p"
-alias rebuild="sudo nixos-rebuild switch"
-alias rebuild-test="sudo nixos-rebuild test"
-alias nix-gc="sudo nix-collect-garbage -d"  # cleanup old generations
+alias rebuild="nh os switch"
+alias rebuild-test="nh os test"
+alias rebuild-update="nh os switch --update"
+alias home-rebuild="nh home switch"
+alias nix-gc="nh clean all"
 alias nix-list="nix-env -q"                 # list installed packages
+
+# ┌─ Quick Navigation ──────────────────────────────────────────────────────────┐
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias ~="cd ~"
+alias nixcfg="cd ~/nixos-config"
 
 # ┌─ Docker Power Tools ────────────────────────────────────────────────────────┐
 alias dc="sudo docker-compose"
