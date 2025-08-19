@@ -33,16 +33,6 @@
     };
   };
   
-  # Configure which applications to theme (using only confirmed working targets)
-  stylix.targets = {
-    # Desktop environment
-    waybar.enable = true;
-    
-    # System
-    console.enable = true;
-    grub.enable = false; # You're using systemd-boot
-  };
-  
   # Override specific colors if needed
   stylix.override = {
     # Example: override the accent color
