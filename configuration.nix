@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+  versions = import ./versions.nix;
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -115,5 +118,5 @@
   # Enable fish system-wide
   programs.fish.enable = true;
 
-  system.stateVersion = "25.05";
+  system.stateVersion = versions.nixos;
 }
