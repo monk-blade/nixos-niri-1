@@ -38,9 +38,6 @@
     # Desktop environment
     waybar.enable = true;
     
-    # Development tools
-    neovim.enable = true;
-    
     # System
     console.enable = true;
     grub.enable = false; # You're using systemd-boot
