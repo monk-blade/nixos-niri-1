@@ -57,7 +57,7 @@
     curl
     wget
     httpie  # Better curl alternative
-    apidog  # API testing
+    bruno  # API testing
     
     # Version control & collaboration
     gh  # GitHub CLI
