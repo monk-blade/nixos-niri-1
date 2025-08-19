@@ -43,9 +43,6 @@
       tk = "tmux kill-session -t";
       tka = "tmux kill-server";
       txsrc = "tmux source-file ~/.tmux.conf";
-      
-      # System Monitoring
-      diskusg = "df -h | grep /dev/nvme0n1p2";
     };
   };
   
