@@ -1,10 +1,15 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
+  # Import modules
+  imports = [
+    ./modules/shell.nix
+  ];
+  
   # Basic info
   home.username = "abbes";
   home.homeDirectory = "/home/abbes";
-  home.stateVersion = "25.05";
+  home.stateVersion = "24.05";
 
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
@@ -102,7 +107,6 @@
   # Link your existing dotfiles
   home.file = {
     # Shell & Terminal configs
-    ".config/fish".source = ./dotfiles/.config/fish;
     ".config/ghostty".source = ./dotfiles/.config/ghostty;
     ".config/alacritty".source = ./dotfiles/.config/alacritty;
     ".config/tmux".source = ./dotfiles/.config/tmux;
@@ -155,42 +159,7 @@
       };
     };
     
-    # Fish shell
-    fish = {
-      enable = true;
-    };
-    
-    # Starship prompt
-    starship = {
-      enable = true;
-    };
-    
-    # Direnv for project environments
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-    
-    # Zoxide for smart directory jumping
-    zoxide = {
-      enable = true;
-    };
-    
-    # Bat for syntax highlighting
-    bat = {
-      enable = true;
-      config = {
-        theme = "TwoDark";
-        style = "numbers,changes,header";
-      };
-    };
-    
-    # FZF fuzzy finder
-    fzf = {
-      enable = true;
-      defaultCommand = "fd --type f --hidden --follow --exclude .git";
-      defaultOptions = [ "--height 40%" "--border" ];
-    };
+    # Note: Shell configuration (Fish, Starship, Zoxide, etc.) is now handled by ./modules/shell.nix
   };
 
   # Environment variables

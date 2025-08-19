@@ -45,7 +45,6 @@
     
     # Development tools
     neovim.enable = true;
-    bat.enable = true;
     
     # System
     console.enable = true;
