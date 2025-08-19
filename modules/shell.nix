@@ -47,68 +47,6 @@
       # System Monitoring
       diskusg = "df -h | grep /dev/nvme0n1p2";
     };
-    
-    # Fish shell initialization
-    interactiveShellInit = ''
-      # Disable fish greeting
-      set fish_greeting ""
-      
-      # Vi keybindings and cursor settings
-      set fish_key_bindings fish_vi_key_bindings
-      set fish_cursor_default block
-      set fish_cursor_insert line
-      set fish_cursor_replace_one underscore
-      
-      # Environment variables
-      set -gx PATH $PATH $HOME/go/bin
-      set -gx EDITOR nvim
-      set -gx BROWSER firefox
-      
-      # Tokyo Night color scheme for Fish
-      set fish_color_normal normal
-      set fish_color_command 7aa2f7
-      set fish_color_quote 9ece6a
-      set fish_color_redirection bb9af7
-      set fish_color_end f7768e
-      set fish_color_error f7768e
-      set fish_color_param e0af68
-      set fish_color_comment 565f89
-      set fish_color_match --background=7aa2f7
-      set fish_color_selection white --bold --background=414868
-      set fish_color_search_match bryellow --background=414868
-      set fish_color_history_current --bold
-      set fish_color_operator bb9af7
-      set fish_color_escape 7dcfff
-      set fish_color_cwd 7aa2f7
-      set fish_color_cwd_root f7768e
-      set fish_color_valid_path --underline
-      set fish_color_autosuggestion 565f89
-      set fish_color_user 9ece6a
-      set fish_color_host normal
-      set fish_color_cancel -r
-      set fish_pager_color_completion normal
-      set fish_pager_color_description e0af68 yellow
-      set fish_pager_color_prefix white --bold --underline
-      set fish_pager_color_progress brwhite --background=414868
-      
-      # Initialize tools if available
-      if command -v starship >/dev/null
-        starship init fish | source
-      end
-      
-      if command -v zoxide >/dev/null
-        zoxide init fish | source
-      end
-      
-      if command -v fnm >/dev/null
-        fnm env --use-on-cd | source
-      end
-      
-      # Terminal sequences (if available)
-      if test -f ~/.cache/ags/user/generated/terminal/sequences.txt
-        cat ~/.cache/ags/user/generated/terminal/sequences.txt
-      end
-    '';
   };
   
   # Related shell tools configuration
