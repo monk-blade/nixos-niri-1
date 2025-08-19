@@ -109,63 +109,6 @@
         cat ~/.cache/ags/user/generated/terminal/sequences.txt
       end
     '';
-    
-    # Fish functions - migrated from Fish config
-    functions = {
-      # Kill process on specific port
-      killport = ''
-        if test -z $argv[1]
-          echo "🔥 Usage: killport <port>"
-          return 1
-        end
-        set -l pid (lsof -ti :$argv[1])
-        if test -n "$pid"
-          echo "💀 Killing process on port $argv[1] (PID: $pid)"
-          kill -9 $pid
-        else
-          echo "🤷 No process found on port $argv[1]"
-        end
-      '';
-      
-      # Quick directory navigation
-      mkcd = ''
-        mkdir -p $argv[1] && cd $argv[1]
-      '';
-      
-      # Extract any archive
-      extract = ''
-        if test -f $argv[1]
-          switch $argv[1]
-            case '*.tar.bz2'
-              tar xjf $argv[1]
-            case '*.tar.gz'
-              tar xzf $argv[1]
-            case '*.bz2'
-              bunzip2 $argv[1]
-            case '*.rar'
-              unrar x $argv[1]
-            case '*.gz'
-              gunzip $argv[1]
-            case '*.tar'
-              tar xf $argv[1]
-            case '*.tbz2'
-              tar xjf $argv[1]
-            case '*.tgz'
-              tar xzf $argv[1]
-            case '*.zip'
-              unzip $argv[1]
-            case '*.Z'
-              uncompress $argv[1]
-            case '*.7z'
-              7z x $argv[1]
-            case '*'
-              echo "🤔 '$argv[1]' cannot be extracted via extract()"
-          end
-        else
-          echo "🚫 '$argv[1]' is not a valid file"
-        end
-      '';
-    };
   };
   
   # Related shell tools configuration
@@ -192,9 +135,5 @@
   # Bat for syntax highlighting
   programs.bat = {
     enable = true;
-    config = {
-      theme = "TwoDark";
-      style = "numbers,changes,header";
-    };
   };
 }
