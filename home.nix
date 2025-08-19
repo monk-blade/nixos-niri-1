@@ -16,6 +16,7 @@
     
     # Terminal & Shell
     fish
+    ghostty
     foot
     starship
     tmux
