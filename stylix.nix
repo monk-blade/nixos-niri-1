@@ -33,9 +33,16 @@ stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml
     };
   };
   
-  # Override specific colors if needed
+  # Override specific colors to match Moonfly background
   stylix.override = {
-    # Example: override the accent color
-    # base0D = "ff6b6b"; # Custom red accent
+    # Moonfly-inspired background colors
+    base00 = "080808"; # Main background (very dark)
+    base01 = "1c1c1c"; # Slightly lighter background
+    base02 = "262626"; # Selection background
+    base03 = "444444"; # Comments, invisibles
+    
+    # Keep Catppuccin Mocha for other colors
+    # base04, base05, base06, base07 (foreground colors) - keep default
+    # base08-base0F (accent colors) - keep default Catppuccin Mocha
   };
 }
