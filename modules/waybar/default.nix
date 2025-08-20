@@ -11,7 +11,7 @@
         position = "bottom";
         height = 22;
         
-        modules-left = [ "niri/workspaces" "niri/mode" ];
+        modules-left = [ "niri/workspaces" ];
         modules-center = [ "" ];
         modules-right = [
           "niri/language"
@@ -31,11 +31,6 @@
         "niri/workspaces" = {
           disable-scroll = true;
           format = "{name}";
-        };
-
-        # Niri Mode
-        "niri/mode" = {
-          format = "<span style=\"italic\">{}</span>";
         };
 
         # Network
