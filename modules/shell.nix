@@ -30,7 +30,6 @@
     yazi  # Modern file manager
 
     ffmpeg
-    unrar
   ];
 
   # Fish shell configuration

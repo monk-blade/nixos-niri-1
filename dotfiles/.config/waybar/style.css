@@ -1,99 +1,99 @@
 /* Waybar CSS for Niri */
 
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "SpaceMono Nerd Font", "Victor Mono", monospace;
-    font-size: 15px;
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  font-family: "SpaceMono Nerd Font", "Victor Mono", monospace;
+  font-size: 15px;
+  min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.8);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: 0.5s;
+  background-color: rgba(43, 48, 59, 0.8);
+  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 /* Niri-specific window states */
 window#waybar.empty {
-    background-color: rgba(30, 35, 45, 0.9);
+  background-color: rgba(30, 35, 45, 0.9);
 }
 
 window#waybar.solo {
-    background-color: rgba(60, 65, 75, 0.9);
+  background-color: rgba(60, 65, 75, 0.9);
 }
 
 /* Niri Workspaces */
 #workspaces {
-    margin: 0 4px;
+  margin: 0 4px;
 }
 
 #workspaces button {
-    padding: 0 8px;
-    background-color: transparent;
-    color: #ffffff;
-    border-bottom: 3px solid transparent;
-    transition: all 0.3s ease;
+  padding: 0 8px;
+  background-color: transparent;
+  color: #ffffff;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-    font-weight: bold;
+  background-color: #64727d;
+  border-bottom: 3px solid #ffffff;
+  font-weight: bold;
 }
 
 #workspaces button.active {
-    background-color: rgba(100, 114, 125, 0.5);
-    border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+  background-color: rgba(100, 114, 125, 0.5);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.7);
 }
 
 #workspaces button.empty {
-    color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* Niri Window */
 #window {
-    margin: 0 4px;
-    padding: 0 8px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    font-weight: bold;
+  margin: 0 4px;
+  padding: 0 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-weight: bold;
 }
 
 /* Make window module transparent when no windows present */
 window#waybar.empty #window {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 /* Per-app styling */
 window#waybar.firefox #window {
-    background-color: rgba(255, 140, 0, 0.3);
-    border-left: 3px solid #ff8c00;
+  background-color: rgba(255, 140, 0, 0.3);
+  border-left: 3px solid #ff8c00;
 }
 
 window#waybar.code #window,
 window#waybar.codium #window {
-    background-color: rgba(0, 122, 204, 0.3);
-    border-left: 3px solid #007acc;
+  background-color: rgba(0, 122, 204, 0.3);
+  border-left: 3px solid #007acc;
 }
 
 window#waybar.ghostty #window {
-    background-color: rgba(40, 40, 40, 0.3);
-    border-left: 3px solid #888888;
+  background-color: rgba(40, 40, 40, 0.3);
+  border-left: 3px solid #888888;
 }
 
 /* Niri Language */
 #language {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 0 8px;
-    margin: 0 2px;
-    border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0 8px;
+  margin: 0 2px;
+  border-radius: 4px;
 }
 
 /* Other modules styling */
@@ -116,24 +116,24 @@ window#waybar.ghostty #window {
 #custom-updates,
 #custom-weather,
 #custom-prayer {
-    padding: 0 8px;
-    margin: 0 2px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+  padding: 0 8px;
+  margin: 0 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 /* Icon-specific improvements */
 #tray {
-    padding: 0 6px;
+  padding: 0 6px;
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: rgba(255, 255, 255, 0.2);
+  -gtk-icon-effect: highlight;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Improve icon spacing and alignment */
@@ -141,142 +141,139 @@ window#waybar.ghostty #window {
 #battery,
 #backlight,
 #network {
-    font-weight: bold;
-    min-width: 60px;
-    /* text-align: center; */
-}
-
-/* Better icon rendering for nerd fonts */
-.module {
-    font-feature-settings: "liga" 1, "calt" 1;
+  font-weight: bold;
+  min-width: 60px;
+  /* text-align: center; */
 }
 
 #battery {
-    color: #ffffff;
+  color: #ffffff;
 }
 
-#battery.charging, #battery.plugged {
-    color: #26A65B;
+#battery.charging,
+#battery.plugged {
+  color: #26a65b;
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #cpu {
-    color: #2ecc71;
+  color: #2ecc71;
 }
 
 #memory {
-    color: #9b59b6;
+  color: #9b59b6;
 }
 
 #disk {
-    color: #ffa502;
+  color: #ffa502;
 }
 
 #backlight {
-    color: #90A4AE;
+  color: #90a4ae;
 }
 
 #network {
-    color: #2980b9;
+  color: #2980b9;
 }
 
 #network.disconnected {
-    color: #f53c3c;
+  color: #f53c3c;
 }
 
 #pulseaudio {
-    color: #f1c40f;
+  color: #f1c40f;
 }
 
 #pulseaudio.muted {
-    color: #90A4AE;
+  color: #90a4ae;
 }
 
 #custom-media {
-    color: #66cc99;
-    min-width: 100px;
+  color: #66cc99;
+  min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-    color: #66cc99;
+  color: #66cc99;
 }
 
 #custom-media.custom-vlc {
-    color: #ffa000;
+  color: #ffa000;
 }
 
 #temperature {
-    color: #f0932b;
+  color: #f0932b;
 }
 
 #temperature.critical {
-    color: #eb4d4b;
+  color: #eb4d4b;
 }
 
 #tray {
-    background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
 }
 
 #custom-updates {
-    color: #e67e22;
+  color: #e67e22;
 }
 
 #custom-weather {
-    color: #74b9ff;
+  color: #74b9ff;
 }
 
 #custom-notification {
-    color: #a0a0a0;
-    font-weight: bold;
-    transition: all 0.3s ease;
+  color: #a0a0a0;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 #custom-notification:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
 }
 
 /* Notification states */
 #custom-notification.has-notifications {
-    color: #ffd700;
-    background-color: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  background-color: rgba(255, 215, 0, 0.2);
 }
 
 #custom-notification.mako-not-running {
-    color: #ff6b6b;
-    background-color: rgba(255, 107, 107, 0.2);
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.2);
 }
 
 #custom-prayer {
-    color: #00b894;
+  color: #00b894;
 }
 
 #clock {
-    color: #ffffff;
-    font-weight: bold;
+  color: #ffffff;
+  font-weight: bold;
 }
+
