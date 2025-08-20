@@ -182,7 +182,7 @@
     };
 
     # CSS Styling - Reference external file for better modularity
-    styleFile = ./style.css;
+    style = builtins.readFile ./style.css;
   };
 
   # Create the necessary script files
