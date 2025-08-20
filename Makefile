@@ -17,8 +17,10 @@ help:
 	@echo "  test         - Test system configuration (temporary)"
 	@echo "  switch-min   - Switch to minimal configuration"
 	@echo ""
-	@echo "Home Manager Commands:"
-	@echo "  home-switch        - Switch home-manager configuration"
+	@echo "Home Manager Commands (Fast):"
+	@echo "  home-switch        - Switch home-manager configuration (packages only)"
+	@echo "  home-build         - Build home-manager configuration"
+	@echo "  home-test          - Test home-manager configuration (dry-run)"
 	@echo ""
 	@echo "Maintenance Commands:"
 	@echo "  update             - Update flake inputs"
@@ -67,10 +69,18 @@ test-min:
 	@echo "Testing minimal configuration (temporary)..."
 	sudo nixos-rebuild test --flake .#minimal
 
-# Home Manager
+# Home Manager Commands
 home-switch:
-	@echo "Switching home-manager configuration..."
-	home-manager switch --flake .
+	@echo "Switching home-manager configuration (fast)..."
+	home-manager switch --flake .#abbes
+
+home-build:
+	@echo "Building home-manager configuration..."
+	home-manager build --flake .#abbes
+
+home-test:
+	@echo "Testing home-manager configuration..."
+	home-manager switch --flake .#abbes --dry-run
 
 # Maintenance
 update:
@@ -126,3 +136,12 @@ t: test
 u: update
 c: clean
 h: home-switch
+hb: home-build
+ht: home-test
+
+# Quick commands for development
+quick-home: home-switch
+	@echo "Home configuration updated! Restart applications if needed."
+
+quick-system: switch
+	@echo "System configuration updated!"
