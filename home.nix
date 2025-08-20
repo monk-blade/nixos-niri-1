@@ -20,7 +20,7 @@ in
   programs.home-manager.enable = true;
   
   # Automatically backup conflicting files
-  home.backupFileExtension = "backup";
+  home-manager.backupFileExtension = "backup";
 
   # Install your packages here (keeping it minimal for fast setup)
   home.packages = with pkgs; [
