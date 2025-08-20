@@ -208,7 +208,7 @@
 
   # Prayer time script (symlink to existing script)
   home.file.".config/waybar/scripts/next-prayer.sh" = {
-    source = /home/abbes/nixverse/dotfiles/.config/waybar/scripts/next-prayer.sh;
+    source = ../../dotfiles/.config/waybar/scripts/next-prayer.sh;
   };
 
   # Notification script for mako
