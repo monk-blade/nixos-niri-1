@@ -5,6 +5,7 @@ let
 in
 {
   imports = [
+    ./globals.nix # Import shared settings
     ./hardware-configuration.nix
     ./stylix.nix
   ];
@@ -33,8 +34,7 @@ in
     };  
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+
 
   # VirtualBox optimizations
   boot.initrd.checkJournalingFS = false;

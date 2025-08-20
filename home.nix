@@ -6,6 +6,7 @@ in
 {
   # Import modules
   imports = [
+    ./globals.nix # Import shared settings
     ./modules/shell.nix
   ];
   
