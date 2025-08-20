@@ -18,9 +18,6 @@ in
 
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
-  
-  # Automatically backup conflicting files
-  home-manager.backupFileExtension = "backup";
 
   # Install your packages here (keeping it minimal for fast setup)
   home.packages = with pkgs; [
