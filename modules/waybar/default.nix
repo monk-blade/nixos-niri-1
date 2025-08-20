@@ -206,7 +206,8 @@
   # Ensure required packages are available
   home.packages = with pkgs; [
     # Fonts for proper icon display
-    (nerdfonts.override { fonts = [ "SpaceMono" "VictorMono" ]; })
+    nerd-fonts.space-mono
+    nerd-fonts.victor-mono
     
     # Utilities used by the scripts
     pavucontrol # for audio control
