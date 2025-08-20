@@ -7,8 +7,8 @@
     
     settings = {
       mainBar = {
-        layer = "bottom";
-        position = "bottom";
+        layer = "top";
+        position = "top";
         height = 22;
         
         modules-left = [ "niri/workspaces" ];
