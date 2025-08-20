@@ -16,8 +16,6 @@ in
   home.homeDirectory = "/home/abbes";
   home.stateVersion = versions.homeManager;
 
-  # Let Home Manager install and manage itself
-  programs.home-manager.enable = true;
 
   # Install your packages here (keeping it minimal for fast setup)
   home.packages = with pkgs; [
