@@ -8,6 +8,7 @@ in
   imports = [
     ./globals.nix # Import shared settings
     ./modules/shell.nix
+    ./modules/waybar
   ];
   
   # Basic info
@@ -31,7 +32,6 @@ in
     
     # Wayland & Window Manager
     niri
-    waybar
     swww
     fuzzel  # Application launcher
     mako  # Lightweight notification daemon
@@ -98,7 +98,6 @@ in
     
     # Wayland & Window Manager configs
     ".config/niri".source = ./dotfiles/.config/niri;
-    ".config/waybar".source = ./dotfiles/.config/waybar;
     ".config/fuzzel".source = ./dotfiles/.config/fuzzel;
     ".config/mako".source = ./dotfiles/.config/mako;
     ".config/swaylock".source = ./dotfiles/.config/swaylock;
