@@ -41,7 +41,7 @@ in
   virtualisation.virtualbox.guest.enable = true;
 
   # Network
-  networking.hostName = "abbes";
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
   # Time zone

@@ -12,8 +12,8 @@
 
   outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs: {
     nixosConfigurations = {
-      # Replace "nixos-vm" with your hostname
-      abbes = nixpkgs.lib.nixosSystem {
+      # Hostname configuration
+      nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
@@ -35,7 +35,7 @@
 
     # Standalone home-manager configuration
     homeConfigurations = {
-      abbes = home-manager.lib.homeManagerConfiguration {
+      nixos = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [ ./home.nix ];
         extraSpecialArgs = { inherit inputs; };

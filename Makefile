@@ -38,7 +38,7 @@ help:
 # Build configurations
 build:
 	@echo "Building system configuration..."
-	sudo nixos-rebuild build --flake .#abbes
+	sudo nixos-rebuild build --flake .#nixos
 
 build-min:
 	@echo "Building minimal configuration..."
@@ -47,7 +47,7 @@ build-min:
 # Switch configurations
 switch:
 	@echo "Switching to system configuration..."
-	sudo nixos-rebuild switch --flake .#abbes
+	sudo nixos-rebuild switch --flake .#nixos
 
 switch-min:
 	@echo "Switching to minimal configuration..."
@@ -56,7 +56,7 @@ switch-min:
 # Boot configurations
 boot:
 	@echo "Setting as next boot configuration..."
-	sudo nixos-rebuild boot --flake .#abbes
+	sudo nixos-rebuild boot --flake .#nixos
 
 boot-min:
 	@echo "Setting minimal as next boot configuration..."
@@ -65,7 +65,7 @@ boot-min:
 # Test configurations (temporary, reverts on reboot)
 test:
 	@echo "Testing system configuration (temporary)..."
-	sudo nixos-rebuild test --flake .#abbes
+	sudo nixos-rebuild test --flake .#nixos
 
 test-min:
 	@echo "Testing minimal configuration (temporary)..."
@@ -74,24 +74,24 @@ test-min:
 # Home Manager Commands
 home-switch:
 	@echo "Switching home-manager configuration (fast)..."
-	home-manager switch --flake .#abbes
+	home-manager switch --flake .#nixos
 
 home-build:
 	@echo "Building home-manager configuration..."
-	home-manager build --flake .#abbes
+	home-manager build --flake .#nixos
 
 home-test:
 	@echo "Testing home-manager configuration..."
-	home-manager switch --flake .#abbes --dry-run
+	home-manager switch --flake .#nixos --dry-run
 
 # Alternative home-manager commands (work without home-manager command)
 home-nix:
 	@echo "Building home-manager with nix..."
-	nix build .#homeConfigurations.abbes.activationPackage
+	nix build .#homeConfigurations.nixos.activationPackage
 
 home-activate:
 	@echo "Activating home-manager configuration..."
-	nix build .#homeConfigurations.abbes.activationPackage && ./result/activate
+	nix build .#homeConfigurations.nixos.activationPackage && ./result/activate
 
 # Maintenance
 update:
@@ -104,7 +104,7 @@ upgrade: update switch
 clean:
 	@echo "Cleaning old generations and garbage collecting..."
 	sudo nix-collect-garbage -d
-	sudo nixos-rebuild switch --flake .#abbes
+	sudo nixos-rebuild switch --flake .#nixos
 	@echo "Cleanup completed!"
 
 check:
