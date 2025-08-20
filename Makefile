@@ -21,6 +21,8 @@ help:
 	@echo "  home-switch        - Switch home-manager configuration (packages only)"
 	@echo "  home-build         - Build home-manager configuration"
 	@echo "  home-test          - Test home-manager configuration (dry-run)"
+	@echo "  home-nix           - Build home-manager with nix (alternative)"
+	@echo "  home-activate      - Build and activate home-manager (alternative)"
 	@echo ""
 	@echo "Maintenance Commands:"
 	@echo "  update             - Update flake inputs"
@@ -82,6 +84,15 @@ home-test:
 	@echo "Testing home-manager configuration..."
 	home-manager switch --flake .#abbes --dry-run
 
+# Alternative home-manager commands (work without home-manager command)
+home-nix:
+	@echo "Building home-manager with nix..."
+	nix build .#homeConfigurations.abbes.activationPackage
+
+home-activate:
+	@echo "Activating home-manager configuration..."
+	nix build .#homeConfigurations.abbes.activationPackage && ./result/activate
+
 # Maintenance
 update:
 	@echo "Updating flake inputs..."
@@ -138,6 +149,8 @@ c: clean
 h: home-switch
 hb: home-build
 ht: home-test
+hn: home-nix
+ha: home-activate
 
 # Quick commands for development
 quick-home: home-switch
