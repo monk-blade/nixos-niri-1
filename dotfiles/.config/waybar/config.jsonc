@@ -2,12 +2,12 @@
   "layer": "bottom",
   "position": "bottom",
   "height": 22,
-  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-left": ["niri/workspaces", "niri/mode"],
   "modules-center": [""],
   "modules-right": [
       // "custom/night_mode",
       // "custom/power"
-      "sway/language",
+      "niri/language",
       "custom/updates",
       // "memory",
       // "cpu",
