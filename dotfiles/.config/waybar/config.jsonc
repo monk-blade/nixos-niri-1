@@ -8,12 +8,11 @@
       // "custom/night_mode",
       // "custom/power"
       "niri/language",
-      "custom/updates",
       // "memory",
       // "cpu",
       // "disk",
-      "pulseaudio",
-      "pulseaudio#microphone",
+      "wireplumber",
+      "wireplumber#microphone",
       "backlight",
       "battery",
       "custom/weather",
@@ -43,19 +42,27 @@
       "format": "󰻠 {usage}%",
       "interval": 5
   },
-  "pulseaudio": {
+  "wireplumber": {
       "format": "{icon} {volume}%",
       "format-muted": "󰝟",
       "format-icons": {
+          "headphone": "󰋋",
+          "hands-free": "󱡏",
+          "headset": "󰋎",
+          "phone": "󰄜",
+          "portable": "󰦧",
+          "car": "󰄋",
           "default": ["󰕿", "󰖀", "󰕾"]
       },
-      "on-click": "pavucontrol"
+      "on-click": "pavucontrol",
+      "scroll-step": 5
   },
-  "pulseaudio#microphone": {
+  "wireplumber#microphone": {
       "format": "{format_source}",
       "format-source": "󰍬 {volume}%",
       "format-source-muted": "󰍭",
-      "on-click": "pavucontrol"
+      "on-click": "pavucontrol",
+      "scroll-step": 5
   },
   "backlight": {
       "format": "{icon} {percent}%",
@@ -82,12 +89,7 @@
       "format": "󰋊 {percentage_free}%",
       "path": "/"
   },
-  "custom/updates": {
-      "format": "󰏗 {}",
-      "exec": "nix-env --query --available --status | grep -c '^I'",
-      "interval": 3600,
-      "signal": 8
-  },
+
   "custom/weather": {
       "format": "{}",
       "exec": "$HOME/.config/waybar/scripts/weather.sh",
