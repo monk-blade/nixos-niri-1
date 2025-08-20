@@ -185,48 +185,23 @@
     style = builtins.readFile ./style.css;
   };
 
-  # Create the necessary script files
+  # Create the necessary script files by referencing external scripts
   home.file.".config/waybar/scripts/weather.sh" = {
+    source = ./scripts/weather.sh;
     executable = true;
-    text = ''
-      #!/bin/bash
-      
-      # Get weather data from wttr.in
-      weather_data=$(curl -s "wttr.in/?format=%t+%C" 2>/dev/null)
-      
-      if [ -z "$weather_data" ]; then
-        echo '{"text": "Weather unavailable", "tooltip": "Unable to fetch weather data"}'
-      else
-        # Clean up the data
-        temp=$(echo "$weather_data" | cut -d' ' -f1)
-        condition=$(echo "$weather_data" | cut -d' ' -f2-)
-        
-        echo "{\"text\": \"$temp\", \"tooltip\": \"$condition\"}"
-      fi
-    '';
   };
 
-  # Prayer time script (symlink to existing script)
   home.file.".config/waybar/scripts/next-prayer.sh" = {
-    source = ../../dotfiles/.config/waybar/scripts/next-prayer.sh;
+    source = ./scripts/next-prayer.sh;
+    executable = true;
   };
 
-  # Notification script for mako
-  home.file.".config/waybar/scripts/notification.sh" = {
+  home.file.".config/waybar/scripts/mako-count.sh" = {
+    source = ./scripts/mako-count.sh;
     executable = true;
-    text = ''
-      #!/bin/bash
-      
-      # Get notification count from mako
-      count=$(makoctl list | jq length 2>/dev/null || echo "0")
-      
-      if [ "$count" -eq 0 ]; then
-        echo '{"text": "0", "tooltip": "No notifications", "class": "empty"}'
-      else
-        echo "{\"text\": \"$count\", \"tooltip\": \"$count notification(s)\", \"class\": \"notifications\"}"
-      fi
-    '';
   };
+
+
 
   # Ensure required packages are available
   home.packages = with pkgs; [
