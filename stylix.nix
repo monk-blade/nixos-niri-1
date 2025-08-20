@@ -9,7 +9,7 @@
 stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
 
   # Set wallpaper (Stylix can generate colors from your wallpaper)
-  stylix.image = ./dotfiles/.config/backgrounds/white-tree.jpeg;
+  stylix.image = ./dotfiles/.config/backgrounds/sky-soft-clouds-tranquil-moonlight.jpg;
   
   # Font configuration
   stylix.fonts = {

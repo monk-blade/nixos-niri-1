@@ -143,7 +143,7 @@ window#waybar.ghostty #window {
 #network {
     font-weight: bold;
     min-width: 60px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 /* Better icon rendering for nerd fonts */
