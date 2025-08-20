@@ -32,6 +32,7 @@ in
     # Wayland & Window Manager
     niri
     waybar
+    swww
     mako  # Lightweight notification daemon
     hyprlock  # Screen locker
     wl-clipboard  # Wayland clipboard utilities
