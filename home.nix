@@ -100,7 +100,6 @@ in
     ".config/niri".source = ./dotfiles/.config/niri;
     ".config/fuzzel".source = ./dotfiles/.config/fuzzel;
     ".config/mako".source = ./dotfiles/.config/mako;
-    ".config/swaylock".source = ./dotfiles/.config/swaylock;
     
     # Development configs
     ".config/nvim".source = ./dotfiles/.config/nvim;
