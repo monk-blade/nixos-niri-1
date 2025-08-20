@@ -1,13 +1,13 @@
 {
-    "layer": "bottom",
-    "position": "bottom",
-    "height": 32,
-    "modules-left": ["niri/workspaces", "niri/window"],
-    "modules-center": [""],
-    "modules-right": [
+  "layer": "bottom",
+  "position": "bottom",
+  "height": 22,
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": [""],
+  "modules-right": [
       // "custom/night_mode",
       // "custom/power"
-      "niri/language",
+      "sway/language",
       "custom/updates",
       // "memory",
       // "cpu",
@@ -16,189 +16,117 @@
       "pulseaudio#microphone",
       "backlight",
       "battery",
-      "custom/notification",
       "custom/weather",
       "custom/prayer",
       "clock",
       "tray"
-    ],
-  
-    // Fixed niri/workspaces configuration
-    "niri/workspaces": {
-      "format": "{icon}",
-      "format-icons": {
-        "1": "1",
-        "2": "2", 
-        "3": "3",
-        "4": "4",
-        "5": "5",
-        "6": "6",
-        "7": "7",
-        "8": "8",
-        "9": "9"
-      },
-      "disable-click": false,
-      "all-outputs": false,
-      "current-only": false
-    },
-  
-    // Fixed niri/window configuration
-    "niri/window": {
-      "format": "{title}",
-      "max-length": 50,
-      "rewrite": {
-        "(.*) - Mozilla Firefox": "🌎 $1",
-        "(.*) - Visual Studio Code": " $1",
-        "(.*) - zsh": " $1",
-        "(.*) - fish": " $1",
-        "ghostty": " Terminal"
-      }
-    },
-  
-    // Fixed niri/language configuration
-    "niri/language": {
-      "format": "󰌓 {short}",
-      "format-en": "EN",
-      "format-ar": "AR"
-    },
-  
-    "network": {
+  ],
+  "niri/workspaces": {
+      "disable-scroll": true,
+      "format": "{name}"
+  },
+  "niri/mode": {
+      "format": "<span style=\"italic\">{}</span>"
+  },
+  "network": {
       "format-wifi": "󰤨 {bandwidthUpBytes} 󰤥 {bandwidthDownBytes}",
       "format-ethernet": "󰈀 {bandwidthUpBytes} 󰤥 {bandwidthDownBytes}",
       "format-disconnected": "󰤭 Disconnected",
       "interval": 2,
       "tooltip-format": "{ifname}: {ipaddr}"
-    },
-  
-    "memory": {
+  },
+  "memory": {
       "format": "󰍛 {percentage}%",
       "interval": 5
-    },
-  
-    "cpu": {
+  },
+  "cpu": {
       "format": "󰻠 {usage}%",
       "interval": 5
-    },
-  
-    "pulseaudio": {
+  },
+  "pulseaudio": {
       "format": "{icon} {volume}%",
       "format-muted": "󰝟",
       "format-icons": {
-        "default": ["󰕿", "󰖀", "󰕾"]
+          "default": ["󰕿", "󰖀", "󰕾"]
       },
-      "on-click": "pavucontrol",
-      "scroll-step": 5
-    },
-  
-    "pulseaudio#microphone": {
+      "on-click": "pavucontrol"
+  },
+  "pulseaudio#microphone": {
       "format": "{format_source}",
       "format-source": "󰍬 {volume}%",
       "format-source-muted": "󰍭",
-      "on-click": "pavucontrol",
-      "scroll-step": 5
-    },
-  
-    "backlight": {
+      "on-click": "pavucontrol"
+  },
+  "backlight": {
       "format": "{icon} {percent}%",
-      "format-icons": ["󰃞", "󰃟", "󰃠"],
-      "scroll-step": 5
-    },
-  
-    "battery": {
+      "format-icons": ["󰃞", "󰃟", "󰃠"]
+  },
+  "battery": {
       "format": "{icon} {capacity}%",
       "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
       "format-charging": "󰂄 {capacity}%",
-      "format-plugged": "󰚥 {capacity}%",
       "interval": 30,
       "states": {
-        "warning": 25,
-        "critical": 10
-      },
-      "tooltip-format": "{timeTo}, {power}W"
-    },
-  
-    "custom/night_mode": {
+          "warning": 25,
+          "critical": 10
+      }
+  },
+  "custom/night_mode": {
       "format": "{}",
-      "exec": "echo '󱩌'",
+      "exec": "echo '󱩌' NL",
       "on-click": "wlsunset -t 4500 -T 6500",
       "on-click-right": "pkill wlsunset",
       "tooltip": false
-    },
-  
-    "disk": {
+  },
+  "disk": {
       "format": "󰋊 {percentage_free}%",
-      "path": "/",
-      "interval": 30,
-      "tooltip-format": "{used} / {total} used"
-    },
-  
-    "custom/updates": {
+      "path": "/"
+  },
+  "custom/updates": {
       "format": "󰏗 {}",
       "exec": "checkupdates | wc -l",
-      "exec-if": "which checkupdates",
       "interval": 3600,
-      "signal": 8,
-      "tooltip": true,
-      "tooltip-format": "{} updates available"
-    },
-  
-    "custom/weather": {
+      "signal": 8
+  },
+  "custom/weather": {
       "format": "{}",
       "exec": "~/.config/waybar/scripts/weather.sh",
-      "exec-if": "test -f ~/.config/waybar/scripts/weather.sh",
       "interval": 3600,
       "tooltip": true,
       "tooltip-format": "{}",
       "on-click": "xdg-open https://wttr.in"
-    },
-  
-    "custom/prayer": {
-      "format": " {}",
+  },
+  "custom/prayer": {
+      "format": "  {}",
       "exec": "~/.config/waybar/scripts/next-prayer.sh",
-      "exec-if": "test -f ~/.config/waybar/scripts/next-prayer.sh",
       "interval": 60,
       "tooltip": false
-    },
-  
-    "clock": {
-      "format": "{:%d, %H:%M}",
+  },
+  "sway/language": {
+      "format": "󰌓 {}"
+  },
+  "clock": {
+      "format": "{:%a, %d %b %Y, %H:%M}",
       "tooltip-format": "<tt>{calendar}</tt>",
       "calendar": {
-        "mode": "month",
-        "on-scroll": 1,
-        "format": {
-          "months": "<span color='#ffead3'><b>{}</b></span>",
-          "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-          "today": "<span color='#ff6699'><b>{}</b></span>"
-        }
-      },
-      "actions": {
-        "on-click-right": "mode"
+          "mode": "month",
+          "on-scroll": 1,
+          "format": {
+              "months": "<span color='#ffead3'><b>{}</b></span>",
+              "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+              "today": "<span color='#ff6699'><b>{}</b></span>"
+          }
       }
-    },
-  
-    "custom/notification": {
-      "tooltip": true,
-      "format": "{}",
-      "exec": "~/.config/waybar/scripts/mako-count.sh",
-      "exec-if": "which makoctl",
-      "on-click": "~/.config/waybar/scripts/notification-center.sh",
-      "on-click-middle": "makoctl invoke",
-      "on-click-right": "makoctl dismiss --all",
-      "interval": 2,
-      "escape": true,
-      "tooltip-format": "Left: Show history | Middle: Invoke | Right: Clear all"
-    },
-  
-    "custom/power": {
+  },
+  "custom/power": {
       "format": " ⏻ ",
       "on-click": "~/.config/scripts/power-menu.sh",
       "tooltip": false
-    },
-  
-    "tray": {
-      "icon-size": 20,
-      "spacing": 12,
-      "show-passive-items": true
-    }
+  },
+  "tray": {
+      "tray": {
+      "icon-size": 16,
+      "spacing": 10
+      }
   }
+}

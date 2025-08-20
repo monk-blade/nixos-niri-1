@@ -33,6 +33,7 @@ in
     niri
     waybar
     swww
+    fuzzel  # Application launcher
     mako  # Lightweight notification daemon
     hyprlock  # Screen locker
     wl-clipboard  # Wayland clipboard utilities
@@ -98,6 +99,7 @@ in
     # Wayland & Window Manager configs
     ".config/niri".source = ./dotfiles/.config/niri;
     ".config/waybar".source = ./dotfiles/.config/waybar;
+    ".config/fuzzel".source = ./dotfiles/.config/fuzzel;
     ".config/mako".source = ./dotfiles/.config/mako;
     ".config/swaylock".source = ./dotfiles/.config/swaylock;
     
