@@ -17,13 +17,6 @@ help:
 	@echo "  test         - Test system configuration (temporary)"
 	@echo "  switch-min   - Switch to minimal configuration"
 	@echo ""
-	@echo "Home Manager Commands (Fast):"
-	@echo "  home-switch        - Switch home-manager configuration (packages only)"
-	@echo "  home-build         - Build home-manager configuration"
-	@echo "  home-test          - Test home-manager configuration (dry-run)"
-	@echo "  home-nix           - Build home-manager with nix (alternative)"
-	@echo "  home-activate      - Build and activate home-manager (alternative)"
-	@echo ""
 	@echo "Maintenance Commands:"
 	@echo "  update             - Update flake inputs"
 	@echo "  upgrade            - Update and rebuild system"
@@ -70,28 +63,6 @@ test:
 test-min:
 	@echo "Testing minimal configuration (temporary)..."
 	sudo nixos-rebuild test --flake .#minimal
-
-# Home Manager Commands
-home-switch:
-	@echo "Switching home-manager configuration (fast)..."
-	home-manager switch --flake .#nixos
-
-home-build:
-	@echo "Building home-manager configuration..."
-	home-manager build --flake .#nixos
-
-home-test:
-	@echo "Testing home-manager configuration..."
-	home-manager switch --flake .#nixos --dry-run
-
-# Alternative home-manager commands (work without home-manager command)
-home-nix:
-	@echo "Building home-manager with nix..."
-	nix build .#homeConfigurations.nixos.activationPackage
-
-home-activate:
-	@echo "Activating home-manager configuration..."
-	nix build .#homeConfigurations.nixos.activationPackage && ./result/activate
 
 # Maintenance
 update:
@@ -146,15 +117,7 @@ b: build
 t: test
 u: update
 c: clean
-h: home-switch
-hb: home-build
-ht: home-test
-hn: home-nix
-ha: home-activate
 
 # Quick commands for development
-quick-home: home-switch
-	@echo "Home configuration updated! Restart applications if needed."
-
 quick-system: switch
 	@echo "System configuration updated!"

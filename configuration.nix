@@ -98,7 +98,6 @@ in
     git
     curl
     wget
-    home-manager  # Enable standalone home-manager command
   ];
 
   # Fonts
