@@ -84,25 +84,25 @@
   },
   "custom/updates": {
       "format": "󰏗 {}",
-      "exec": "checkupdates | wc -l",
+      "exec": "nix-env --query --available --status | grep -c '^I'",
       "interval": 3600,
       "signal": 8
   },
   "custom/weather": {
       "format": "{}",
-      "exec": "~/.config/waybar/scripts/weather.sh",
+      "exec": "$HOME/.config/waybar/scripts/weather.sh",
       "interval": 3600,
       "tooltip": true,
       "tooltip-format": "{}",
       "on-click": "xdg-open https://wttr.in"
   },
   "custom/prayer": {
-      "format": "  {}",
-      "exec": "~/.config/waybar/scripts/next-prayer.sh",
+      "format": "  {}",
+      "exec": "/home/abbes/.config/waybar/scripts/next-prayer.sh",
       "interval": 60,
       "tooltip": false
   },
-  "sway/language": {
+  "niri/language": {
       "format": "󰌓 {}"
   },
   "clock": {
@@ -120,13 +120,11 @@
   },
   "custom/power": {
       "format": " ⏻ ",
-      "on-click": "~/.config/scripts/power-menu.sh",
+      "on-click": "$HOME/.config/scripts/power-menu.sh",
       "tooltip": false
   },
   "tray": {
-      "tray": {
-      "icon-size": 16,
-      "spacing": 10
-      }
+      "icon-size": 20,
+      "spacing": 12
   }
 }
