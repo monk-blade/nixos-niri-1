@@ -35,14 +35,14 @@ window#waybar.hidden {
     padding: 3px 5px;  /* Adjusted padding to reduce height */
     margin: 3px 5px;    /* Reduced margin slightly */
     border-radius: 6px;
-    color: @foreground;
+    color: #abb2bf;
     background-color: #111827;
     transition: all 0.3s ease-in-out;
     font-size: 13px;  /* Slightly smaller font size */
 }
 
 #workspaces button.active {
-    color: @foreground;
+    color: #abb2bf;
     background: #025939;
 }
 
@@ -64,7 +64,7 @@ window#waybar.hidden {
     background-color: #111827;
     font-size: 15px;   /* Slightly smaller font size */
     font-weight: 800;
-    color: @foreground;
+    color: #abb2bf;
     border-radius: 14px;
     padding: 3px 6px;  /* Reduced padding */
     margin: 2px;
@@ -219,22 +219,17 @@ window#waybar.hidden {
 
 @keyframes blink {
     to {
-<<<<<<< HEAD
-        background-color: @red;
-        color: @bg-black;
+        background-color: rgba(30, 34, 42, 0.5);
+        color: #abb2bf;
     }
 }
 
 .modules-left > widget\:first-child > #workspaces {
-margin-left: 0;
+    margin-left: 0;
 }
 
 .modules-right > widget\:last-child > #workspaces {
-margin-right: 0;
-=======
-        background-color: rgba(30, 34, 42, 0.5);
-        color: #abb2bf;
-    }
+    margin-right: 0;
 }
 
 #battery.critical:not(.charging) {
@@ -332,5 +327,4 @@ label:focus {
 
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
->>>>>>> 0b4e5b21be15b9bd6e724021da9933337ecf4440
 }
