@@ -76,6 +76,9 @@ in
     pulse.enable = true;
   };
 
+  # Enable fish shell system-wide
+  programs.fish.enable = true;
+
   # User account
   users.users.abbes = {
     isNormalUser = true;
