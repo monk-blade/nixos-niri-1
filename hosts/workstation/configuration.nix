@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  versions = import ./versions.nix;
+  versions = import ../../versions.nix;
 in
 {
   imports = [
