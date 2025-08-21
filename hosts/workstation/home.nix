@@ -8,7 +8,6 @@ in
   imports = [
     ../../globals.nix 
     ../../modules/shell.nix
-    ../../modules/waybar
   ];
   
   # Basic info
@@ -81,6 +80,14 @@ in
     gcc
     gnumake
     cmake
+
+    # waybar
+    waybar
+    pavucontrol
+    jq
+    wlogout
+    wlsunset
+
     
     # System Monitoring & Info
     nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
@@ -97,6 +104,7 @@ in
     ".config/niri".source = ../../dotfiles/.config/niri;
     ".config/fuzzel".source = ../../dotfiles/.config/fuzzel;
     ".config/mako".source = ../../dotfiles/.config/mako;
+    ".config/waybar".source = ../../dotfiles/.config/waybar;
     
     # Development configs
     ".config/nvim".source = ../../dotfiles/.config/nvim;

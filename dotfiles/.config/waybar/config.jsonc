@@ -1,0 +1,260 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 27,
+    "spacing": 0,
+    "margin": "5 15 0 15",
+    "modules-left": ["custom/separator", "niri/workspaces", "cpu#icon", "cpu#text", "memory#icon", "memory#text"],
+    "modules-center": ["custom/updates#icon","custom/updates#text", "niri/window", "custom/notification", "idle_inhibitor"],
+    "modules-right": [
+      "pulseaudio#icon",
+      "pulseaudio#text",
+      "clock#icon",
+      "clock#text",
+      "tray",
+      "custom/separator"
+    ],
+    
+    "custom/separator": {
+      "format": "  ",
+      "tooltip": false
+    },
+  
+    "custom/opensuse": {
+      "format": " ",
+      "tooltip": true,
+      "tooltip-format": "I use openSUSE btw.",
+      "on-click": "rofi -show drun",
+      "interval": "once"
+    },
+  
+    "niri/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
+    },
+    "on-click": "activate",
+    "persistent-workspaces": {
+                "eDP-1": [1, 2, 3, 9, 10]
+              }
+    },
+    
+    "cpu#icon": {
+      "format": "",
+      "tooltip": false
+    },
+  
+    "cpu#text": {
+      "interval": 1,
+      "format": "{usage}%",
+      "signal": 1,
+      "on-click": "pkill -SIGRTMIN+1 waybar",
+      "tooltip": true,
+      "tooltip-format": "CPU Usage: {usage}%"
+    },
+  
+    "memory#icon": {
+      "interval": 3,
+      "format": "",
+      "tooltip": false
+    },
+  
+    "memory#text": {
+      "interval": 3,
+      "format": "{percentage}%",
+      "signal": 2,
+      "on-click": "pkill -SIGRTMIN+2 waybar",
+      "tooltip": true,
+      "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB"
+    },
+  
+    "custom/updates#icon": {
+      "format": "{}",
+      "tooltip": false,
+      "exec": "~/.config/waybar/scripts/updator.sh img"
+    },
+  
+    "custom/updates#text": {
+      "format": "{}",
+      "exec": "~/.config/waybar/scripts/updator.sh text",
+      "interval": "21600",
+      "tooltip": false,
+      "on-click": "~/.config/waybar/scripts/updator.sh up"
+    },
+  
+    "niri/window": {
+      "format": "{class}",
+      "icon": true,
+      "rewrite": {
+      "brave-browser": "Brave Browser",
+      "discord": "Discord",
+      "kitty": "Kitty",
+      "librewolf": "LibreWolf",
+      "thunar": "Thunar",
+      "^$": "~@"
+    },
+      "max-length": 50
+    },
+  
+      "custom/notification": {
+      "tooltip": false,
+      "format": "{icon}",
+      "format-icons": {
+        "notification": "<span foreground='red'><sup></sup></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-inhibited-none": ""
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    },
+  
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "󰅶",
+        "deactivated": "󰛊"
+      },
+      "tooltip": true,
+      "tooltip-format-activated": "Screen will stay awake",
+      "tooltip-format-deactivated": "Screen can sleep"
+    },
+  
+    "network#icon": {
+      "format": "{icon}",
+      "format-icons": {
+        "wifi": "󰖩",
+        "ethernet": "󰈀",
+        "disconnected": "󰖪"
+      },
+      "tooltip": false,
+      "on-click": "kitty --title 'Network Manager' -e bash -c nmtui"
+    },
+  
+    "network#text": {
+      "format": "{essid}",
+      "format-disconnected": "Disconnected",
+      "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+      "tooltip": true,
+      "tooltip-format": "Interface: {ifname}\nIP: {ipaddr}/{cidr}"
+    },
+  
+    "bluetooth#icon": {
+      "format": "󰂯",
+      "format-disabled": "󰂲",
+      "format-connected": "󰂱",
+      "tooltip-format": "{status}",
+      "tooltip-format-connected": "Connected to {device_alias}",
+      "tooltip-format-disabled": "Bluetooth disabled",
+      "on-click": "blueman-manager"
+    },
+  
+  
+    "battery#icon": {
+      "bat": "BAT0",
+      "interval": 3,
+      "signal": 3,
+      "states": {
+        "good": 90,
+        "warning": 30,
+        "critical": 15
+      },
+      "tooltip": false,
+      "format": "{icon}",
+      "format-charging": "󰂄",
+      "format-plugged": "󰚥",
+      "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+  
+    "battery#text": {
+      "bat": "BAT0",
+      "interval": 3,
+      "signal": 3,
+      "on-click": "pkill -SIGRTMIN+3 waybar",
+      "states": {
+        "good": 90,
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{capacity}%",
+      "format-charging": "{capacity}%",
+      "format-plugged": "{capacity}%",
+      "tooltip": true,
+      "tooltip-format": "Battery: {capacity}%\nTime remaining: {time}"
+      },
+  
+    "pulseaudio#icon": {
+      "format": "{icon}",
+      "format-muted": "󰝟",
+      "format-icons": {
+        "headphone": "󰋋",
+        "hands-free": "󰋎",
+        "headset": "󰋎",
+        "phone": "󰏲",
+        "portable": "󰄝",
+        "car": "󰄋",
+        "default": ["󰕿", "󰖀", "󰕾"]
+      },
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "tooltip": false
+    },
+  
+     "pulseaudio#text": {
+      "format": "{volume}%",
+      "format-muted": "{volume}%",
+      "on-click": "pavucontrol",
+      "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "tooltip": true,
+      "tooltip-format": "Volume: {volume}%\nDevice: {desc}"
+    },
+  
+    "tray": {
+      "icon-size": 18,
+      "spacing": 8,
+      "show-passive-items": true
+    },
+  
+    "clock#icon": {
+      "format": "󰥔",
+      "tooltip": false
+    },
+    
+    
+    "clock#text": {
+      "format": "{:%I:%M %p}",
+      "format-alt": "{:%a, %d %b}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "calendar": {
+        "mode"          : "month",
+        "mode-mon-col"  : 3,
+        "weeks-pos"     : "right",
+        "on-scroll"     : 1,
+        "format": {
+          "months":     "<span color='#ffead3'><b>{}</b></span>",
+          "days":       "<span color='#ecc6d9'>{}</span>",
+          "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+          "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+          "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+        }
+      }
+    }
+  }
+  
+  
