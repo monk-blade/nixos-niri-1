@@ -119,6 +119,11 @@ b: build
 t: test
 u: update
 c: clean
+# Convenient Home Manager aliases
+hm-build: home-build
+hm-switch: home-switch
+hm: home-switch
+	@echo "System configuration updated!"
 
 # Quick commands for development
 quick-system: switch
@@ -132,8 +137,3 @@ home-switch:
 	@echo "Switching to Home Manager configuration..."
 	home-manager switch --flake .#abbes
 
-# Convenient Home Manager aliases
-hm-build: home-build
-hm-switch: home-switch
-hm: home-switch
-	@echo "System configuration updated!"
