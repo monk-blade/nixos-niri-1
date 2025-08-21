@@ -6,9 +6,9 @@ in
 {
   # Import modules
   imports = [
-    ../globals.nix 
-    ../modules/shell.nix
-    ../modules/waybar
+    ../../globals.nix 
+    ../../modules/shell.nix
+    ../../modules/waybar
   ];
   
   # Basic info

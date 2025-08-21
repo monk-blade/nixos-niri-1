@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    ../globals.nix # Import shared settings
+    ../../globals.nix # Import shared settings
     ./hardware-configuration.nix
     ./stylix.nix
   ];
