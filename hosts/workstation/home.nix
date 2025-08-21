@@ -89,26 +89,26 @@ in
   # Link your existing dotfiles
   home.file = {
     # Shell & Terminal configs
-    ".config/ghostty".source = ./dotfiles/.config/ghostty;
-    ".config/tmux".source = ./dotfiles/.config/tmux;
-    ".config/starship".source = ./dotfiles/.config/starship;
+    ".config/ghostty".source = ../../dotfiles/.config/ghostty;
+    ".config/tmux".source = ../../dotfiles/.config/tmux;
+    ".config/starship".source = ../../dotfiles/.config/starship;
     
     # Wayland & Window Manager configs
-    ".config/niri".source = ./dotfiles/.config/niri;
-    ".config/fuzzel".source = ./dotfiles/.config/fuzzel;
-    ".config/mako".source = ./dotfiles/.config/mako;
+    ".config/niri".source = ../../dotfiles/.config/niri;
+    ".config/fuzzel".source = ../../dotfiles/.config/fuzzel;
+    ".config/mako".source = ../../dotfiles/.config/mako;
     
     # Development configs
-    ".config/nvim".source = ./dotfiles/.config/nvim;
+    ".config/nvim".source = ../../dotfiles/.config/nvim;
     
     # System tools configs
-    ".config/btop".source = ./dotfiles/.config/btop;
-    ".config/cava".source = ./dotfiles/.config/cava;
-    ".config/fastfetch".source = ./dotfiles/.config/fastfetch;
-    ".config/ranger".source = ./dotfiles/.config/ranger;
+    ".config/btop".source = ../../dotfiles/.config/btop;
+    ".config/cava".source = ../../dotfiles/.config/cava;
+    ".config/fastfetch".source = ../../dotfiles/.config/fastfetch;
+    ".config/ranger".source = ../../dotfiles/.config/ranger;
     
     # Backgrounds
-    ".config/backgrounds".source = ./dotfiles/.config/backgrounds;
+    ".config/backgrounds".source = ../../dotfiles/.config/backgrounds;
   };
 
   programs.nh.enable = true;
