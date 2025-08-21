@@ -28,11 +28,11 @@
         ];
 
         # Module configurations
-        "niri/window"= {
+        "niri/window" = {
           format = "{}";
-          max-length= 50;
+          max-length = 50;
           tooltip = true;
-          tooltip-format = "{}"
+          tooltip-format = "{}";
         };
 
         # Niri Workspaces
