@@ -33,7 +33,7 @@ help:
 # Build configurations
 build:
 	@echo "Building system configuration..."
-	sudo nixos-rebuild build --flake .#nixos
+	sudo nixos-rebuild build --flake .#workstation
 
 build-min:
 	@echo "Building minimal configuration..."
@@ -42,7 +42,7 @@ build-min:
 # Switch configurations
 switch:
 	@echo "Switching to system configuration..."
-	sudo nixos-rebuild switch --flake .#nixos
+	sudo nixos-rebuild switch --flake .#workstation
 
 switch-min:
 	@echo "Switching to minimal configuration..."
@@ -51,7 +51,7 @@ switch-min:
 # Boot configurations
 boot:
 	@echo "Setting as next boot configuration..."
-	sudo nixos-rebuild boot --flake .#nixos
+	sudo nixos-rebuild boot --flake .#workstation
 
 boot-min:
 	@echo "Setting minimal as next boot configuration..."
@@ -60,7 +60,7 @@ boot-min:
 # Test configurations (temporary, reverts on reboot)
 test:
 	@echo "Testing system configuration (temporary)..."
-	sudo nixos-rebuild test --flake .#nixos
+	sudo nixos-rebuild test --flake .#workstation
 
 test-min:
 	@echo "Testing minimal configuration (temporary)..."
@@ -77,7 +77,7 @@ upgrade: update switch
 clean:
 	@echo "Cleaning old generations and garbage collecting..."
 	sudo nix-collect-garbage -d
-	sudo nixos-rebuild switch --flake .#nixos
+	sudo nixos-rebuild switch --flake .#workstation
 	@echo "Cleanup completed!"
 
 check:

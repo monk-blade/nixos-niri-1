@@ -6,9 +6,9 @@ in
 {
   # Import modules
   imports = [
-    ./globals.nix # Import shared settings
-    ./modules/shell.nix
-    ./modules/waybar
+    ../globals.nix 
+    ../modules/shell.nix
+    ../modules/waybar
   ];
   
   # Basic info
@@ -90,7 +90,6 @@ in
   home.file = {
     # Shell & Terminal configs
     ".config/ghostty".source = ./dotfiles/.config/ghostty;
-    ".config/alacritty".source = ./dotfiles/.config/alacritty;
     ".config/tmux".source = ./dotfiles/.config/tmux;
     ".config/starship".source = ./dotfiles/.config/starship;
     
@@ -111,6 +110,8 @@ in
     # Backgrounds
     ".config/backgrounds".source = ./dotfiles/.config/backgrounds;
   };
+
+  programs.nh.enable = true;
 
   # Enable programs that need special handling
   programs = {
@@ -138,8 +139,6 @@ in
         };
       };
     };
-    
-    # Note: Shell configuration (Fish, Starship, Zoxide, etc.) is now handled by ./modules/shell.nix
   };
 
   # Environment variables
