@@ -31,6 +31,7 @@
         "niri/workspaces" = {
           disable-scroll = true;
           format = "{name}";
+          on-click = "activate";
         };
 
         # Network
@@ -133,8 +134,8 @@
         # Custom Notification (Mako)
         "custom/notification" = {
           format = "🔔 {}";
-          exec = "~/.config/waybar/scripts/notification.sh";
-          interval = 30; # Update every 5 seconds
+          exec = "~/.config/waybar/scripts/mako-count.sh";
+          interval = 5; # Update every 5 seconds
           return-type = "json";
           tooltip = true;
           on-click = "makoctl invoke";

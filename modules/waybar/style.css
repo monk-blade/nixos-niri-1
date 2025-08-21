@@ -1,28 +1,16 @@
-/* Waybar CSS for Niri */
+/* Waybar CSS for Niri - Stylix Compatible */
+/* Colors and fonts will be managed by Stylix */
 
 * {
   border: none;
   border-radius: 0;
-  font-family: "SpaceMono Nerd Font", "Victor Mono", monospace;
   font-size: 15px;
   min-height: 0;
 }
 
 window#waybar {
-  background-color: rgba(43, 48, 59, 0.8);
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-  color: #ffffff;
   transition-property: background-color;
   transition-duration: 0.5s;
-}
-
-/* Niri-specific window states */
-window#waybar.empty {
-  background-color: rgba(30, 35, 45, 0.9);
-}
-
-window#waybar.solo {
-  background-color: rgba(60, 65, 75, 0.9);
 }
 
 /* Niri Workspaces */
@@ -33,31 +21,27 @@ window#waybar.solo {
 #workspaces button {
   padding: 0 8px;
   background-color: transparent;
-  color: #ffffff;
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
+  min-width: 30px;
 }
 
 #workspaces button:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1);
 }
 
-#workspaces button.focused {
-  background-color: #64727d;
-  border-bottom: 3px solid #ffffff;
+#workspaces button.focused,
+#workspaces button.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-bottom: 3px solid currentColor;
   font-weight: bold;
 }
 
-#workspaces button.active {
-  background-color: rgba(100, 114, 125, 0.5);
-  border-bottom: 3px solid rgba(255, 255, 255, 0.7);
-}
-
 #workspaces button.empty {
-  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
 }
 
-/* Niri Window */
+/* Window title */
 #window {
   margin: 0 4px;
   padding: 0 8px;
@@ -66,29 +50,11 @@ window#waybar.solo {
   font-weight: bold;
 }
 
-/* Make window module transparent when no windows present */
 window#waybar.empty #window {
   background-color: transparent;
 }
 
-/* Per-app styling */
-window#waybar.firefox #window {
-  background-color: rgba(255, 140, 0, 0.3);
-  border-left: 3px solid #ff8c00;
-}
-
-window#waybar.code #window,
-window#waybar.codium #window {
-  background-color: rgba(0, 122, 204, 0.3);
-  border-left: 3px solid #007acc;
-}
-
-window#waybar.ghostty #window {
-  background-color: rgba(40, 40, 40, 0.3);
-  border-left: 3px solid #888888;
-}
-
-/* Niri Language */
+/* Language indicator */
 #language {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 0 8px;
@@ -96,7 +62,7 @@ window#waybar.ghostty #window {
   border-radius: 4px;
 }
 
-/* Other modules styling */
+/* All other modules */
 #clock,
 #battery,
 #cpu,
@@ -105,6 +71,7 @@ window#waybar.ghostty #window {
 #temperature,
 #backlight,
 #network,
+#wireplumber,
 #pulseaudio,
 #custom-media,
 #tray,
@@ -115,14 +82,15 @@ window#waybar.ghostty #window {
 #custom-launcher,
 #custom-updates,
 #custom-weather,
-#custom-prayer {
+#custom-prayer,
+#custom-notification {
   padding: 0 8px;
   margin: 0 2px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
 
-/* Icon-specific improvements */
+/* Tray specific styling */
 #tray {
   padding: 0 6px;
 }
@@ -136,8 +104,8 @@ window#waybar.ghostty #window {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Improve icon spacing and alignment */
-#pulseaudio,
+/* Module sizing */
+#wireplumber,
 #battery,
 #backlight,
 #network {
@@ -145,25 +113,19 @@ window#waybar.ghostty #window {
   min-width: 60px;
 }
 
-#battery {
-  color: #ffffff;
-}
-
+/* Battery states */
 #battery.charging,
 #battery.plugged {
-  color: #26a65b;
+  opacity: 0.8;
 }
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: #000000;
+    opacity: 0.5;
   }
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -171,131 +133,37 @@ window#waybar.ghostty #window {
   animation-direction: alternate;
 }
 
-#cpu {
-  color: #2ecc71;
-}
-
-#memory {
-  color: #9b59b6;
-}
-
-#disk {
-  color: #ffa502;
-}
-
-#backlight {
-  color: #90a4ae;
-}
-
-#network {
-  color: #2980b9;
-}
-
+/* Network states */
 #network.disconnected {
-  color: #f53c3c;
+  opacity: 0.5;
 }
 
-#pulseaudio {
-  color: #f1c40f;
+#wireplumber.muted {
+  opacity: 0.5;
 }
 
-#pulseaudio.muted {
-  color: #90a4ae;
-}
-
-#custom-media {
-  color: #66cc99;
-  min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-  color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-  color: #ffa000;
-}
-
-#temperature {
-  color: #f0932b;
-}
-
-#temperature.critical {
-  color: #eb4d4b;
-}
-
-#custom-updates {
-  color: #e67e22;
-}
-
-#custom-weather {
-  color: #74b9ff;
-}
-
+/* Custom modules */
 #custom-notification {
-  color: #a0a0a0;
   font-weight: bold;
   transition: all 0.3s ease;
 }
 
 #custom-notification:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
 }
 
-/* Notification states */
-#custom-notification.has-notifications {
-  color: #ffd700;
-  background-color: rgba(255, 215, 0, 0.2);
-}
-
-#custom-notification.mako-not-running {
-  color: #ff6b6b;
-  background-color: rgba(255, 107, 107, 0.2);
-}
-
-#custom-prayer {
-  color: #00b894;
+#custom-notification.empty {
+  opacity: 0.5;
 }
 
 #clock {
-  color: #ffffff;
   font-weight: bold;
 }
 
-#custom-prayer {
-  background-color: rgba(0, 150, 136, 0.8);
-  color: #ffffff;
-  padding: 0 10px;
-  margin: 0 2px;
-  border-radius: 5px;
-}
-
-#custom-prayer:hover {
-  background-color: rgba(0, 150, 136, 1);
-}
-
-#custom-notification {
-  background-color: rgba(255, 193, 7, 0.8);
-  color: #000000;
-  padding: 0 10px;
-  margin: 0 2px;
-  border-radius: 5px;
-}
-
-#custom-notification:hover {
-  background-color: rgba(255, 193, 7, 1);
-}
-
 #custom-power {
-  background-color: rgba(244, 67, 54, 0.8);
-  color: #ffffff;
-  padding: 0 10px;
-  margin: 0 2px;
-  border-radius: 5px;
   font-size: 16px;
 }
 
 #custom-power:hover {
-  background-color: rgba(244, 67, 54, 1);
+  background-color: rgba(255, 255, 255, 0.2);
 }

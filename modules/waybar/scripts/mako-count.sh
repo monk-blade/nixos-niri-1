@@ -1,9 +1,16 @@
 #!/bin/bash
 
-# Get notification count from mako
-count=$(makoctl list | jq length 2>/dev/null)
+# Check if mako is running
+if ! pgrep -x "mako" > /dev/null; then
+    echo '{"text": "!", "tooltip": "Mako not running", "class": "mako-not-running"}'
+    exit 0
+fi
 
-if [ -z "$count" ] || [ "$count" = "null" ]; then
+# Get notification count from mako
+count=$(makoctl list 2>/dev/null | jq length 2>/dev/null)
+
+# Handle errors or empty responses
+if [ -z "$count" ] || [ "$count" = "null" ] || ! [[ "$count" =~ ^[0-9]+$ ]]; then
     count=0
 fi
 
