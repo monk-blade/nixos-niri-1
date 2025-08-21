@@ -24,8 +24,7 @@ window#waybar {
   border: none;
   border-radius: 50%;
   transition: all 0.3s ease;
-  min-width: 24px;
-  max-width: 24px;
+  width: 24px;
   height: 24px;
   margin: 0 3px;
   font-size: 12px;
