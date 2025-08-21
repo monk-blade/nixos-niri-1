@@ -11,8 +11,8 @@
         position = "top";
         height = 22;
         
-        modules-left = [ "niri/workspaces" ];
-        modules-center = [ "" ];
+        modules-left = [ "" ];
+        modules-center = [ "niri/workspaces" ];
         modules-right = [
           "niri/language"
           "wireplumber"
@@ -26,6 +26,14 @@
           "custom/power"
           "tray"
         ];
+
+        # Module configurations
+        "niri/window"= {
+          format = "{}";
+          max-length= 50;
+          tooltip = true;
+          tooltip-format = "{}"
+        };
 
         # Niri Workspaces
         "niri/workspaces" = {
