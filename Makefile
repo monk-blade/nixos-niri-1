@@ -23,6 +23,8 @@ help:
 	@echo "  clean              - Clean old generations and garbage collect"
 	@echo "  check              - Check flake for errors"
 	@echo "  format             - Format Nix files with nixpkgs-fmt"
+	@echo "  home-switch        - Switch Home Manager configuration only (fast)"
+	@echo "  home-build         - Build Home Manager configuration only"
 	@echo ""
 	@echo "Git Commands:"
 	@echo "  commit             - Add, commit and push changes"
@@ -120,4 +122,18 @@ c: clean
 
 # Quick commands for development
 quick-system: switch
+
+# Home Manager only commands (faster updates)
+home-build:
+	@echo "Building Home Manager configuration..."
+	home-manager build --flake .#abbes
+
+home-switch:
+	@echo "Switching to Home Manager configuration..."
+	home-manager switch --flake .#abbes
+
+# Convenient Home Manager aliases
+hm-build: home-build
+hm-switch: home-switch
+hm: home-switch
 	@echo "System configuration updated!"

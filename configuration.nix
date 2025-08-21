@@ -115,8 +115,5 @@ in
     fontconfig.enable = true;
   };
 
-  # Enable fish system-wide
-  programs.fish.enable = true;
-
   system.stateVersion = versions.nixos;
 }

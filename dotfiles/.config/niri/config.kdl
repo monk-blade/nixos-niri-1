@@ -186,7 +186,7 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 4
+        width 2
         active-color "#ffc87f"
         inactive-color "#505050"
 
@@ -256,7 +256,7 @@ layout {
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "swww img ~/.config/backgrounds/sky-soft-clouds-tranquil-moonlight.jpg"
+spawn-at-startup "swww img ../backgrounds/texture.jpg"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
