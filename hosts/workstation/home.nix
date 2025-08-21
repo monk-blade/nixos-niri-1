@@ -112,6 +112,8 @@ in
   };
 
   programs.nh.enable = true;
+  
+  # programs.virt-manager.enable = true;
 
   # Enable programs that need special handling
   programs = {

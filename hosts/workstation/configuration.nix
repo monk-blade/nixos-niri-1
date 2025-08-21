@@ -92,6 +92,11 @@ in
     autoPrune.enable = true;
   };
 
+  environment.sessionVariables = {
+    # Enable Wayland for Chromium-based apps
+    NIXOS_OZONE_WL = "1";
+  };
+
   # System packages (minimal, let home-manager handle user packages)
   environment.systemPackages = with pkgs; [
     vim
