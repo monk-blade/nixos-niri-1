@@ -27,7 +27,6 @@
     # File Management
     tree
     ranger
-    yazi  # Modern file manager
 
     ffmpeg
   ];

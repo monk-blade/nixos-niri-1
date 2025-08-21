@@ -107,7 +107,6 @@ in
     ".config/cava".source = ./dotfiles/.config/cava;
     ".config/fastfetch".source = ./dotfiles/.config/fastfetch;
     ".config/ranger".source = ./dotfiles/.config/ranger;
-    ".config/yazi".source = ./dotfiles/.config/yazi;
     
     # Backgrounds
     ".config/backgrounds".source = ./dotfiles/.config/backgrounds;

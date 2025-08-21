@@ -7,28 +7,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:nix-community/stylix/release-24.05";
+    stylix.url = "github:nix-community/stylix/release-25.05";
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs: {
     nixosConfigurations = {
-      # Hostname configuration
-      nixos = nixpkgs.lib.nixosSystem {
+      # Workstation configuration
+      workstation = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./hosts/workstation
           stylix.nixosModules.stylix
-          
-          # Home Manager integration
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.abbes = import ./home.nix;
-            home-manager.backupFileExtension = "backup";
-            # Pass flake inputs to home-manager
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
         ];
       };
     };
