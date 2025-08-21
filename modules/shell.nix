@@ -15,10 +15,14 @@
     ripgrep
     fd
     zoxide
-    jq
     starship
     fastfetch
-    lazygit
+
+    # Version control & collaboration
+    gh  # GitHub CLI
+    delta  # Better git diff
+    lazygit  # TUI for git
+
     tmux
     neovim
     cava

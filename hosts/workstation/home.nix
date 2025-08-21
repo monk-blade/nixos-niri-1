@@ -61,11 +61,6 @@ in
     httpie  # Better curl alternative
     bruno  # API testing
     
-    # Version control & collaboration
-    gh  # GitHub CLI
-    lazygit  # TUI for git
-    delta  # Better git diff
-    
     # Code quality & formatting
     shellcheck  # Shell script linting
     shfmt  # Shell script formatting
@@ -91,6 +86,13 @@ in
     
     # System Monitoring & Info
     nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
+
+    # waybar
+    waybar
+    pavucontrol
+    jq
+    wlogout
+    wlsunset
   ];
 
   # Link your existing dotfiles
@@ -99,6 +101,7 @@ in
     ".config/ghostty".source = ../../dotfiles/.config/ghostty;
     ".config/tmux".source = ../../dotfiles/.config/tmux;
     ".config/starship".source = ../../dotfiles/.config/starship;
+    ".config/lazygit".source = ../../dotfiles/.config/lazygit;
     
     # Wayland & Window Manager configs
     ".config/niri".source = ../../dotfiles/.config/niri;
