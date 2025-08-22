@@ -72,9 +72,6 @@ window#waybar.hidden {
   border-radius: 9999px; /* Fully rounded ends for pill shape */
   padding: 2px 4px; /* Padding inside the pill */
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-width: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
