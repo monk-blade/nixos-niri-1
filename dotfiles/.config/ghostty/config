@@ -20,7 +20,7 @@ window-theme = ghostty
 
 # Transparency and Focus
 background-opacity = 1
-unfocused-split-opacity = 1
+unfocused-split-opacity = 0.98
 
 # Mouse Configuration
 mouse-hide-while-typing = true
