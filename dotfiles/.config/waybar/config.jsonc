@@ -58,7 +58,7 @@
     },
     "memory": {
         "interval": 30,
-        "format": " {percentage}%",
+        "format": " {percentage}%",
         "on-click": "foot -e btop"
     },
     "battery": {
