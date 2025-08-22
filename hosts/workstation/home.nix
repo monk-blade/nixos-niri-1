@@ -8,7 +8,6 @@ in
   imports = [
     ../../globals.nix 
     ../../modules/shell.nix
-    ./locals.nix
   ];
   
   # Basic info
