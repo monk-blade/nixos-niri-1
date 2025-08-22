@@ -15,10 +15,12 @@
         //"niri/language",
         //"idle_inhibitor",
         //"mpd"
-        "niri/window",
+        "niri/window"
     ],
     "modules-center": [
+        "clock",
         "niri/workspaces"
+        // "custom/next-prayer"
         // "custom/weather"
         //"custom/gammastep"
     ],
@@ -31,7 +33,6 @@
         "battery",
         //"pulseaudio",
         "wireplumber",
-        "clock",
         "tray",
         "custom/power"
     ],
@@ -57,7 +58,7 @@
     },
     "memory": {
         "interval": 30,
-        "format": "  {used:0.2f} / {total:0.0f} GB",
+        "format": " {percentage}%",
         "on-click": "foot -e btop"
     },
     "battery": {
@@ -196,10 +197,9 @@
     },
     "cpu": {
         "interval": 1,
-        //"format": " {}%", // Icon: microchip
-        "format": "{max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
-        "max-length": 13,
-        "min-length": 13
+        "format": " {usage}%",
+        "max-length": 10,
+        "min-length": 10
     },
     "mpd": {
         "max-length": 25,
@@ -247,10 +247,10 @@
             "7": "7",
             "8": "8",
             "9": "9",
-            "10": "10",
-            "urgent": "",
-            "focused": "",
-            "default": ""
+            "10": "10"
+            // "urgent": "",
+            // "focused": "",
+            // "default": ""
         },
         "on-click": "activate",
         "on-scroll-up": "niri msg action focus-workspace-up",

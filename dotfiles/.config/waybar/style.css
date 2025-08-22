@@ -38,24 +38,32 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-  padding: 2px 2px; /* Adjusted padding for better appearance */
-  margin: 2px 2px;
-  border-radius: 4px;
-  color: #2c3f69; /* Stylix muted text */
-  background-color: #111827; /* Stylix secondary background */
-  transition: all 0.3s ease-in-out;
+  padding: 0 12px;
+  margin: 0 1px;
+  border-radius: 9999px; /* Fully rounded buttons */
+  color: #9ca3af; /* Muted text color */
+  background-color: transparent; /* Transparent background by default */
+  transition: all 0.2s ease-in-out;
   font-size: 14px;
-  min-width: 20px;
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 #workspaces button.active {
-  color: #7a90bd; /* Dark text on accent */
-  background: #111827; /* Stylix blue accent */
+  color: #ffffff; /* White text for active */
+  background-color: #4b5563; /* Slightly lighter gray for active */
+  font-weight: 600;
 }
 
 #workspaces button:hover {
-  background: #111827; /* Stylix selection background */
-  color: #7a90bd; /* Stylix foreground */
+  background-color: #374151; /* Slightly lighter than container */
+  color: #ffffff;
 }
 
 #workspaces button.urgent {
@@ -63,9 +71,15 @@ window#waybar.hidden {
 }
 
 #workspaces {
-  background-color: transparent;
-  border-radius: 4px;
-  padding: 2px 2px;
+  background-color: rgba(17, 24, 39, 0.9); /* Semi-transparent dark background */
+  border-radius: 9999px; /* Fully rounded ends for pill shape */
+  padding: 2px 4px; /* Padding inside the pill */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #window {
