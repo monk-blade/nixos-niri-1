@@ -128,6 +128,9 @@ in
       # Optional: add some common fallbacks
       noto-fonts
       liberation_ttf
+      # Font Awesome for waybar icons
+      font-awesome
+      nerd-fonts.symbols-only
     ];
     
     fontconfig.enable = true;

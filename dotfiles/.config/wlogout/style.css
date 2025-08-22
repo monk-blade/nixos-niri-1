@@ -1,99 +1,73 @@
 * {
-  all: unset;
   background-image: none;
-  transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-family: "Lilex";
 }
 
 window {
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(31, 31, 40, 0.8);
+  /* #1F1F28 with opacity */
 }
 
-/* Main container */
-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
-}
-
-/* Title styling */
-label {
-  color: #ffffff;
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-/* Grid container for buttons */
-box > box {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-/* Button styling */
 button {
-  font-family: "Material Symbols Outlined";
-  font-size: 3rem;
-  background-color: rgba(30, 30, 30, 0.7);
-  color: #ffffff;
-  border-radius: 1rem;
-  padding: 2rem;
-  min-width: 120px;
-  min-height: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* color: #FFF;
+  background-color: #1F1F28;
+  border: 1px solid #454554; */
+  outline: none;
+  box-shadow: none;
+  margin: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
 }
 
 button:focus,
 button:active,
 button:hover {
-  background-color: rgba(60, 60, 60, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  /* color: #285577; */
+  /* background-color: #2d4f67;
+  border: 1px solid #7e9cd8; */
+  outline: none;
+  box-shadow: none;
 }
 
-/* Individual button colors for better identification */
 #lock {
-  background-color: rgba(255, 193, 7, 0.2);
+  background-image: image(
+    url("/usr/share/wlogout/icons/lock.png"),
+    url("/usr/local/share/wlogout/icons/lock.png")
+  );
 }
 
 #logout {
-  background-color: rgba(108, 117, 125, 0.2);
+  background-image: image(
+    url("/usr/share/wlogout/icons/logout.png"),
+    url("/usr/local/share/wlogout/icons/logout.png")
+  );
 }
 
 #suspend {
-  background-color: rgba(13, 202, 240, 0.2);
+  background-image: image(
+    url("/usr/share/wlogout/icons/suspend.png"),
+    url("/usr/local/share/wlogout/icons/suspend.png")
+  );
 }
 
 #hibernate {
-  background-color: rgba(25, 135, 84, 0.2);
+  background-image: image(
+    url("/usr/share/wlogout/icons/hibernate.png"),
+    url("/usr/local/share/wlogout/icons/hibernate.png")
+  );
 }
 
 #shutdown {
-  background-color: rgba(220, 53, 69, 0.2);
+  background-image: image(
+    url("/usr/share/wlogout/icons/shutdown.png"),
+    url("/usr/local/share/wlogout/icons/shutdown.png")
+  );
 }
 
 #reboot {
-  background-color: rgba(255, 193, 7, 0.2);
-}
-
-/* Button text labels (if any) */
-button label {
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-  opacity: 0.8;
+  background-image: image(
+    url("/usr/share/wlogout/icons/reboot.png"),
+    url("/usr/local/share/wlogout/icons/reboot.png")
+  );
 }

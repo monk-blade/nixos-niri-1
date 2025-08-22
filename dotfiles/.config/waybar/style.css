@@ -1,8 +1,8 @@
 
 * {
-    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;  /* Slightly smaller font size */
-    font-weight: 900;
+    font-family: "SpaceMono Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
     margin: 0;
     padding: 0;
     transition-property: background-color;
@@ -12,9 +12,10 @@
 /* Reset all styles */
 * {
     border: none;
-    border-radius: 3px;
+    border-radius: 6px;
     min-height: 0;
-    margin: 0.2em 0.3em 0.2em 0.3em;
+    margin: 0;
+    padding: 0;
 }
 
 /* The whole bar */
@@ -23,11 +24,12 @@
     color: @base05; /* Stylix foreground text */
     transition-property: background-color;
     transition-duration: 0.5s;
-    border-radius: 8px;
-    margin: 5px 10px;
-    padding: 0px 10px;
-    border: 1px solid @base03; /* Subtle border using Stylix colors */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0px;
+    margin-top: 8px; /* Symmetric top margin */
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0px 15px;
 }
 
 window#waybar.hidden {
@@ -38,21 +40,21 @@ window#waybar.hidden {
     padding: 2px 8px;  /* Adjusted padding for better appearance */
     margin: 2px 2px;
     border-radius: 4px;
-    color: @base04; /* Stylix muted text */
-    background-color: @base01; /* Stylix secondary background */
+    color: #2c3f69; /* Stylix muted text */
+    background-color: #111827; /* Stylix secondary background */
     transition: all 0.3s ease-in-out;
     font-size: 12px;
     min-width: 20px;
 }
 
 #workspaces button.active {
-    color: @base00; /* Dark text on accent */
-    background: @base0D; /* Stylix blue accent */
+    color: #7a90bd; /* Dark text on accent */
+    background: #111827; /* Stylix blue accent */
 }
 
 #workspaces button:hover {
-    background: @base02; /* Stylix selection background */
-    color: @base05; /* Stylix foreground */
+    background: #111827; /* Stylix selection background */
+    color: #7a90bd; /* Stylix foreground */
 }
 
 #workspaces button.urgent {
