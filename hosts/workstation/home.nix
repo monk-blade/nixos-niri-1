@@ -8,6 +8,7 @@ in
   imports = [
     ../../globals.nix 
     ../../modules/shell.nix
+    ./locals.nix
   ];
   
   # Basic info
@@ -76,23 +77,15 @@ in
     gnumake
     cmake
 
-    # waybar
+    # Waybar and related tools
     waybar
     pavucontrol
     jq
     wlogout
     wlsunset
 
-    
     # System Monitoring & Info
     nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
-
-    # waybar
-    waybar
-    pavucontrol
-    jq
-    wlogout
-    wlsunset
   ];
 
   # Link your existing dotfiles

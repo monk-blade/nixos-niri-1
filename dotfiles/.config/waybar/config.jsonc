@@ -7,7 +7,7 @@
 
     "position": "top",
 
-    "output": ["eDP-1", "HDMI-A-1"],
+    // "output": ["eDP-1", "HDMI-A-1"], // Commented out to work with any display
 
     //"height": 20,
 
@@ -189,7 +189,7 @@
             "spotify": "",
             "default": "🎜"
         },
-        "escape": true,
+        "escape": true
         //"exec": "~/.config/waybar/mediaplayer.py" // Script in resources folder
         // "exec": "~/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
@@ -215,11 +215,7 @@
     "custom/gammastep": {
       "interval": 5,
       "return-type": "json",
-      "exec": {
-        "pre": "if unit_status=\"$(systemctl --user is-active gammastep)\"; then\nstatus=\"$unit_status ($(journalctl --user -u gammastep.service -g 'Period: ' | tail -1 | cut -d ':' -f6 | xargs))\"\nelse\nstatus=\"$unit_status\"\nfi",
-        "alt": "${status:-inactive}",
-        "tooltip": "Gammastep is $status",
-      },
+      "exec": "if unit_status=\"$(systemctl --user is-active gammastep)\"; then status=\"$unit_status ($(journalctl --user -u gammastep.service -g 'Period: ' | tail -1 | cut -d ':' -f6 | xargs))\"; else status=\"$unit_status\"; fi; echo \"{\\\"text\\\": \\\"${status:-inactive}\\\", \\\"tooltip\\\": \\\"Gammastep is ${status:-inactive}\\\"}\"",
       "format": "{icon}",
       "format-icons": {
         "activating": "󰁪 ",
@@ -234,7 +230,7 @@
         "active (Transition (Day)": " ",
         "active (Transition (Daytime)": " ",
       },
-      "on-click": "systemctl --user is-active gammastep && systemctl --user stop gammastep || systemctl --user start gammastep",
+      "on-click": "systemctl --user is-active gammastep && systemctl --user stop gammastep || systemctl --user start gammastep"
     },
 
     "cpu": {
@@ -296,10 +292,10 @@
             "7": "七",
             "8": "八",
             "9": "九",
-            "10": "十",
+            "10": "十"
         },
         "on-scroll-up": "niri msg action focus-workspace-up",
-        "on-scroll-down": "niri msg action focus-workspace-down",
+        "on-scroll-down": "niri msg action focus-workspace-down"
     },
 
     "niri/window": {
@@ -350,7 +346,7 @@
             "portable": " ",
             "car": " ",
             "default": [" ", " ", " "]
-        },
+        }
     },
 
     "tray": {
