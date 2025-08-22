@@ -2,21 +2,14 @@
     // -------------------------------------------------------------------------
     // Global configuration
     // -------------------------------------------------------------------------
-
     "layer": "top",
-
     "position": "top",
-
     // "output": ["eDP-1", "HDMI-A-1"], // Commented out to work with any display
-
     "height": 22,
-
     "margin-left": 10,
     "margin-bottom": 0,
     "margin-right": 10,
-
     "spacing": 5, // Gaps between modules (4px)
-
     "modules-left": [
         //"custom/rofi",
         //"niri/language",
@@ -26,8 +19,8 @@
         "temperature"
     ],
     "modules-center": [
-        "niri/workspaces",
-        "custom/weather"
+        "niri/workspaces"
+        // "custom/weather"
         //"custom/gammastep"
     ],
     "modules-right": [
@@ -42,12 +35,9 @@
         "tray",
         "custom/power"
     ],
-
-
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
-
     "custom/sp1": {
         "format": " | ",
         "tooltip": false
@@ -56,8 +46,6 @@
         "format": " |",
         "tooltip": false
     },
-
-
     "custom/rofi": {
         "format": "",
         "tooltip": false,
@@ -65,7 +53,6 @@
         "on-click": "wofi --show run",
         "on-click-middle": "pkill -9 wofi"
     },
-
     "clock#1": {
         "format": " {:%a}",
         "tooltip": false,
@@ -81,7 +68,6 @@
         "tooltip": false,
         "on-click": "gsimplecal"
     },
-
     "temperature": {
         // "thermal-zone": 1,
         "interval": 4,
@@ -90,18 +76,20 @@
         // "format-critical": " {temperatureC}°C",
         "format-critical": "  {temperatureC}°C",
         "format": "{icon}  {temperatureC}°C",
-        "format-icons": ["", "", ""],
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
         "max-length": 7,
         "min-length": 7,
         "on-click": "xsensors"
     },
-
     "memory": {
         "interval": 30,
         "format": "  {used:0.2f} / {total:0.0f} GB",
         "on-click": "foot -e btop"
     },
-
     "battery": {
         "interval": 2,
         "states": {
@@ -115,12 +103,35 @@
         "format-full": "󰁹 {capacity}%",
         "format-alt": "{icon} {capacity}% • {time}",
         "format-icons": {
-            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+            "default": [
+                "󰂎",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ],
+            "charging": [
+                "󰢟",
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ]
         },
         "tooltip-format": "Battery: {capacity}%\nTime: {time}\nPower: {power}W"
     },
-    
     "network": {
         "format-wifi": " {essid} ({signalStrength}%)",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
@@ -142,14 +153,16 @@
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh"
     },
-
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
         "format-alt": "{percent}% {icon}",
         "format-alt-click": "click-right",
         //"format-icons": ["", ""],
-        "format-icons": ["", ""],
+        "format-icons": [
+            "",
+            ""
+        ],
         "on-scroll-down": "brightnessctl s 5%-",
         "on-scroll-up": "brightnessctl s +5%"
     },
@@ -171,68 +184,51 @@
         //"exec": "~/.config/waybar/modules/weather.sh",
         "exec-if": "ping wttr.in -c1"
     },
-
-"custom/spotify": {
-    "exec": "~/.config/waybar/mediaplayer.py --player spotify",
-    "format": "{}  ",
-    "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous"
-},
-
     "custom/media": {
         "format": "{0} {1}",
         "return-type": "json",
         "max-length": 40,
         "format-icons": {
-            "spotify": "",
             "default": "🎜"
         },
         "escape": true
         //"exec": "~/.config/waybar/mediaplayer.py" // Script in resources folder
-        // "exec": "~/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
-
     "custom/power": {
         "format": " 󰐥 ",
         "tooltip": false,
         "on-click": "wlogout"
     },
-
     "clock": {
         "format": "  {:%H:%M   %e %b}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "today-format": "<b>{}</b>"
     },
-
     "clock#date": {
-        "format": "󰥔  {:%H:%M \n %e %b}",
+        "format": "{:%d, %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "today-format": "<b>{}</b>"
     },
-
     "custom/gammastep": {
-      "interval": 5,
-      "return-type": "json",
-      "exec": "if unit_status=\"$(systemctl --user is-active gammastep)\"; then status=\"$unit_status ($(journalctl --user -u gammastep.service -g 'Period: ' | tail -1 | cut -d ':' -f6 | xargs))\"; else status=\"$unit_status\"; fi; echo \"{\\\"text\\\": \\\"${status:-inactive}\\\", \\\"tooltip\\\": \\\"Gammastep is ${status:-inactive}\\\"}\"",
-      "format": "{icon}",
-      "format-icons": {
-        "activating": "󰁪 ",
-        "deactivating": "󰁪 ",
-        "inactive": "? ",
-        "active (Night)": " ",
-        "active (Nighttime)": " ",
-        "active (Transition (Night)": " ",
-        "active (Transition (Nighttime)": " ",
-        "active (Day)": " ",
-        "active (Daytime)": " ",
-        "active (Transition (Day)": " ",
-        "active (Transition (Daytime)": " ",
-      },
-      "on-click": "systemctl --user is-active gammastep && systemctl --user stop gammastep || systemctl --user start gammastep"
+        "interval": 5,
+        "return-type": "json",
+        "exec": "if unit_status=\"$(systemctl --user is-active gammastep)\"; then status=\"$unit_status ($(journalctl --user -u gammastep.service -g 'Period: ' | tail -1 | cut -d ':' -f6 | xargs))\"; else status=\"$unit_status\"; fi; echo \"{\\\"text\\\": \\\"${status:-inactive}\\\", \\\"tooltip\\\": \\\"Gammastep is ${status:-inactive}\\\"}\"",
+        "format": "{icon}",
+        "format-icons": {
+            "activating": "󰁪 ",
+            "deactivating": "󰁪 ",
+            "inactive": "? ",
+            "active (Night)": " ",
+            "active (Nighttime)": " ",
+            "active (Transition (Night)": " ",
+            "active (Transition (Nighttime)": " ",
+            "active (Day)": " ",
+            "active (Daytime)": " ",
+            "active (Transition (Day)": " ",
+            "active (Transition (Daytime)": " ",
+        },
+        "on-click": "systemctl --user is-active gammastep && systemctl --user stop gammastep || systemctl --user start gammastep"
     },
-
     "cpu": {
         "interval": 1,
         //"format": " {}%", // Icon: microchip
@@ -240,7 +236,6 @@
         "max-length": 13,
         "min-length": 13
     },
-
     "mpd": {
         "max-length": 25,
         "format": "<span foreground='#bb9af7'></span> {title}",
@@ -255,7 +250,6 @@
         "smooth-scrolling-threshold": 5,
         "tooltip-format": "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})"
     },
-
     "custom/title": {
         "format": "{}",
         "interval": 0,
@@ -263,22 +257,18 @@
         //"max-length": 35,
         "tooltip": false
     },
-
     "custom/title#name": {
         "format": "{}",
         "interval": 0,
         "return-type": "json",
-
         "max-length": 35,
         "exec": "$HOME/.scripts/title"
     },
-
     /*"custom/keyboard": {
         "format": " {}",
         "interval": 1,
         "exec": "$HOME/.config/waybar/get_kbdlayout.sh"
     },*/
-
     "niri/workspaces": {
         "all-outputs": true,
         "format": "{name}",
@@ -297,12 +287,10 @@
         "on-scroll-up": "niri msg action focus-workspace-up",
         "on-scroll-down": "niri msg action focus-workspace-down"
     },
-
     "niri/window": {
         "max-length": 100,
         "separate-outputs": true
     },
-
     "pulseaudio": {
         "scroll-step": 3, // %, can be a float
         "format": "{icon} {volume}% {format_source}",
@@ -320,12 +308,15 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol",
         "on-click-right": "amixer sset Master toggle"
     },
-
     "wireplumber": {
         "on-click": "pavucontrol",
         "on-click-right": "amixer sset Master toggle 1>/dev/null",
@@ -345,10 +336,13 @@
             "phone": " ",
             "portable": " ",
             "car": " ",
-            "default": [" ", " ", " "]
+            "default": [
+                " ",
+                " ",
+                " "
+            ]
         }
     },
-
     "tray": {
         "icon-size": 15,
         "spacing": 5
