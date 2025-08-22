@@ -43,6 +43,16 @@ in
   # Network
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  
+  # DNS configuration for VM
+  networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
+  networking.resolvconf.enable = true;
+  
+  # Ensure DNS is working in VM environment
+  networking.dhcpcd.extraConfig = ''
+    # Use static DNS servers
+    static domain_name_servers=8.8.8.8 1.1.1.1
+  '';
 
   # Time zone
   time.timeZone = "Africa/Tunis";
