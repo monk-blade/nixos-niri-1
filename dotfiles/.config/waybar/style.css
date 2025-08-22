@@ -46,7 +46,7 @@ window#waybar.hidden {
   transition: all 0.2s ease-in-out;
   font-size: 14px;
   min-width: 28px;
-  height: 28px;
+  min-height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
