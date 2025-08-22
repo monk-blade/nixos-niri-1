@@ -36,16 +36,14 @@ in
     };
   };
   
-  # Override specific colors to match Moonfly background
+  # Override specific colors
   stylix.override = {
-    # Moonfly-inspired background colors
-    base00 = "080808"; # Main background (very dark)
-    base01 = "1c1c1c"; # Slightly lighter background
-    base02 = "262626"; # Selection background
-    base03 = "444444"; # Comments, invisibles
+    # Base colors - darker than Kanagawa
+    base00 = "0a0a0a";  # Darker background (Kanagawa is 1f1f28)
+    base01 = "1a1a1a";  # Slightly lighter than base00 (Kanagawa is 1f1f28)
+    base02 = "252535";  # Selection background (darker than Kanagawa's 2d4f67)
+    base03 = "4a4a5a";  # Comments, invisibles (darker than Kanagawa's 54546d)
     
-    # Keep Catppuccin Mocha for other colors
-    # base04, base05, base06, base07 (foreground colors) - keep default
-    # base08-base0F (accent colors) - keep default Catppuccin Mocha
+    # Let Stylix handle other colors from the base16 scheme
   };
 }
