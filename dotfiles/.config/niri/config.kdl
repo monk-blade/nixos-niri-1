@@ -186,7 +186,7 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 2
+        width 1
         active-color "#ffc87f"
         inactive-color "#505050"
 
@@ -255,8 +255,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
-spawn-at-startup "swww-daemon"
-spawn-at-startup "swww img ~/.config/stylix/wallpaper"
+spawn-at-startup "~/.config/niri/scripts/set-wallpaper.sh"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.

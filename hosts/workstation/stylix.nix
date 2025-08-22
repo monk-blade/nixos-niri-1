@@ -1,15 +1,18 @@
 { pkgs, ... }:
 
+let
+  locals = import ./locals.nix { inherit pkgs; };
+in
 {
   # Enable Stylix for system-wide theming
   stylix.enable = true;
   
   # Base16 color scheme - you can change this to any base16 theme
   # Popular options: "gruvbox-dark-hard", "nord", "dracula", "tokyo-night-dark", "catppuccin-mocha"
-stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
 
-  # Set wallpaper (Stylix can generate colors from your wallpaper)
-  stylix.image = ../../dotfiles/.config/backgrounds/texture.jpg;
+  # Set wallpaper from locals.nix (Stylix can generate colors from your wallpaper)
+  stylix.image = locals.wallpaper;
   
   # Font configuration
   stylix.fonts = {
