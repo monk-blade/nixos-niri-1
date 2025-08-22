@@ -9,7 +9,7 @@
 
     // "output": ["eDP-1", "HDMI-A-1"], // Commented out to work with any display
 
-    //"height": 20,
+    "height": 22,
 
     "margin-left": 10,
     "margin-bottom": 0,
@@ -19,12 +19,11 @@
 
     "modules-left": [
         //"custom/rofi",
-        "niri/window",
         //"niri/language",
-        "temperature",
         //"idle_inhibitor",
         //"mpd"
-        "custom/spotify"
+        "niri/window",
+        "temperature"
     ],
     "modules-center": [
         "niri/workspaces",
@@ -121,6 +120,7 @@
             ""
         ]
     },
+    
     "network": {
         "format-wifi": " {essid} ({signalStrength}%)",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
