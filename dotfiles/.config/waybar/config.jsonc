@@ -16,7 +16,6 @@
         //"idle_inhibitor",
         //"mpd"
         "niri/window",
-        "temperature"
     ],
     "modules-center": [
         "niri/workspaces"
@@ -26,48 +25,19 @@
     "modules-right": [
         "backlight",
         "custom/storage",
+        "temperature",
         "memory",
         "cpu",
         "battery",
         //"pulseaudio",
         "wireplumber",
-        "clock#date",
+        "clock",
         "tray",
         "custom/power"
     ],
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
-    "custom/sp1": {
-        "format": " | ",
-        "tooltip": false
-    },
-    "custom/sp2": {
-        "format": " |",
-        "tooltip": false
-    },
-    "custom/rofi": {
-        "format": "",
-        "tooltip": false,
-        "on-click-right": "nwg-drawer",
-        "on-click": "wofi --show run",
-        "on-click-middle": "pkill -9 wofi"
-    },
-    "clock#1": {
-        "format": " {:%a}",
-        "tooltip": false,
-        "on-click": "gsimplecal"
-    },
-    "clock#2": {
-        "format": " {:%d-%h-%Y}",
-        "tooltip": false,
-        "on-click": "gsimplecal"
-    },
-    "clock#3": {
-        "format": " {:%H:%M:%S %p}",
-        "tooltip": false,
-        "on-click": "gsimplecal"
-    },
     "temperature": {
         // "thermal-zone": 1,
         "interval": 4,
@@ -200,11 +170,6 @@
         "on-click": "wlogout"
     },
     "clock": {
-        "format": "  {:%H:%M   %e %b}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "today-format": "<b>{}</b>"
-    },
-    "clock#date": {
         "format": "{:%d, %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "today-format": "<b>{}</b>"
@@ -271,19 +236,23 @@
     },*/
     "niri/workspaces": {
         "all-outputs": true,
-        "format": "{name}",
+        "format": "{icon} {name}",
         "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九",
-            "10": "十"
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "urgent": "",
+            "focused": "",
+            "default": ""
         },
+        "on-click": "activate",
         "on-scroll-up": "niri msg action focus-workspace-up",
         "on-scroll-down": "niri msg action focus-workspace-down"
     },

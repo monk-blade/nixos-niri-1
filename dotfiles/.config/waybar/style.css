@@ -127,38 +127,38 @@ window#waybar.hidden {
 #tray {
   background-color: #111827;
   border-radius: 14px;
-  padding: 6px; /* Adjusted padding */
+  padding: 2px; /* Adjusted padding */
 }
 
 #cpu {
   color: #fb958b;
   background-color: #111827;
-  padding: 6px;
+  padding: 2px;
 }
 
 #memory {
   color: #ebcb8b;
   background-color: #111827;
-  padding: 6px;
+  padding: 2px;
 }
 
 #custom-power {
   background-color: #111827;
   border-radius: 14px;
-  padding: 6px;
+  padding: 2px;
 }
 
 #custom-storage {
   background-color: #111827;
   border-radius: 14px;
-  padding: 6px;
+  padding: 2px;
 }
 
 #custom-launcher {
   background-color: #1b242b;
   color: #6a92d7;
   border-radius: 7.5px;
-  padding: 3px 6px; /* Adjusted padding */
+  padding: 2px; /* Adjusted padding */
 }
 
 #custom-weather.severe {
