@@ -39,10 +39,10 @@ in
   # Override specific colors
   stylix.override = {
     # Base colors - darker than Kanagawa
-    base00 = "0a0a0a";  # Darker background (Kanagawa is 1f1f28)
-    base01 = "1a1a1a";  # Slightly lighter than base00 (Kanagawa is 1f1f28)
-    base02 = "252535";  # Selection background (darker than Kanagawa's 2d4f67)
-    base03 = "4a4a5a";  # Comments, invisibles (darker than Kanagawa's 54546d)
+    # base00 = "0a0a0a";  # Darker background (Kanagawa is 1f1f28)
+    # base01 = "1a1a1a";  # Slightly lighter than base00 (Kanagawa is 1f1f28)
+    # base02 = "252535";  # Selection background (darker than Kanagawa's 2d4f67)
+    # base03 = "4a4a5a";  # Comments, invisibles (darker than Kanagawa's 54546d)
     
     # Let Stylix handle other colors from the base16 scheme
   };
