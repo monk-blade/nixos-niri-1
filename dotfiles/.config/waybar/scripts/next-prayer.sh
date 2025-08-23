@@ -1,6 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 MAX_RETRIES=3
 RETRY_DELAY=2
+
+# Check if required commands are available
+if ! command -v curl >/dev/null 2>&1; then
+    echo "curl not found"
+    exit 1
+fi
+
+if ! command -v jq >/dev/null 2>&1; then
+    echo "jq not found"
+    exit 1
+fi
 
 # Function to fetch location with retries
 fetch_location() {
