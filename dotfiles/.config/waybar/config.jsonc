@@ -130,7 +130,7 @@
     "custom/next-prayer": {
         "format": " {}",
         "interval": 60,
-        "exec": "~/.config/waybar/scripts/next-prayer.sh",
+        "exec": "$HOME/.config/waybar/scripts/next-prayer.sh",
         "tooltip": true,
         "tooltip-format": "Next Prayer: {}"
     },
