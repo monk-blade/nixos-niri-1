@@ -102,6 +102,8 @@ window#waybar {
 /* System tray */
 #tray {
   padding: 0 8px;
+  border-left: 2px dotted rgba(255, 255, 255, 0.2);
+  margin-left: 8px;
 }
 
 #tray > .passive {
@@ -113,11 +115,9 @@ window#waybar {
 }
 
 /* Separator dot for tray */
-#tray::before {
-  content: "•";
-  color: rgba(255, 255, 255, 0.3);
-  margin-right: 8px;
-  font-size: 16px;
+#tray {
+  border-left: 2px dotted rgba(255, 255, 255, 0.2);
+  margin-left: 8px;
 }
 
 /* Power button */
@@ -165,3 +165,4 @@ tooltip label {
   border-radius: 4px;
   transition: background 0.2s ease;
 }
+
