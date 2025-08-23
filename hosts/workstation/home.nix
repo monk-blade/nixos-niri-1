@@ -4,6 +4,7 @@ let
   versions = import ../../versions.nix;
   locals = import ./locals.nix { inherit pkgs; };
 in
+{ inputs, pkgs, ... }:
 {
   # Import modules
   imports = [
@@ -21,6 +22,7 @@ in
   home.packages = with pkgs; [
     # browser
     brave
+    inputs.zen-browser.packages."${pkgs.system}".default
     
     # Terminal & Shell
     ghostty
