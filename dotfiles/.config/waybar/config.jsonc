@@ -10,6 +10,8 @@
     "margin-bottom": 0,
     "margin-right": 10,
     "spacing": 5, // Gaps between modules (4px)
+    "font-family": "Space Mono",
+    "font-size": 14,
     "modules-left": [
         //"custom/rofi",
         //"niri/language",
@@ -191,7 +193,7 @@
             "active (Day)": " ",
             "active (Daytime)": " ",
             "active (Transition (Day)": " ",
-            "active (Transition (Daytime)": " ",
+            "active (Transition (Daytime)": " "
         },
         "on-click": "systemctl --user is-active gammastep && systemctl --user stop gammastep || systemctl --user start gammastep"
     },

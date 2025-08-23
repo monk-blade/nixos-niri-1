@@ -1,6 +1,6 @@
 * {
   font-family:
-    "SpaceMono Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands",
+    "Space Mono", "SpaceMono Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands",
     sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -21,16 +21,17 @@
 
 /* The whole bar */
 #waybar {
-  background-color: @base00; /* Stylix base background */
+  background-color: @base01; /* Stylix secondary background for solid bar */
   color: @base05; /* Stylix foreground text */
   transition-property: background-color;
   transition-duration: 0.5s;
-  border-radius: 0px;
+  border-radius: 8px;
   margin-top: 8px; /* Symmetric top margin */
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 0px;
-  padding: 0px 15px;
+  padding: 4px 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 window#waybar.hidden {
@@ -77,12 +78,12 @@ window#waybar.hidden {
 }
 
 #window {
-  background-color: @base01; /* Stylix secondary background */
+  background-color: transparent; /* No individual background */
   font-size: 14px;
   font-weight: 600;
   color: @base05; /* Stylix foreground */
   border-radius: 6px;
-  padding: 2px 2px;
+  padding: 2px 8px;
   margin: 2px;
   opacity: 1;
 }
@@ -115,10 +116,10 @@ window#waybar.hidden {
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.default {
-  background-color: @base01; /* Stylix secondary background */
+  background-color: transparent; /* No individual backgrounds */
   color: @base05; /* Stylix foreground */
   border-radius: 4px;
-  padding: 2px 2px;
+  padding: 2px 8px;
   margin: 1px 2px;
   font-size: 14px;
 }
@@ -133,33 +134,33 @@ window#waybar.hidden {
 }
 
 #tray {
-  background-color: #111827;
+  background-color: transparent;
   border-radius: 14px;
-  padding: 2px; /* Adjusted padding */
+  padding: 2px 8px; /* Adjusted padding */
 }
 
 #cpu {
   color: #fb958b;
-  background-color: #111827;
-  padding: 2px;
+  background-color: transparent;
+  padding: 2px 8px;
 }
 
 #memory {
   color: #ebcb8b;
-  background-color: #111827;
-  padding: 2px;
+  background-color: transparent;
+  padding: 2px 8px;
 }
 
 #custom-power {
-  background-color: #111827;
+  background-color: transparent;
   border-radius: 14px;
-  padding: 2px;
+  padding: 2px 8px;
 }
 
 #custom-storage {
-  background-color: #111827;
+  background-color: transparent;
   border-radius: 14px;
-  padding: 2px;
+  padding: 2px 8px;
 }
 
 #custom-launcher {

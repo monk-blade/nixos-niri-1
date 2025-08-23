@@ -39,21 +39,21 @@ in
   # Override specific colors - Darker Catppuccin Mocha
   stylix.override = {
     # Base colors - darker variants of Catppuccin Mocha
-    base00 = "0b0b0f";  # Darker base (original: 1e1e2e)
-    base01 = "131318";  # Darker mantle (original: 181825)
-    base02 = "1a1a24";  # Darker surface0 (original: 313244)
-    base03 = "2a2a3e";  # Darker surface1 (original: 45475a)
-    base04 = "3a3a54";  # Darker surface2 (original: 585b70)
-    base05 = "b8b8d1";  # Text (slightly dimmed from original: cdd6f4)
-    base06 = "c8c8e1";  # Subtext0 (slightly dimmed from original: f2cdcd)
-    base07 = "d8d8f1";  # Subtext1 (slightly dimmed from original: f5e0dc)
-    base08 = "e78284";  # Red (slightly dimmed from original: f38ba8)
-    base09 = "e5a890";  # Peach (slightly dimmed from original: fab387)
-    base0A = "e2d065";  # Yellow (slightly dimmed from original: f9e2af)
-    base0B = "a4c884";  # Green (slightly dimmed from original: a6e3a1)
-    base0C = "7dc4e4";  # Teal (slightly dimmed from original: 94e2d5)
-    base0D = "7287fd";  # Blue (slightly dimmed from original: 89b4fa)
-    base0E = "c6a0f6";  # Mauve (slightly dimmed from original: cba6f7)
-    base0F = "e78284";  # Flamingo (slightly dimmed from original: f2cdcd)
+    base00 = "0a0a0f"; # Much darker base (original: 1e1e2e)
+    base01 = "111118"; # Much darker mantle (original: 181825)  
+    base02 = "16161f"; # Much darker surface0 (original: 313244)
+    base03 = "1c1c28"; # Much darker surface1 (original: 45475a)
+    base04 = "28283a"; # Much darker surface2 (original: 585b70)
+    base05 = "cdd6f4"; # Keep original text for readability
+    base06 = "f2cdcd"; # Keep original subtext0 for readability
+    base07 = "f5e0dc"; # Keep original subtext1 for readability
+    base08 = "f38ba8"; # Keep original red - no dimming needed
+    base09 = "fab387"; # Keep original peach
+    base0A = "f9e2af"; # Keep original yellow  
+    base0B = "a6e3a1"; # Keep original green
+    base0C = "94e2d5"; # Keep original teal
+    base0D = "89b4fa"; # Keep original blue
+    base0E = "cba6f7"; # Keep original mauve
+    base0F = "f2cdcd"; # Use subtext0 for base0F (original uses red)
   };
 }
