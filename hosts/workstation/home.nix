@@ -1,10 +1,9 @@
 { config, lib, pkgs, ... }:
-
+{ inputs, pkgs, ... }:
 let
   versions = import ../../versions.nix;
   locals = import ./locals.nix { inherit pkgs; };
 in
-{ inputs, pkgs, ... }:
 {
   # Import modules
   imports = [
