@@ -22,8 +22,8 @@
     ],
     "modules-center": [
         "clock",
-        "niri/workspaces"
-        // "custom/next-prayer"
+        "niri/workspaces",
+        "custom/next-prayer"
         // "custom/weather"
         //"custom/gammastep"
     ],
@@ -120,12 +120,19 @@
         "interval": 10
     },
     "custom/storage": {
-        "format": " {}",
-        "format-alt": "{percentage}% ",
+        "format": " {}",
+        "format-alt": "{percentage}% ",
         "format-alt-click": "click-right",
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh"
+    },
+    "custom/next-prayer": {
+        "format": " {}",
+        "interval": 60,
+        "exec": "~/.config/waybar/scripts/next-prayer.sh",
+        "tooltip": true,
+        "tooltip-format": "Next Prayer: {}"
     },
     "backlight": {
         "device": "intel_backlight",
