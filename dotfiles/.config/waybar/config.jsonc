@@ -294,10 +294,10 @@
         //on-click: "${wpctl} set-mute @DEFAULT_AUDIO_SINK@ toggle";
         //on-scroll-down: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04+";
         //on-scroll-up: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04-";
-        "format": "{icon} {volume}%",
+        "format": "{icon}{volume}%",
         "format-muted": " ",
-        "format-source": "",
-        "format-source-muted": "",
+        "format-source": " ",
+        "format-source-muted": " ",
         //"format-muted": "<span foreground='#fab387'> </span>",
         //"format-icons": [ "<span foreground='#fab387'></span>" ]
         "format-icons": {
