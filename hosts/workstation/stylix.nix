@@ -9,7 +9,7 @@ in
   
   # Base16 color scheme - you can change this to any base16 theme
   # Popular options: "gruvbox-dark-hard", "nord", "dracula", "tokyo-night-dark", "catppuccin-mocha"
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
 
   # Set wallpaper from locals.nix (Stylix can generate colors from your wallpaper)
   stylix.image = locals.wallpaper;
@@ -43,7 +43,17 @@ in
     # base01 = "1a1a1a";  # Slightly lighter than base00 (Kanagawa is 1f1f28)
     # base02 = "252535";  # Selection background (darker than Kanagawa's 2d4f67)
     # base03 = "4a4a5a";  # Comments, invisibles (darker than Kanagawa's 54546d)
-    
-    # Let Stylix handle other colors from the base16 scheme
+    # base04 = "809980"
+    # base05 = "8ca68c"
+    # base06 = "cfe8cf"
+    # base07 = "f4fbf4"
+    # base08 = "e6193c"
+    # base09 = "87711d"
+    # base0A = "98981b"
+    # base0B = "29a329"
+    # base0C = "1999b3"
+    # base0D = "3d62f5"
+    # base0E = "ad2bee"
+    # base0F = "e619c3"
   };
 }
