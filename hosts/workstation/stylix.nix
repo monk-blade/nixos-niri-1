@@ -36,24 +36,24 @@ in
     };
   };
   
-  # Override specific colors
+  # Override specific colors - Darker Catppuccin Mocha
   stylix.override = {
-    # Base colors - slightly softer dark tones
-    base00 = "121212";  # Softer dark background (was 0a0a0a)
-    base01 = "1e1e1e";  # Slightly lighter than base00 (was 1a1a1a)
-    base02 = "2a2a3a";  # Selection background - softer (was 252535)
-    base03 = "505060";  # Comments, invisibles - softer (was 4a4a5a)
-    # base04 = "809980"
-    # base05 = "8ca68c"
-    # base06 = "cfe8cf"
-    # base07 = "f4fbf4"
-    # base08 = "e6193c"
-    # base09 = "87711d"
-    # base0A = "98981b"
-    # base0B = "29a329"
-    # base0C = "1999b3"
-    # base0D = "3d62f5"
-    # base0E = "ad2bee"
-    # base0F = "e619c3"
+    # Base colors - darker variants of Catppuccin Mocha
+    base00 = "0b0b0f";  # Darker base (original: 1e1e2e)
+    base01 = "131318";  # Darker mantle (original: 181825)
+    base02 = "1a1a24";  # Darker surface0 (original: 313244)
+    base03 = "2a2a3e";  # Darker surface1 (original: 45475a)
+    base04 = "3a3a54";  # Darker surface2 (original: 585b70)
+    base05 = "b8b8d1";  # Text (slightly dimmed from original: cdd6f4)
+    base06 = "c8c8e1";  # Subtext0 (slightly dimmed from original: f2cdcd)
+    base07 = "d8d8f1";  # Subtext1 (slightly dimmed from original: f5e0dc)
+    base08 = "e78284";  # Red (slightly dimmed from original: f38ba8)
+    base09 = "e5a890";  # Peach (slightly dimmed from original: fab387)
+    base0A = "e2d065";  # Yellow (slightly dimmed from original: f9e2af)
+    base0B = "a4c884";  # Green (slightly dimmed from original: a6e3a1)
+    base0C = "7dc4e4";  # Teal (slightly dimmed from original: 94e2d5)
+    base0D = "7287fd";  # Blue (slightly dimmed from original: 89b4fa)
+    base0E = "c6a0f6";  # Mauve (slightly dimmed from original: cba6f7)
+    base0F = "e78284";  # Flamingo (slightly dimmed from original: f2cdcd)
   };
 }
