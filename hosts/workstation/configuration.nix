@@ -123,8 +123,8 @@ in
       START_CHARGE_THRESH_BAT0 = 40;
       STOP_CHARGE_THRESH_BAT0 = 80;  # Battery charge limiting
       
-      # WIFI_PWR_ON_AC = "off";
-      # WIFI_PWR_ON_BAT = "on";
+      WIFI_PWR_ON_AC = "off";
+      WIFI_PWR_ON_BAT = "on";
     };
   };
 
@@ -132,9 +132,8 @@ in
   services.thermald.enable = true;  # Thermal management
   services.auto-cpufreq.enable = true;  # Automatic CPU frequency scaling
   
-  # Disable unnecessary services for battery
-  services.printing.enable = lib.mkDefault false;
-  services.avahi.enable = lib.mkDefault false;
+  services.printing.enable = lib.mkDefault true;
+  services.avahi.enable = lib.mkDefault true;
 
   environment.sessionVariables = {
     # Enable Wayland for Chromium-based apps
