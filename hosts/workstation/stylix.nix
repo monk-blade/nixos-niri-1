@@ -38,22 +38,22 @@ in
   
   # Override specific colors - Darker Catppuccin Mocha
   stylix.override = {
-    # Base colors - darker variants of Catppuccin Mocha
-    base00 = "0a0a0f"; # Much darker base (original: 1e1e2e)
-    base01 = "111118"; # Much darker mantle (original: 181825)  
-    base02 = "16161f"; # Much darker surface0 (original: 313244)
-    base03 = "1c1c28"; # Much darker surface1 (original: 45475a)
-    base04 = "28283a"; # Much darker surface2 (original: 585b70)
+    # Base colors - moderately darker variants of Catppuccin Mocha
+    base00 = "141420"; # Darker base (original: 1e1e2e)
+    base01 = "1a1a28"; # Darker mantle (original: 181825)  
+    base02 = "252538"; # Darker surface0 (original: 313244)
+    base03 = "383850"; # Darker surface1 (original: 45475a)
+    base04 = "4a4a64"; # Darker surface2 (original: 585b70)
     base05 = "cdd6f4"; # Keep original text for readability
     base06 = "f2cdcd"; # Keep original subtext0 for readability
     base07 = "f5e0dc"; # Keep original subtext1 for readability
-    base08 = "f38ba8"; # Keep original red - no dimming needed
+    base08 = "f38ba8"; # Keep original red
     base09 = "fab387"; # Keep original peach
     base0A = "f9e2af"; # Keep original yellow  
     base0B = "a6e3a1"; # Keep original green
     base0C = "94e2d5"; # Keep original teal
     base0D = "89b4fa"; # Keep original blue
     base0E = "cba6f7"; # Keep original mauve
-    base0F = "f2cdcd"; # Use subtext0 for base0F (original uses red)
+    base0F = "f2cdcd"; # Use subtext0 for base0F
   };
 }
