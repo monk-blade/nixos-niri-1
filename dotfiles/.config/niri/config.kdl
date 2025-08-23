@@ -188,9 +188,9 @@ layout {
         width 1
 
         // Colors removed to let Stylix handle them
-        // active-color "#ffc87f"
-        // inactive-color "#505050"
-        // urgent-color "#9b0000"
+        active-color "#89b4fa"    // Catppuccin Blue (matches Stylix accent)
+        inactive-color "#45475a"  // Catppuccin Surface1 (subtle)
+        urgent-color "#f38ba8"    // Catppuccin Pink (attention-grabbing)
 
         // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
@@ -275,7 +275,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
-    // off
+    off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     slowdown 0.8
