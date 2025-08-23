@@ -17,7 +17,7 @@ button {
   
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 80px;
+  background-size: 60px;
   
   border-style: solid;
   border-width: 2px;
@@ -46,24 +46,30 @@ button:hover {
 /* Icon definitions */
 #lock {
   background-image: url("./icons/lock.svg");
+  filter: brightness(0) invert(1); /* Makes icons white */
 }
 
 #logout {
   background-image: url("./icons/logout.svg");
+  filter: brightness(0) invert(1);
 }
 
 #suspend {
   background-image: url("./icons/suspend.svg");
+  filter: brightness(0) invert(1);
 }
 
 #hibernate {
   background-image: url("./icons/hibernate.svg");
+  filter: brightness(0) invert(1);
 }
 
 #shutdown {
   background-image: url("./icons/shutdown.svg");
+  filter: brightness(0) invert(1);
 }
 
 #reboot {
   background-image: url("./icons/reboot.svg");
+  filter: brightness(0) invert(1);
 }
