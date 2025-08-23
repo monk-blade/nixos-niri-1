@@ -60,11 +60,13 @@ in
   # Locale
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # X11 and Desktop Environment (adjust as needed)
-  services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.lightdm.greeters.gtk.enable = true;  
-  services.xserver.desktopManager.xfce.enable = true;
+  # Minimal X11 setup (only enable if needed for compatibility)
+  services.xserver.enable = lib.mkDefault false;  # Disable by default, enable if needed
+  # services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.displayManager.lightdm.greeters.gtk.enable = true;  
+  # services.xserver.desktopManager.xfce.enable = true;  # Disabled to save battery
+  
+  # Use Niri as primary compositor (Wayland-native)
   programs.niri.enable = true;
 
   # Enable Wayland protocols
@@ -98,12 +100,43 @@ in
     packages = with pkgs; [];
   };
 
-  # Docker support
+  # Docker support (disabled on boot for battery savings)
   virtualisation.docker = {
     enable = true;
-    enableOnBoot = true;
+    enableOnBoot = false;  # Start manually when needed
     autoPrune.enable = true;
   };
+
+  # Power Management for Battery Life
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 80;  # Limit CPU to 50% on battery
+      
+      START_CHARGE_THRESH_BAT0 = 40;
+      STOP_CHARGE_THRESH_BAT0 = 80;  # Battery charge limiting
+      
+      WIFI_PWR_ON_AC = "off";
+      WIFI_PWR_ON_BAT = "on";
+    };
+  };
+
+  # Additional power optimizations
+  services.thermald.enable = true;  # Thermal management
+  services.auto-cpufreq.enable = true;  # Automatic CPU frequency scaling
+  
+  # Disable unnecessary services for battery
+  services.printing.enable = lib.mkDefault false;
+  services.avahi.enable = lib.mkDefault false;
 
   environment.sessionVariables = {
     # Enable Wayland for Chromium-based apps

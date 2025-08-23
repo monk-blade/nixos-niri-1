@@ -87,6 +87,12 @@ in
 
     # System Monitoring & Info
     nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
+    
+    # Battery & Power Management Tools
+    powertop  # Power consumption analyzer
+    acpi  # Battery status
+    tlp  # Power management
+    auto-cpufreq  # Automatic CPU frequency scaling
   ];
 
   # Link your existing dotfiles
