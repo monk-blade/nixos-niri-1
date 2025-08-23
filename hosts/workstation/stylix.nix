@@ -9,7 +9,7 @@ in
   
   # Base16 color scheme - you can change this to any base16 theme
   # Popular options: "gruvbox-dark-hard", "nord", "dracula", "tokyo-night-dark", "catppuccin-mocha"
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
   # Set wallpaper from locals.nix (Stylix can generate colors from your wallpaper)
   stylix.image = locals.wallpaper;
@@ -38,11 +38,11 @@ in
   
   # Override specific colors
   stylix.override = {
-    # Base colors - darker than Kanagawa
-    # base00 = "0a0a0a";  # Darker background (Kanagawa is 1f1f28)
-    # base01 = "1a1a1a";  # Slightly lighter than base00 (Kanagawa is 1f1f28)
-    # base02 = "252535";  # Selection background (darker than Kanagawa's 2d4f67)
-    # base03 = "4a4a5a";  # Comments, invisibles (darker than Kanagawa's 54546d)
+    # Base colors - slightly softer dark tones
+    base00 = "121212";  # Softer dark background (was 0a0a0a)
+    base01 = "1e1e1e";  # Slightly lighter than base00 (was 1a1a1a)
+    base02 = "2a2a3a";  # Selection background - softer (was 252535)
+    base03 = "505060";  # Comments, invisibles - softer (was 4a4a5a)
     # base04 = "809980"
     # base05 = "8ca68c"
     # base06 = "cfe8cf"
