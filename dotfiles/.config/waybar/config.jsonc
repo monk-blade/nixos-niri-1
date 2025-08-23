@@ -238,7 +238,7 @@
     },*/
     "niri/workspaces": {
         "all-outputs": true,
-        "format": "{icon} {name}",
+        "format": "{icon}",
         "format-icons": {
             "1": "1",
             "2": "2",
