@@ -40,6 +40,7 @@ window#waybar {
 #temperature,
 #backlight,
 #wireplumber,
+#idle_inhibitor,
 #custom-storage,
 #custom-power {
   background: transparent;
@@ -133,6 +134,31 @@ window#waybar {
 
 #custom-power:hover {
   background: #f38ba8;
+  color: #141420;
+}
+
+/* Idle Inhibitor (Keep Awake) */
+#idle_inhibitor {
+  color: #cdd6f4;
+  background: #252538;
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin: 0 2px;
+  transition: all 0.2s ease;
+}
+
+#idle_inhibitor.activated {
+  background: #a6e3a1;
+  color: #141420;
+}
+
+#idle_inhibitor.deactivated {
+  background: #252538;
+  color: #6c7086;
+}
+
+#idle_inhibitor:hover {
+  background: #89b4fa;
   color: #141420;
 }
 

@@ -16,7 +16,6 @@
     "modules-left": [
         //"custom/rofi",
         //"niri/language",
-        //"idle_inhibitor",
         //"mpd"
         "niri/window"
     ],
@@ -150,10 +149,12 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "󰅶",
+            "deactivated": "󰾪"
         },
-        "tooltip": "true"
+        "tooltip": true,
+        "tooltip-format-activated": "Keep Awake: ON (Click to allow sleep)",
+        "tooltip-format-deactivated": "Keep Awake: OFF (Click to prevent sleep)"
     },
     "custom/weather": {
         "format": "{}",
