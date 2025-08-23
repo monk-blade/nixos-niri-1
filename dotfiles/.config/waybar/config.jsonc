@@ -12,6 +12,7 @@
     "spacing": 5, // Gaps between modules (4px)
     "font-family": "Space Mono",
     "font-size": 14,
+    "font-weight": 400,
     "modules-left": [
         //"custom/rofi",
         //"niri/language",

@@ -1,6 +1,6 @@
 * {
   font-family:
-    "Space Mono", "SpaceMono Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands",
+    "SpaceMono", "SpaceMono Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands",
     sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -39,9 +39,9 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-  padding: 0 12px;
-  margin: 0 1px;
-  border-radius: 9999px; /* Fully rounded buttons */
+  padding: 0 8px;
+  margin: 0 2px;
+  border-radius: 100%; /* Fully rounded buttons */
   color: #9ca3af; /* Muted text color */
   background-color: transparent; /* Transparent background by default */
   transition: all 0.2s ease-in-out;
@@ -70,11 +70,11 @@ window#waybar.hidden {
 
 #workspaces {
   background-color: rgba(17, 24, 39, 0.9); /* Semi-transparent dark background */
-  border-radius: 9999px; /* Fully rounded ends for pill shape */
-  padding: 2px 4px; /* Padding inside the pill */
+  border-radius: 100%; /* Fully rounded ends for pill shape */
+  padding: 2px 2px; /* Padding inside the pill */
   margin: 0px;
   min-width: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 #window {
