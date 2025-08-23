@@ -1,0 +1,167 @@
+/* ===== Waybar Minimal CSS ===== */
+
+* {
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/* Main window */
+window#waybar {
+  background: rgba(30, 30, 30, 0.95);
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* All modules default styling */
+.modules-left,
+.modules-center,
+.modules-right {
+  background: transparent;
+}
+
+.modules-left > widget:first-child > * {
+  margin-left: 12px;
+}
+
+.modules-right > widget:last-child > * {
+  margin-right: 12px;
+}
+
+/* Individual modules */
+#workspaces,
+#window,
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#wireplumber,
+#custom-storage,
+#custom-power {
+  background: transparent;
+  color: #ffffff;
+  padding: 0 8px;
+  margin: 0 2px;
+}
+
+/* Workspaces */
+#workspaces {
+  padding: 0;
+}
+
+#workspaces button {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border: none;
+  padding: 4px 8px;
+  margin: 0 2px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+#workspaces button.focused {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+/* Clock - center highlight */
+#clock {
+  font-weight: 500;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+
+/* Battery states */
+#battery.warning {
+  color: #ffcc02;
+}
+
+#battery.critical {
+  color: #ff5555;
+}
+
+#battery.charging {
+  color: #50fa7b;
+}
+
+/* Temperature states */
+#temperature.critical {
+  color: #ff5555;
+}
+
+/* System tray */
+#tray {
+  padding: 0 8px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+/* Separator dot for tray */
+#tray::before {
+  content: "•";
+  color: rgba(255, 255, 255, 0.3);
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* Power button */
+#custom-power {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin-left: 4px;
+  transition: all 0.2s ease;
+}
+
+#custom-power:hover {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff5555;
+}
+
+/* Window title */
+#window {
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+/* Tooltip */
+tooltip {
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+tooltip label {
+  padding: 6px 10px;
+}
+
+/* Subtle hover effects */
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#wireplumber:hover,
+#custom-storage:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
