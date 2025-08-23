@@ -60,13 +60,11 @@ in
   # Locale
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Minimal X11 setup (only enable if needed for compatibility)
-  services.xserver.enable = lib.mkDefault false;  # Disable by default, enable if needed
-  # services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.displayManager.lightdm.greeters.gtk.enable = true;  
-  # services.xserver.desktopManager.xfce.enable = true;  # Disabled to save battery
-  
-  # Use Niri as primary compositor (Wayland-native)
+  # X11 and Desktop Environment (adjust as needed)
+  services.xserver.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm.greeters.gtk.enable = true;  
+  services.xserver.desktopManager.xfce.enable = true;
   programs.niri.enable = true;
 
   # Enable Wayland protocols
@@ -103,7 +101,7 @@ in
   # Docker support (disabled on boot for battery savings)
   virtualisation.docker = {
     enable = true;
-    enableOnBoot = false;  # Start manually when needed
+    enableOnBoot = true;
     autoPrune.enable = true;
   };
 
@@ -125,8 +123,8 @@ in
       START_CHARGE_THRESH_BAT0 = 40;
       STOP_CHARGE_THRESH_BAT0 = 80;  # Battery charge limiting
       
-      WIFI_PWR_ON_AC = "off";
-      WIFI_PWR_ON_BAT = "on";
+      # WIFI_PWR_ON_AC = "off";
+      # WIFI_PWR_ON_BAT = "on";
     };
   };
 
