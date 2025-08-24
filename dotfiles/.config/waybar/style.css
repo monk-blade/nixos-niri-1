@@ -125,16 +125,13 @@ window#waybar {
 /* Power button */
 #custom-power {
   color: #cdd6f4;
-  background: #252538;
-  border-radius: 4px;
-  padding: 4px 6px;
+  padding: 4px 4px;
   margin-left: 4px;
   transition: all 0.2s ease;
 }
 
 #custom-power:hover {
-  background: #f38ba8;
-  color: #141420;
+  color: #f38ba8;
 }
 
 /* Idle Inhibitor (Keep Awake) */
@@ -192,4 +189,3 @@ tooltip label {
   border-radius: 4px;
   transition: background 0.2s ease;
 }
-
