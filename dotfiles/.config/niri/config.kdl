@@ -296,7 +296,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^(code|Code|VSCodium|zen|google-chrome|chromium|firefox|discord|steam|ghostty|slack)$"#
+    match app-id=r#"^(code|Code|VSCodium|zen-browser|google-chrome|chromium|firefox|discord|steam)$"#
     default-column-width { proportion 1.0; }
 }
 
