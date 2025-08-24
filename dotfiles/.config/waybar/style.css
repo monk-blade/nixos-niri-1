@@ -138,7 +138,6 @@ window#waybar {
 #custom-power {
   color: #cdd6f4;
   padding: 4px 4px;
-  margin-left: 4px;
   transition: all 0.2s ease;
 }
 
