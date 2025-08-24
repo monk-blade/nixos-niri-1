@@ -7,8 +7,8 @@ font-size = 12
 
 # Window Configuration
 window-save-state = never
-# window-padding-x = 10
-# window-padding-y = 10
+window-padding-x = 10
+window-padding-y = 10
 window-decoration = false
 # Custom color scheme
 # background = #141415
