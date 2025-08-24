@@ -51,9 +51,9 @@ case "$1" in
             count=0
         fi
         if [ "$count" -gt 0 ]; then
-            echo "{\"text\": \"$count\", \"tooltip\": \"$count notifications\", \"class\": \"notifications\"}"
+            echo "{\"text\": \"$count\", \"tooltip\": \"$count notifications\", \"class\": \"notifications\", \"icon\": \"notifications\"}"
         else
-            echo "{\"text\": \"\", \"tooltip\": \"No notifications\", \"class\": \"no-notifications\"}"
+            echo "{\"text\": \"\", \"tooltip\": \"No notifications\", \"class\": \"no-notifications\", \"icon\": \"no-notifications\"}"
         fi
         ;;
 esac
