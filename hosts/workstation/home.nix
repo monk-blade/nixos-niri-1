@@ -34,7 +34,7 @@ in
     swww
     waypaper
     fuzzel  # Application launcher
-    mako  # Lightweight notification daemon
+    # mako  # Lightweight notification daemon
     swaynotificationcenter  # SwayNC notification daemon
     libnotify  # Provides notify-send command
     hyprlock  # Screen locker
@@ -112,7 +112,6 @@ in
     ".config/niri".source = ../../dotfiles/.config/niri;
     ".config/fuzzel".source = ../../dotfiles/.config/fuzzel;
     ".config/waybar".source = ../../dotfiles/.config/waybar;
-    ".config/mako".source = ../../dotfiles/.config/mako;
     
     # Development configs
     ".config/nvim".source = ../../dotfiles/.config/nvim;
