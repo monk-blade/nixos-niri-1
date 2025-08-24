@@ -109,10 +109,10 @@
         "tooltip-format": "Battery: {capacity}%\nTime: {time}\nPower: {power}W"
     },
     "network": {
-        "format-wifi": "󰤨 ",
-        "format-ethernet": "󰛳 ",
-        "format-linked": "󰤭 ",
-        "format-disconnected": "󰤭 ",
+        "format-wifi": "󰤨",
+        "format-ethernet": "󰛳",
+        "format-linked": "󰤭",
+        "format-disconnected": "󰤭",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "Ethernet: {ifname}\nIP: {ipaddr}/{cidr}\n󰊗 {bandwidthUpBits}  󰊘 {bandwidthDownBits}",
         "tooltip-format-wifi": "WiFi: {essid} ({signalStrength}%)\nFrequency: {frequency}MHz\nSignal: {signaldBm}dBm\nIP: {ipaddr}/{cidr}\n󰊗 {bandwidthUpBits}  󰊘 {bandwidthDownBits}",
