@@ -5,7 +5,7 @@
     "layer": "top",
     "position": "top",
     // "output": ["eDP-1", "HDMI-A-1"], // Commented out to work with any display
-    "height": 22,
+    "height": 20,
     "margin-left": 0,
     "margin-bottom": 0,
     "margin-right": 0,
