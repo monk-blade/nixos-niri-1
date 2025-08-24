@@ -58,7 +58,7 @@ window#waybar {
 #workspaces button {
   background: #1a1a28;
   color: #4a4a64;
-  border: none;
+  border-bottom: 1px solid #383850;
   padding: 4px 4px;
   margin: 0 2px;
   border-radius: 0px;
@@ -84,12 +84,14 @@ window#waybar {
   padding: 4px 10px;
   background: #1a1a28;
   border-radius: 0px;
+  border-bottom: 1px solid #383850;
 }
 #custom-next-prayer {
   font-weight: 500;
   padding: 4px 10px;
   background: #1a1a28;
   border-radius: 0px;
+  border-bottom: 1px solid #383850;
 }
 
 /* Battery states */
