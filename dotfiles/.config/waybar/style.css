@@ -66,13 +66,15 @@ window#waybar {
 }
 
 #workspaces button.focused {
-  color: #cdd6f4;
-  background: #383850;
+  background: #285577;
+  color: #fff;
+  border: #89b4fa 1px solid;
 }
 
-#workspaces button:hover {
-  background: #252538;
-  color: #cdd6f4;
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+  border: #da605e 1px solid;
+  color: #fff;
 }
 
 /* Clock - center highlight */
