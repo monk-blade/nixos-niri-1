@@ -185,7 +185,7 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // Border enabled - colors will be handled by Stylix
-        width 2
+        width 1
 
         // Colors removed to let Stylix handle them
         active-color "#89b4fa"    // Catppuccin Blue (matches Stylix accent)
