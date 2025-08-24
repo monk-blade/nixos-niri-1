@@ -34,6 +34,7 @@ in
     waypaper
     fuzzel  # Application launcher
     mako  # Lightweight notification daemon
+    libnotify  # Provides notify-send command
     hyprlock  # Screen locker
     wl-clipboard  # Wayland clipboard utilities
     grim  # Screenshot utility
