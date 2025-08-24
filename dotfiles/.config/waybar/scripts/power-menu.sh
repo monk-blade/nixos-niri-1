@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Power menu options
 options="🔒 Lock\n🚪 Logout\n💤 Suspend\n🔄 Reboot\n⚡ Shutdown"
