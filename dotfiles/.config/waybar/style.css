@@ -44,6 +44,7 @@ window#waybar {
 #idle_inhibitor,
 #custom-storage,
 #custom-next-prayer,
+#custom-notifications,
 #custom-power {
   background: transparent;
   color: #cdd6f4;
