@@ -37,6 +37,8 @@ window#waybar {
 #battery,
 #cpu,
 #memory,
+#network,
+#bluetooth,
 #temperature,
 #language,
 #backlight,
@@ -48,7 +50,7 @@ window#waybar {
 #custom-power {
   background: transparent;
   color: #cdd6f4;
-  padding: 0 8px;
+  padding: 0 4px;
   margin: 0 2px;
 }
 
