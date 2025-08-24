@@ -29,17 +29,17 @@
         "niri/language",
         "backlight",
         "custom/storage",
-        "temperature",
         "memory",
         "cpu",
         "network",
         "bluetooth",
         "battery",
-        //"pulseaudio",
         "wireplumber",
         "custom/notifications",
         "custom/power",
         "tray"
+        // "temperature",
+        //"pulseaudio",
     ],
     // -------------------------------------------------------------------------
     // Modules

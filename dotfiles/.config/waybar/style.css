@@ -175,7 +175,6 @@ window#waybar {
 #window {
   color: #cdd6f4;
   font-style: italic;
-  max-width: 48px;
 }
 
 /* Tooltip */
