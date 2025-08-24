@@ -328,8 +328,8 @@
     },
     "niri/language": {
         "format": "󰌓 {}",
-        "format-en": "󰌓 us",
-        "format-fr": "󰌓 fr",
+        "format-en": "us",
+        "format-fr": "fr",
         "tooltip-format": "Language: {long}"
     }
 }

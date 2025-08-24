@@ -14,7 +14,7 @@ input {
 
             // For example:
             layout "us,fr"
-            options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+            options "compose:ralt,ctrl:nocaps"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -352,6 +352,9 @@ binds {
     Shift+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+E hotkey-overlay-title="Open a File Manager: thunar" { spawn "thunar"; }
     Mod+X {spawn "wlogout";}
+    
+    // Language switching
+    Alt+Mod+Ctrl+Space hotkey-overlay-title="Switch Language" { switch-layout "next"; }
 	// You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec ghostty"; }
