@@ -38,6 +38,7 @@ window#waybar {
 #cpu,
 #memory,
 #temperature,
+#language,
 #backlight,
 #wireplumber,
 #idle_inhibitor,
