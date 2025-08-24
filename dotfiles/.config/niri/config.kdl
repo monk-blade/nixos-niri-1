@@ -103,7 +103,7 @@ output "eDP-1" {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 12
+    gaps 10
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -296,7 +296,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^(code|Code|VSCodium|zen-browser|google-chrome|chromium|firefox|discord|steam)$"#
+    match app-id=r#"^(code|Code|VSCodium|zen|google-chrome|chromium|firefox|discord|steam|ghostty|slack)$"#
     default-column-width { proportion 1.0; }
 }
 
