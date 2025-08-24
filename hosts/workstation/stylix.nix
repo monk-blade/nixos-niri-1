@@ -29,16 +29,11 @@ in
       name = "Noto Serif";
     };
     sizes = {
-      applications = 11;
+      applications = 12;
       terminal = 14;
-      desktop = 11;
-      popups = 10;
+      desktop = 12;
+      popups = 12;
     };
-  };
-  
-  # Disable theming for applications we manage differently
-  stylix.targets = {
-    tmux.enable = false;  # tmux is now a Nix module with custom theming
   };
   
   # Override specific colors
