@@ -50,8 +50,8 @@ window#waybar {
 #custom-power {
   background: transparent;
   color: #cdd6f4;
-  padding: 0 4px;
-  margin: 0 2px;
+  padding: 0px 4px;
+  margin: 0px 0px;
 }
 
 /* Workspaces */
@@ -196,10 +196,14 @@ tooltip label {
 #cpu:hover,
 #memory:hover,
 #temperature:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-notifications:hover,
 #backlight:hover,
 #wireplumber:hover,
 #custom-storage:hover {
   background: #252538;
+  color: #89b4fa;
   border-radius: 0px;
   transition: background 0.2s ease;
 }
