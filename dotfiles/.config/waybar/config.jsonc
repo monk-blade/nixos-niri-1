@@ -178,7 +178,7 @@
         //"exec": "~/.config/waybar/mediaplayer.py" // Script in resources folder
     },
     "custom/power": {
-        "format": " ",
+        "format": " ",
         "tooltip": false,
         "on-click": "~/.config/waybar/scripts/power-menu.sh"
     },
