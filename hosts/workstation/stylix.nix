@@ -25,7 +25,7 @@ in
       name = "Noto Sans";
     };
     serif = {
-      package = pkgs.nerd-fonts.space-mono;
+      package = pkgs.noto-fonts;
       name = "Noto Serif";
     };
     sizes = {
@@ -36,10 +36,9 @@ in
     };
   };
   
-  # Disable theming for applications we don't use or manage differently
+  # Disable theming for applications we manage differently
   stylix.targets = {
     tmux.enable = false;  # tmux is now a Nix module with custom theming
-    mako.enable = false;  # We use SwayNC instead
   };
   
   # Override specific colors
