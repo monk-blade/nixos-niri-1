@@ -150,7 +150,7 @@ window#waybar {
 #idle_inhibitor {
   color: #cdd6f4;
   background: #252538;
-  border-radius: 4px;
+  border-radius: 0px;
   padding: 4px 6px;
   margin: 0 2px;
   transition: all 0.2s ease;
@@ -198,6 +198,6 @@ tooltip label {
 #wireplumber:hover,
 #custom-storage:hover {
   background: #252538;
-  border-radius: 4px;
+  border-radius: 0px;
   transition: background 0.2s ease;
 }

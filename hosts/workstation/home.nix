@@ -84,6 +84,10 @@ in
     pavucontrol
     jq
     wlsunset
+    
+    # Network & Bluetooth Management
+    networkmanagerapplet  # nm-connection-editor
+    blueman  # Bluetooth manager
 
     # System Monitoring & Info
     nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
