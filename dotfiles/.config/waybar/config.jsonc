@@ -325,5 +325,11 @@
     "tray": {
         "icon-size": 12,
         "spacing": 3
+    },
+    "niri/language": {
+        "format": "󰌓 {}",
+        "format-en": "󰌓 us",
+        "format-fr": "󰌓 fr",
+        "tooltip-format": "Language: {long}"
     }
 }
