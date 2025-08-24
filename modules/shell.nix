@@ -98,7 +98,7 @@
       ga = "git add";
       gc = "git commit";
       gp = "git push";
-      gl = "git pull";
+      gP = "git pull";
       gd = "git diff";
       gco = "git checkout";
       gb = "git branch";

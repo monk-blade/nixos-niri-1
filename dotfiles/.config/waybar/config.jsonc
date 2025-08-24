@@ -35,6 +35,7 @@
         "battery",
         //"pulseaudio",
         "wireplumber",
+        "custom/notifications",
         "custom/power",
         "tray"
     ],
@@ -119,8 +120,8 @@
         "interval": 10
     },
     "custom/storage": {
-        "format": " {}",
-        "format-alt": "{percentage}% ",
+        "format": "󰋊 {}",
+        "format-alt": "{percentage}% 󰋊",
         "format-alt-click": "click-right",
         "return-type": "json",
         "interval": 60,
@@ -177,9 +178,21 @@
         //"exec": "~/.config/waybar/mediaplayer.py" // Script in resources folder
     },
     "custom/power": {
-        "format": " ",
+        "format": " ",
         "tooltip": false,
         "on-click": "~/.config/waybar/scripts/power-menu.sh"
+    },
+    "custom/notifications": {
+        "format": "{icon} {}",
+        "format-icons": {
+            "notifications": "󰂚",
+            "no-notifications": "󰂛"
+        },
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/notifications.sh",
+        "on-click": "~/.config/waybar/scripts/notifications.sh show",
+        "interval": 5,
+        "tooltip": true
     },
     "clock": {
         "format": "{:%d, %H:%M}",
