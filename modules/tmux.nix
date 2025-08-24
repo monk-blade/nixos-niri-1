@@ -22,7 +22,7 @@
         '';
       }
       {
-        plugin = tmux-resurrect;
+        plugin = resurrect;
         extraConfig = ''set -g @resurrect-capture-pane-contents 'on'
         '';
       }
