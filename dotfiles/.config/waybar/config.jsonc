@@ -127,7 +127,7 @@
         "exec": "~/.config/waybar/modules/storage.sh"
     },
     "custom/next-prayer": {
-        "format": " {}",
+        "format": "{}",
         "interval": 60,
         "exec": "~/.config/waybar/scripts/next-prayer.sh",
         "tooltip": true,

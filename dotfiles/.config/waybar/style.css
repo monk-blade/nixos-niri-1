@@ -180,8 +180,8 @@ window#waybar {
 tooltip {
   background: #1a1a28;
   border: 1px solid #383850;
-  border-radius: 6px;
-  color: #cdd6f4;
+  border-radius: 0px;
+  /* color: #cdd6f4; */
 }
 
 tooltip label {
