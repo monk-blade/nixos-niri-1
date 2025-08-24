@@ -8,6 +8,7 @@ in
   imports = [
     ../../globals.nix 
     ../../modules/shell.nix
+    ../../modules/tmux.nix
   ];
   
   # Basic info
@@ -104,7 +105,6 @@ in
   home.file = {
     # Shell & Terminal configs
     ".config/ghostty".source = ../../dotfiles/.config/ghostty;
-    ".config/tmux".source = ../../dotfiles/.config/tmux;
     ".config/starship".source = ../../dotfiles/.config/starship;
     ".config/lazygit".source = ../../dotfiles/.config/lazygit;
     
