@@ -19,6 +19,7 @@
         "niri/window"
     ],
     "modules-center": [
+        "custom/notifications",
         "clock",
         "niri/workspaces",
         "custom/next-prayer"
@@ -26,16 +27,15 @@
         //"custom/gammastep"
     ],
     "modules-right": [
-        "niri/language",
-        "backlight",
+        // "niri/language",
         "custom/storage",
         "memory",
         "cpu",
+        "backlight",
+        "wireplumber",
         "network",
         "bluetooth",
         "battery",
-        "wireplumber",
-        "custom/notifications",
         "custom/power",
         "tray"
         // "temperature",
