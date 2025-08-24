@@ -109,17 +109,18 @@
         "tooltip-format": "Battery: {capacity}%\nTime: {time}\nPower: {power}W"
     },
     "network": {
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format": "",
-        "format-disconnected": "",
+        "format-wifi": "󰤨",
+        "format-ethernet": "󰈀",
+        "format-linked": "󰤭",
+        "format-disconnected": "󰤭",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
-        "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
-        "tooltip-format": " {bandwidthUpBits}  {bandwidthDownBits}\n{ifname}\n{ipaddr}/{cidr}\n",
-        "tooltip-format-wifi": " {essid} {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n {bandwidthUpBits}  {bandwidthDownBits}",
-        "interval": 10
+        "tooltip-format": "Ethernet: {ifname}\nIP: {ipaddr}/{cidr}\n󰊗 {bandwidthUpBits}  󰊘 {bandwidthDownBits}",
+        "tooltip-format-wifi": "WiFi: {essid} ({signalStrength}%)\nFrequency: {frequency}MHz\nSignal: {signaldBm}dBm\nIP: {ipaddr}/{cidr}\n󰊗 {bandwidthUpBits}  󰊘 {bandwidthDownBits}",
+        "tooltip-format-ethernet": "Ethernet: {ifname}\nIP: {ipaddr}/{cidr}\n󰊗 {bandwidthUpBits}  󰊘 {bandwidthDownBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "nm-connection-editor",
+        "on-click-right": "wl-copy $(ip route get 1.1.1.1 | grep -oP 'src \\K\\S+')",
+        "interval": 5
     },
     "custom/storage": {
         "format": "󰋊 {}",
@@ -150,17 +151,20 @@
         "on-scroll-up": "brightnessctl s +5%"
     },
     "bluetooth": {
-        "format": "󰂯 {status}",
+        "format": "󰂯",
         "format-disabled": "󰂲",
         "format-off": "󰂲",
         "format-on": "󰂯",
-        "format-connected": "󰂱 {device_alias}",
-        "format-connected-battery": "󰂱 {device_alias} ({device_battery_percentage}%)",
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "on-click": "blueman-manager"
+        "format-connected": "󰂱",
+        "format-connected-battery": "󰂱",
+        "tooltip-format": "Bluetooth: {status}\nController: {controller_alias}\nConnections: {num_connections}",
+        "tooltip-format-connected": "Bluetooth: Connected\nDevice: {device_alias}\nController: {controller_alias}\nConnections: {num_connections}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias} ({device_address})",
+        "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_address}) - {device_battery_percentage}%",
+        "tooltip-format-disabled": "Bluetooth: Disabled",
+        "tooltip-format-off": "Bluetooth: Off",
+        "on-click": "blueman-manager",
+        "on-click-right": "bluetoothctl power toggle"
     },
     "idle_inhibitor": {
         "format": "{icon}",

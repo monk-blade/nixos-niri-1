@@ -111,7 +111,6 @@ in
     # Wayland & Window Manager configs
     ".config/niri".source = ../../dotfiles/.config/niri;
     ".config/fuzzel".source = ../../dotfiles/.config/fuzzel;
-    ".config/mako".source = ../../dotfiles/.config/mako;
     ".config/waybar".source = ../../dotfiles/.config/waybar;
     
     # Development configs

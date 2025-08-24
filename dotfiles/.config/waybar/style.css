@@ -118,7 +118,7 @@ window#waybar {
 #tray {
   padding: 0 8px;
   border-left: 2px dotted #4a4a64;
-  margin-left: 8px;
+  margin: 0px 8px;
 }
 
 #tray > .passive {
@@ -132,7 +132,7 @@ window#waybar {
 /* Separator dot for tray */
 #tray {
   border-left: 2px dotted rgba(255, 255, 255, 0.2);
-  margin-left: 8px;
+  margin: 0px 8px;
 }
 
 /* Power button */
@@ -175,6 +175,7 @@ window#waybar {
 #window {
   color: #cdd6f4;
   font-style: italic;
+  max-width: 48px;
 }
 
 /* Tooltip */
