@@ -82,7 +82,6 @@ in
     waybar
     pavucontrol
     jq
-    wlogout
     wlsunset
 
     # System Monitoring & Info
@@ -108,7 +107,6 @@ in
     ".config/fuzzel".source = ../../dotfiles/.config/fuzzel;
     ".config/mako".source = ../../dotfiles/.config/mako;
     ".config/waybar".source = ../../dotfiles/.config/waybar;
-    ".config/wlogout".source = ../../dotfiles/.config/wlogout;
     
     # Development configs
     ".config/nvim".source = ../../dotfiles/.config/nvim;
