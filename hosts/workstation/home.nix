@@ -190,6 +190,23 @@ in
       };
       Install.WantedBy = [ "graphical-session.target" ];
     };
+
+    # SwayNC notification daemon
+    swaync = {
+      Unit = {
+        Description = "SwayNotificationCenter";
+        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session.target" ];
+      };
+      Service = {
+        Type = "dbus";
+        BusName = "org.freedesktop.Notifications";
+        ExecStart = "${pkgs.swaynotificationcenter}/bin/swaync";
+        Restart = "on-failure";
+        RestartSec = "1";
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
   };
 
   # Environment variables
