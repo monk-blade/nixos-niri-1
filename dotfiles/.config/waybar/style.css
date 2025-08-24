@@ -80,9 +80,9 @@ window#waybar {
 /* Clock - center highlight */
 #clock {
   font-weight: 500;
-  padding: 4px 12px;
-  background: #252538;
-  border-radius: 6px;
+  padding: 4px 10px;
+  background: #1a1a28;
+  border-radius: 0px;
 }
 
 /* Battery states */
