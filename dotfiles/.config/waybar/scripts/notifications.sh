@@ -46,6 +46,10 @@ case "$1" in
     *)
         # Default: return count for waybar
         count=$(get_notification_count)
+        # Ensure count is a valid integer
+        if ! [[ "$count" =~ ^[0-9]+$ ]]; then
+            count=0
+        fi
         if [ "$count" -gt 0 ]; then
             echo "{\"text\": \"$count\", \"tooltip\": \"$count notifications\", \"class\": \"notifications\"}"
         else
