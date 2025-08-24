@@ -42,6 +42,7 @@ window#waybar {
 #wireplumber,
 #idle_inhibitor,
 #custom-storage,
+#custom-next-prayer,
 #custom-power {
   background: transparent;
   color: #cdd6f4;
@@ -84,7 +85,7 @@ window#waybar {
   background: #1a1a28;
   border-radius: 0px;
 }
-#next-prayer {
+#custom-next-prayer {
   font-weight: 500;
   padding: 4px 10px;
   background: #1a1a28;
