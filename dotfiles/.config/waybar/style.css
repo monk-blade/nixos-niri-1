@@ -13,8 +13,6 @@ window#waybar {
   background: #141420;
   color: #cdd6f4;
   border-bottom: 1px solid #383850;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 /* All modules default styling */
@@ -25,11 +23,11 @@ window#waybar {
 }
 
 .modules-left > widget:first-child > * {
-  margin-left: 0px;
+  margin-left: 8px;
 }
 
 .modules-right > widget:last-child > * {
-  margin-right: 0px;
+  margin-right: 3px;
 }
 
 /* Individual modules */
@@ -53,7 +51,6 @@ window#waybar {
   background: transparent;
   color: #cdd6f4;
   padding: 0px 4px;
-  margin: 0px 0px;
 }
 
 /* Workspaces */
