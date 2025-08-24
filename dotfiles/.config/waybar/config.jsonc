@@ -15,7 +15,6 @@
     "font-weight": 400,
     "modules-left": [
         //"custom/rofi",
-        //"niri/language",
         //"mpd"
         "niri/window"
     ],
@@ -27,6 +26,7 @@
         //"custom/gammastep"
     ],
     "modules-right": [
+        "niri/language",
         "backlight",
         "custom/storage",
         "temperature",
@@ -61,7 +61,7 @@
     "memory": {
         "interval": 30,
         "format": " {percentage}%",
-        "on-click": "foot -e btop"
+        "on-click": "ghostty -e btop"
     },
     "battery": {
         "interval": 2,
@@ -219,7 +219,7 @@
         "format-disconnected": "",
         "on-click": "mpc --quiet toggle",
         "on-click-right": "mpc update; mpc ls | mpc add",
-        "on-click-middle": "foot -e ncmpcpp",
+        "on-click-middle": "ghostty -e ncmpcpp",
         "on-scroll-up": "mpc --quiet prev",
         "on-scroll-down": "mpc --quiet next",
         "smooth-scrolling-threshold": 5,
