@@ -200,14 +200,21 @@
     "custom/notifications": {
         "format": "{icon} {}",
         "format-icons": {
-            "notifications": "󰂚",
-            "no-notifications": "󰂛"
+            "notification": "󰂚",
+            "none": "󰂛",
+            "dnd-notification": "󰂛",
+            "dnd-none": "󰂛",
+            "inhibited-notification": "󰂚",
+            "inhibited-none": "󰂛",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰂛"
         },
         "return-type": "json",
-        "exec": "~/.config/waybar/scripts/notifications.sh",
-        "on-click": "~/.config/waybar/scripts/notifications.sh show",
-        "interval": 5,
-        "tooltip": true
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
     "clock": {
         "format": "{:%d, %H:%M}",

@@ -33,7 +33,8 @@ in
     swww
     waypaper
     fuzzel  # Application launcher
-    mako  # Lightweight notification daemon
+    # mako  # Lightweight notification daemon
+    swaynotificationcenter  # SwayNC notification daemon
     libnotify  # Provides notify-send command
     hyprlock  # Screen locker
     wl-clipboard  # Wayland clipboard utilities
