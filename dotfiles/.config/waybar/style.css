@@ -23,11 +23,11 @@ window#waybar {
 }
 
 .modules-left > widget:first-child > * {
-  margin-left: 14px;
+  margin-left: 18px;
 }
 
 .modules-right > widget:last-child > * {
-  margin-right: 14px;
+  margin-right: 18px;
 }
 
 /* Individual modules */
