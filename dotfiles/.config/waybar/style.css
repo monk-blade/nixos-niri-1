@@ -202,7 +202,7 @@ tooltip label {
 #backlight:hover,
 #wireplumber:hover,
 #custom-storage:hover {
-  background: #252538;
+  background: #1a1a28;
   color: #89b4fa;
   border-radius: 0px;
   transition: background 0.2s ease;
