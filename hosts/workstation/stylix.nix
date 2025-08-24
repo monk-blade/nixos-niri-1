@@ -36,6 +36,11 @@ in
     };
   };
   
+  # Disable theming for applications we don't use
+  stylix.targets = {
+    mako.enable = false;  # We use SwayNC instead
+  };
+  
   # Override specific colors
   stylix.override = {
     # Base colors - moderately darker variants of Catppuccin Mocha
