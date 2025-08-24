@@ -8,7 +8,7 @@ in
   imports = [
     ../../globals.nix 
     ../../modules/shell.nix
-    ../../modules/tmux.nix
+    # ../../modules/tmux.nix  # Temporarily disabled for cleanup
   ];
   
   # Basic info
