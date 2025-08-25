@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
 
-# Power menu options
-options="🔒 Lock\n🚪 Logout\n💤 Suspend\n🔄 Reboot\n⚡ Shutdown"
+# Power menu options with Nerd Font icons
+options=" Lock\n󰗽 Logout\n󰤄 Suspend\n󰜉 Reboot\n󰐥 Shutdown"
 
 # Show fuzzel menu and get selection
-selected=$(echo -e "$options" | fuzzel --dmenu --prompt="Power: " --width=30 --lines=5)
+selected=$(echo -e "$options" | fuzzel --dmenu --prompt="󰐥 Power: " --width=32 --lines=5)
 
 case $selected in
-    "🔒 Lock")
+    " Lock")
         hyprlock
         ;;
-    "🚪 Logout")
+    "󰗽 Logout")
         niri msg action quit
         ;;
-    "💤 Suspend")
+    "󰤄 Suspend")
         systemctl suspend
         ;;
-    "🔄 Reboot")
+    "󰜉 Reboot")
         systemctl reboot
         ;;
-    "⚡ Shutdown")
+    "󰐥 Shutdown")
         systemctl poweroff
         ;;
 esac
