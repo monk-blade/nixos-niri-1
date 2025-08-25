@@ -1,5 +1,14 @@
 /* SwayNC Custom Styling - Matching Ghostty/Niri Aesthetic */
 
+/* Transparent backdrop */
+.swaync-notification-window {
+  background: transparent;
+}
+
+.swaync-control-center {
+  background: transparent;
+}
+
 /* Global Variables - Will be overridden by Stylix */
 * {
   font-family: "SpaceMono Nerd Font";
