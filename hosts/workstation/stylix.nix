@@ -56,4 +56,10 @@ in
     base0E = "cba6f7";
     base0F = "f2cdcd";
   };
+
+
+  # Stylix targets configuration
+  stylix.targets = {
+    swaync.enable = true;
+  };
 }

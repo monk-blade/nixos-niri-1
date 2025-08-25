@@ -20,7 +20,7 @@ in
   # Install your packages here (keeping it minimal for fast setup)
   home.packages = with pkgs; [
     # browser
-    brave
+    # brave
     inputs.zen-browser.packages."${pkgs.system}".default
     
     # Terminal & Shell
@@ -218,7 +218,7 @@ in
   # Environment variables
   home.sessionVariables = {
     EDITOR = "nvim";
-    BROWSER = "brave";
+    BROWSER = "zen";
     
     # Development environment
     TERM = "xterm-256color";
