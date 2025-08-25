@@ -256,8 +256,8 @@ spawn-at-startup "mako"
 spawn-at-startup "waybar"
 
 // Launch applications on startup with specific workspace assignments
-spawn-at-startup "zen"
-spawn-at-startup "chromium --app=https://web.whatsapp.com"
+spawn-at-startup "zen-browser"
+spawn-at-startup "chromium --new-window --app=https://web.whatsapp.com"
 spawn-at-startup "slack"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -307,21 +307,21 @@ window-rule {
 
 // Zen Browser: Launch on workspace 1 with 100% screen width
 window-rule {
-    match app-id="zen-browser"
+    match app-id="zen-beta"
     open-on-workspace "1"
     default-column-width { proportion 1.0; }
 }
 
 // WhatsApp Web: Launch on workspace 8
 window-rule {
-    match app-id="chromium" title="WhatsApp"
+    match app-id="chromium-browser" title=r#".*WhatsApp.*"#
     open-on-workspace "8"
     default-column-width { proportion 0.8; }
 }
 
 // Slack: Launch on workspace 9
 window-rule {
-    match app-id="slack"
+    match app-id="Slack"
     open-on-workspace "9"
     default-column-width { proportion 0.8; }
 }

@@ -107,6 +107,8 @@ in
     # Social media apps
     slack
     discord
+
+    # obs-studio
     
   ];
 
