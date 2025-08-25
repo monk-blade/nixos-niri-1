@@ -110,7 +110,7 @@
     },
     "network": {
         "format-wifi": "󰤨",
-        "format-ethernet": " ",
+        "format-ethernet": "󰛳",
         "format-linked": "󰤭",
         "format-disconnected": "󰤭",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
