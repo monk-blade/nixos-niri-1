@@ -15,18 +15,18 @@ max_entries = 200
 placeholder = " Search..."
 
 [builtins.applications]
-launch_prefix = "uwsm app -- "
-placeholder = " Search..."
-prioritize_new = false
-context_aware = false
+launch_prefix = ""
+placeholder = " Search apps..."
+prioritize_new = true
+context_aware = true
 show_sub_when_single = false
-history = false
+history = true
 icon = ""
-hidden = true
+hidden = false
 
 [builtins.applications.actions]
-enabled = false
-hide_category = true
+enabled = true
+hide_category = false
 
 [builtins.bookmarks]
 hidden = true
@@ -36,24 +36,63 @@ name = "Calculator"
 icon = ""
 min_chars = 3
 prefix = "="
+hidden = false
 
 [builtins.windows]
-switcher_only = true
-hidden = true
+switcher_only = false
+hidden = false
+icon = ""
+name = "Windows"
 
 [builtins.clipboard]
 hidden = true
 
 [builtins.commands]
-hidden = true
+hidden = false
+icon = ""
+name = "Commands"
+placeholder = " Run command..."
 
 [builtins.custom_commands]
-hidden = true
+hidden = false
+icon = "⚡"
+name = "Power & System"
+
+[[builtins.custom_commands.commands]]
+name = "Lock Screen"
+icon = ""
+cmd = "hyprlock"
+
+[[builtins.custom_commands.commands]]
+name = "Logout"
+icon = ""
+cmd = "niri msg action quit"
+
+[[builtins.custom_commands.commands]]
+name = "Suspend"
+icon = "󰒲"
+cmd = "systemctl suspend"
+
+[[builtins.custom_commands.commands]]
+name = "Reboot"
+icon = ""
+cmd = "systemctl reboot"
+
+[[builtins.custom_commands.commands]]
+name = "Shutdown"
+icon = ""
+cmd = "systemctl poweroff"
+
+[[builtins.custom_commands.commands]]
+name = "Reload Niri"
+icon = ""
+cmd = "niri msg action reload-config"
 
 [builtins.emojis]
 name = "Emojis"
 icon = ""
 prefix = ":"
+hidden = false
 
 [builtins.symbols]
 after_copy = ""
@@ -62,16 +101,21 @@ hidden = true
 [builtins.finder]
 use_fd = true
 cmd_alt = "xdg-open $(dirname ~/%RESULT%)"
-icon = "file"
-name = "Finder"
+icon = ""
+name = "Files"
 preview_images = true
 hidden = false
 prefix = "."
+placeholder = " Find files..."
 
 [builtins.runner]
 shell_config = ""
-switcher_only = true
-hidden = true
+switcher_only = false
+hidden = false
+icon = ""
+name = "Run"
+placeholder = " Execute..."
+prefix = "!"
 
 [builtins.ssh]
 hidden = true
