@@ -41,7 +41,7 @@ window {
 
 /* Individual notification styling - these should have background */
 .notification {
-  background: #141420;
+  background: #111318;
   border: 1px solid #383850;
   border-radius: 0px; /* Square borders like Niri */
   margin: 10px;
@@ -51,17 +51,17 @@ window {
 
 .notification.critical {
   border: 1px solid #f38ba8;
-  background: #141420;
+  background: #111318;
 }
 
 .notification.low {
   border: 1px solid #4a4a64;
-  background: #141420;
+  background: #111318;
 }
 
 .notification.normal {
   border: 1px solid #383850;
-  background: #141420;
+  background: #111318;
 }
 
 /* Notification Content */
@@ -107,7 +107,7 @@ window {
 
 /* Control Center - this should have background */
 .control-center {
-  background: #141420;
+  background: #111318;
   border: 1px solid #383850;
   border-radius: 0px; /* Square borders */
   margin: 10px;
@@ -116,7 +116,7 @@ window {
 }
 
 .control-center-list {
-  background: #141420;
+  background: #111318;
   padding: 10px;
 }
 
@@ -130,7 +130,7 @@ window {
 /* Widget Styling */
 .widget-title {
   color: #cdd6f4;
-  background: #1a1a28;
+  background: #141420;
   padding: 15px;
   font-weight: bold;
   font-size: 14px;
@@ -160,7 +160,7 @@ window {
 
 /* DND Widget */
 .widget-dnd {
-  background: #1a1a28;
+  background: #141420;
   padding: 15px;
   margin: 0;
   border-bottom: 1px solid #383850;
@@ -184,7 +184,7 @@ window {
 
 /* Inhibitors Widget */
 .widget-inhibitors {
-  background: #1a1a28;
+  background: #141420;
   padding: 15px;
   margin: 0;
   border-bottom: 1px solid #383850;
@@ -250,7 +250,7 @@ window {
 
 /* Scrollbar */
 .control-center scrollbar {
-  background: #1a1a28;
+  background: #141420;
   border-radius: 0px;
   border: 1px solid #383850;
 }
@@ -279,7 +279,7 @@ window {
 
 /* Notification Group */
 .notification-group {
-  background: #141420;
+  background: #111318;
   border: 1px solid #383850;
   border-radius: 0px;
   margin: 10px;
@@ -287,7 +287,7 @@ window {
 }
 
 .notification-group-headers {
-  background: #1a1a28;
+  background: #141420;
   border-bottom: 1px solid #383850;
   padding: 10px;
 }

@@ -10,7 +10,7 @@
 
 /* Main window */
 window#waybar {
-  background: #141420;
+  background: #111318;
   color: #cdd6f4;
   border-bottom: 1px solid #383850;
 }
@@ -59,7 +59,7 @@ window#waybar {
 }
 
 #workspaces button {
-  background: #1a1a28;
+  background: #141420;
   color: #4a4a64;
   border-bottom: 1px solid #383850;
   padding: 4px 4px;
@@ -85,14 +85,14 @@ window#waybar {
 #clock {
   font-weight: 500;
   padding: 4px 10px;
-  background: #1a1a28;
+  background: #141420;
   border-radius: 0px;
   border-bottom: 1px solid #383850;
 }
 #custom-next-prayer {
   font-weight: 500;
   padding: 4px 10px;
-  background: #1a1a28;
+  background: #141420;
   border-radius: 0px;
   border-bottom: 1px solid #383850;
 }
@@ -180,7 +180,7 @@ window#waybar {
 
 /* Tooltip */
 tooltip {
-  background: #1a1a28;
+  background: #141420;
   border: 1px solid #383850;
   border-radius: 0px;
   /* color: #cdd6f4; */
@@ -201,7 +201,7 @@ tooltip label {
 #backlight:hover,
 #wireplumber:hover,
 #custom-storage:hover {
-  background: #1a1a28;
+  background: #141420;
   color: #89b4fa;
   border-radius: 0px;
   transition: background 0.2s ease;
