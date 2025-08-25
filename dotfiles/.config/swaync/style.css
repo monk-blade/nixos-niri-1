@@ -1,0 +1,304 @@
+/* SwayNC Custom Styling - Matching Ghostty/Niri Aesthetic */
+
+/* Global Variables - Will be overridden by Stylix */
+* {
+  font-family: "SpaceMono Nerd Font";
+  font-weight: normal;
+  font-size: 12px;
+}
+
+/* Notification Window */
+.notification-row {
+  outline: none;
+  margin: 10px;
+  padding: 0;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+  background: @base01;
+}
+
+.notification {
+  background: @base00;
+  border: 1px solid @base03;
+  border-radius: 0px; /* Square borders like Niri */
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.notification.critical {
+  border: 1px solid @base08;
+  background: @base00;
+}
+
+.notification.low {
+  border: 1px solid @base04;
+  background: @base00;
+}
+
+.notification.normal {
+  border: 1px solid @base03;
+  background: @base00;
+}
+
+/* Notification Content */
+.notification-content {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-default-action {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0px;
+}
+
+.summary {
+  font-size: 14px;
+  font-weight: bold;
+  background: transparent;
+  color: @base05;
+  text-shadow: none;
+  margin: 0 0 5px 0;
+}
+
+.time {
+  font-size: 11px;
+  font-weight: normal;
+  background: transparent;
+  color: @base04;
+  text-shadow: none;
+  margin: 0;
+}
+
+.body {
+  font-size: 12px;
+  font-weight: normal;
+  background: transparent;
+  color: @base05;
+  text-shadow: none;
+  margin: 5px 0 0 0;
+}
+
+/* Control Center */
+.control-center {
+  background: @base00;
+  border: 1px solid @base03;
+  border-radius: 0px; /* Square borders */
+  margin: 10px;
+  padding: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.control-center-list {
+  background: transparent;
+  padding: 10px;
+}
+
+.control-center-list-placeholder {
+  opacity: 0.5;
+  color: @base04;
+  font-size: 14px;
+  margin: 20px;
+}
+
+/* Widget Styling */
+.widget-title {
+  color: @base05;
+  background: @base01;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  border-bottom: 1px solid @base03;
+  margin: 0;
+}
+
+.widget-title > button {
+  font-size: 12px;
+  color: @base0D;
+  text-shadow: none;
+  background: transparent;
+  border: 1px solid @base03;
+  border-radius: 0px;
+  padding: 8px 12px;
+  margin: 0 0 0 10px;
+}
+
+.widget-title > button:hover {
+  background: @base02;
+  color: @base0D;
+}
+
+.widget-title > button:active {
+  background: @base03;
+}
+
+/* DND Widget */
+.widget-dnd {
+  background: @base01;
+  padding: 15px;
+  margin: 0;
+  border-bottom: 1px solid @base03;
+}
+
+.widget-dnd > switch {
+  border-radius: 0px;
+  background: @base02;
+  border: 1px solid @base03;
+}
+
+.widget-dnd > switch:checked {
+  background: @base0D;
+}
+
+.widget-dnd > switch slider {
+  background: @base05;
+  border-radius: 0px;
+  border: 1px solid @base03;
+}
+
+/* Inhibitors Widget */
+.widget-inhibitors {
+  background: @base01;
+  padding: 15px;
+  margin: 0;
+  border-bottom: 1px solid @base03;
+}
+
+.widget-inhibitors > button {
+  font-size: 12px;
+  color: @base08;
+  text-shadow: none;
+  background: transparent;
+  border: 1px solid @base08;
+  border-radius: 0px;
+  padding: 8px 12px;
+  margin: 5px;
+}
+
+.widget-inhibitors > button:hover {
+  background: @base08;
+  color: @base00;
+}
+
+/* Notification Actions */
+.notification-action {
+  border-radius: 0px;
+  color: @base05;
+  background: @base02;
+  border: 1px solid @base03;
+  margin: 5px;
+  padding: 8px 12px;
+}
+
+.notification-action:hover {
+  background: @base03;
+  color: @base05;
+}
+
+.notification-action:active {
+  background: @base04;
+}
+
+/* Close Button */
+.close-button {
+  background: @base08;
+  color: @base00;
+  text-shadow: none;
+  padding: 4px 8px;
+  border: 1px solid @base08;
+  border-radius: 0px;
+  margin: 5px;
+}
+
+.close-button:hover {
+  background: @base09;
+  color: @base00;
+}
+
+/* Image */
+.notification-default-action .notification-content .image {
+  border-radius: 0px;
+  border: 1px solid @base03;
+  margin: 0 10px 0 0;
+}
+
+/* Scrollbar */
+.control-center scrollbar {
+  background: @base01;
+  border-radius: 0px;
+  border: 1px solid @base03;
+}
+
+.control-center scrollbar slider {
+  background: @base04;
+  border-radius: 0px;
+  border: 1px solid @base03;
+}
+
+.control-center scrollbar slider:hover {
+  background: @base05;
+}
+
+/* Blank Window (when no notifications) */
+.blank-window {
+  background: alpha(@base00, 0.95);
+  border: 1px solid @base03;
+  border-radius: 0px;
+}
+
+/* Floating Notifications */
+.floating-notifications {
+  background: transparent;
+}
+
+/* Notification Group */
+.notification-group {
+  background: @base00;
+  border: 1px solid @base03;
+  border-radius: 0px;
+  margin: 10px;
+  padding: 0;
+}
+
+.notification-group-headers {
+  background: @base01;
+  border-bottom: 1px solid @base03;
+  padding: 10px;
+}
+
+.notification-group-icon {
+  color: @base05;
+}
+
+.notification-group-header {
+  color: @base05;
+  font-weight: bold;
+}
+
+.notification-group-collapse-button {
+  background: transparent;
+  border: 1px solid @base03;
+  border-radius: 0px;
+  color: @base05;
+  padding: 4px 8px;
+}
+
+.notification-group-collapse-button:hover {
+  background: @base02;
+}
+
+/* Custom styling to match window padding like Ghostty */
+.notification-window {
+  background: transparent;
+  padding: 10px; /* Similar to Ghostty's window-padding */
+}
+
+/* Make sure all elements respect the square border aesthetic */
+* {
+  border-radius: 0px !important;
+}

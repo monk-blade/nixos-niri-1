@@ -124,6 +124,9 @@ in
     ".config/fastfetch".source = ../../dotfiles/.config/fastfetch;
     ".config/ranger".source = ../../dotfiles/.config/ranger;
     
+    # SwayNC notification center
+    ".config/swaync".source = ../../dotfiles/.config/swaync;
+    
     # Backgrounds
     ".config/backgrounds".source = ../../dotfiles/.config/backgrounds;
   };
