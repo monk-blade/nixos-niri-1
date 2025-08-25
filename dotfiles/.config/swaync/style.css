@@ -1,11 +1,16 @@
 /* SwayNC Custom Styling - Matching Ghostty/Niri Aesthetic */
 
-/* Transparent backdrop */
+/* Transparent backdrop/overlay behind notification center */
+.swaync-control-center-layer {
+  background: transparent;
+}
+
 .swaync-notification-window {
   background: transparent;
 }
 
-.swaync-control-center {
+/* Make the main overlay transparent */
+window {
   background: transparent;
 }
 
