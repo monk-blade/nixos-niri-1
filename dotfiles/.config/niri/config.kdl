@@ -353,6 +353,16 @@ binds {
     Mod+E hotkey-overlay-title="Open a File Manager: thunar" { spawn "thunar"; }
     Mod+X {spawn "wlogout";}
     
+    // Web Applications (using Zen browser in app mode)
+    Alt+A hotkey-overlay-title="Open ChatGPT" { spawn "zen" "--app=https://chatgpt.com"; }
+    Alt+C hotkey-overlay-title="Open HEY Calendar" { spawn "zen" "--app=https://app.hey.com/calendar"; }
+    Alt+H hotkey-overlay-title="Open HEY Email" { spawn "zen" "--app=https://app.hey.com"; }
+    Alt+D hotkey-overlay-title="Open Discord" { spawn "zen" "--app=https://discord.com/app"; }
+    Alt+S hotkey-overlay-title="Open Spotify" { spawn "zen" "--app=https://open.spotify.com"; }
+    Alt+W hotkey-overlay-title="Open WhatsApp" { spawn "zen" "--app=https://web.whatsapp.com"; }
+    Alt+N hotkey-overlay-title="Open Notion" { spawn "zen" "--app=https://notion.so"; }
+    Alt+F hotkey-overlay-title="Open Figma" { spawn "zen" "--app=https://figma.com"; }
+    
     // Language switching
     Alt+Mod+Ctrl+Space hotkey-overlay-title="Switch Language" { switch-layout "next"; }
 	// You can also use a shell. Do this if you need pipes, multiple commands, etc.
