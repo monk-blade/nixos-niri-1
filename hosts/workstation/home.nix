@@ -103,6 +103,11 @@ in
     auto-cpufreq  # Automatic CPU frequency scaling
 
     # libreoffice-qt6-fresh
+
+    # Social media apps
+    slack
+    discord
+    
   ];
 
   # Link your existing dotfiles

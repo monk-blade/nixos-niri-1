@@ -255,6 +255,11 @@ layout {
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
 
+// Launch applications on startup with specific workspace assignments
+spawn-at-startup "zen"
+spawn-at-startup "chromium --app=https://web.whatsapp.com"
+spawn-at-startup "slack"
+
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
@@ -298,6 +303,27 @@ window-rule {
 window-rule {
     match app-id=r#"^(code|Code|VSCodium|zen-browser|google-chrome|chromium|firefox|discord|steam)$"#
     default-column-width { proportion 1.0; }
+}
+
+// Zen Browser: Launch on workspace 1 with 100% screen width
+window-rule {
+    match app-id="zen"
+    open-on-workspace 1
+    default-column-width { proportion 1.0; }
+}
+
+// WhatsApp Web: Launch on workspace 8
+window-rule {
+    match app-id="chromium" title="WhatsApp"
+    open-on-workspace 8
+    default-column-width { proportion 0.8; }
+}
+
+// Slack: Launch on workspace 9
+window-rule {
+    match app-id="slack"
+    open-on-workspace 9
+    default-column-width { proportion 0.8; }
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -358,7 +384,6 @@ binds {
     Alt+C hotkey-overlay-title="Open HEY Calendar" { spawn "chromium" "--app=https://app.hey.com/calendar"; }
     Alt+H hotkey-overlay-title="Open HEY Email" { spawn "chromium" "--app=https://app.hey.com"; }
     Alt+D hotkey-overlay-title="Open Discord" { spawn "chromium" "--app=https://discord.com/app"; }
-    Alt+S hotkey-overlay-title="Open Spotify" { spawn "chromium" "--app=https://open.spotify.com"; }
     Alt+W hotkey-overlay-title="Open WhatsApp" { spawn "chromium" "--app=https://web.whatsapp.com"; }
     Alt+N hotkey-overlay-title="Open Notion" { spawn "chromium" "--app=https://notion.so"; }
     Alt+F hotkey-overlay-title="Open Figma" { spawn "chromium" "--app=https://figma.com"; }
