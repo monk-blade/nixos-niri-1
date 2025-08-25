@@ -45,13 +45,13 @@
 
 /* Notification Content */
 .notification-content {
-  background: transparent;
+  background: @base00;
   padding: 0;
   margin: 0;
 }
 
 .notification-default-action {
-  background: transparent;
+  background: @base00;
   padding: 0;
   margin: 0;
   border-radius: 0px;
@@ -60,7 +60,7 @@
 .summary {
   font-size: 14px;
   font-weight: bold;
-  background: transparent;
+  background: @base00;
   color: @base05;
   text-shadow: none;
   margin: 0 0 5px 0;
@@ -69,7 +69,7 @@
 .time {
   font-size: 11px;
   font-weight: normal;
-  background: transparent;
+  background: @base00;
   color: @base04;
   text-shadow: none;
   margin: 0;
@@ -78,7 +78,7 @@
 .body {
   font-size: 12px;
   font-weight: normal;
-  background: transparent;
+  background: @base00;
   color: @base05;
   text-shadow: none;
   margin: 5px 0 0 0;
@@ -95,7 +95,7 @@
 }
 
 .control-center-list {
-  background: transparent;
+  background: @base00;
   padding: 10px;
 }
 
@@ -121,7 +121,7 @@
   font-size: 12px;
   color: @base0D;
   text-shadow: none;
-  background: transparent;
+  background: @base02;
   border: 1px solid @base03;
   border-radius: 0px;
   padding: 8px 12px;
@@ -173,7 +173,7 @@
   font-size: 12px;
   color: @base08;
   text-shadow: none;
-  background: transparent;
+  background: @base02;
   border: 1px solid @base08;
   border-radius: 0px;
   padding: 8px 12px;
@@ -246,14 +246,14 @@
 
 /* Blank Window (when no notifications) */
 .blank-window {
-  background: alpha(@base00, 0.95);
+  background: @base00;
   border: 1px solid @base03;
   border-radius: 0px;
 }
 
 /* Floating Notifications */
 .floating-notifications {
-  background: transparent;
+  background: @base00;
 }
 
 /* Notification Group */
@@ -281,7 +281,7 @@
 }
 
 .notification-group-collapse-button {
-  background: transparent;
+  background: @base02;
   border: 1px solid @base03;
   border-radius: 0px;
   color: @base05;
@@ -294,7 +294,7 @@
 
 /* Custom styling to match window padding like Ghostty */
 .notification-window {
-  background: transparent;
+  background: @base00;
   padding: 10px; /* Similar to Ghostty's window-padding */
 }
 
