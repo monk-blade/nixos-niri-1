@@ -1,0 +1,42 @@
+/* Walker Default Theme - Minimal CSS */
+* {
+  all: unset;
+}
+
+window {
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+}
+
+#main {
+  background: transparent;
+  padding: 10px;
+}
+
+#input {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#list {
+  background: transparent;
+}
+
+.item {
+  background: transparent;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.item:selected {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

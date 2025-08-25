@@ -101,6 +101,8 @@ in
     acpi  # Battery status
     tlp  # Power management
     auto-cpufreq  # Automatic CPU frequency scaling
+
+    # libreoffice-qt6-fresh
   ];
 
   # Link your existing dotfiles
