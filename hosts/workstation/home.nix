@@ -21,6 +21,7 @@ in
   home.packages = with pkgs; [
     # browser
     # brave
+    chromium
     inputs.zen-browser.packages."${pkgs.system}".default
     
     # Terminal & Shell
