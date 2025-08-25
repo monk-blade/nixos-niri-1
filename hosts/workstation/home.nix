@@ -34,6 +34,8 @@ in
     swww
     waypaper
     fuzzel  # Application launcher
+    walker
+    
     # mako  # Lightweight notification daemon
     swaynotificationcenter  # SwayNC notification daemon
     libnotify  # Provides notify-send command
