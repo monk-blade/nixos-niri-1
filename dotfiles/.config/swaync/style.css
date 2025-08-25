@@ -16,12 +16,12 @@
 
 .notification-row:focus,
 .notification-row:hover {
-  background: @base01;
+  background: #1a1a28;
 }
 
 .notification {
-  background: @base00;
-  border: 1px solid @base03;
+  background: #141420;
+  border: 1px solid #383850;
   border-radius: 0px; /* Square borders like Niri */
   margin: 10px;
   padding: 15px;
@@ -29,29 +29,29 @@
 }
 
 .notification.critical {
-  border: 1px solid @base08;
-  background: @base00;
+  border: 1px solid #f38ba8;
+  background: #141420;
 }
 
 .notification.low {
-  border: 1px solid @base04;
-  background: @base00;
+  border: 1px solid #4a4a64;
+  background: #141420;
 }
 
 .notification.normal {
-  border: 1px solid @base03;
-  background: @base00;
+  border: 1px solid #383850;
+  background: #141420;
 }
 
 /* Notification Content */
 .notification-content {
-  background: @base00;
+  background: #141420;
   padding: 0;
   margin: 0;
 }
 
 .notification-default-action {
-  background: @base00;
+  background: #141420;
   padding: 0;
   margin: 0;
   border-radius: 0px;
@@ -60,8 +60,8 @@
 .summary {
   font-size: 14px;
   font-weight: bold;
-  background: @base00;
-  color: @base05;
+  background: #141420;
+  color: #cdd6f4;
   text-shadow: none;
   margin: 0 0 5px 0;
 }
@@ -69,8 +69,8 @@
 .time {
   font-size: 11px;
   font-weight: normal;
-  background: @base00;
-  color: @base04;
+  background: #141420;
+  color: #4a4a64;
   text-shadow: none;
   margin: 0;
 }
@@ -78,16 +78,16 @@
 .body {
   font-size: 12px;
   font-weight: normal;
-  background: @base00;
-  color: @base05;
+  background: #141420;
+  color: #cdd6f4;
   text-shadow: none;
   margin: 5px 0 0 0;
 }
 
 /* Control Center */
 .control-center {
-  background: @base00;
-  border: 1px solid @base03;
+  background: #141420;
+  border: 1px solid #383850;
   border-radius: 0px; /* Square borders */
   margin: 10px;
   padding: 0;
@@ -95,206 +95,206 @@
 }
 
 .control-center-list {
-  background: @base00;
+  background: #141420;
   padding: 10px;
 }
 
 .control-center-list-placeholder {
   opacity: 0.5;
-  color: @base04;
+  color: #4a4a64;
   font-size: 14px;
   margin: 20px;
 }
 
 /* Widget Styling */
 .widget-title {
-  color: @base05;
-  background: @base01;
+  color: #cdd6f4;
+  background: #1a1a28;
   padding: 15px;
   font-weight: bold;
   font-size: 14px;
-  border-bottom: 1px solid @base03;
+  border-bottom: 1px solid #383850;
   margin: 0;
 }
 
 .widget-title > button {
   font-size: 12px;
-  color: @base0D;
+  color: #89b4fa;
   text-shadow: none;
-  background: @base02;
-  border: 1px solid @base03;
+  background: #252538;
+  border: 1px solid #383850;
   border-radius: 0px;
   padding: 8px 12px;
   margin: 0 0 0 10px;
 }
 
 .widget-title > button:hover {
-  background: @base02;
-  color: @base0D;
+  background: #252538;
+  color: #89b4fa;
 }
 
 .widget-title > button:active {
-  background: @base03;
+  background: #383850;
 }
 
 /* DND Widget */
 .widget-dnd {
-  background: @base01;
+  background: #1a1a28;
   padding: 15px;
   margin: 0;
-  border-bottom: 1px solid @base03;
+  border-bottom: 1px solid #383850;
 }
 
 .widget-dnd > switch {
   border-radius: 0px;
-  background: @base02;
-  border: 1px solid @base03;
+  background: #252538;
+  border: 1px solid #383850;
 }
 
 .widget-dnd > switch:checked {
-  background: @base0D;
+  background: #89b4fa;
 }
 
 .widget-dnd > switch slider {
-  background: @base05;
+  background: #cdd6f4;
   border-radius: 0px;
-  border: 1px solid @base03;
+  border: 1px solid #383850;
 }
 
 /* Inhibitors Widget */
 .widget-inhibitors {
-  background: @base01;
+  background: #1a1a28;
   padding: 15px;
   margin: 0;
-  border-bottom: 1px solid @base03;
+  border-bottom: 1px solid #383850;
 }
 
 .widget-inhibitors > button {
   font-size: 12px;
-  color: @base08;
+  color: #f38ba8;
   text-shadow: none;
-  background: @base02;
-  border: 1px solid @base08;
+  background: #252538;
+  border: 1px solid #f38ba8;
   border-radius: 0px;
   padding: 8px 12px;
   margin: 5px;
 }
 
 .widget-inhibitors > button:hover {
-  background: @base08;
-  color: @base00;
+  background: #f38ba8;
+  color: #141420;
 }
 
 /* Notification Actions */
 .notification-action {
   border-radius: 0px;
-  color: @base05;
-  background: @base02;
-  border: 1px solid @base03;
+  color: #cdd6f4;
+  background: #252538;
+  border: 1px solid #383850;
   margin: 5px;
   padding: 8px 12px;
 }
 
 .notification-action:hover {
-  background: @base03;
-  color: @base05;
+  background: #383850;
+  color: #cdd6f4;
 }
 
 .notification-action:active {
-  background: @base04;
+  background: #4a4a64;
 }
 
 /* Close Button */
 .close-button {
-  background: @base08;
-  color: @base00;
+  background: #f38ba8;
+  color: #141420;
   text-shadow: none;
   padding: 4px 8px;
-  border: 1px solid @base08;
+  border: 1px solid #f38ba8;
   border-radius: 0px;
   margin: 5px;
 }
 
 .close-button:hover {
-  background: @base09;
-  color: @base00;
+  background: #fab387;
+  color: #141420;
 }
 
 /* Image */
 .notification-default-action .notification-content .image {
   border-radius: 0px;
-  border: 1px solid @base03;
+  border: 1px solid #383850;
   margin: 0 10px 0 0;
 }
 
 /* Scrollbar */
 .control-center scrollbar {
-  background: @base01;
+  background: #1a1a28;
   border-radius: 0px;
-  border: 1px solid @base03;
+  border: 1px solid #383850;
 }
 
 .control-center scrollbar slider {
-  background: @base04;
+  background: #4a4a64;
   border-radius: 0px;
-  border: 1px solid @base03;
+  border: 1px solid #383850;
 }
 
 .control-center scrollbar slider:hover {
-  background: @base05;
+  background: #cdd6f4;
 }
 
 /* Blank Window (when no notifications) */
 .blank-window {
-  background: @base00;
-  border: 1px solid @base03;
+  background: #141420;
+  border: 1px solid #383850;
   border-radius: 0px;
 }
 
 /* Floating Notifications */
 .floating-notifications {
-  background: @base00;
+  background: #141420;
 }
 
 /* Notification Group */
 .notification-group {
-  background: @base00;
-  border: 1px solid @base03;
+  background: #141420;
+  border: 1px solid #383850;
   border-radius: 0px;
   margin: 10px;
   padding: 0;
 }
 
 .notification-group-headers {
-  background: @base01;
-  border-bottom: 1px solid @base03;
+  background: #1a1a28;
+  border-bottom: 1px solid #383850;
   padding: 10px;
 }
 
 .notification-group-icon {
-  color: @base05;
+  color: #cdd6f4;
 }
 
 .notification-group-header {
-  color: @base05;
+  color: #cdd6f4;
   font-weight: bold;
 }
 
 .notification-group-collapse-button {
-  background: @base02;
-  border: 1px solid @base03;
+  background: #252538;
+  border: 1px solid #383850;
   border-radius: 0px;
-  color: @base05;
+  color: #cdd6f4;
   padding: 4px 8px;
 }
 
 .notification-group-collapse-button:hover {
-  background: @base02;
+  background: #252538;
 }
 
 /* Custom styling to match window padding like Ghostty */
 .notification-window {
-  background: @base00;
+  background: #141420;
   padding: 10px; /* Similar to Ghostty's window-padding */
 }
 
