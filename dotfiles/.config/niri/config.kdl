@@ -381,8 +381,8 @@ binds {
     
     // Web Applications (using Chromium in app mode )
     Alt+A hotkey-overlay-title="Open ChatGPT" { spawn "chromium" "--app=https://chatgpt.com"; }
-    Alt+C hotkey-overlay-title="Open HEY Calendar" { spawn "chromium" "--app=https://app.hey.com/calendar"; }
-    Alt+H hotkey-overlay-title="Open HEY Email" { spawn "chromium" "--app=https://app.hey.com"; }
+    // Alt+C hotkey-overlay-title="Open HEY Calendar" { spawn "chromium" "--app=https://app.hey.com/calendar"; }
+    // Alt+H hotkey-overlay-title="Open HEY Email" { spawn "chromium" "--app=https://app.hey.com"; }
     Alt+D hotkey-overlay-title="Open Discord" { spawn "chromium" "--app=https://discord.com/app"; }
     Alt+W hotkey-overlay-title="Open WhatsApp" { spawn "chromium" "--app=https://web.whatsapp.com"; }
     Alt+N hotkey-overlay-title="Open Notion" { spawn "chromium" "--app=https://notion.so"; }
