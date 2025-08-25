@@ -1,8 +1,4 @@
 close_when_open = true
-theme = "default"
-theme_base = []
-theme_location = [""]
-hotreload_theme = true
 force_keyboard_focus = true
 
 [keys.ai]
