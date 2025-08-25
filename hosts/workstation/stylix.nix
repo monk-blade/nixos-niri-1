@@ -39,8 +39,8 @@ in
   # Override specific colors
   stylix.override = {
     # Base colors - moderately darker variants of Catppuccin Mocha
-    base00 = "141420";
-    base01 = "1a1a28"; 
+    base00 = "111318";
+    base01 = "141420"; 
     base02 = "252538"; 
     base03 = "383850";
     base04 = "4a4a64";
