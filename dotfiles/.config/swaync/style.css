@@ -1,17 +1,22 @@
 /* SwayNC Custom Styling - Matching Ghostty/Niri Aesthetic */
+/* Fixed transparent backdrop for notifications and control center */
 
-/* Transparent backdrop/overlay behind notification center */
-.swaync-control-center-layer {
-  background: transparent;
-}
-
-.swaync-notification-window {
-  background: transparent;
-}
-
-/* Make the main overlay transparent */
+/* Most important - make ALL possible backdrop elements transparent */
+.swaync-control-center-layer,
+.swaync-notification-window,
+.control-center-layer,
+.notification-window-layer,
 window {
-  background: transparent;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Target any potential overlay or backdrop elements */
+.swaync-layer,
+.swaync-layer-shell,
+.swaync-overlay {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Global Variables - Will be overridden by Stylix */
@@ -26,13 +31,15 @@ window {
   outline: none;
   margin: 10px;
   padding: 0;
+  background: transparent;
 }
 
 .notification-row:focus,
 .notification-row:hover {
-  background: #1a1a28;
+  background: transparent;
 }
 
+/* Individual notification styling - these should have background */
 .notification {
   background: #141420;
   border: 1px solid #383850;
@@ -59,13 +66,13 @@ window {
 
 /* Notification Content */
 .notification-content {
-  background: #141420;
+  background: transparent;
   padding: 0;
   margin: 0;
 }
 
 .notification-default-action {
-  background: #141420;
+  background: transparent;
   padding: 0;
   margin: 0;
   border-radius: 0px;
@@ -74,7 +81,7 @@ window {
 .summary {
   font-size: 14px;
   font-weight: bold;
-  background: #141420;
+  background: transparent;
   color: #cdd6f4;
   text-shadow: none;
   margin: 0 0 5px 0;
@@ -83,7 +90,7 @@ window {
 .time {
   font-size: 11px;
   font-weight: normal;
-  background: #141420;
+  background: transparent;
   color: #4a4a64;
   text-shadow: none;
   margin: 0;
@@ -92,13 +99,13 @@ window {
 .body {
   font-size: 12px;
   font-weight: normal;
-  background: #141420;
+  background: transparent;
   color: #cdd6f4;
   text-shadow: none;
   margin: 5px 0 0 0;
 }
 
-/* Control Center */
+/* Control Center - this should have background */
 .control-center {
   background: #141420;
   border: 1px solid #383850;
@@ -258,16 +265,16 @@ window {
   background: #cdd6f4;
 }
 
-/* Blank Window (when no notifications) */
+/* Blank Window (when no notifications) - should be transparent background */
 .blank-window {
-  background: #141420;
-  border: 1px solid #383850;
+  background: transparent !important;
+  border: none;
   border-radius: 0px;
 }
 
-/* Floating Notifications */
+/* Floating Notifications - transparent background */
 .floating-notifications {
-  background: #141420;
+  background: transparent !important;
 }
 
 /* Notification Group */
@@ -306,13 +313,32 @@ window {
   background: #252538;
 }
 
-/* Custom styling to match window padding like Ghostty */
+/* Make notification window container transparent but keep individual notifications styled */
 .notification-window {
-  background: #141420;
+  background: transparent !important;
   padding: 10px; /* Similar to Ghostty's window-padding */
+}
+
+/* Additional specific targeting for potential backdrop elements */
+.swaync-blank-window,
+.swaync-notification-window .notification-window {
+  background: transparent !important;
 }
 
 /* Make sure all elements respect the square border aesthetic */
 * {
   border-radius: 0px !important;
+}
+
+/* Force transparency on any remaining backdrop elements */
+.swaync-control-center-layer > *,
+.swaync-notification-window > * {
+  background-color: transparent !important;
+}
+
+/* Target the actual window layer if it exists */
+window.swaync-notification-window,
+window.swaync-control-center {
+  background: transparent !important;
+  background-color: transparent !important;
 }
