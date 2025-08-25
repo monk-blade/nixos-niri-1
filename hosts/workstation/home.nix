@@ -114,6 +114,7 @@ in
     ".config/niri".source = ../../dotfiles/.config/niri;
     ".config/fuzzel".source = ../../dotfiles/.config/fuzzel;
     ".config/waybar".source = ../../dotfiles/.config/waybar;
+    ".config/walker".source = ../../dotfiles/.config/walker;
     
     # Development configs
     ".config/nvim".source = ../../dotfiles/.config/nvim;
