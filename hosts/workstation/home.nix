@@ -178,6 +178,20 @@ in
 
   # Systemd user services
   systemd.user.services = {
+    swww-daemon = {
+      Unit = {
+        Description = "swww wallpaper daemon";
+        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session.target" ];
+      };
+      Service = {
+        Type = "simple";
+        ExecStart = "${pkgs.swww}/bin/swww-daemon";
+        Restart = "on-failure";
+        RestartSec = "1";
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
 
     set-wallpaper = {
       Unit = {
