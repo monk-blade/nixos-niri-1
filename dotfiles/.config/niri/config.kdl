@@ -97,20 +97,12 @@ output "eDP-1" {
 
 // Layer rules for hybrid wallpaper setup
 layer-rule {
-    // swaybg workspace wallpaper (sharp) - normal behavior
     match namespace="^wallpaper$"
-    // No place-within-backdrop - stays with workspaces
-}
-
-layer-rule {
-    // swww backdrop wallpaper (blurry) - stationary in overview
-    match namespace="^swww$"
     place-within-backdrop true
 }
 layout {
     // Set gaps around windows in logical pixels.
     gaps 10
-    
     background-color "transparent"
 
     // When to center a column when changing focus, options are:
@@ -296,12 +288,11 @@ animations {
 
 // Overview configuration with proper backdrop handling
 overview {
-    zoom 0.4
-    // Disable workspace shadows for cleaner look
+    zoom 0.3
     workspace-shadow {
-        off
+        // false
+        on 
     }
-    // Use a dark backdrop color instead of transparent for now
     backdrop-color "transparent"
 }
 

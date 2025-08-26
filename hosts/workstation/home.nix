@@ -32,8 +32,8 @@ in
     
     # Wayland & Window Manager
     niri
-    swww
-    swaybg  # For overview backdrop wallpaper
+    # swww
+    swaybg 
     imagemagick  # For wallpaper blur effects
     waypaper
     fuzzel  # Application launcher
