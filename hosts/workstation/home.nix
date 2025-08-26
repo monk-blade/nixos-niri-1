@@ -85,6 +85,8 @@ in
     gnumake
     cmake
 
+    xwayland-satellite
+
     # Waybar and related tools
     waybar
     pavucontrol
