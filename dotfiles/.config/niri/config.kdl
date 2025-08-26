@@ -1,3 +1,16 @@
+// Named workspaces - always exist even when empty
+workspace "browser" {
+    // Workspace 1: Web browsers and browsing
+}
+
+workspace "terminal" {
+    // Workspace 2: Terminal applications and development
+}
+
+workspace "communication" {
+    // Workspace 3: Communication and messaging apps
+}
+
 input {
     keyboard {
         xkb {
@@ -289,24 +302,35 @@ window-rule {
     default-column-width { proportion 1.0; }
 }
 
-// Zen Browser: Launch on workspace 1 with 100% screen width
+// Browser workspace - Web browsers and browsing
 window-rule {
     match app-id="zen-beta"
-    open-on-workspace "1"
+    open-on-workspace "browser"
     open-maximized true
 }
 
-// WhatsApp Web: Launch on workspace 8
+window-rule {
+    match app-id=r#"^(firefox|chromium|google-chrome|brave)$"#
+    open-on-workspace "browser"
+    default-column-width { proportion 1.0; }
+}
+
+// Terminal workspace - Development and command line
+window-rule {
+    match app-id=r#"^(com\.mitchellh\.ghostty|foot|alacritty|kitty|wezterm|org\.wezfurlong\.wezterm)$"#
+    open-on-workspace "terminal"
+    default-column-width { proportion 0.5; }
+}
+
+// Communication workspace - Messaging and communication apps
 window-rule {
     match app-id="chrome-web.whatsapp.com__-Default" title="WhatsApp"
-    open-on-workspace "8"
+    open-on-workspace "communication"
     open-maximized true
 }
-
-// Slack: Launch on workspace 9
 window-rule {
-    match app-id="Slack"
-    open-on-workspace "9"
+    match app-id=r#"^(Slack|discord|telegram|signal)$"#
+    open-on-workspace "communication"
     open-maximized true
 }
 
