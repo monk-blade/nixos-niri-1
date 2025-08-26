@@ -288,11 +288,15 @@ animations {
 
 // Overview configuration with proper backdrop handling
 overview {
-    zoom 0.3
+    zoom 0.8
     workspace-shadow {
-        false
+        off
+        softness 400
+        spread 300
+        offset x=0 y=10
+        color "#00000000"
     }
-    backdrop-color "transparent"
+    backdrop-color "#141420"
 }
 
 // Window rules let you adjust behavior for individual windows.
