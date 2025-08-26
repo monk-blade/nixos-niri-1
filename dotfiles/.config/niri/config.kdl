@@ -99,7 +99,6 @@ layer-rule {
     match namespace="^wallpaper$"
     place-within-backdrop true
 }
-
 layout {
     // Set gaps around windows in logical pixels.
     gaps 10
@@ -288,12 +287,13 @@ animations {
 
 // Overview configuration with proper backdrop handling
 overview {
+    zoom 0.4
     // Disable workspace shadows for cleaner look
     workspace-shadow {
         off
     }
     // Use a dark backdrop color instead of transparent for now
-    backdrop-color "#1e1e2e"
+    backdrop-color "transparent"
 }
 
 // Window rules let you adjust behavior for individual windows.
