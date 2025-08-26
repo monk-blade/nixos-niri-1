@@ -1,23 +1,22 @@
-// This config is in the KDL format: https://kdl.dev
-// "/-" comments out the following node.
-// Check the wiki for a full description of the configuration:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+workspaces {
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+}
 
-// Input device configuration.
-// Find the full list of options on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 input {
     keyboard {
         xkb {
-            // You can set rules, model, layout, variant and options.
-            // For more information, see xkeyboard-config(7).
 
-            // For example:
             layout "us,fr"
             options "compose:ralt,ctrl:nocaps"
         }
-
-        // Enable numlock on startup, omitting this setting disables it.
         numlock
     }
 
@@ -64,18 +63,11 @@ input {
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
-// Find more information on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
 output "eDP-1" {
     // Uncomment this line to disable this output.
     // off
-
-    // Resolution and, optionally, refresh rate of the output.
-    // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
-    // If the refresh rate is omitted, niri will pick the highest refresh rate
-    // for the resolution.
-    // If the mode is omitted altogether or is invalid, niri will pick one automatically.
+    
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
     mode "1920x1080@144"
 
@@ -251,14 +243,12 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "mako"
-spawn-at-startup "waybar"
 
 // Launch applications on startup with proper delays
-spawn-at-startup "zen"
-spawn-at-startup "bash" "-c" "sleep 5 && chromium --new-window --app=https://web.whatsapp.com"
-spawn-at-startup "bash" "-c" "sleep 3 && slack"
+spawn-at-startup "waybar"
+spawn-at-startup "bash" "-c" "sleep 1 && zen"
+spawn-at-startup "bash" "-c" "sleep 2 && slack"
+spawn-at-startup "bash" "-c" "sleep 3 && chromium --new-window --app=https://web.whatsapp.com"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -309,21 +299,21 @@ window-rule {
 window-rule {
     match app-id="zen-beta"
     open-on-workspace "1"
-    default-column-width { proportion 1.0; }
+    open-maximized true
 }
 
 // WhatsApp Web: Launch on workspace 8
 window-rule {
     match app-id="chrome-web.whatsapp.com__-Default" title="WhatsApp"
     open-on-workspace "8"
-    default-column-width { proportion 1.0; }
+    open-maximized true
 }
 
 // Slack: Launch on workspace 9
 window-rule {
     match app-id="Slack"
     open-on-workspace "9"
-    default-column-width { proportion 1.0; }
+    open-maximized true
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
