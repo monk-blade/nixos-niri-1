@@ -95,9 +95,17 @@ output "eDP-1" {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 
+// Layer rules for dual wallpaper setup
 layer-rule {
+    // swaybg backdrop wallpaper (blurry-snaky.jpg) stays stationary in overview
     match namespace="^wallpaper$"
     place-within-backdrop true
+}
+
+layer-rule {
+    // swww workspace wallpaper moves with workspaces (normal behavior)
+    match namespace="^swww$"
+    // No place-within-backdrop - stays with workspaces
 }
 
 layout {
@@ -254,6 +262,7 @@ layout {
 
 
 // Launch applications on startup with proper delays
+// Note: Wallpapers are handled by systemd services in home.nix
 spawn-at-startup "waybar"
 spawn-at-startup "bash" "-c" "sleep 1 && zen"
 spawn-at-startup "bash" "-c" "sleep 2 && ghostty"
@@ -288,12 +297,13 @@ animations {
 
 // Overview configuration with proper backdrop handling
 overview {
+    zoom 0.5
     // Disable workspace shadows for cleaner look
     workspace-shadow {
         off
     }
-    // Use a dark backdrop color instead of transparent for now
-    backdrop-color "#1e1e2e"
+    // Set transparent backdrop to show swaybg wallpaper
+    backdrop-color "transparent"
 }
 
 // Window rules let you adjust behavior for individual windows.

@@ -207,6 +207,22 @@ in
       Install.WantedBy = [ "graphical-session.target" ];
     };
 
+    # Backdrop wallpaper for overview mode
+    swaybg-backdrop = {
+      Unit = {
+        Description = "swaybg backdrop wallpaper for overview mode";
+        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session.target" ];
+      };
+      Service = {
+        Type = "simple";
+        ExecStart = "${pkgs.swaybg}/bin/swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill";
+        Restart = "on-failure";
+        RestartSec = "1";
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
+
     # SwayNC notification daemon
     swaync = {
       Unit = {
