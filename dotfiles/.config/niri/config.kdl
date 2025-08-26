@@ -248,8 +248,9 @@ layout {
 // Launch applications on startup with proper delays
 spawn-at-startup "waybar"
 spawn-at-startup "bash" "-c" "sleep 1 && zen"
-spawn-at-startup "bash" "-c" "sleep 2 && slack"
-spawn-at-startup "bash" "-c" "sleep 3 && chromium --new-window --app=https://web.whatsapp.com"
+spawn-at-startup "bash" "-c" "sleep 2 && ghostty"
+spawn-at-startup "bash" "-c" "sleep 3 && slack"
+spawn-at-startup "bash" "-c" "sleep 4 && chromium --new-window --app=https://web.whatsapp.com"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -277,6 +278,11 @@ animations {
     slowdown 0.8
 }
 
+overview {
+    workspace-shadow {
+        off
+    }
+}
 // Make wallpaper persist in background during overview mode
 layer-rule {
     match namespace="^wallpaper$"
@@ -324,12 +330,7 @@ window-rule {
 
 // Communication workspace - Messaging and communication apps
 window-rule {
-    match app-id="chrome-web.whatsapp.com__-Default" title="WhatsApp"
-    open-on-workspace "communication"
-    open-maximized true
-}
-window-rule {
-    match app-id=r#"^(Slack|discord|telegram|signal)$"#
+    match app-id=r#"^(Slack|discord|chrome-web.whatsapp.com__-Default|telegram|signal)$"#
     open-on-workspace "communication"
     open-maximized true
 }
