@@ -98,13 +98,20 @@ output "eDP-1" {
 // Layer rules for dual wallpaper setup
 layer-rule {
     // swaybg backdrop wallpaper (blurry-snaky.jpg) stays stationary in overview
-    match namespace="^wallpaper$"
+    // swaybg typically uses "wallpaper" namespace
+    match namespace="wallpaper"
+    place-within-backdrop true
+}
+
+layer-rule {
+    // Alternative match for swaybg if it uses a different namespace
+    match app-id="swaybg"
     place-within-backdrop true
 }
 
 layer-rule {
     // swww workspace wallpaper moves with workspaces (normal behavior)
-    match namespace="^swww$"
+    match namespace="swww"
     // No place-within-backdrop - stays with workspaces
 }
 
@@ -302,8 +309,9 @@ overview {
     workspace-shadow {
         off
     }
-    // Set transparent backdrop to show swaybg wallpaper
-    backdrop-color "transparent"
+    // Set fallback backdrop color in case swaybg wallpaper doesn't show
+    // Use transparent first, fallback to dark color if needed
+    backdrop-color "#1e1e2e"
 }
 
 // Window rules let you adjust behavior for individual windows.
