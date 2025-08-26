@@ -117,9 +117,10 @@ window#waybar {
 
 /* System tray */
 #tray {
-  padding: 0 4px;
+  padding: 0 8px;
   margin: 0px 4px;
   border-right: 2px dotted #4a4a64;
+  border-left: 2px dotted #4a4a64;
 }
 
 #tray > .passive {

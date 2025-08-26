@@ -278,14 +278,20 @@ animations {
     slowdown 0.8
 }
 
+// Overview configuration with proper backdrop handling
 overview {
+    // Disable workspace shadows for cleaner look
     workspace-shadow {
         off
     }
+    // Set transparent backdrop to let wallpaper show through
+    backdrop-color "transparent"
 }
-// Make wallpaper persist in background during overview mode
+
+// Make wallpaper stationary in backdrop during overview mode
 layer-rule {
-    match namespace="^wallpaper$"
+    // This matches swww wallpaper namespace - check with 'niri msg layers'
+    match namespace="swww"
     place-within-backdrop true
 }
 
