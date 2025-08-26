@@ -94,9 +94,17 @@ output "eDP-1" {
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
+
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
 layout {
     // Set gaps around windows in logical pixels.
     gaps 10
+    
+    background-color "transparent"
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -286,15 +294,6 @@ overview {
     }
     // Use a dark backdrop color instead of transparent for now
     backdrop-color "#1e1e2e"
-}
-
-layer-rule {
-    match namespace="^wallpaper$"
-    place-within-backdrop true
-}
-
-layout {
-    background-color "transparent"  // Let both show
 }
 
 // Window rules let you adjust behavior for individual windows.
