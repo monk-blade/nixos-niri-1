@@ -97,7 +97,6 @@ output "eDP-1" {
 
 // Overview configuration with proper backdrop handling
 overview {
-    zoom 0.8
     workspace-shadow {
         off
         softness 400
@@ -105,7 +104,7 @@ overview {
         offset x=0 y=10
         color "#00000000"
     }
-    // backdrop-color "#141420"
+    backdrop-color "#141420"
 }
 
 // Layer rules for swww wallpaper setup
@@ -428,7 +427,7 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Alt+Tab repeat=false { toggle-overview; }
+    Ctrl+Tab repeat=false { toggle-overview; }
 
     Mod+Q { close-window; }
 
