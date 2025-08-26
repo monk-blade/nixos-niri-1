@@ -246,9 +246,6 @@ layout {
 
 
 // Launch applications on startup with proper delays
-// Simplified wallpaper setup - let swww handle everything for now
-// spawn-at-startup "bash" "-c" "convert ~/Pictures/wallpaper.jpg -blur 0x8 ~/Pictures/wallpaper-blurred.jpg"
-// spawn-at-startup "swaybg" "-i" "~/Pictures/wallpaper-blurred.jpg" "-m" "fill"
 spawn-at-startup "waybar"
 spawn-at-startup "bash" "-c" "sleep 1 && zen"
 spawn-at-startup "bash" "-c" "sleep 2 && ghostty"
@@ -291,11 +288,13 @@ overview {
     backdrop-color "#1e1e2e"
 }
 
-// Simple wallpaper setup: swww for both workspaces and overview backdrop
 layer-rule {
-    // swww wallpaper stays stationary in overview backdrop
-    match namespace="swww"
+    match namespace="^wallpaper$"
     place-within-backdrop true
+}
+
+layout {
+    background-color "transparent"  // Let both show
 }
 
 // Window rules let you adjust behavior for individual windows.

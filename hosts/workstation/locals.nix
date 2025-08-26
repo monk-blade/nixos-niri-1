@@ -5,7 +5,7 @@
 
 {
   # Wallpaper configuration
-  wallpaper = ../../dotfiles/.config/backgrounds/texture.jpg;
+  wallpaper = ../../dotfiles/.config/backgrounds/snaky.jpg;
   
   # Host-specific settings
   hostname = "workstation";
