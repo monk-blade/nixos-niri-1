@@ -289,10 +289,9 @@ animations {
 // Overview configuration with proper backdrop handling
 overview {
     zoom 0.3
-    workspace-shadow {
-        // false
-        true 
-    }
+    // workspace-shadow {
+    //     false
+    // }
     backdrop-color "transparent"
 }
 
