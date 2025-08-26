@@ -84,6 +84,7 @@ in
     gcc
     gnumake
     cmake
+    lsusb
 
     # xwayland-satellite
 

@@ -209,7 +209,7 @@ tooltip label {
   color: #f9e2af;
   background: #252538;
   border-radius: 0px;
-  padding: 4px 6px;
+  padding: 0px 8px;
   margin: 0 2px;
   transition: all 0.2s ease;
   animation: pulse 2s infinite;
