@@ -289,9 +289,9 @@ animations {
 // Overview configuration with proper backdrop handling
 overview {
     zoom 0.3
-    // workspace-shadow {
-    //     false
-    // }
+    workspace-shadow {
+        false
+    }
     backdrop-color "transparent"
 }
 
@@ -420,7 +420,7 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Ctrl+Tab repeat=false { toggle-overview; }
+    Alt+Tab repeat=false { toggle-overview; }
 
     Mod+Q { close-window; }
 
