@@ -85,7 +85,7 @@ in
     gnumake
     cmake
 
-    xwayland-satellite
+    # xwayland-satellite
 
     # Waybar and related tools
     waybar

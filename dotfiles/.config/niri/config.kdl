@@ -268,8 +268,8 @@ layout {
 
 // Launch applications on startup with proper delays
 // Note: Wallpapers are handled by systemd services in home.nix
+// spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
-spawn-at-startup "xwayland-satellite"
 spawn-at-startup "bash" "-c" "sleep 1 && zen"
 spawn-at-startup "bash" "-c" "sleep 2 && ghostty"
 spawn-at-startup "bash" "-c" "sleep 3 && slack"
