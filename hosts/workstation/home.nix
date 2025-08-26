@@ -84,7 +84,6 @@ in
     gcc
     gnumake
     cmake
-    lsusb
 
     # xwayland-satellite
 
@@ -100,6 +99,11 @@ in
 
     # System Monitoring & Info
     nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
+    
+    # Hardware Detection Tools
+    usbutils  # Provides lsusb command
+    pciutils  # Provides lspci command
+    lshw      # Hardware lister
     
     # Fingerprint Authentication
     fprintd  # Fingerprint daemon
