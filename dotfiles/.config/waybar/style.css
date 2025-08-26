@@ -218,7 +218,6 @@ tooltip label {
 #custom-fingerprint:hover {
   background: #f9e2af;
   color: #141420;
-  cursor: pointer;
 }
 
 /* Subtle pulse animation to draw attention */

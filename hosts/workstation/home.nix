@@ -109,6 +109,10 @@ in
     acpi  # Battery status
     tlp  # Power management
     auto-cpufreq  # Automatic CPU frequency scaling
+    
+    # Theme and cursor support
+    adwaita-icon-theme  # Default GNOME icon and cursor theme
+    gtk4  # GTK4 for modern theme support
 
     # libreoffice-qt6-fresh
 
@@ -206,5 +210,35 @@ in
     
     # Path additions
     PATH = "$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH";
+  };
+
+  # GTK and cursor theme configuration to fix Gdk-Message errors
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+      size = 24;
+    };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+  };
+
+  # Qt theme configuration
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk4";
+    style.name = "adwaita-dark";
+  };
+
+  # Home cursor theme (for Wayland)
+  home.pointerCursor = {
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
   };
 }

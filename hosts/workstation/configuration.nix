@@ -74,6 +74,8 @@ in
       xdg-desktop-portal-gtk
       xdg-desktop-portal-wlr
     ];
+    config.common.default = "*";
+    wlr.enable = true;
   };
 
   # Enable sound with PipeWire (modern audio system)
