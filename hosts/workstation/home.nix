@@ -226,13 +226,6 @@ in
     };
   };
 
-  # Qt theme configuration
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk4";
-    style.name = "adwaita-dark";
-  };
-
   # Home cursor theme (for Wayland)
   home.pointerCursor = {
     name = "Adwaita";
