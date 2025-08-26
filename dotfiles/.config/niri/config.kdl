@@ -95,9 +95,10 @@ output "eDP-1" {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 
-// Layer rules for hybrid wallpaper setup
+// Layer rules for swww wallpaper setup
 layer-rule {
-    match namespace="^wallpaper$"
+    // swww wallpaper stays stationary in overview backdrop
+    match namespace="^swww$"
     place-within-backdrop true
 }
 layout {

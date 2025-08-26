@@ -32,8 +32,8 @@ in
     
     # Wayland & Window Manager
     niri
-    # swww
-    swaybg 
+    swww
+    # swaybg 
     imagemagick  # For wallpaper blur effects
     waypaper
     fuzzel  # Application launcher
@@ -176,49 +176,18 @@ in
 
   # Systemd user services
   systemd.user.services = {
-    # Workspace wallpaper using swaybg
-    swaybg-workspace = {
-      Unit = {
-        Description = "swaybg workspace wallpaper";
-        PartOf = [ "graphical-session.target" ];
-        After = [ "graphical-session.target" ];
-      };
-      Service = {
-        Type = "simple";
-        ExecStart = "${pkgs.swaybg}/bin/swaybg -i ${locals.wallpaper} -m fill";
-        Restart = "on-failure";
-        RestartSec = "1";
-      };
-      Install.WantedBy = [ "graphical-session.target" ];
-    };
 
-    # Backdrop wallpaper for overview mode using swww
-    swww-backdrop-daemon = {
+    set-wallpaper = {
       Unit = {
-        Description = "swww backdrop wallpaper daemon";
-        PartOf = [ "graphical-session.target" ];
-        After = [ "graphical-session.target" ];
-      };
-      Service = {
-        Type = "simple";
-        ExecStart = "${pkgs.swww}/bin/swww-daemon";
-        Restart = "on-failure";
-        RestartSec = "1";
-      };
-      Install.WantedBy = [ "graphical-session.target" ];
-    };
-
-    set-backdrop-wallpaper = {
-      Unit = {
-        Description = "Set blurry backdrop wallpaper using swww";
-        After = [ "swww-backdrop-daemon.service" ];
-        Wants = [ "swww-backdrop-daemon.service" ];
+        Description = "Set wallpaper using swww";
+        After = [ "swww-daemon.service" ];
+        Wants = [ "swww-daemon.service" ];
         PartOf = [ "graphical-session.target" ];
       };
       Service = {
         Type = "oneshot";
         ExecStartPre = "/bin/sh -c 'until ${pkgs.swww}/bin/swww query; do sleep 0.1; done'";
-        ExecStart = "${pkgs.swww}/bin/swww img ~/.config/backgrounds/blurry-snaky.jpg";
+        ExecStart = "${pkgs.swww}/bin/swww img ${locals.wallpaper}";
         RemainAfterExit = true;
       };
       Install.WantedBy = [ "graphical-session.target" ];
