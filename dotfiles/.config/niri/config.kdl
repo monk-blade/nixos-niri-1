@@ -102,19 +102,6 @@ layer-rule {
     match namespace="wallpaper"
     place-within-backdrop true
 }
-
-layer-rule {
-    // Alternative match for swaybg if it uses a different namespace
-    match app-id="swaybg"
-    place-within-backdrop true
-}
-
-layer-rule {
-    // swww workspace wallpaper moves with workspaces (normal behavior)
-    match namespace="swww"
-    // No place-within-backdrop - stays with workspaces
-}
-
 layout {
     // Set gaps around windows in logical pixels.
     gaps 10
@@ -304,14 +291,13 @@ animations {
 
 // Overview configuration with proper backdrop handling
 overview {
-    zoom 0.5
+    zoom 0.4
     // Disable workspace shadows for cleaner look
     workspace-shadow {
         off
     }
-    // Set fallback backdrop color in case swaybg wallpaper doesn't show
-    // Use transparent first, fallback to dark color if needed
-    backdrop-color "#1e1e2e"
+    // Use a dark backdrop color instead of transparent for now
+    backdrop-color "transparent"
 }
 
 // Window rules let you adjust behavior for individual windows.
