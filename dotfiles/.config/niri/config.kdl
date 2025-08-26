@@ -97,6 +97,7 @@ output "eDP-1" {
 
 // Overview configuration with proper backdrop handling
 overview {
+    zoom 0.45
     workspace-shadow {
         off
         softness 400
@@ -104,20 +105,19 @@ overview {
         offset x=0 y=10
         color "#00000000"
     }
-    backdrop-color "#141420"
+    // backdrop-color "#141420"
 }
 
 // Layer rules for swww wallpaper setup
 layer-rule {
     // swww wallpaper stays stationary in overview backdrop
-    match namespace="^swww$"
+    match namespace="swww"
     place-within-backdrop true
 }
 layout {
     // Set gaps around windows in logical pixels.
     gaps 10
     background-color "transparent"
-
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
