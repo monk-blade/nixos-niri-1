@@ -270,10 +270,12 @@ layout {
 // Note: Wallpapers are handled by systemd services in home.nix
 // spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
-spawn-at-startup "bash" "-c" "sleep 1 && zen"
-spawn-at-startup "bash" "-c" "sleep 2 && ghostty"
-spawn-at-startup "bash" "-c" "sleep 3 && slack"
-spawn-at-startup "bash" "-c" "sleep 4 && chromium --new-window --app=https://web.whatsapp.com"
+spawn-at-startup "swaync"  // Notification daemon
+spawn-at-startup "bash" "-c" "sleep 1 && swww-daemon && sleep 0.5 && swww img ~/.config/backgrounds/snaky.jpg"  // Wallpaper setup
+spawn-at-startup "bash" "-c" "sleep 2 && zen"
+spawn-at-startup "bash" "-c" "sleep 3 && ghostty"
+spawn-at-startup "bash" "-c" "sleep 4 && slack"
+spawn-at-startup "bash" "-c" "sleep 5 && chromium --new-window --app=https://web.whatsapp.com"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.

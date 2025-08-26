@@ -176,56 +176,56 @@ in
     };
   };
 
-  # Systemd user services
-  systemd.user.services = {
-    swww-daemon = {
-      Unit = {
-        Description = "swww wallpaper daemon";
-        PartOf = [ "graphical-session.target" ];
-        After = [ "graphical-session.target" ];
-      };
-      Service = {
-        Type = "simple";
-        ExecStart = "${pkgs.swww}/bin/swww-daemon";
-        Restart = "on-failure";
-        RestartSec = "1";
-      };
-      Install.WantedBy = [ "graphical-session.target" ];
-    };
+  # Systemd user services - DISABLED FOR VM TROUBLESHOOTING
+  # systemd.user.services = {
+  #   swww-daemon = {
+  #     Unit = {
+  #       Description = "swww wallpaper daemon";
+  #       PartOf = [ "graphical-session.target" ];
+  #       After = [ "graphical-session.target" ];
+  #     };
+  #     Service = {
+  #       Type = "simple";
+  #       ExecStart = "${pkgs.swww}/bin/swww-daemon";
+  #       Restart = "on-failure";
+  #       RestartSec = "1";
+  #     };
+  #     Install.WantedBy = [ "graphical-session.target" ];
+  #   };
 
-    set-wallpaper = {
-      Unit = {
-        Description = "Set wallpaper using swww";
-        After = [ "swww-daemon.service" ];
-        Wants = [ "swww-daemon.service" ];
-        PartOf = [ "graphical-session.target" ];
-      };
-      Service = {
-        Type = "oneshot";
-        ExecStartPre = "/bin/sh -c 'until ${pkgs.swww}/bin/swww query; do sleep 0.1; done'";
-        ExecStart = "${pkgs.swww}/bin/swww img ${locals.wallpaper}";
-        RemainAfterExit = true;
-      };
-      Install.WantedBy = [ "graphical-session.target" ];
-    };
+  #   set-wallpaper = {
+  #     Unit = {
+  #       Description = "Set wallpaper using swww";
+  #       After = [ "swww-daemon.service" ];
+  #       Wants = [ "swww-daemon.service" ];
+  #       PartOf = [ "graphical-session.target" ];
+  #     };
+  #     Service = {
+  #       Type = "oneshot";
+  #       ExecStartPre = "/bin/sh -c 'until ${pkgs.swww}/bin/swww query; do sleep 0.1; done'";
+  #       ExecStart = "${pkgs.swww}/bin/swww img ${locals.wallpaper}";
+  #       RemainAfterExit = true;
+  #     };
+  #     Install.WantedBy = [ "graphical-session.target" ];
+  #   };
 
-    # SwayNC notification daemon
-    swaync = {
-      Unit = {
-        Description = "SwayNotificationCenter";
-        PartOf = [ "graphical-session.target" ];
-        After = [ "graphical-session.target" ];
-      };
-      Service = {
-        Type = "dbus";
-        BusName = "org.freedesktop.Notifications";
-        ExecStart = "${pkgs.swaynotificationcenter}/bin/swaync";
-        Restart = "on-failure";
-        RestartSec = "1";
-      };
-      Install.WantedBy = [ "graphical-session.target" ];
-    };
-  };
+  #   # SwayNC notification daemon
+  #   swaync = {
+  #     Unit = {
+  #       Description = "SwayNotificationCenter";
+  #       PartOf = [ "graphical-session.target" ];
+  #       After = [ "graphical-session.target" ];
+  #     };
+  #     Service = {
+  #       Type = "dbus";
+  #       BusName = "org.freedesktop.Notifications";
+  #       ExecStart = "${pkgs.swaynotificationcenter}/bin/swaync";
+  #       Restart = "on-failure";
+  #       RestartSec = "1";
+  #     };
+  #     Install.WantedBy = [ "graphical-session.target" ];
+  #   };
+  # };
 
   # Environment variables
   home.sessionVariables = {
