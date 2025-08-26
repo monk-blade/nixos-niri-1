@@ -95,12 +95,13 @@ output "eDP-1" {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 
-// Layer rules for dual wallpaper setup
+// Layer rules for swaybg wallpaper setup
 layer-rule {
-    // swaybg backdrop wallpaper (blurry-snaky.jpg) stays stationary in overview
-    // swaybg typically uses "wallpaper" namespace
-    match namespace="wallpaper"
+    // All swaybg wallpapers use "wallpaper" namespace
+    // The backdrop service will be placed within backdrop for overview mode
+    match namespace="^wallpaper$"
     place-within-backdrop true
+
 }
 layout {
     // Set gaps around windows in logical pixels.

@@ -176,47 +176,16 @@ in
 
   # Systemd user services
   systemd.user.services = {
-    swww-daemon = {
+    # Workspace wallpaper using swaybg
+    swaybg-workspace = {
       Unit = {
-        Description = "swww wallpaper daemon";
+        Description = "swaybg workspace wallpaper";
         PartOf = [ "graphical-session.target" ];
         After = [ "graphical-session.target" ];
       };
       Service = {
         Type = "simple";
-        ExecStart = "${pkgs.swww}/bin/swww-daemon";
-        Restart = "on-failure";
-        RestartSec = "1";
-      };
-      Install.WantedBy = [ "graphical-session.target" ];
-    };
-
-    set-wallpaper = {
-      Unit = {
-        Description = "Set wallpaper using swww";
-        After = [ "swww-daemon.service" ];
-        Wants = [ "swww-daemon.service" ];
-        PartOf = [ "graphical-session.target" ];
-      };
-      Service = {
-        Type = "oneshot";
-        ExecStartPre = "/bin/sh -c 'until ${pkgs.swww}/bin/swww query; do sleep 0.1; done'";
-        ExecStart = "${pkgs.swww}/bin/swww img ${locals.wallpaper}";
-        RemainAfterExit = true;
-      };
-      Install.WantedBy = [ "graphical-session.target" ];
-    };
-
-    # Backdrop wallpaper for overview mode
-    swaybg-backdrop = {
-      Unit = {
-        Description = "swaybg backdrop wallpaper for overview mode";
-        PartOf = [ "graphical-session.target" ];
-        After = [ "graphical-session.target" ];
-      };
-      Service = {
-        Type = "simple";
-        ExecStart = "${pkgs.swaybg}/bin/swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill";
+        ExecStart = "${pkgs.swaybg}/bin/swaybg -i ${locals.wallpaper} -m fill";
         Restart = "on-failure";
         RestartSec = "1";
       };
