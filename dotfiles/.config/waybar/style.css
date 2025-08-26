@@ -117,7 +117,8 @@ window#waybar {
 
 /* System tray */
 #tray {
-  padding: 0 4px;
+  padding: 0 6px;
+  margin: 0px 4px;
   border-right: 2px dotted #4a4a64;
 }
 
@@ -127,12 +128,6 @@ window#waybar {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-}
-
-/* Separator dot for tray */
-#tray {
-  border-left: 2px dotted rgba(255, 255, 255, 0.2);
-  margin: 0px 8px;
 }
 
 /* Power button */
