@@ -255,10 +255,10 @@ layout {
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
 
-// Launch applications on startup with specific workspace assignments
-spawn-at-startup "zen-browser"
-spawn-at-startup "chromium --new-window --app=https://web.whatsapp.com"
-spawn-at-startup "slack"
+// Launch applications on startup with proper delays
+spawn-at-startup "zen"
+spawn-at-startup "bash" "-c" "sleep 5 && chromium --new-window --app=https://web.whatsapp.com"
+spawn-at-startup "bash" "-c" "sleep 3 && slack"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -314,16 +314,16 @@ window-rule {
 
 // WhatsApp Web: Launch on workspace 8
 window-rule {
-    match app-id="chromium-browser" title=r#".*WhatsApp.*"#
+    match app-id="chrome-web.whatsapp.com__-Default" title="WhatsApp"
     open-on-workspace "8"
-    default-column-width { proportion 0.8; }
+    default-column-width { proportion 1.0; }
 }
 
 // Slack: Launch on workspace 9
 window-rule {
     match app-id="Slack"
     open-on-workspace "9"
-    default-column-width { proportion 0.8; }
+    default-column-width { proportion 1.0; }
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
