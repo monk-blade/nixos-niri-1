@@ -99,11 +99,11 @@ output "eDP-1" {
 overview {
     zoom 0.45
     workspace-shadow {
-        off
-        softness 400
-        spread 300
-        offset x=0 y=10
-        color "#00000000"
+        // Remove 'off' to enable shadows
+        softness 400      // How blurry the shadow is (higher = more blur)
+        spread 300        // How far the shadow extends (higher = larger shadow)
+        offset x=0 y=10   // Shadow position offset (x=horizontal, y=vertical)
+        color "#00000080"  // Shadow color with transparency (80 = 50% opacity)
     }
     // backdrop-color "#141420"
 }
