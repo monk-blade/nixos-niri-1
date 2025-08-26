@@ -28,6 +28,7 @@
     ],
     "modules-right": [
         // "niri/language",
+        "custom/fingerprint",
         "tray",
         "custom/storage",
         "memory",
@@ -219,6 +220,14 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "custom/fingerprint": {
+        "format": "󰈷",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/fingerprint-status.sh",
+        "interval": 30,
+        "on-click": "foot --title='Fingerprint Setup' ~/.config/niri/scripts/fingerprint-setup.sh setup",
+        "tooltip": true
     },
     "clock": {
         "format": "{:%d, %H:%M}",

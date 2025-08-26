@@ -86,6 +86,28 @@ in
     pulse.enable = true;
   };
 
+  # Fingerprint authentication
+  services.fprintd = {
+    enable = true;
+    tod.enable = true;  # Enable Touch OEM Drivers for better hardware support
+    tod.driver = pkgs.libfprint-2-tod1-goodix;  # Common driver, adjust if needed
+  };
+
+  # PAM configuration for fingerprint authentication
+  security.pam.services = {
+    # Enable fingerprint for login (lightdm/display manager)
+    lightdm.fprintAuth = true;
+    
+    # Enable fingerprint for sudo
+    sudo.fprintAuth = true;
+    
+    # Enable fingerprint for screen unlock (if using a screen locker that supports PAM)
+    hyprlock.fprintAuth = true;
+    
+    # Enable fingerprint for system authentication prompts
+    polkit-1.fprintAuth = true;
+  };
+
   # Enable fish shell system-wide
   programs.fish.enable = true;
 

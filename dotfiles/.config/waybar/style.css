@@ -47,7 +47,8 @@ window#waybar {
 #custom-storage,
 #custom-next-prayer,
 #custom-notifications,
-#custom-power {
+#custom-power,
+#custom-fingerprint {
   background: transparent;
   color: #cdd6f4;
   padding: 0px 4px;
@@ -195,9 +196,34 @@ tooltip label {
 #custom-notifications:hover,
 #backlight:hover,
 #wireplumber:hover,
-#custom-storage:hover {
+#custom-storage:hover,
+#custom-fingerprint:hover {
   /* background: #141420; */
   color: #89b4fa;
   border-radius: 0px;
   transition: background 0.2s ease;
+}
+
+/* Fingerprint module - only shows when not setup */
+#custom-fingerprint {
+  color: #f9e2af;
+  background: #252538;
+  border-radius: 0px;
+  padding: 4px 6px;
+  margin: 0 2px;
+  transition: all 0.2s ease;
+  animation: pulse 2s infinite;
+}
+
+#custom-fingerprint:hover {
+  background: #f9e2af;
+  color: #141420;
+  cursor: pointer;
+}
+
+/* Subtle pulse animation to draw attention */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
 }

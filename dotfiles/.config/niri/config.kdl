@@ -410,6 +410,9 @@ binds {
     Alt+N hotkey-overlay-title="Open Notion" { spawn "chromium" "--app=https://notion.so"; }
     Alt+F hotkey-overlay-title="Open Figma" { spawn "chromium" "--app=https://figma.com"; }
     
+    // System Management
+    Alt+Shift+F hotkey-overlay-title="Fingerprint Setup" { spawn "foot" "--title=Fingerprint Setup" "~/.config/niri/scripts/fingerprint-setup.sh"; }
+    
     // Language switching
     Alt+Mod+Ctrl+Space hotkey-overlay-title="Switch Language" { switch-layout "next"; }
 	// You can also use a shell. Do this if you need pipes, multiple commands, etc.

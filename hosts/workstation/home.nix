@@ -100,6 +100,10 @@ in
     # System Monitoring & Info
     nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
     
+    # Fingerprint Authentication
+    fprintd  # Fingerprint daemon
+    libfprint  # Fingerprint library
+    
     # Battery & Power Management Tools
     powertop  # Power consumption analyzer
     acpi  # Battery status
