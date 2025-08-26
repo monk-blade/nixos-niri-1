@@ -246,6 +246,10 @@ layout {
 
 
 // Launch applications on startup with proper delays
+// Dual wallpaper setup: swww for workspace background (handled by systemd), swaybg for blurred overview backdrop
+// Create blurred wallpaper for fancy overview effect
+spawn-at-startup "bash" "-c" "convert ~/Pictures/wallpaper.jpg -blur 0x8 ~/Pictures/wallpaper-blurred.jpg"
+spawn-at-startup "swaybg" "-i" "~/Pictures/wallpaper-blurred.jpg" "-m" "fill"
 spawn-at-startup "waybar"
 spawn-at-startup "bash" "-c" "sleep 1 && zen"
 spawn-at-startup "bash" "-c" "sleep 2 && ghostty"
@@ -288,11 +292,18 @@ overview {
     backdrop-color "transparent"
 }
 
-// Make wallpaper stationary in backdrop during overview mode
+// Dual wallpaper setup: swww for workspaces, swaybg for overview backdrop
+// This provides wallpaper in normal view and stationary backdrop in overview
 layer-rule {
-    // This matches swww wallpaper namespace - check with 'niri msg layers'
-    match namespace="swww"
+    // swaybg wallpaper stays stationary in overview backdrop
+    match namespace="wallpaper"
     place-within-backdrop true
+}
+
+layer-rule {
+    // swww provides normal workspace wallpaper that moves with workspaces
+    match namespace="swww"
+    // No place-within-backdrop - this stays with workspaces
 }
 
 // Window rules let you adjust behavior for individual windows.

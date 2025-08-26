@@ -33,6 +33,8 @@ in
     # Wayland & Window Manager
     niri
     swww
+    swaybg  # For overview backdrop wallpaper
+    imagemagick  # For wallpaper blur effects
     waypaper
     fuzzel  # Application launcher
     
