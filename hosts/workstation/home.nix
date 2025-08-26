@@ -192,6 +192,38 @@ in
       Install.WantedBy = [ "graphical-session.target" ];
     };
 
+    # Backdrop wallpaper for overview mode using swww
+    swww-backdrop-daemon = {
+      Unit = {
+        Description = "swww backdrop wallpaper daemon";
+        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session.target" ];
+      };
+      Service = {
+        Type = "simple";
+        ExecStart = "${pkgs.swww}/bin/swww-daemon";
+        Restart = "on-failure";
+        RestartSec = "1";
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
+
+    set-backdrop-wallpaper = {
+      Unit = {
+        Description = "Set blurry backdrop wallpaper using swww";
+        After = [ "swww-backdrop-daemon.service" ];
+        Wants = [ "swww-backdrop-daemon.service" ];
+        PartOf = [ "graphical-session.target" ];
+      };
+      Service = {
+        Type = "oneshot";
+        ExecStartPre = "/bin/sh -c 'until ${pkgs.swww}/bin/swww query; do sleep 0.1; done'";
+        ExecStart = "${pkgs.swww}/bin/swww img ~/.config/backgrounds/blurry-snaky.jpg";
+        RemainAfterExit = true;
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
+
     # SwayNC notification daemon
     swaync = {
       Unit = {
