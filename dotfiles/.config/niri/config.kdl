@@ -291,7 +291,7 @@ overview {
     zoom 0.3
     workspace-shadow {
         // false
-        on 
+        true 
     }
     backdrop-color "transparent"
 }
