@@ -60,26 +60,20 @@ window#waybar {
 }
 
 #workspaces button {
-  background: #141420;
   color: #4a4a64;
-  border-bottom: 1px solid #383850;
-  padding: 4px 4px;
-  margin: 0 2px;
+  padding: 4px 2px;
+  margin: 0 0px;
   border-radius: 0px;
   transition: all 0.2s ease;
   min-width: 24px;
 }
 
 #workspaces button.focused {
-  background: #285577;
-  color: #fff;
-  border: #89b4fa 1px solid;
+  color: #89b4fa;
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
-  border: #da605e 1px solid;
-  color: #fff;
+  color: #eb4d4b;
 }
 
 /* Clock - center highlight */
