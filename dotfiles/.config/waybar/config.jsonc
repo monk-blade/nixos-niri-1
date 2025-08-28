@@ -19,6 +19,9 @@
         "niri/window"
     ],
     "modules-center": [
+        "custom/storage",
+        "memory",
+        "cpu",
         "custom/notifications",
         "clock",
         "niri/workspaces",
@@ -30,9 +33,6 @@
         // "niri/language",
         "custom/fingerprint",
         "tray",
-        "custom/storage",
-        "memory",
-        "cpu",
         "backlight",
         "wireplumber",
         "network",
