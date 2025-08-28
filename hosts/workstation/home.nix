@@ -41,7 +41,7 @@ in
     # mako  # Lightweight notification daemon
     swaynotificationcenter  # SwayNC notification daemon
     libnotify  # Provides notify-send command
-    hyprlock  # Screen locker
+    swaylock-effects  # Screen locker with effects (better for wlroots/Niri)
     wl-clipboard  # Wayland clipboard utilities
     grim  # Screenshot utility
     slurp  # Screen area selection
@@ -85,7 +85,7 @@ in
     gnumake
     cmake
 
-    # xwayland-satellite
+    xwayland-satellite
 
     # Waybar and related tools
     waybar
@@ -96,6 +96,12 @@ in
     # Network & Bluetooth Management
     networkmanagerapplet  # nm-connection-editor
     blueman  # Bluetooth manager
+    
+    # System Control Tools (for system-controls.sh)
+    gammastep  # Night light/blue light filter
+    swayidle   # Idle management
+    brightnessctl  # Brightness control
+    lm_sensors  # Hardware sensors (temperature, etc.)
 
     # System Monitoring & Info
     nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
