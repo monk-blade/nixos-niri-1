@@ -122,7 +122,7 @@ layer-rule {
 
 layer-rule {
     // waybar - attach to workspace instead of global
-    match app-id="waybar"
+    match namespace="waybar"
     place-within-backdrop false
 }
 layout {
