@@ -95,24 +95,28 @@ output "eDP-1" {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 
-// Overview configuration with proper backdrop handling
+// Overview configuration with dual wallpaper setup
 overview {
     zoom 0.45
     workspace-shadow {
-        // Remove 'off' to enable shadows
-        softness 600      // How blurry the shadow is (higher = more blur)
-        spread 500        // How far the shadow extends (higher = larger shadow)
-        offset x=0 y=10   // Shadow position offset (x=horizontal, y=vertical)
-        color "#00000080"  // Shadow color with transparency (80 = 50% opacity)
+        // Disable shadows for cleaner overview look
+        off
     }
-    // backdrop-color "#141420"
+    // Use transparent backdrop to show swaybg wallpaper
+    backdrop-color "transparent"
 }
 
-// Layer rules for swww wallpaper setup
+// Layer rules for dual wallpaper setup
 layer-rule {
-    // swww wallpaper stays stationary in overview backdrop
-    match namespace="swww"
+    // swaybg wallpaper (backdrop) - stationary in overview
+    match namespace="wallpaper"
     place-within-backdrop true
+}
+
+layer-rule {
+    // swww wallpaper - moves with workspaces
+    match namespace="swww"
+    // No special placement - normal behavior
 }
 layout {
     // Set gaps around windows in logical pixels.
