@@ -119,12 +119,6 @@ layer-rule {
     match namespace="swww"
     // No special placement - normal behavior
 }
-
-layer-rule {
-    // waybar - attach to workspace instead of global
-    match namespace="waybar"
-    place-within-backdrop false
-}
 layout {
     // Set gaps around windows in logical pixels.
     gaps 10

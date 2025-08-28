@@ -1,0 +1,58 @@
+# Swaylock Configuration
+# Beautiful lock screen with blurred background
+
+# Background
+image=~/.config/backgrounds/blurry-snaky.jpg
+scaling=fill
+
+# General appearance
+color=1e1e2e
+font=SpaceMono Nerd Font
+font-size=24
+
+# Ring colors (Catppuccin Mocha inspired)
+ring-color=313244
+ring-clear-color=a6e3a1
+ring-caps-lock-color=f9e2af
+ring-ver-color=89b4fa
+ring-wrong-color=f38ba8
+
+# Key highlight colors
+key-hl-color=cba6f7
+bs-hl-color=f38ba8
+
+# Separator color
+separator-color=00000000
+
+# Inside colors
+inside-color=1e1e2e88
+inside-clear-color=1e1e2e88
+inside-caps-lock-color=1e1e2e88
+inside-ver-color=1e1e2e88
+inside-wrong-color=1e1e2e88
+
+# Text colors
+text-color=cdd6f4
+text-clear-color=1e1e2e
+text-caps-lock-color=1e1e2e
+text-ver-color=1e1e2e
+text-wrong-color=1e1e2e
+
+# Layout
+indicator-radius=120
+indicator-thickness=8
+indicator-caps-lock
+
+# Effects
+effect-blur=7x5
+effect-vignette=0.5:0.5
+fade-in=0.2
+
+# Clock
+clock
+timestr=%H:%M
+datestr=%A, %d %B %Y
+
+# Disable screen timeout while locked
+ignore-empty-password
+show-failed-attempts
