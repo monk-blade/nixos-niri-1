@@ -61,6 +61,7 @@ in
     # Container & Cloud tools
     docker
     docker-compose
+
     kubectl
     terraform
     
@@ -158,6 +159,9 @@ in
     
     # SwayNC notification center
     ".config/swaync".source = ../../dotfiles/.config/swaync;
+    
+    # Swaylock screen locker
+    ".config/swaylock".source = ../../dotfiles/.config/swaylock;
     
     # Backgrounds
     ".config/backgrounds".source = ../../dotfiles/.config/backgrounds;
