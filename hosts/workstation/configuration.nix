@@ -104,7 +104,7 @@ in
     sudo.fprintAuth = true;
     
     # Enable fingerprint for screen unlock (if using a screen locker that supports PAM)
-    hyprlock.fprintAuth = true;
+    swaylock.fprintAuth = true;
     
     # Enable fingerprint for system authentication prompts
     polkit-1.fprintAuth = true;

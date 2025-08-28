@@ -8,7 +8,7 @@ selected=$(echo -e "$options" | fuzzel --dmenu --prompt="󰐥 Power: " --width=3
 
 case $selected in
     "󰌾 Lock")
-        hyprlock
+        swaylock
         ;;
     "󰗽 Logout")
         niri msg action quit

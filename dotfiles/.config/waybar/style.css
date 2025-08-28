@@ -78,14 +78,14 @@ window#waybar {
 
 /* Clock - center highlight */
 #clock {
-  font-weight: 500;
+  font-weight: 600;
   padding: 4px 10px;
   background: #141420;
   border-radius: 0px;
   border-bottom: 1px solid #383850;
 }
 #custom-next-prayer {
-  font-weight: 500;
+  font-weight: 600;
   padding: 4px 10px;
   background: #141420;
   border-radius: 0px;
