@@ -417,6 +417,7 @@ binds {
     Alt+Space hotkey-overlay-title="System Controls Menu" { spawn "~/.config/niri/scripts/system-controls.sh"; }
     Alt+Ctrl+Shift+Space hotkey-overlay-title="Theme Selector" { spawn "~/.config/niri/scripts/theme-menu.sh"; }
     Alt+S hotkey-overlay-title="Settings Menu" { spawn "~/.config/niri/scripts/settings-menu.sh"; }
+    Alt+L hotkey-overlay-title="Power menu" { spawn "~/.config/niri/scripts/power-menu.sh"; }
     
     // Language switching
     Alt+Mod+Ctrl+Space hotkey-overlay-title="Switch Language" { switch-layout "next"; }
