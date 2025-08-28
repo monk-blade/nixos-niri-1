@@ -135,27 +135,6 @@ in
     
   ];
 
-  # Systemd user services
-  systemd.user.services = {
-    # Backdrop wallpaper service using swaybg
-    swaybg-backdrop = {
-      Unit = {
-        Description = "Backdrop wallpaper for Niri overview mode";
-        After = [ "graphical-session.target" ];
-        PartOf = [ "graphical-session.target" ];
-      };
-      Service = {
-        Type = "simple";
-        ExecStart = "${pkgs.swaybg}/bin/swaybg -i ${config.home.homeDirectory}/.config/backgrounds/blurry-snaky.jpg -m fill";
-        Restart = "on-failure";
-        RestartSec = "5";
-      };
-      Install = {
-        WantedBy = [ "graphical-session.target" ];
-      };
-    };
-  };
-
   # Link your existing dotfiles
   home.file = {
     # Shell & Terminal configs
