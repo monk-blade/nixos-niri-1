@@ -4,8 +4,17 @@
 { pkgs, ... }:
 
 {
-  # Wallpaper configuration
-  wallpaper = ../../dotfiles/.config/backgrounds/snaky.jpg;
+  # Wallpaper configuration - Centralized image paths
+  wallpapers = {
+    # Main wallpaper for Stylix theming and workspace backgrounds
+    main = ../../dotfiles/.config/backgrounds/snaky.jpg;
+    
+    # Blurred version for lock screen and overview backdrop
+    blurred = ../../dotfiles/.config/backgrounds/blurry-snaky.jpg;
+    
+    # Alternative wallpapers (add more as needed)
+    # alternative2 = ../../dotfiles/.config/backgrounds/mountain.jpg;
+  };
   
   # Host-specific settings
   hostname = "workstation";

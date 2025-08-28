@@ -12,7 +12,7 @@ in
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
   # Set wallpaper from locals.nix (Stylix can generate colors from your wallpaper)
-  stylix.image = locals.wallpaper;
+  stylix.image = locals.wallpapers.main;
   
   # Font configuration
   stylix.fonts = {
