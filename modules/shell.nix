@@ -86,6 +86,7 @@
       lg = "lazygit";
       ff = "fastfetch";
       ".." = "cd ..";
+      "cd" = "z";
       
       # Better CLI defaults
       cat = "bat";
