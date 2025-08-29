@@ -165,8 +165,8 @@ in
     };
   };
   
-  # Enable Bluetooth service
-  services.bluetooth.enable = true;
+  # Enable Blueman service for GUI management
+  services.blueman.enable = true;
 
   # Fingerprint authentication
   services.fprintd = {
