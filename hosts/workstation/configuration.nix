@@ -57,9 +57,9 @@ in
 
 
 
-  # VirtualBox optimizations
-  boot.initrd.checkJournalingFS = false;
-  virtualisation.virtualbox.guest.enable = true;
+  # VirtualBox optimizations (disable for real hardware)
+  # boot.initrd.checkJournalingFS = false;  # VM-specific
+  # virtualisation.virtualbox.guest.enable = true;  # VM-specific
 
   # Graphics and hardware acceleration
   hardware.graphics = {
@@ -96,15 +96,9 @@ in
     # allowPing = true;  # Uncomment if needed
   };
   
-  # DNS configuration for VM
-  networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
-  networking.resolvconf.enable = true;
-  
-  # Ensure DNS is working in VM environment
-  networking.dhcpcd.extraConfig = ''
-    # Use static DNS servers
-    static domain_name_servers=8.8.8.8 1.1.1.1
-  '';
+  # DNS will be handled automatically by NetworkManager
+  # networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];  # Only needed for VMs
+  # networking.resolvconf.enable = true;  # Default behavior
 
   # Time zone
   time.timeZone = "Africa/Tunis";
