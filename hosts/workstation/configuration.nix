@@ -164,6 +164,9 @@ in
       };
     };
   };
+  
+  # Enable Bluetooth service
+  services.bluetooth.enable = true;
 
   # Fingerprint authentication
   services.fprintd = {
