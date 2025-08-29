@@ -393,39 +393,35 @@ binds {
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
 
-    // Mod-Shift-/, which is usually the same as Mod-?,
-    // shows a list of important hotkeys.
-    Mod+Shift+Slash { show-hotkey-overlay; }
-
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Ctrl+Shift+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Alt+Z hotkey-overlay-title="Open default Browser: zen-browser" { spawn "zen"; }
-    Mod+B hotkey-overlay-title="Open brave: brave" { spawn "brave"; }
+    Mod+Return { spawn "foot"; }
+    Ctrl+Shift+T { spawn "ghostty"; }
+    Alt+Z { spawn "zen"; }
+    Mod+B { spawn "brave"; }
     Alt+P { spawn "fuzzel"; }    
-    Shift+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Mod+E hotkey-overlay-title="Open a File Manager: thunar" { spawn "thunar"; }
+    Shift+Alt+L { spawn "swaylock"; }
+    Mod+E { spawn "thunar"; }
     
     // Web Applications (using Chromium in app mode )
-    Alt+A hotkey-overlay-title="Open ChatGPT" { spawn "chromium" "--app=https://chatgpt.com"; }
-    // Alt+C hotkey-overlay-title="Open HEY Calendar" { spawn "chromium" "--app=https://app.hey.com/calendar"; }
-    // Alt+H hotkey-overlay-title="Open HEY Email" { spawn "chromium" "--app=https://app.hey.com"; }
-    Alt+D hotkey-overlay-title="Open Discord" { spawn "chromium" "--app=https://discord.com/app"; }
-    Alt+W hotkey-overlay-title="Open WhatsApp" { spawn "chromium" "--app=https://web.whatsapp.com"; }
-    Alt+N hotkey-overlay-title="Open Notion" { spawn "chromium" "--app=https://notion.so"; }
-    Alt+F hotkey-overlay-title="Open Figma" { spawn "chromium" "--app=https://figma.com"; }
+    Alt+A { spawn "chromium" "--app=https://chatgpt.com"; }
+    // Alt+C { spawn "chromium" "--app=https://app.hey.com/calendar"; }
+    // Alt+H { spawn "chromium" "--app=https://app.hey.com"; }
+    Alt+D { spawn "chromium" "--app=https://discord.com/app"; }
+    Alt+W { spawn "chromium" "--app=https://web.whatsapp.com"; }
+    Alt+N { spawn "chromium" "--app=https://notion.so"; }
+    Alt+F { spawn "chromium" "--app=https://figma.com"; }
     
     // System Management
-    Alt+Shift+F hotkey-overlay-title="Fingerprint Setup" { spawn "foot" "--title=Fingerprint Setup" "~/.config/niri/scripts/fingerprint-setup.sh"; }
+    Alt+Shift+F { spawn "foot" "--title=Fingerprint Setup" "~/.config/niri/scripts/fingerprint-setup.sh"; }
     
     // Omarchy-inspired System Controls (similar to Omarchy's menu system)
-    Alt+Space hotkey-overlay-title="System Controls Menu" { spawn "~/.config/niri/scripts/system-controls.sh"; }
-    Alt+Ctrl+Shift+Space hotkey-overlay-title="Theme Selector" { spawn "~/.config/niri/scripts/theme-menu.sh"; }
-    Alt+S hotkey-overlay-title="Settings Menu" { spawn "~/.config/niri/scripts/settings-menu.sh"; }
-    Alt+L hotkey-overlay-title="Power menu" { spawn "~/.config/niri/scripts/power-menu.sh"; }
+    Alt+Space { spawn "~/.config/niri/scripts/system-controls.sh"; }
+    Alt+Ctrl+Shift+Space { spawn "~/.config/niri/scripts/theme-menu.sh"; }
+    Alt+S { spawn "~/.config/niri/scripts/settings-menu.sh"; }
+    Alt+L { spawn "~/.config/niri/scripts/power-menu.sh"; }
     
     // Language switching
-    Alt+Mod+Ctrl+Space hotkey-overlay-title="Switch Language" { switch-layout "next"; }
+    Alt+Mod+Ctrl+Space { switch-layout "next"; }
 	// You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec ghostty"; }
