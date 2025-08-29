@@ -111,15 +111,15 @@ in
 
   # Display Manager and Wayland Compositor
   services.xserver.enable = true;  # Still needed for LightDM
-  services.displayManager.lightdm.enable = true;
-  services.displayManager.lightdm.greeters.gtk.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm.greeters.gtk.enable = true;  
+  # Emergency fallback desktop (lightweight)
+  # To enable fallback: rebuild with --override-input or set to true
+  services.xserver.desktopManager.xfce.enable = lib.mkDefault false;  # Disabled by default
   
   # Primary compositor
   programs.niri.enable = true;
   
-  # Emergency fallback desktop (lightweight)
-  services.xserver.desktopManager.xfce.enable = lib.mkDefault false;  # Disabled by default
-  # To enable fallback: rebuild with --override-input or set to true
   
   services.autorandr.enable = true;  # Auto display profiles
 
