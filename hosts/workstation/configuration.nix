@@ -64,20 +64,23 @@ in
   # Graphics and hardware acceleration
   hardware.graphics = {
     enable = true;
-    enable32Bit = true;  # For 32-bit applications
+    enable32Bit = true;  # For 32-bit applications and games
     
-    # Mesa drivers for Intel/AMD/Nouveau
+    # Mesa drivers for Intel/AMD/Nouveau graphics
     extraPackages = with pkgs; [
-      mesa.drivers
-      intel-media-driver  # Intel hardware video acceleration
-      intel-vaapi-driver  # Intel VA-API support
-      libvdpau-va-gl     # VDPAU support
+      mesa  # Use mesa instead of mesa.drivers
+      # Intel hardware video acceleration
+      intel-media-driver
+      intel-vaapi-driver
+      # VDPAU support
+      libvdpau-va-gl
     ];
     
-    # 32-bit support for games and legacy apps
+    # 32-bit driver support
     extraPackages32 = with pkgs.pkgsi686Linux; [
-      mesa.drivers
+      mesa  # Use mesa instead of mesa.drivers
       intel-media-driver
+      intel-vaapi-driver
     ];
   };
 
@@ -111,8 +114,8 @@ in
 
   # Display Manager and Wayland Compositor
   services.xserver.enable = true;  # Still needed for LightDM
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.lightdm.greeters.gtk.enable = true;  
+  services.displayManager.lightdm.enable = true;
+  services.displayManager.lightdm.greeters.gtk.enable = true;  
   # Emergency fallback desktop (lightweight)
   # To enable fallback: rebuild with --override-input or set to true
   services.xserver.desktopManager.xfce.enable = lib.mkDefault false;  # Disabled by default

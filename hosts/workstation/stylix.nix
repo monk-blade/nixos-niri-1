@@ -6,6 +6,7 @@ in
 {
   # Enable Stylix for system-wide theming
   stylix.enable = true;
+  # stylix.enableReleaseChecks = false;  # Suppress version mismatch warnings
   
   # Base16 color scheme - you can change this to any base16 theme
   # Popular options: "gruvbox-dark-hard", "nord", "dracula", "tokyo-night-dark", "catppuccin-mocha"
