@@ -41,10 +41,17 @@ in
       trusted-users = [ "root" "@wheel" ];
     };
     
+    # Automatic garbage collection
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 7d --max-freed 5G";  # Also limit by space freed
+      options = "--delete-older-than 30d";
+    };
+    
+    # Automatic store optimization
+    optimise = {
+      automatic = true;
+      dates = [ "03:45" ];
     };  
   };
 
@@ -78,6 +85,14 @@ in
   networking.hostName = locals.hostname;
   networking.networkmanager.enable = true;
   
+  # Firewall configuration
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ ];  # Add ports as needed: 22 80 443
+    allowedUDPPorts = [ ];
+    # allowPing = true;  # Uncomment if needed
+  };
+  
   # DNS configuration for VM
   networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
   networking.resolvconf.enable = true;
@@ -105,6 +120,8 @@ in
   # Emergency fallback desktop (lightweight)
   services.xserver.desktopManager.xfce.enable = lib.mkDefault false;  # Disabled by default
   # To enable fallback: rebuild with --override-input or set to true
+  
+  services.autorandr.enable = true;  # Auto display profiles
 
   # Enable Wayland protocols
   xdg.portal = {
