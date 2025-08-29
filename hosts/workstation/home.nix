@@ -35,7 +35,6 @@ in
     swww
     swaybg  # For backdrop wallpaper in overview mode 
     imagemagick  # For wallpaper blur effects
-    waypaper
     fuzzel  # Application launcher
     
     # mako  # Lightweight notification daemon
@@ -66,8 +65,6 @@ in
     terraform
     
     # API & Network tools
-    curl
-    wget
     httpie  # Better curl alternative
     bruno  # API testing
     
@@ -86,6 +83,7 @@ in
     gnumake
     cmake
 
+    # mostly for gaming
     xwayland-satellite
 
     # Waybar and related tools
@@ -111,6 +109,7 @@ in
     usbutils  # Provides lsusb command
     pciutils  # Provides lspci command
     lshw      # Hardware lister
+    ethtool
     
     # Fingerprint Authentication
     fprintd  # Fingerprint daemon
@@ -135,17 +134,35 @@ in
     # PDF viewers and document tools
     zathura      # Lightweight PDF viewer with vim-like keybindings
 
+    # Qt6 support (essential for Qt-based applications)
+    qt6.qtbase   # Core Qt6 framework
+    qt6.qttools  # Qt6 development tools
+
+    # Graphics and hardware acceleration
+    vulkan-tools # Vulkan utilities
+    
     # Add to home.packages
     # gimp        # Image editing
     # inkscape    # Vector graphics
     # obs-studio  # Screen recording (you have commented)    
+
+    # Archive & Compression
+    zip
+    xz
+    unzip
+    p7zip
+
+    # System Call Monitoring & Debugging
+    strace                  # system call monitoring
+    ltrace                  # library call monitoring
+    lsof                    # list open files
   ];
 
   # Link your existing dotfiles
   home.file = {
     # Shell & Terminal configs
     ".config/ghostty".source = ../../dotfiles/.config/ghostty;
-    ".config/starship".source = ../../dotfiles/.config/starship;
+    ".config/starship".source = ../../dotfiles/.config/starship/starship.toml;
     ".config/lazygit".source = ../../dotfiles/.config/lazygit;
     
     # Wayland & Window Manager configs

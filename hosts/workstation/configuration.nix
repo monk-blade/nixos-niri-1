@@ -153,6 +153,18 @@ in
     pulse.enable = true;
   };
 
+  # Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;  # Don't auto-power on boot (saves battery)
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+        Experimental = true;  # Enable experimental features
+      };
+    };
+  };
+
   # Fingerprint authentication
   services.fprintd = {
     enable = true;
