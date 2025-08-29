@@ -97,8 +97,20 @@ in
   };
   
   # DNS will be handled automatically by NetworkManager
-  # networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];  # Only needed for VMs
-  # networking.resolvconf.enable = true;  # Default behavior
+  # Optional: Custom DNS servers (uncomment if you want to override ISP DNS)
+  # networking.nameservers = [ "8.8.8.8" "1.1.1.1" "1.0.0.1" "9.9.9.9" ];
+  
+  # Enable systemd-resolved for better DNS handling
+  services.resolved = {
+    enable = true;
+    dnssec = "true";
+    domains = [ "~." ];
+    fallbackDns = [ "8.8.8.8" "1.1.1.1" ];
+    extraConfig = ''
+      DNS=8.8.8.8 1.1.1.1 1.0.0.1
+      FallbackDNS=9.9.9.9 149.112.112.112
+    '';
+  };
 
   # Time zone
   time.timeZone = "Africa/Tunis";
