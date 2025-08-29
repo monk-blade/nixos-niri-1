@@ -2,6 +2,7 @@
 
 let
   versions = import ../../versions.nix;
+  locals = import ./locals.nix { inherit pkgs; };
 in
 {
   imports = [
@@ -10,10 +11,23 @@ in
     ./stylix.nix
   ];
 
-  # Bootloader for VirtualBox
+  # Bootloader configuration
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.configurationLimit = 5;
+  
+  # LUKS disk encryption support
+  boot.initrd.luks.devices = {
+    # Example LUKS setup - uncomment and configure for real hardware
+    # "luks-root" = {
+    #   device = "/dev/disk/by-uuid/YOUR-LUKS-UUID-HERE";
+    #   preLVM = true;
+    # };
+  };
+  
+  # Enable LUKS support in initrd
+  boot.initrd.availableKernelModules = [ "aes" "xts" "sha256" "sha512" ];
+  boot.supportedFilesystems = [ "ext4" "btrfs" "xfs" "ntfs" ];
 
   system.autoUpgrade = {
     enable = false;  # Set to true if you want automatic updates
@@ -40,8 +54,28 @@ in
   boot.initrd.checkJournalingFS = false;
   virtualisation.virtualbox.guest.enable = true;
 
+  # Graphics and hardware acceleration
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;  # For 32-bit applications
+    
+    # Mesa drivers for Intel/AMD/Nouveau
+    extraPackages = with pkgs; [
+      mesa.drivers
+      intel-media-driver  # Intel hardware video acceleration
+      intel-vaapi-driver  # Intel VA-API support
+      libvdpau-va-gl     # VDPAU support
+    ];
+    
+    # 32-bit support for games and legacy apps
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      mesa.drivers
+      intel-media-driver
+    ];
+  };
+
   # Network
-  networking.hostName = "nixos";
+  networking.hostName = locals.hostname;
   networking.networkmanager.enable = true;
   
   # DNS configuration for VM
@@ -60,12 +94,17 @@ in
   # Locale
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # X11 and Desktop Environment (adjust as needed)
-  services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.lightdm.greeters.gtk.enable = true;  
-  services.xserver.desktopManager.xfce.enable = true;
+  # Display Manager and Wayland Compositor
+  services.xserver.enable = true;  # Still needed for LightDM
+  services.displayManager.lightdm.enable = true;
+  services.displayManager.lightdm.greeters.gtk.enable = true;
+  
+  # Primary compositor
   programs.niri.enable = true;
+  
+  # Emergency fallback desktop (lightweight)
+  services.xserver.desktopManager.xfce.enable = lib.mkDefault false;  # Disabled by default
+  # To enable fallback: rebuild with --override-input or set to true
 
   # Enable Wayland protocols
   xdg.portal = {
@@ -142,7 +181,7 @@ in
       CPU_MIN_PERF_ON_AC = 0;
       CPU_MAX_PERF_ON_AC = 100;
       CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 80;  # Limit CPU to 50% on battery
+      CPU_MAX_PERF_ON_BAT = 80;  # Limit CPU to 80% on battery
       
       START_CHARGE_THRESH_BAT0 = 40;
       STOP_CHARGE_THRESH_BAT0 = 80;  # Battery charge limiting
@@ -153,11 +192,21 @@ in
   };
 
   # Additional power optimizations
-  services.thermald.enable = true;  # Thermal management
-  services.auto-cpufreq.enable = true;  # Automatic CPU frequency scaling
+  services.thermald.enable = true;  # Thermal management (compatible with TLP)
+  # services.auto-cpufreq.enable = true;  # DISABLED - conflicts with TLP
   
   services.printing.enable = lib.mkDefault true;
   services.avahi.enable = lib.mkDefault true;
+  
+  # SSH for remote recovery (disabled by default)
+  services.openssh = {
+    enable = lib.mkDefault false;  # Enable when needed: set to true
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
 
   environment.sessionVariables = {
     # Enable Wayland for Chromium-based apps

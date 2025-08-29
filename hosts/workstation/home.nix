@@ -132,8 +132,13 @@ in
     slack
     discord
 
-    # obs-studio
-    
+    # PDF viewers and document tools
+    zathura      # Lightweight PDF viewer with vim-like keybindings
+
+    # Add to home.packages
+    # gimp        # Image editing
+    # inkscape    # Vector graphics
+    # obs-studio  # Screen recording (you have commented)    
   ];
 
   # Link your existing dotfiles

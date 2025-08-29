@@ -401,6 +401,7 @@ binds {
     Alt+P { spawn "fuzzel"; }    
     Shift+Alt+L { spawn "swaylock"; }
     Mod+E { spawn "thunar"; }
+    Mod+P { spawn "zathura"; }  // Quick PDF viewer launch
     
     // Web Applications (using Chromium in app mode )
     Alt+A { spawn "chromium" "--app=https://chatgpt.com"; }
