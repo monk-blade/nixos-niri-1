@@ -36,6 +36,8 @@ in
     swaybg  # For backdrop wallpaper in overview mode 
     imagemagick  # For wallpaper blur effects
     fuzzel  # Application launcher
+    switcheroo
+    localsend
     
     # mako  # Lightweight notification daemon
     swaynotificationcenter  # SwayNC notification daemon
@@ -44,6 +46,7 @@ in
     wl-clipboard  # Wayland clipboard utilities
     grim  # Screenshot utility
     slurp  # Screen area selection
+    # davinci-resolve
     
     # Essential Development
     fnm  # Fast Node Manager
