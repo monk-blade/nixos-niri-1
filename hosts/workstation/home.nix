@@ -8,7 +8,8 @@ in
   imports = [
     ../../globals.nix 
     ../../modules/shell.nix
-    ../../modules/tmux.nix 
+    ../../modules/tmux.nix
+    ../../modules/git.nix
   ];
   
   # Basic info
@@ -195,34 +196,6 @@ in
   programs.nh.enable = true;
   
   # programs.virt-manager.enable = true;
-
-  # Enable programs that need special handling
-  programs = {
-    # Git configuration
-    git = {
-      enable = true;
-      userName = "abbesm0hamed";
-      userEmail = "abbesmohamed717@gmail.com";
-      extraConfig = {
-        init.defaultBranch = "main";
-        core.editor = "nvim";
-        pull.rebase = false;
-        push.default = "simple";
-      };
-    };
-    
-    # SSH configuration for GitHub
-    ssh = {
-      enable = true;
-      matchBlocks = {
-        "github.com" = {
-          hostname = "github.com";
-          user = "git";
-          identityFile = "~/.ssh/id_ed25519";
-        };
-      };
-    };
-  };
 
   # Environment variables
   home.sessionVariables = {
