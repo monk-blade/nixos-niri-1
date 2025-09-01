@@ -65,6 +65,8 @@ in
     docker
     docker-compose
 
+    tableplus
+
     kubectl
     terraform
     
