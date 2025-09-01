@@ -162,11 +162,10 @@ in
     lsof                    # list open files
   ];
 
-  # Link your existing dotfiles
   home.file = {
     # Shell & Terminal configs
     ".config/ghostty".source = ../../dotfiles/.config/ghostty;
-    ".config/starship".source = ../../dotfiles/.config/starship/starship.toml;
+    ".config/starship.toml".source = ../../dotfiles/.config/starship/starship.toml;
     ".config/lazygit".source = ../../dotfiles/.config/lazygit;
     
     # Wayland & Window Manager configs
