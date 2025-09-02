@@ -51,6 +51,7 @@ in
     
     # Essential Development
     fnm  # Fast Node Manager
+    windsurf
     
     # Languages & Runtimes
     nodejs_24  # Latest LTS Node.js
