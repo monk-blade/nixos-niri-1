@@ -65,14 +65,16 @@ in
     docker
     docker-compose
 
-    tableplus
 
     kubectl
     terraform
     
     # API & Network tools
     httpie  # Better curl alternative
-    bruno  # API testing
+    # bruno  # API testing
+    # postman
+    yaak
+    tableplus
     
     # Code quality & formatting
     shellcheck  # Shell script linting
