@@ -199,6 +199,23 @@ in
   
   # programs.virt-manager.enable = true;
 
+  # Systemd user services
+  systemd.user.services = {
+    # Clipboard history daemon
+    cliphist = {
+      Unit = {
+        Description = "Clipboard history daemon";
+        After = [ "graphical-session.target" ];
+      };
+      Service = {
+        ExecStart = "${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store";
+        Restart = "always";
+        RestartSec = "1";
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
+  };
+
   # Environment variables
   home.sessionVariables = {
     XCURSOR_THEME = "Bibata-Modern-Ice";
