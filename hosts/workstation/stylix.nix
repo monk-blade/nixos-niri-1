@@ -61,6 +61,6 @@ in
     base0C = "94e2d5";
     base0D = "89b4fa";
     base0E = "cba6f7";
-    base0F = "f2cdcd";
+    base0F = "cba6f7";
   };
 }
