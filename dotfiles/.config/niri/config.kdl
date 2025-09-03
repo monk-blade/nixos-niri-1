@@ -418,15 +418,12 @@ binds {
     // System Management
     Alt+Shift+F { spawn "foot" "--title=Fingerprint Setup" "~/.config/niri/scripts/fingerprint-setup.sh"; }
     
-    // Screenshots & Screen Recording
-    Alt+S { spawn "~/.config/niri/scripts/screenshot.sh" "area"; }  // Area screenshot
-    Shift+Print { spawn "~/.config/niri/scripts/screenshot.sh" "window"; }  // Window screenshot
-    Ctrl+Print { spawn "~/.config/niri/scripts/screenshot.sh" "screen"; }  // Full screen
+    // Screen Recording
     Alt+Shift+R { spawn "~/.config/niri/scripts/screencast.sh" "area"; }  // Start area recording
     Alt+Ctrl+R { spawn "~/.config/niri/scripts/screencast.sh" "stop"; }  // Stop recording
     
     // Clipboard Management
-    Alt+V { spawn "~/.config/niri/scripts/clipboard-manager.sh"; }  // Show clipboard history
+    Alt+Ctrl+V { spawn "~/.config/niri/scripts/clipboard-manager.sh"; }  // Show clipboard history
     
     // Omarchy-inspired System Controls (similar to Omarchy's menu system)
     Alt+Space { spawn "~/.config/niri/scripts/system-controls.sh"; }
