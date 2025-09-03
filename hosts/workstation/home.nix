@@ -134,7 +134,7 @@ in
     auto-cpufreq  # Automatic CPU frequency scaling
     
     # File Management
-    kdePackages.dolphin
+    nautilus  # GNOME Files
 
     # libreoffice-qt6-fresh
 
