@@ -87,6 +87,7 @@ window#waybar {
 }
 #custom-notifications {
   border-left: 2px dotted #4a4a64;
+  padding: 4px 0px;
 }
 #custom-next-prayer {
   font-weight: 600;
