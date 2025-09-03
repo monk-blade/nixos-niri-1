@@ -8,7 +8,8 @@
   color: #cdd6f4; /* base05 - default foreground */
   border: 1px solid #89b4fa; /* base0D - blue accent (matching Niri windows) */
   border-radius: 0px;
-  padding: 10px 10px;
+  margin: 4px 0px;
+  padding: 12px 16px;
   font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
