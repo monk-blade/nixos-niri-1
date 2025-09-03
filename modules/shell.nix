@@ -33,6 +33,7 @@
     ranger
 
     ffmpeg
+    killall
   ];
 
   # Fish shell configuration
