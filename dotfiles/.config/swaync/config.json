@@ -49,6 +49,7 @@
     }
   },
   "widgets": ["inhibitors", "title", "dnd", "notifications"],
+  "dnd": false,
   "widget-config": {
     "inhibitors": {
       "text": "Inhibitors",

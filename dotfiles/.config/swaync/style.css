@@ -6,12 +6,11 @@
 .notification {
   background-color: #111318; /* base00 - main background */
   color: #cdd6f4; /* base05 - default foreground */
-  border: 1px solid #cba6f7; /* base0E - purple accent */
+  border: 1px solid #89b4fa; /* base0D - blue accent (matching Niri windows) */
   border-radius: 0px;
   margin: 10px;
-  padding: 12px 16px;
+  padding: 10px 10px;
   font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .notification .title {
@@ -54,11 +53,13 @@
   background-color: #383850; /* base03 - hover state */
   border-color: #cba6f7; /* base0E - purple accent */
   color: #f9e2af; /* base0A - yellow highlight */
+  border-radius: 0px;
 }
 
 .control-center .widget-title > button:active {
   background-color: #4a4a64; /* base04 - active state */
   color: #a6e3a1; /* base0B - green active */
+  border-radius: 0px;
 }
 
 .control-center .notification-row {
