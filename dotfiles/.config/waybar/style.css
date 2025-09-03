@@ -85,10 +85,6 @@ window#waybar {
   border-right: 2px dotted #4a4a64;
   border-left: 2px dotted #4a4a64;
 }
-#custom-notifications {
-  border-left: 2px dotted #4a4a64;
-  padding: 4px 0px;
-}
 #custom-next-prayer {
   font-weight: 600;
   padding: 4px 10px;
