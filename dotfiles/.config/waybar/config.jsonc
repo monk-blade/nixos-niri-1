@@ -203,15 +203,16 @@
         "on-click": "~/.config/waybar/scripts/power-menu.sh"
     },
     "custom/notifications": {
+        "tooltip": false,
         "format": "{icon} {}",
         "format-icons": {
-            "notification": "󰂚",
+            "notification": "<span foreground='#f9e2af'>󰂚</span>",
             "none": "󰂛",
-            "dnd-notification": "󰂛",
+            "dnd-notification": "<span foreground='#fab387'>󰂛</span>",
             "dnd-none": "󰂛",
-            "inhibited-notification": "󰂚",
+            "inhibited-notification": "<span foreground='#f9e2af'>󰂚</span>",
             "inhibited-none": "󰂛",
-            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-notification": "<span foreground='#fab387'>󰂛</span>",
             "dnd-inhibited-none": "󰂛"
         },
         "return-type": "json",
@@ -219,6 +220,7 @@
         "exec": "swaync-client -swb",
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
+        "on-click-middle": "swaync-client -C",
         "escape": true
     },
     "custom/fingerprint": {

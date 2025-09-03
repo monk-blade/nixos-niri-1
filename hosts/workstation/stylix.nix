@@ -63,4 +63,10 @@ in
     base0E = "cba6f7";
     base0F = "f2cdcd";
   };
+  
+  # Configure which applications Stylix should theme
+  stylix.targets = {
+    # Enable SwayNC theming
+    swaynotificationcenter.enable = true;
+  };
 }
