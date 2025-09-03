@@ -96,6 +96,7 @@
       # Git shortcuts
       g = "git";
       gs = "git status";
+      gsh = "git stash";
       ga = "git add";
       gc = "git commit";
       gp = "git push";

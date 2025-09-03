@@ -26,7 +26,6 @@ in
     
     # Terminal & Shell
     ghostty
-    foot
     cliphist
     dysk
     
