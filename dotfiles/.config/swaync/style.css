@@ -1,15 +1,21 @@
 /* === Notifications === */
+/* Global font family */
+* {
+  font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
+}
+
 .notification {
-  background-color: #0c141e;
+  background-color: #111318;
   color: #c2c4c6;
-  border: 2px solid #9F7A85;
+  border: 2px solid #9f7a85;
   border-radius: 0px;
   margin: 6px;
   padding: 6px 12px;
+  font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
 }
 
 .notification .title {
-  color: #AC9196;
+  color: #ac9196;
   font-weight: bold;
 }
 
@@ -19,21 +25,22 @@
 
 /* === Control Center === */
 .control-center {
-  background-color: #0c141e;
+  background-color: #111318;
   color: #c2c4c6;
   border-radius: 0px;
   padding: 16px;
+  font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
 }
 
 .control-center .widget-title {
-  color: #AC9196;
+  color: #ac9196;
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
 .control-center .notification-row {
-  background-color: #62545B;
+  background-color: #62545b;
   border-radius: 8px;
   margin-bottom: 6px;
 }
