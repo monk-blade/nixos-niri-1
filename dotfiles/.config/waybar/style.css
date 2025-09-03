@@ -80,14 +80,14 @@ window#waybar {
 #clock {
   font-weight: 600;
   padding: 4px 10px;
-  background: #0c141e;
+  background: #141430;
   border-radius: 0px;
   border-bottom: 1px solid #383850;
 }
 #custom-next-prayer {
   font-weight: 600;
   padding: 4px 10px;
-  background: #0c141e;
+  background: #141430;
   border-radius: 0px;
   border-bottom: 1px solid #383850;
 }
