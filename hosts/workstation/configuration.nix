@@ -199,17 +199,6 @@ in
     packages = with pkgs; [];
   };
 
-  # GTK and icon theme support for proper application theming
-  environment.systemPackages = with pkgs; [
-    # GTK themes and icon support
-    adwaita-icon-theme    # Default GNOME icons (required for Nautilus)
-    gtk3                  # GTK3 runtime
-    gtk4                  # GTK4 runtime
-    glib                  # GLib runtime (required for GTK apps)
-    # Font rendering
-    fontconfig
-  ];
-
   # Enable dconf for GTK settings
   programs.dconf.enable = true;
 

@@ -135,6 +135,12 @@ in
     
     # File Management
     nautilus  # GNOME Files
+    
+    # GTK theming and icon support for Nautilus
+    adwaita-icon-theme    # Default GNOME icons (required for Nautilus)
+    gtk3                  # GTK3 runtime
+    gtk4                  # GTK4 runtime
+    glib                  # GLib runtime (required for GTK apps)
 
     # libreoffice-qt6-fresh
 
