@@ -4,11 +4,11 @@
 }
 
 .notification {
-  background-color: #111318; /* base00 - main background */
+  background-color: #141420; /* base00 - main background */
   color: #cdd6f4; /* base05 - default foreground */
   border: 1px solid #89b4fa; /* base0D - blue accent (matching Niri windows) */
   border-radius: 0px;
-  margin: 4px 0px;
+  margin: 4px -2px;
   padding: 10px 14px;
   font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
 }
@@ -31,7 +31,6 @@
   border-radius: 0px;
   padding: 20px;
   font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
 }
 
 .control-center .widget-title {
@@ -44,7 +43,7 @@
   background-color: #252538; /* base02 - selection background */
   border: 1px solid #383850; /* base03 - subtle border */
   border-radius: 0px;
-  padding: 10px 16px;
+  padding: 10px 14px;
   color: #cdd6f4; /* base05 - default foreground */
   transition: all 0.2s ease;
 }
