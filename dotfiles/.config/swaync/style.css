@@ -1,42 +1,64 @@
-/* === Notifications === */
 /* Global font family */
 * {
   font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
 }
 
 .notification {
-  background-color: #111318;
-  color: #c2c4c6;
-  border: 2px solid #9f7a85;
-  border-radius: 0px;
-  margin: 6px;
-  padding: 6px 12px;
+  background-color: #111318;  /* base00 - main background */
+  color: #cdd6f4;  /* base05 - default foreground */
+  border: 2px solid #cba6f7;  /* base0E - purple accent */
+  border-radius: 8px;
+  margin: 8px;
+  padding: 12px 16px;
   font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .notification .title {
-  color: #ac9196;
   font-weight: bold;
+  color: #f9e2af;  /* base0A - yellow for titles */
 }
 
 .notification .body {
-  color: #c2c4c6;
+  margin-top: 4px;
+  color: #cdd6f4;  /* base05 - default foreground */
 }
 
 /* === Control Center === */
 .control-center {
-  background-color: #111318;
-  color: #c2c4c6;
-  border-radius: 0px;
-  padding: 16px;
+  background-color: #111318;  /* base00 - main background */
+  color: #cdd6f4;  /* base05 - default foreground */
+  border: 2px solid #89b4fa;  /* base0D - blue accent */
+  border-radius: 12px;
+  padding: 20px;
   font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .control-center .widget-title {
-  color: #ac9196;
-  font-size: 1.2em;
   font-weight: bold;
-  margin-bottom: 8px;
+  color: #94e2d5;  /* base0C - cyan for widget titles */
+  margin-bottom: 12px;
+}
+
+.control-center .widget-title > button {
+  background-color: #252538;  /* base02 - selection background */
+  border: 1px solid #383850;  /* base03 - subtle border */
+  border-radius: 6px;
+  padding: 10px 16px;
+  color: #cdd6f4;  /* base05 - default foreground */
+  transition: all 0.2s ease;
+}
+
+.control-center .widget-title > button:hover {
+  background-color: #383850;  /* base03 - hover state */
+  border-color: #cba6f7;  /* base0E - purple accent */
+  color: #f9e2af;  /* base0A - yellow highlight */
+}
+
+.control-center .widget-title > button:active {
+  background-color: #4a4a64;  /* base04 - active state */
+  color: #a6e3a1;  /* base0B - green active */
 }
 
 .control-center .notification-row {

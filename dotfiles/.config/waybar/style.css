@@ -80,16 +80,18 @@ window#waybar {
 #clock {
   font-weight: 600;
   padding: 4px 10px;
-  background: #141430;
   border-radius: 0px;
   border-bottom: 1px solid #383850;
+  border-right: 2px dotted #4a4a64;
+  border-left: 2px dotted #4a4a64;
 }
 #custom-next-prayer {
   font-weight: 600;
   padding: 4px 10px;
-  background: #141430;
   border-radius: 0px;
   border-bottom: 1px solid #383850;
+  border-right: 2px dotted #4a4a64;
+  border-left: 2px dotted #4a4a64;
 }
 
 /* Battery states */
