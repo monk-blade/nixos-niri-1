@@ -1,344 +1,52 @@
-/* SwayNC Custom Styling - Matching Ghostty/Niri Aesthetic */
-/* Fixed transparent backdrop for notifications and control center */
-
-/* Most important - make ALL possible backdrop elements transparent */
-.swaync-control-center-layer,
-.swaync-notification-window,
-.control-center-layer,
-.notification-window-layer,
-window {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-/* Target any potential overlay or backdrop elements */
-.swaync-layer,
-.swaync-layer-shell,
-.swaync-overlay {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-/* Global Variables - Will be overridden by Stylix */
-* {
-  font-family: "SpaceMono Nerd Font";
-  font-weight: normal;
-  font-size: 12px;
-}
-
-/* Notification Window */
-.notification-row {
-  outline: none;
-  margin: 10px;
-  padding: 0;
-  background: transparent;
-}
-
-.notification-row:focus,
-.notification-row:hover {
-  background: transparent;
-}
-
-/* Individual notification styling - these should have background */
+/* === Notifications === */
 .notification {
-  background: #111318;
-  border: 1px solid #383850;
-  border-radius: 0px; /* Square borders like Niri */
-  margin: 10px;
-  padding: 15px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.notification.critical {
-  border: 1px solid #f38ba8;
-  background: #111318;
-}
-
-.notification.low {
-  border: 1px solid #4a4a64;
-  background: #111318;
-}
-
-.notification.normal {
-  border: 1px solid #383850;
-  background: #111318;
-}
-
-/* Notification Content */
-.notification-content {
-  background: transparent;
-  padding: 0;
-  margin: 0;
-}
-
-.notification-default-action {
-  background: transparent;
-  padding: 0;
-  margin: 0;
+  background-color: #0c141e;
+  color: #c2c4c6;
+  border: 2px solid #9F7A85;
   border-radius: 0px;
+  margin: 6px;
+  padding: 6px 12px;
 }
 
-.summary {
-  font-size: 14px;
+.notification .title {
+  color: #AC9196;
   font-weight: bold;
-  background: transparent;
-  color: #cdd6f4;
-  text-shadow: none;
-  margin: 0 0 5px 0;
 }
 
-.time {
-  font-size: 11px;
-  font-weight: normal;
-  background: transparent;
-  color: #4a4a64;
-  text-shadow: none;
-  margin: 0;
+.notification .body {
+  color: #c2c4c6;
 }
 
-.body {
-  font-size: 12px;
-  font-weight: normal;
-  background: transparent;
-  color: #cdd6f4;
-  text-shadow: none;
-  margin: 5px 0 0 0;
-}
-
-/* Control Center - this should have background */
+/* === Control Center === */
 .control-center {
-  background: #111318;
-  border: 1px solid #383850;
-  border-radius: 0px; /* Square borders */
-  margin: 10px;
-  padding: 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  background-color: #0c141e;
+  color: #c2c4c6;
+  border-radius: 0px;
+  padding: 16px;
 }
 
-.control-center-list {
-  background: #111318;
-  padding: 10px;
-}
-
-.control-center-list-placeholder {
-  opacity: 0.5;
-  color: #4a4a64;
-  font-size: 14px;
-  margin: 20px;
-}
-
-/* Widget Styling */
-.widget-title {
-  color: #cdd6f4;
-  background: #141420;
-  padding: 15px;
+.control-center .widget-title {
+  color: #AC9196;
+  font-size: 1.2em;
   font-weight: bold;
-  font-size: 14px;
-  border-bottom: 1px solid #383850;
-  margin: 0;
+  margin-bottom: 8px;
 }
 
-.widget-title > button {
-  font-size: 12px;
-  color: #89b4fa;
-  text-shadow: none;
-  background: #252538;
-  border: 1px solid #383850;
-  border-radius: 0px;
-  padding: 8px 12px;
-  margin: 0 0 0 10px;
+.control-center .notification-row {
+  background-color: #62545B;
+  border-radius: 8px;
+  margin-bottom: 6px;
 }
 
-.widget-title > button:hover {
-  background: #252538;
-  color: #89b4fa;
+.control-center .notification-row .title {
+  color: #c2c4c6;
 }
 
-.widget-title > button:active {
-  background: #383850;
+.control-center .notification-row .body {
+  color: #c2c4c6;
 }
 
-/* DND Widget */
-.widget-dnd {
-  background: #141420;
-  padding: 15px;
-  margin: 0;
-  border-bottom: 1px solid #383850;
-}
-
-.widget-dnd > switch {
-  border-radius: 0px;
-  background: #252538;
-  border: 1px solid #383850;
-}
-
-.widget-dnd > switch:checked {
-  background: #89b4fa;
-}
-
-.widget-dnd > switch slider {
-  background: #cdd6f4;
-  border-radius: 0px;
-  border: 1px solid #383850;
-}
-
-/* Inhibitors Widget */
-.widget-inhibitors {
-  background: #141420;
-  padding: 15px;
-  margin: 0;
-  border-bottom: 1px solid #383850;
-}
-
-.widget-inhibitors > button {
-  font-size: 12px;
-  color: #f38ba8;
-  text-shadow: none;
-  background: #252538;
-  border: 1px solid #f38ba8;
-  border-radius: 0px;
-  padding: 8px 12px;
-  margin: 5px;
-}
-
-.widget-inhibitors > button:hover {
-  background: #f38ba8;
-  color: #141420;
-}
-
-/* Notification Actions */
-.notification-action {
-  border-radius: 0px;
-  color: #cdd6f4;
-  background: #252538;
-  border: 1px solid #383850;
-  margin: 5px;
-  padding: 8px 12px;
-}
-
-.notification-action:hover {
-  background: #383850;
-  color: #cdd6f4;
-}
-
-.notification-action:active {
-  background: #4a4a64;
-}
-
-/* Close Button */
-.close-button {
-  background: #f38ba8;
-  color: #141420;
-  text-shadow: none;
-  padding: 4px 8px;
-  border: 1px solid #f38ba8;
-  border-radius: 0px;
-  margin: 5px;
-}
-
-.close-button:hover {
-  background: #fab387;
-  color: #141420;
-}
-
-/* Image */
-.notification-default-action .notification-content .image {
-  border-radius: 0px;
-  border: 1px solid #383850;
-  margin: 0 10px 0 0;
-}
-
-/* Scrollbar */
-.control-center scrollbar {
-  background: #141420;
-  border-radius: 0px;
-  border: 1px solid #383850;
-}
-
-.control-center scrollbar slider {
-  background: #4a4a64;
-  border-radius: 0px;
-  border: 1px solid #383850;
-}
-
-.control-center scrollbar slider:hover {
-  background: #cdd6f4;
-}
-
-/* Blank Window (when no notifications) - should be transparent background */
-.blank-window {
-  background: transparent !important;
-  border: none;
-  border-radius: 0px;
-}
-
-/* Floating Notifications - transparent background */
-.floating-notifications {
-  background: transparent !important;
-}
-
-/* Notification Group */
-.notification-group {
-  background: #111318;
-  border: 1px solid #383850;
-  border-radius: 0px;
-  margin: 10px;
-  padding: 0;
-}
-
-.notification-group-headers {
-  background: #141420;
-  border-bottom: 1px solid #383850;
-  padding: 10px;
-}
-
-.notification-group-icon {
-  color: #cdd6f4;
-}
-
-.notification-group-header {
-  color: #cdd6f4;
-  font-weight: bold;
-}
-
-.notification-group-collapse-button {
-  background: #252538;
-  border: 1px solid #383850;
-  border-radius: 0px;
-  color: #cdd6f4;
-  padding: 4px 8px;
-}
-
-.notification-group-collapse-button:hover {
-  background: #252538;
-}
-
-/* Make notification window container transparent but keep individual notifications styled */
-.notification-window {
-  background: transparent !important;
-  padding: 10px; /* Similar to Ghostty's window-padding */
-}
-
-/* Additional specific targeting for potential backdrop elements */
-.swaync-blank-window,
-.swaync-notification-window .notification-window {
-  background: transparent !important;
-}
-
-/* Make sure all elements respect the square border aesthetic */
-* {
-  border-radius: 0px !important;
-}
-
-/* Force transparency on any remaining backdrop elements */
-.swaync-control-center-layer > *,
-.swaync-notification-window > * {
-  background-color: transparent !important;
-}
-
-/* Target the actual window layer if it exists */
-window.swaync-notification-window,
-window.swaync-control-center {
-  background: transparent !important;
-  background-color: transparent !important;
+.control-center .empty {
+  color: #5c6570;
+  font-style: italic;
 }
