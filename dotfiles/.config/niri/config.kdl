@@ -3,9 +3,9 @@ workspace "browser" {
     // Workspace 1: Web browsers and browsing
 }
 
-workspace "terminal" {
-    // Workspace 2: Terminal applications and development
-}
+// workspace "terminal" {
+//     // Workspace 2: Terminal applications and development
+// }
 
 workspace "communication" {
     // Workspace 3: Communication and messaging apps
@@ -278,9 +278,8 @@ spawn-at-startup "swaync"  // Notification daemon
 spawn-at-startup "bash" "-c" "swww-daemon && sleep 0.5 && swww img ~/.config/backgrounds/snaky.jpg"  // Workspace wallpaper
 spawn-at-startup "bash" "-c" "sleep 1 && swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill"  // Backdrop wallpaper for overview
 spawn-at-startup "bash" "-c" "sleep 2 && zen"
-spawn-at-startup "bash" "-c" "sleep 3 && ghostty"
-// spawn-at-startup "bash" "-c" "sleep 4 && slack"
-// spawn-at-startup "bash" "-c" "sleep 5 && chromium --new-window --app=https://web.whatsapp.com"
+// spawn-at-startup "bash" "-c" "sleep 3 && slack"
+// spawn-at-startup "bash" "-c" "sleep 4 && chromium --new-window --app=https://web.whatsapp.com"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -341,11 +340,11 @@ window-rule {
 }
 
 // Terminal workspace - Development and command line
-window-rule {
-    match app-id=r#"^(com\.mitchellh\.ghostty|foot|alacritty|kitty|wezterm|org\.wezfurlong\.wezterm)$"#
-    open-on-workspace "terminal"
-    default-column-width { proportion 0.5; }
-}
+// window-rule {
+//     match app-id=r#"^(com\.mitchellh\.ghostty|foot|alacritty|kitty|wezterm|org\.wezfurlong\.wezterm)$"#
+//     open-on-workspace "terminal"
+//     default-column-width { proportion 0.5; }
+// }
 
 // Communication workspace - Messaging and communication apps
 window-rule {
@@ -401,7 +400,6 @@ binds {
     Mod+Return { spawn "foot"; }
     Ctrl+Shift+T { spawn "ghostty"; }
     Alt+Z { spawn "zen"; }
-    Mod+B { spawn "brave"; }
     Alt+P { spawn "fuzzel"; }    
     Shift+Alt+L { spawn "swaylock"; }
     Mod+E { spawn "thunar"; }
