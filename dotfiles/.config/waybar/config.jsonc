@@ -228,7 +228,7 @@
         "return-type": "json",
         "exec": "~/.config/waybar/scripts/fingerprint-status.sh",
         "interval": 30,
-        "on-click": "foot --title='Fingerprint Setup' ~/.config/niri/scripts/fingerprint-setup.sh setup",
+        "on-click": "ghostty --title='Fingerprint Setup' ~/.config/niri/scripts/fingerprint-setup.sh setup",
         "tooltip": true
     },
     "clock": {

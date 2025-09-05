@@ -414,9 +414,6 @@ binds {
     Alt+N { spawn "chromium" "--app=https://notion.so"; }
     Alt+F { spawn "chromium" "--app=https://figma.com"; }
     
-    // System Management
-    Alt+Shift+F { spawn "ghostty" "--title=Fingerprint Setup" "~/.config/niri/scripts/fingerprint-setup.sh"; }
-    
     // Screen Recording
     Alt+Shift+R { spawn "~/.config/niri/scripts/screencast.sh" "area"; }  // Start area recording
     Alt+Ctrl+R { spawn "~/.config/niri/scripts/screencast.sh" "stop"; }  // Stop recording
