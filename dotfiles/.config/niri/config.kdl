@@ -270,16 +270,17 @@ layout {
 // See the binds section below for more spawn examples.
 
 
-// Launch applications on startup with proper delays
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "waybar"
-spawn-at-startup "cliphist"
-spawn-at-startup "swaync"  // Notification daemon
-spawn-at-startup "bash" "-c" "swww-daemon && sleep 0.5 && swww img ~/.config/backgrounds/snaky.jpg"  // Workspace wallpaper
-spawn-at-startup "bash" "-c" "sleep 1 && swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill"  // Backdrop wallpaper for overview
-spawn-at-startup "bash" "-c" "sleep 2 && zen"
-// spawn-at-startup "bash" "-c" "sleep 3 && slack"
-// spawn-at-startup "bash" "-c" "sleep 4 && chromium --new-window --app=https://web.whatsapp.com"
+spawn-at-startup "bash" "-c" "sleep 0.2 && /home/abbes/.config/niri/wallpaper-setup.sh"
+spawn-at-startup "bash" "-c" "sleep 0.4 && waybar"
+spawn-at-startup "bash" "-c" "sleep 1 && zen-browser"
+spawn-at-startup "bash" "-c" "sleep 1.5 && wl-paste --type text --watch cliphist store &"
+spawn-at-startup "bash" "-c" "sleep 1.5 && wl-paste --type image --watch cliphist store &"
+spawn-at-startup "bash" "-c" "sleep 2.5 && swaync"
+
+// Communication apps (uncomment as needed)
+// spawn-at-startup "bash" "-c" "sleep 4 && slack"
+// spawn-at-startup "bash" "-c" "sleep 5 && chromium --new-window --app=https://web.whatsapp.com"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -301,10 +302,10 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
-    off
+    // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 0.8
+    slowdown 0.9
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -397,14 +398,12 @@ binds {
     // `niri msg action do-something`.
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return { spawn "foot"; }
-    Ctrl+Shift+T { spawn "ghostty"; }
+    Mod+Return { spawn "ghostty"; }
     Alt+Z { spawn "zen"; }
-    Alt+P { spawn "fuzzel"; }    
+    Alt+Tab { spawn "fuzzel"; }    
     Shift+Alt+L { spawn "swaylock"; }
-    Mod+E { spawn "thunar"; }
-    Mod+P { spawn "zathura"; }  // Quick PDF viewer launch
-    
+    Alt+E { spawn "nautilus"; }
+    Alt+P { spawn "zathura"; }  // Quick PDF viewer launch
     // Web Applications (using Chromium in app mode )
     Alt+A { spawn "chromium" "--app=https://chatgpt.com"; }
     // Alt+C { spawn "chromium" "--app=https://app.hey.com/calendar"; }
@@ -415,7 +414,7 @@ binds {
     Alt+F { spawn "chromium" "--app=https://figma.com"; }
     
     // System Management
-    Alt+Shift+F { spawn "foot" "--title=Fingerprint Setup" "~/.config/niri/scripts/fingerprint-setup.sh"; }
+    Alt+Shift+F { spawn "ghostty" "--title=Fingerprint Setup" "~/.config/niri/scripts/fingerprint-setup.sh"; }
     
     // Screen Recording
     Alt+Shift+R { spawn "~/.config/niri/scripts/screencast.sh" "area"; }  // Start area recording
