@@ -271,12 +271,13 @@ layout {
 
 
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "bash" "-c" "sleep 0.2 && /home/abbes/.config/niri/wallpaper-setup.sh"
-spawn-at-startup "bash" "-c" "sleep 0.4 && waybar"
-spawn-at-startup "bash" "-c" "sleep 1 && zen-browser"
+spawn-at-startup "bash" "-c" "swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill &" 
+spawn-at-startup "bash" "-c" "swww-daemon && swww img ~/.config/backgrounds/snaky.jpg &"  // Workspace wallpaper
+spawn-at-startup "bash" "-c" "sleep 0.5 && waybar &"
+spawn-at-startup "bash" "-c" "sleep 1 && zen &"
 spawn-at-startup "bash" "-c" "sleep 1.5 && wl-paste --type text --watch cliphist store &"
 spawn-at-startup "bash" "-c" "sleep 1.5 && wl-paste --type image --watch cliphist store &"
-spawn-at-startup "bash" "-c" "sleep 2.5 && swaync"
+spawn-at-startup "bash" "-c" "sleep 2.5 && swaync &"
 
 // Communication apps (uncomment as needed)
 // spawn-at-startup "bash" "-c" "sleep 4 && slack"
@@ -454,21 +455,15 @@ binds {
     Mod+J  { focus-window-down; }
     Mod+K    { focus-window-up; }
     Mod+L { focus-column-right; }
-    Mod+Ctrl+H  { move-column-left; }
-    Mod+Ctrl+J  { move-window-down; }
-    Mod+Ctrl+K    { move-window-up; }
-    Mod+Ctrl+L { move-column-right; }
+    Mod+Shift+H  { move-column-left; }
+    Mod+Shift+J  { move-window-down; }
+    Mod+Shift+K    { move-window-up; }
+    Mod+Shift+L { move-column-right; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
     Mod+Ctrl+Home { move-column-to-first; }
     Mod+Ctrl+End  { move-column-to-last; }
-
-    Mod+Shift+Left  { focus-monitor-left; }
-    Mod+Shift+Down  { focus-monitor-down; }
-    Mod+Shift+Up    { focus-monitor-up; }
-    Mod+Shift+Right { focus-monitor-right; }
-
 
     Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
     Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
@@ -492,12 +487,9 @@ binds {
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
     
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
-    // ...
+    Mod+Ctrl+K { move-window-to-workspace-up; }
+    Mod+Ctrl+J { move-window-to-workspace-down; }
 
-    Mod+Shift+Page_Down { move-workspace-down; }
-    Mod+Shift+Page_Up   { move-workspace-up; }
     Mod+Shift+U         { move-workspace-down; }
     Mod+Shift+I         { move-workspace-up; }
 
