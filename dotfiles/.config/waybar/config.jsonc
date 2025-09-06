@@ -353,7 +353,7 @@
         //on-scroll-down: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04+";
         //on-scroll-up: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04-";
         "format": "{icon}{volume}%",
-        "format-muted": " ",
+        "format-muted": "  ",
         "format-source": " ",
         "format-source-muted": " ",
         //"format-muted": "<span foreground='#fab387'> </span>",
@@ -376,9 +376,9 @@
         "icon-size": 14,
         "spacing": 6,
         "ignored-items": [
-            "nm-applet", 
-            "blueman-applet",
-            "network-manager-applet"
+                "*blueman*",
+                "*network*", 
+                "*nm-*"
         ]
     },
     "niri/language": {
