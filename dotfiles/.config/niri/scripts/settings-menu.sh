@@ -6,30 +6,30 @@
 # Function to show audio settings
 audio_menu() {
     local options=(
-        "🔊 Volume Control (pavucontrol)"
-        "🎵 Audio Devices"
-        "🔇 Toggle Mute"
-        "📢 Increase Volume (+5%)"
-        "📉 Decrease Volume (-5%)"
+        "  Volume Control (pavucontrol)" # nf-fa-volume_up
+        "  Audio Devices"                # nf-fa-headphones
+        "󰝟  Toggle Mute"                  # nf-mdi-volume_off
+        "  Increase Volume (+5%)"        # nf-fa-microphone
+        "  Decrease Volume (-5%)"        # nf-fa-volume_down
     )
-    
+
     local choice
     choice=$(printf '%s\n' "${options[@]}" | fuzzel --dmenu --prompt="Audio Settings: " --width=40 --lines=6)
-    
+
     case "$choice" in
         *"Volume Control"*) pavucontrol & ;;
-        *"Audio Devices"*) 
+        *"Audio Devices"*)
             pactl list sinks short | fuzzel --dmenu --prompt="Audio Devices: " --width=60
             ;;
-        *"Toggle Mute"*) 
+        *"Toggle Mute"*)
             pactl set-sink-mute @DEFAULT_SINK@ toggle
             notify-send "Audio" "Audio mute toggled" -i "audio-volume-muted"
             ;;
-        *"Increase Volume"*) 
+        *"Increase Volume"*)
             pactl set-sink-volume @DEFAULT_SINK@ +5%
             notify-send "Audio" "Volume increased" -i "audio-volume-high"
             ;;
-        *"Decrease Volume"*) 
+        *"Decrease Volume"*)
             pactl set-sink-volume @DEFAULT_SINK@ -5%
             notify-send "Audio" "Volume decreased" -i "audio-volume-low"
             ;;
@@ -39,33 +39,33 @@ audio_menu() {
 # Function to show display settings
 display_menu() {
     local options=(
-        "🖥️ Display Configuration"
-        "💡 Brightness Control"
-        "🌅 Night Light Settings"
-        "🔆 Increase Brightness (+10%)"
-        "🔅 Decrease Brightness (-10%)"
+        "  Display Configuration"      # nf-fa-desktop
+        "  Brightness Control"         # nf-fa-lightbulb_o
+        "  Night Light Settings"       # nf-fa-moon_o
+        "  Increase Brightness (+10%)" # nf-fa-adjust
+        "  Decrease Brightness (-10%)" # nf-fa-tint
     )
-    
+
     local choice
     choice=$(printf '%s\n' "${options[@]}" | fuzzel --dmenu --prompt="Display Settings: " --width=40 --lines=6)
-    
+
     case "$choice" in
-        *"Display Configuration"*) 
+        *"Display Configuration"*)
             notify-send "Settings" "Edit ~/.config/niri/config.kdl for display settings" -i "preferences-desktop-display"
             ghostty -e nvim ~/.config/niri/config.kdl &
             ;;
-        *"Brightness Control"*) 
+        *"Brightness Control"*)
             local current=$(brightnessctl get)
             local max=$(brightnessctl max)
             local percent=$((current * 100 / max))
             notify-send "Brightness" "Current: ${percent}%" -i "display-brightness"
             ;;
         *"Night Light Settings"*) ~/.config/niri/scripts/system-controls.sh ;;
-        *"Increase Brightness"*) 
+        *"Increase Brightness"*)
             brightnessctl set +10%
             notify-send "Brightness" "Brightness increased" -i "display-brightness"
             ;;
-        *"Decrease Brightness"*) 
+        *"Decrease Brightness"*)
             brightnessctl set 10%-
             notify-send "Brightness" "Brightness decreased" -i "display-brightness"
             ;;
@@ -75,21 +75,21 @@ display_menu() {
 # Function to show network settings
 network_menu() {
     local options=(
-        "📶 WiFi Networks"
-        "🔵 Bluetooth Devices"
-        "🌐 Network Manager"
-        "📡 Toggle WiFi"
-        "🔵 Toggle Bluetooth"
+        "  WiFi Networks"     # nf-fa-wifi
+        "  Bluetooth Devices" # nf-fa-bluetooth
+        "  Network Manager"   # nf-fa-sitemap (or globe)
+        "  Toggle WiFi"       # nf-fa-wifi
+        "  Toggle Bluetooth"  # nf-fa-bluetooth
     )
-    
+
     local choice
     choice=$(printf '%s\n' "${options[@]}" | fuzzel --dmenu --prompt="Network Settings: " --width=40 --lines=6)
-    
+
     case "$choice" in
-        *"WiFi Networks"*) 
+        *"WiFi Networks"*)
             nmcli device wifi list | fuzzel --dmenu --prompt="WiFi Networks: " --width=60
             ;;
-        *"Bluetooth Devices"*) 
+        *"Bluetooth Devices"*)
             bluetoothctl devices | fuzzel --dmenu --prompt="Bluetooth Devices: " --width=60
             ;;
         *"Network Manager"*) nm-connection-editor & ;;
@@ -101,51 +101,51 @@ network_menu() {
 # Function to show system info
 system_info() {
     local info=(
-        "💻 $(uname -n)"
-        "🐧 $(uname -r)"
-        "⚡ $(uptime -p)"
-        "💾 $(free -h | awk '/^Mem:/ {print $3 "/" $2}')"
-        "💽 $(df -h / | awk 'NR==2 {print $3 "/" $2}')"
-        "🌡️ $(sensors 2>/dev/null | grep -E 'Core|temp' | head -1 | awk '{print $3}' || echo 'N/A')"
+        "  $(uname -n)"  # nf-fa-laptop
+        "  $(uname -r)"  # nf-fa-linux
+        "  $(uptime -p)" # nf-fa-bolt
+        "  $(free -h | awk '/^Mem:/ {print $3 "/" $2}')"
+        "  $(df -h / | awk 'NR==2 {print $3 "/" $2}')"
+        "  $(sensors 2>/dev/null | grep -E 'Core|temp' | head -1 | awk '{print $3}' || echo 'N/A')"
     )
-    
+
     printf '%s\n' "${info[@]}" | fuzzel --dmenu --prompt="System Info: " --width=50 --lines=8
 }
 
 # Main settings menu
 main_menu() {
     local options=(
-        "🔊 Audio Settings"
-        "🖥️ Display Settings"
-        "📶 Network Settings"
-        "⌨️ Input Settings"
-        "🔔 Notification Settings"
-        "🎨 Appearance"
-        "ℹ️ System Information"
-        "⚙️ Edit Niri Config"
-        "🏠 Edit Home Config"
-        "🔧 System Settings (GUI)"
+        "  Audio Settings"        # nf-fa-volume_up
+        "  Display Settings"      # nf-fa-desktop
+        "  Network Settings"      # nf-fa-wifi
+        "  Input Settings"        # nf-fa-keyboard_o
+        "  Notification Settings" # nf-fa-bell
+        "  Appearance"            # nf-fa-paint_brush
+        "  System Information"    # nf-fa-info_circle
+        "  Edit Niri Config"      # nf-fa-cogs
+        "  Edit Home Config"      # nf-fa-home
+        "  System Settings (GUI)" # nf-fa-wrench
     )
-    
+
     local choice
     choice=$(printf '%s\n' "${options[@]}" | fuzzel --dmenu --prompt="Settings: " --width=40 --lines=10)
-    
+
     case "$choice" in
         *"Audio Settings"*) audio_menu ;;
         *"Display Settings"*) display_menu ;;
         *"Network Settings"*) network_menu ;;
-        *"Input Settings"*) 
+        *"Input Settings"*)
             notify-send "Settings" "Configure input in Niri config" -i "preferences-desktop-keyboard"
             ghostty -e nvim ~/.config/niri/config.kdl &
             ;;
-        *"Notification Settings"*) 
+        *"Notification Settings"*)
             ghostty -e nvim ~/.config/swaync/config.json &
             ;;
         *"Appearance"*) ~/.config/niri/scripts/theme-menu.sh ;;
         *"System Information"*) system_info ;;
         *"Edit Niri Config"*) ghostty -e nvim ~/.config/niri/config.kdl & ;;
         *"Edit Home Config"*) ghostty -e nvim /home/abbes/nixverse/hosts/workstation/home.nix & ;;
-        *"System Settings"*) 
+        *"System Settings"*)
             if command -v gnome-control-center >/dev/null; then
                 gnome-control-center &
             else
