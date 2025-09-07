@@ -5,7 +5,7 @@
 
 # Function to check if a service/feature is active
 check_idle_mode() {
-    if pgrep -f "swayidle" > /dev/null; then
+    if pgrep -f "swayidle" >/dev/null; then
         echo "🌙 Idle Mode: ON"
     else
         echo "🌙 Idle Mode: OFF"
@@ -13,7 +13,7 @@ check_idle_mode() {
 }
 
 check_night_light() {
-    if pgrep -f "gammastep\|redshift" > /dev/null; then
+    if pgrep -f "gammastep\|redshift" >/dev/null; then
         echo "🌅 Night Light: ON"
     else
         echo "🌅 Night Light: OFF"
@@ -21,7 +21,7 @@ check_night_light() {
 }
 
 check_notifications() {
-    if pgrep -f "swaync\|mako" > /dev/null; then
+    if pgrep -f "swaync\|mako" >/dev/null; then
         echo "🔔 Notifications: ON"
     else
         echo "🔔 Notifications: OFF"
@@ -46,7 +46,7 @@ check_bluetooth() {
 
 # Function to toggle idle mode
 toggle_idle_mode() {
-    if pgrep -f "swayidle" > /dev/null; then
+    if pgrep -f "swayidle" >/dev/null; then
         pkill swayidle
         notify-send "System Controls" "Idle mode disabled" -i "system-suspend"
     else
@@ -60,18 +60,18 @@ toggle_idle_mode() {
 
 # Function to toggle night light
 toggle_night_light() {
-    if pgrep -f "gammastep" > /dev/null; then
+    if pgrep -f "gammastep" >/dev/null; then
         pkill gammastep
         notify-send "System Controls" "Night light disabled" -i "weather-clear-night"
     else
-        gammastep -O 4000 &
+        gammastep -O 2000 &
         notify-send "System Controls" "Night light enabled" -i "weather-clear-night"
     fi
 }
 
 # Function to toggle notifications
 toggle_notifications() {
-    if pgrep -f "swaync" > /dev/null; then
+    if pgrep -f "swaync" >/dev/null; then
         swaync-client -d
         notify-send "System Controls" "Notifications disabled"
     else
@@ -111,8 +111,6 @@ main_menu() {
         "$(check_wifi)"
         "$(check_bluetooth)"
         "🔧 Settings"
-        "🎨 Themes"
-        "🔄 Reload Niri"
         "🔒 Lock Screen"
         "⚡ Power Menu"
     )
@@ -127,10 +125,8 @@ main_menu() {
         *"WiFi"*) toggle_wifi ;;
         *"Bluetooth"*) toggle_bluetooth ;;
         *"Settings") ~/.config/niri/scripts/settings-menu.sh ;;
-        *"Themes") ~/.config/niri/scripts/theme-menu.sh ;;
-        *"Reload Niri") niri msg action reload-config && notify-send "System" "Niri configuration reloaded" ;;
         *"Lock Screen") swaylock ;;
-        *"Power Menu") ~/.config/niri/scripts/power-menu.sh ;;
+        *"Power Menu") ~/.config/waybar/scripts/power-menu.sh ;;
     esac
 }
 

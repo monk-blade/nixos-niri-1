@@ -4,12 +4,14 @@ let
   locals = import ../hosts/workstation/locals.nix { inherit pkgs; };
 in
 {
+  services.displayManager.autoLogin.enable = false;
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
     
     settings = {
       General = {
+        Relogin = false;
         DefaultSession = "niri.desktop";
         EnableAvatars = false;
       };

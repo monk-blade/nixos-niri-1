@@ -48,6 +48,7 @@ in
     swaynotificationcenter  # SwayNC notification daemon
     libnotify  # Provides notify-send command
     swaylock-effects  # Screen locker with effects (better for wlroots/Niri)
+    swayidle
     wl-clipboard  # Wayland clipboard utilities
     grim  # Screenshot utility
     slurp  # Screen area selection

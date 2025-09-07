@@ -264,6 +264,14 @@ in
       WIFI_PWR_ON_BAT = "on";
     };
   };
+  services.logind = {
+    lidSwitch = "suspend";
+    lidSwitchExternalPower = "suspend";
+    killUserProcesses = false;
+  };
+
+  # Enable the user service to run when user is not actively logged in
+  users.users.abbes.linger = true;
 
   # Additional power optimizations
   services.thermald.enable = true;  # Thermal management (compatible with TLP)

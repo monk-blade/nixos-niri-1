@@ -273,7 +273,7 @@ layout {
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "bash" "-c" "swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill &" 
 spawn-at-startup "bash" "-c" "swww-daemon && swww img ~/.config/backgrounds/snaky.jpg &"  // Workspace wallpaper
-spawn-at-startup "bash" "-c" "sleep 0.5 && waybar &"
+spawn-at-startup "bash" "-c" "sleep 0.5 && ~/.config/waybar/waybar.sh"
 spawn-at-startup "bash" "-c" "sleep 1 && zen &"
 spawn-at-startup "bash" "-c" "sleep 1.5 && wl-paste --type text --watch cliphist store &"
 spawn-at-startup "bash" "-c" "sleep 1.5 && wl-paste --type image --watch cliphist store &"
