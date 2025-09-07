@@ -128,40 +128,20 @@ window#waybar {
   -gtk-icon-effect: highlight;
 }
 
-/* Power button */
-#custom-power {
-  color: #cdd6f4;
-  padding: 4px 4px;
-  transition: all 0.2s ease;
-}
-
 #custom-power:hover {
   color: #f38ba8;
 }
 
-/* Idle Inhibitor (Keep Awake) */
-#idle_inhibitor {
-  color: #cdd6f4;
-  background: #252538;
-  border-radius: 0px;
-  padding: 4px 6px;
-  margin: 0 2px;
-  transition: all 0.2s ease;
-}
-
 #idle_inhibitor.activated {
-  background: #a6e3a1;
-  color: #141420;
+  color: #a6e3a1;
 }
 
 #idle_inhibitor.deactivated {
-  background: #252538;
   color: #6c7086;
 }
 
 #idle_inhibitor:hover {
-  background: #89b4fa;
-  color: #141420;
+  color: #89b4fa;
 }
 
 /* Window title */

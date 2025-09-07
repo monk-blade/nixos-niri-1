@@ -39,6 +39,7 @@
         // "network",
         // "bluetooth",
         "battery",
+        "idle_inhibitor",
         "custom/power"
         // "temperature",
         // "pulseaudio",
@@ -169,12 +170,12 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "󰅶",
-            "deactivated": "󰾪"
+            "activated": "󰅶 ",
+            "deactivated": "󰾪 "
         },
         "tooltip": true,
-        "tooltip-format-activated": "Keep Awake: ON (Click to allow sleep)",
-        "tooltip-format-deactivated": "Keep Awake: OFF (Click to prevent sleep)"
+        "tooltip-format-activated": "Keep Awake: ON",
+        "tooltip-format-deactivated": "Keep Awake: OFF"
     },
     "custom/weather": {
         "format": "{}",
@@ -258,7 +259,7 @@
     "cpu": {
         "interval": 1,
         "format": " {usage}%",
-        "max-length": 5,
+        "max-length": 5
     },
     "mpd": {
         "max-length": 25,
@@ -372,7 +373,7 @@
     },
     "tray": {
          "icon-size": 14,
-        "spacing": 6,
+        "spacing": 6
     },
     "niri/language": {
         "format": " {}",
