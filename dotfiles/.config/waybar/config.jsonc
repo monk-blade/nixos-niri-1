@@ -30,13 +30,14 @@
         //"custom/gammastep"
     ],
     "modules-right": [
-        // "niri/language",
         "custom/fingerprint",
         "tray",
+        "niri/language",
         "backlight",
+        "wireplumber#mic",
         "wireplumber",
-        "network",
-        "bluetooth",
+        // "network",
+        // "bluetooth",
         "battery",
         "custom/power"
         // "temperature",
@@ -140,13 +141,11 @@
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-alt": "{percent}% {icon}",
-        "format-alt-click": "click-right",
-        //"format-icons": ["", ""],
+        "format": "{icon}{percent}%",
         "format-icons": [
-            "",
-            ""
+            "󰃞 ",
+            "󰃟 ",
+            "󰃠 " 
         ],
         "on-scroll-down": "brightnessctl s 5%-",
         "on-scroll-up": "brightnessctl s +5%"
@@ -289,11 +288,6 @@
         "max-length": 35,
         "exec": "$HOME/.scripts/title"
     },
-    /*"custom/keyboard": {
-        "format": " {}",
-        "interval": 1,
-        "exec": "$HOME/.config/waybar/get_kbdlayout.sh"
-    },*/
     "niri/workspaces": {
         "all-outputs": true,
         "format": "{icon}",
@@ -320,49 +314,46 @@
         "max-length": 100,
         "separate-outputs": true
     },
-    "pulseaudio": {
-        "scroll-step": 3, // %, can be a float
-        "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        //"format-source": "{volume}% ",
-        //"format-source-muted": "",
-        "format-source": "",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol",
-        "on-click-right": "amixer sset Master toggle"
-    },
+    // "pulseaudio": {
+    //     "scroll-step": 3, // %, can be a float
+    //     "format": "{icon} {volume}% {format_source}",
+    //     "format-bluetooth": "{volume}% {icon} {format_source}",
+    //     "format-bluetooth-muted": " {icon} {format_source}",
+    //     "format-muted": " {format_source}",
+    //     //"format-source": "{volume}% ",
+    //     //"format-source-muted": "",
+    //     "format-source": "",
+    //     "format-source-muted": "",
+    //     "format-icons": {
+    //         "headphone": "",
+    //         "hands-free": "",
+    //         "headset": "",
+    //         "phone": "",
+    //         "portable": "",
+    //         "car": "",
+    //         "default": [
+    //             "",
+    //             "",
+    //             ""
+    //         ]
+    //     },
+    //     "on-click": "pavucontrol",
+    //     "on-click-right": "amixer sset Master toggle"
+    // },
     "wireplumber": {
         "on-click": "pavucontrol",
-        "on-click-right": "amixer sset Master toggle 1>/dev/null",
-        //on-click: "${wpctl} set-mute @DEFAULT_AUDIO_SINK@ toggle";
-        //on-scroll-down: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04+";
-        //on-scroll-up: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04-";
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
         "format": "{icon}{volume}%",
-        "format-muted": "  ",
-        "format-source": " ",
-        "format-source-muted": " ",
-        //"format-muted": "<span foreground='#fab387'> </span>",
-        //"format-icons": [ "<span foreground='#fab387'></span>" ]
+        "format-muted": "<span foreground='#fab387'> </span>",
+        // "format-icons": [ "<span foreground='#fab387'> </span>" ]
         "format-icons": {
             "headphone": " ",
             "hands-free": " ",
             "headset": " ",
             "phone": " ",
+            "muted": "  ", 
             "portable": " ",
             "car": " ",
             "default": [
@@ -372,19 +363,21 @@
             ]
         }
     },
+    "wireplumber#mic": {
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "format": "󰍬",
+        "format-source-muted": "<span foreground='#f38ba8'> </span>",
+        "tooltip-format": "Mic: {volume}%",
+        "max-volume": 1.0
+    },
     "tray": {
-        "icon-size": 14,
+         "icon-size": 14,
         "spacing": 6,
-        "ignored-items": [
-                "*blueman*",
-                "*network*", 
-                "*nm-*"
-        ]
     },
     "niri/language": {
-        "format": "󰌓 {}",
-        "format-en": "us",
-        "format-fr": "fr",
+        "format": " {}",
+        "format-en": "EN",
+        "format-fr": "FR",
         "tooltip-format": "Language: {long}"
     }
 }

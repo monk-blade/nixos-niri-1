@@ -124,6 +124,17 @@ in
   
   services.autorandr.enable = true;  # Auto display profiles
 
+  # Camera support
+  hardware.ipu6.enable = true;
+  hardware.ipu6.platform = "ipu6";
+  hardware.enableAllFirmware = true;
+  boot.kernelModules = [ 
+    "kvm-intel"
+    "uvcvideo"
+    "intel-ipu6"
+  ];
+  systemd.services.v4l2-relayd-ipu6.enable = lib.mkForce false;
+
   # Enable Wayland protocols
   xdg.portal = {
     enable = true;
@@ -131,7 +142,19 @@ in
       xdg-desktop-portal-gtk
       xdg-desktop-portal-wlr
     ];
-    config.common.default = "*";
+    config = {
+      common.default = "*";
+      niri = {
+        default = [ "wlr" "gtk" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+      };
+      # Explicitly set Firefox portal preferences
+      firefox = {
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+      };
+    };
     wlr.enable = true;
   };
 
@@ -143,6 +166,7 @@ in
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.enable = true;
   };
 
   # Bluetooth
@@ -189,7 +213,15 @@ in
   users.users.abbes = {
     isNormalUser = true;
     description = "abbes";
-    extraGroups = [ "networkmanager" "wheel" "vboxsf" "docker" "podman" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "vboxsf"
+      "docker"
+      "podman"
+      "video"
+      "audio"
+    ];
     shell = pkgs.fish;
     packages = with pkgs; [];
   };

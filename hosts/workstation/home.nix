@@ -24,6 +24,11 @@ in
     # brave
     chromium
     inputs.zen-browser.packages."${pkgs.system}".default
+
+    # camera
+    cheese
+    libcamera
+    v4l-utils
     
     # Terminal & Shell
     ghostty
@@ -110,6 +115,7 @@ in
     swayidle   # Idle management
     brightnessctl  # Brightness control
     lm_sensors  # Hardware sensors (temperature, etc.)
+    pulseaudio
 
     # System Monitoring & Info
     nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands

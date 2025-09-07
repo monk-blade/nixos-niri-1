@@ -18,10 +18,13 @@
     # Wayland environment (for better app compatibility)
     NIXOS_OZONE_WL = "1";  # Enable Wayland for Electron apps
     MOZ_ENABLE_WAYLAND = "1";  # Enable Wayland for Firefox
+    MOZ_WEBRENDER = "1";
+    MOZ_X11_EGL = "1";
     QT_QPA_PLATFORM = "wayland";
     GDK_BACKEND = "wayland";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
+    PIPEWIRE_LATENCY = "128/48000";
     
     # Development environment
     DEVELOPMENT_MODE = "1";
