@@ -33,5 +33,5 @@ in
   # To enable fallback: rebuild with --override-input or set to true
   services.xserver.enable = true;  # Still needed for XFCE fallback
   services.xserver.desktopManager.xfce.enable = lib.mkDefault false;  # Disabled by default
-  services.xserver.displayManager.gdm.enable = false;
+  services.displayManager.gdm.enable = false;
 }
