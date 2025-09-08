@@ -3,6 +3,6 @@
 {
   # NixOS and Home Manager state versions
   # These should match the NixOS release you're using
-  nixos = "25.05";
-  homeManager = "25.05";
+  nixos = "25.11";
+  homeManager = "25.11";
 }

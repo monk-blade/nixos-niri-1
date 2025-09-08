@@ -33,7 +33,7 @@ in
   system.autoUpgrade = {
     enable = false;  # Set to true if you want automatic updates
   };
-  
+
   # Enable flakes and nix command
   nix = {
     settings = {
@@ -264,9 +264,9 @@ in
       WIFI_PWR_ON_BAT = "on";
     };
   };
-  services.logind = {
-    lidSwitch = "suspend";
-    lidSwitchExternalPower = "suspend";
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "suspend";
     killUserProcesses = false;
   };
 
