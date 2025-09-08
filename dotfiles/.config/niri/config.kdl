@@ -270,14 +270,14 @@ layout {
 // See the binds section below for more spawn examples.
 
 
+spawn-at-startup "sh" "-c" "swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill &" 
+spawn-at-startup "sh" "-c" "swww-daemon && swww img ~/.config/backgrounds/snaky.jpg &"  // Workspace wallpaper
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "bash" "-c" "swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill &" 
-spawn-at-startup "bash" "-c" "swww-daemon && swww img ~/.config/backgrounds/snaky.jpg &"  // Workspace wallpaper
-spawn-at-startup "bash" "-c" "sleep 0.5 && ~/.config/waybar/waybar.sh"
-spawn-at-startup "bash" "-c" "sleep 1 && zen &"
-spawn-at-startup "bash" "-c" "sleep 1.5 && wl-paste --type text --watch cliphist store &"
-spawn-at-startup "bash" "-c" "sleep 1.5 && wl-paste --type image --watch cliphist store &"
-spawn-at-startup "bash" "-c" "sleep 2.5 && swaync &"
+spawn-at-startup "sh" "-c" "sleep 0.5 && ~/.config/waybar/waybar.sh"
+spawn-at-startup "sh" "-c" "sleep 1 && zen &"
+spawn-at-startup "sh" "-c" "sleep 1.5 && swaync &"
+spawn-at-startup "sh" "-c" "sleep 2.5 && wl-paste --type text --watch cliphist store &"
+spawn-at-startup "sh" "-c" "sleep 2.5 && wl-paste --type image --watch cliphist store &"
 
 // Communication apps (uncomment as needed)
 // spawn-at-startup "bash" "-c" "sleep 4 && slack"
@@ -608,8 +608,8 @@ binds {
     // a matching layout switch hotkey configured in xkb options above.
     // Having both at once on the same hotkey will break the switching,
     // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
-    // Mod+Space       { switch-layout "next"; }
-    // Mod+Shift+Space { switch-layout "prev"; }
+    Mod+Space       { switch-layout "next"; }
+    Mod+Shift+Space { switch-layout "prev"; }
 
     Print { screenshot; }
     Mod+Shift+S { screenshot-screen; }

@@ -5,13 +5,13 @@
     "layer": "top",
     "position": "top",
     // "output": ["eDP-1", "HDMI-A-1"], // Commented out to work with any display
-    "height": 20,
+    "height": 31,
     "margin-left": 0,
     "margin-bottom": 0,
     "margin-right": 0,
     "spacing": 4,
     "font-family": "SpaceMono",
-    "font-size": 14,
+    "font-size": 12,
     "font-weight": 400,
     "modules-left": [
         //"custom/rofi",
@@ -34,12 +34,12 @@
         "tray",
         "niri/language",
         "backlight",
-        "wireplumber#mic",
         "wireplumber",
+        "wireplumber#mic",
         // "network",
         // "bluetooth",
         "battery",
-        "idle_inhibitor",
+        "custom/idle_inhibitor",
         "custom/power"
         // "temperature",
         // "pulseaudio",
@@ -167,15 +167,12 @@
         "on-click": "blueman-manager",
         "on-click-right": "bluetoothctl power toggle"
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "󰅶 ",
-            "deactivated": "󰾪 "
-        },
-        "tooltip": true,
-        "tooltip-format-activated": "Keep Awake: ON",
-        "tooltip-format-deactivated": "Keep Awake: OFF"
+    "custom/idle_inhibitor": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "if pgrep swayidle >/dev/null; then echo '{\"text\":\"󰅶\",\"tooltip\":\"Idle: ON\"}'; else echo '{\"text\":\"󰾪\",\"tooltip\":\"Idle: OFF\"}'; fi",
+        "interval": 5,
+        "on-click": "if pgrep swayidle; then pkill swayidle; else swayidle -w timeout 600 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' & fi"
     },
     "custom/weather": {
         "format": "{}",
@@ -362,11 +359,15 @@
         "max-volume": 1.0
     },
     "tray": {
-         "icon-size": 14,
-        "spacing": 6
+        "icon-size": 14,
+        "spacing": 6,
+        "show-passive-items": true,
+        "reverse-direction": true,
+        "on-update": "",
+        "smooth-scrolling-threshold": 1
     },
     "niri/language": {
-        "format": " {}",
+        "format": "󰌌 {}",
         "format-en": "EN",
         "format-fr": "FR",
         "tooltip-format": "Language: {long}"

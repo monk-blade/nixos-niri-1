@@ -43,7 +43,7 @@ window#waybar {
 #language,
 #backlight,
 #wireplumber,
-#idle_inhibitor,
+#custom-idle_inhibitor,
 #custom-storage,
 #custom-next-prayer,
 #custom-notifications,
@@ -84,6 +84,9 @@ window#waybar {
   border-bottom: 1px solid #383850;
   border-right: 2px dotted #4a4a64;
   border-left: 2px dotted #4a4a64;
+}
+#cpu {
+  border-right: 2px dotted #4a4a64;
 }
 #custom-next-prayer {
   font-weight: 600;
@@ -132,15 +135,11 @@ window#waybar {
   color: #f38ba8;
 }
 
-#idle_inhibitor.activated {
-  color: #a6e3a1;
+#custom-idle_inhibitor {
+  margin-right: 4px;
 }
 
-#idle_inhibitor.deactivated {
-  color: #6c7086;
-}
-
-#idle_inhibitor:hover {
+#custom-idle_inhibitor:hover {
   color: #89b4fa;
 }
 

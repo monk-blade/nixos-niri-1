@@ -6,41 +6,41 @@
 # Function to check if a service/feature is active
 check_idle_mode() {
     if pgrep -f "swayidle" >/dev/null; then
-        echo "🌙 Idle Mode: ON"
+        echo "  Idle Mode: ON" # nf-fa-moon_o
     else
-        echo "🌙 Idle Mode: OFF"
+        echo "  Idle Mode: OFF" # nf-fa-eye (awake)
     fi
 }
 
 check_night_light() {
     if pgrep -f "gammastep\|redshift" >/dev/null; then
-        echo "🌅 Night Light: ON"
+        echo "  Night Light: ON" # nf-fa-lightbulb_o
     else
-        echo "🌅 Night Light: OFF"
+        echo "  Night Light: OFF" # nf-fa-circle (dark)
     fi
 }
 
 check_notifications() {
     if pgrep -f "swaync\|mako" >/dev/null; then
-        echo "🔔 Notifications: ON"
+        echo "  Notifications: ON" # nf-fa-bell
     else
-        echo "🔔 Notifications: OFF"
+        echo "  Notifications: OFF" # nf-fa-bell_slash
     fi
 }
 
 check_wifi() {
     if nmcli radio wifi | grep -q "enabled"; then
-        echo "📶 WiFi: ON"
+        echo "  WiFi: ON" # nf-fa-wifi
     else
-        echo "📶 WiFi: OFF"
+        echo "󰖪  WiFi: OFF" # nf-fa-ban
     fi
 }
 
 check_bluetooth() {
     if bluetoothctl show | grep -q "Powered: yes"; then
-        echo "🔵 Bluetooth: ON"
+        echo "  Bluetooth: ON" # nf-fa-bluetooth
     else
-        echo "🔵 Bluetooth: OFF"
+        echo "󰂲  Bluetooth: OFF" # nf-fa-ban
     fi
 }
 
@@ -64,7 +64,7 @@ toggle_night_light() {
         pkill gammastep
         notify-send "System Controls" "Night light disabled" -i "weather-clear-night"
     else
-        gammastep -O 2000 &
+        gammastep -O 4700 &
         notify-send "System Controls" "Night light enabled" -i "weather-clear-night"
     fi
 }
@@ -110,9 +110,9 @@ main_menu() {
         "$(check_notifications)"
         "$(check_wifi)"
         "$(check_bluetooth)"
-        "🔧 Settings"
-        "🔒 Lock Screen"
-        "⚡ Power Menu"
+        "  Settings"    # nf-fa-cogs
+        "  Lock Screen" # nf-fa-lock
+        "  Power Menu"  # nf-fa-power_off
     )
 
     local choice
