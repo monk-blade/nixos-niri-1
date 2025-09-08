@@ -262,7 +262,7 @@ layout {
 
 
 spawn-at-startup "sh" "-c" "swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill &" 
-spawn-at-startup "sh" "-c" "swww-daemon && swww img ~/.config/backgrounds/snaky.jpg --transition-type any --transition-fps 60 --transition-duration 2 &"  // Workspace wallpaper
+spawn-at-startup "sh" "-c" "sleep 0.1 && swww-daemon && swww img ~/.config/backgrounds/snaky.jpg --transition-type any --transition-fps 60 --transition-duration 2 &"  // Workspace wallpaper
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "sh" "-c" "~/.config/waybar/waybar.sh" // sleep 0.5s in script
 spawn-at-startup "sh" "-c" "sleep 1 && zen &"
