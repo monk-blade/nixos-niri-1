@@ -7,5 +7,6 @@ if pidof waybar >/dev/null; then
   done
   sleep 0.2
 else
+  sleep 0.5
   waybar &
 fi

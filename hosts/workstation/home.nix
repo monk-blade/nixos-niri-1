@@ -54,17 +54,34 @@ in
     # davinci-resolve
     
     # Essential Development
-    fnm  # Fast Node Manager
+    fnm  # Fast Node Manager ( install node version with fnm install 24 for eg )
     windsurf
     
     # Languages & Runtimes
-    nodejs_24  # Latest LTS Node.js
+    # nodejs_24
+    nodejs_22
+    libjpeg
+    cairo
+    pango
+    pixman
+    libuuid
+    giflib
+    libimagequant
+    librsvg
+    pkg-config
+
     python3
     python3Packages.pip
     python3Packages.virtualenv
     rustc
     cargo
     go
+
+    # npm specific
+    pnpm
+    yarn
+    cairo
+    pango
     
     # Container & Cloud tools
     docker

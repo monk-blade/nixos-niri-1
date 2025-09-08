@@ -1,5 +1,4 @@
-#!/bin/bash
-# ~/.config/swayidle/config.sh or add to your startup script
+#!/usr/bin/env bash
 
 # Basic swayidle command with timeouts
 swayidle -w \

@@ -144,7 +144,7 @@ main_menu() {
         *"Appearance"*) ~/.config/niri/scripts/theme-menu.sh ;;
         *"System Information"*) system_info ;;
         *"Edit Niri Config"*) ghostty -e nvim ~/.config/niri/config.kdl & ;;
-        *"Edit Home Config"*) ghostty -e nvim /home/abbes/nixverse/hosts/workstation/home.nix & ;;
+        *"Edit Home Config"*) ghostty -e nvim ~/nixos-config/hosts/workstation/home.nix & ;;
         *"System Settings"*)
             if command -v gnome-control-center >/dev/null; then
                 gnome-control-center &

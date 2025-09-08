@@ -44,6 +44,7 @@ window#waybar {
 #backlight,
 #wireplumber,
 #custom-idle_inhibitor,
+#custom-night-light,
 #custom-storage,
 #custom-next-prayer,
 #custom-notifications,
@@ -81,6 +82,7 @@ window#waybar {
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 0px;
+  background-color: #141420;
   border-bottom: 1px solid #383850;
   border-right: 2px dotted #4a4a64;
   border-left: 2px dotted #4a4a64;
@@ -92,6 +94,7 @@ window#waybar {
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 0px;
+  background-color: #141420;
   border-bottom: 1px solid #383850;
   border-right: 2px dotted #4a4a64;
   border-left: 2px dotted #4a4a64;

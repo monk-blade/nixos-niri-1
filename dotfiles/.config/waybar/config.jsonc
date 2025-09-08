@@ -4,7 +4,7 @@
     // -------------------------------------------------------------------------
     "layer": "top",
     "position": "top",
-    // "output": ["eDP-1", "HDMI-A-1"], // Commented out to work with any display
+    "output": ["eDP-1", "HDMI-A-1"], // Commented out to work with any display
     "height": 31,
     "margin-left": 0,
     "margin-bottom": 0,
@@ -33,6 +33,7 @@
         "custom/fingerprint",
         "tray",
         "niri/language",
+        "custom/night-light",
         "backlight",
         "wireplumber",
         "wireplumber#mic",
@@ -139,6 +140,14 @@
         "exec": "~/.config/waybar/scripts/next-prayer.sh",
         "tooltip": true,
         "tooltip-format": "Next Prayer: {}"
+    },
+    "custom/night-light": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/night-light.sh status",
+        "on-click": "~/.config/waybar/scripts/night-light.sh toggle",
+        "interval": 5,
+        "signal": 8
     },
     "backlight": {
         "device": "intel_backlight",

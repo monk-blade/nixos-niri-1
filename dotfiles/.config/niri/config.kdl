@@ -88,7 +88,32 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
-    position x=1280 y=0
+    position x=0 y=0
+}
+output "HDMI-A-1" {
+    // Uncomment this line to disable this output.
+    // off
+    
+    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+    mode "1920x1080@144"
+
+    // You can use integer or fractional scale, for example use 1.5 for 150% scale.
+    scale 1.0
+
+    // Transform allows to rotate the output counter-clockwise, valid values are:
+    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+    transform "normal"
+
+    // Position of the output in the global coordinate space.
+    // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
+    // The cursor can only move between directly adjacent outputs.
+    // Output scale and rotation has to be taken into account for positioning:
+    // outputs are sized in logical, or scaled, pixels.
+    // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
+    // so to put another output directly adjacent to it on the right, set its x to 1920.
+    // If the position is unset or results in an overlap, the output is instead placed
+    // automatically.
+    position x=1920 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -271,9 +296,9 @@ layout {
 
 
 spawn-at-startup "sh" "-c" "swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill &" 
-spawn-at-startup "sh" "-c" "swww-daemon && swww img ~/.config/backgrounds/snaky.jpg &"  // Workspace wallpaper
+spawn-at-startup "sh" "-c" "swww-daemon && swww img ~/.config/backgrounds/snaky.jpg --transition-type any --transition-fps 60 --transition-duration 2 &"  // Workspace wallpaper
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "sh" "-c" "sleep 0.5 && ~/.config/waybar/waybar.sh"
+spawn-at-startup "sh" "-c" "~/.config/waybar/waybar.sh" // sleep 0.5s in script
 spawn-at-startup "sh" "-c" "sleep 1 && zen &"
 spawn-at-startup "sh" "-c" "sleep 1.5 && swaync &"
 spawn-at-startup "sh" "-c" "sleep 2.5 && wl-paste --type text --watch cliphist store &"
@@ -402,7 +427,7 @@ binds {
     Mod+Return { spawn "ghostty"; }
     Alt+Z { spawn "zen"; }
     Alt+P { spawn "fuzzel"; }    
-    Shift+Alt+L { spawn "swaylock"; }
+    Alt+Ctrl+L { spawn "swaylock"; }
     Alt+E { spawn "nautilus"; }
     Alt+T { spawn "zathura"; }  // Quick PDF viewer launch
     // Web Applications (using Chromium in app mode )
@@ -461,6 +486,11 @@ binds {
     Mod+End  { focus-column-last; }
     Mod+Ctrl+Home { move-column-to-first; }
     Mod+Ctrl+End  { move-column-to-last; }
+
+    Ctrl+Shift+H { focus-monitor-left; }
+    Ctrl+Shift+L { focus-monitor-right; }
+    Ctrl+Shift+K { focus-monitor-up; }
+    Ctrl+Shift+J { focus-monitor-down; }
 
     Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
     Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
