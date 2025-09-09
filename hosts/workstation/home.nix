@@ -196,6 +196,7 @@ in
     
     # GTK support
     adwaita-icon-theme      # Default GNOME icons (required for Nautilus)
+    papirus-icon-theme      # Comprehensive icon theme with better app coverage
     gtk3                    # GTK3 runtime
     gtk4                    # GTK4 runtime
     glib                    # GLib runtime (required for GTK apps)
