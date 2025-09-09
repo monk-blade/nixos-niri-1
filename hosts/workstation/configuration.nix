@@ -12,7 +12,15 @@ in
     ../../modules/dm.nix
   ];
 
-  # Bootloader configuration
+  # ============================================================================
+  # SYSTEM CONFIGURATION
+  # ============================================================================
+
+  # ========================================
+  # BOOT & SYSTEM CONFIGURATION
+  # ========================================
+  
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.configurationLimit = 5;
@@ -26,20 +34,30 @@ in
     # };
   };
   
-  # Enable LUKS support in initrd
+  # Encryption & filesystem support
   boot.initrd.availableKernelModules = [ "aes" "xts" "sha256" "sha512" ];
   boot.supportedFilesystems = [ "ext4" "btrfs" "xfs" "ntfs" ];
 
+  # System updates
   system.autoUpgrade = {
     enable = false;  # Set to true if you want automatic updates
   };
 
-  # Enable flakes and nix command
+
+  # ========================================
+  # NIX CONFIGURATION
+  # ========================================
+  
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
       trusted-users = [ "root" "@wheel" ];
+      # Improve build performance and stability
+      max-jobs = "auto";
+      cores = 0;  # Use all available cores
+      keep-outputs = false;  # Don't keep build outputs (saves space)
+      keep-derivations = false;  # Don't keep derivation files
     };
     
     # Automatic garbage collection
@@ -62,6 +80,10 @@ in
   # boot.initrd.checkJournalingFS = false;  # VM-specific
   # virtualisation.virtualbox.guest.enable = true;  # VM-specific
 
+  # ========================================
+  # HARDWARE CONFIGURATION
+  # ========================================
+  
   # Graphics and hardware acceleration
   hardware.graphics = {
     enable = true;
@@ -85,7 +107,27 @@ in
     ];
   };
 
-  # Network
+  # Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;  # Don't auto-power on boot (saves battery)
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+        Experimental = true;  # Enable experimental features
+      };
+    };
+  };
+
+  # Camera support
+  hardware.ipu6.enable = true;
+  hardware.ipu6.platform = "ipu6";
+  hardware.enableAllFirmware = true;
+
+  # ========================================
+  # NETWORKING & CONNECTIVITY
+  # ========================================
+  
   networking.hostName = locals.hostname;
   networking.networkmanager.enable = true;
   
@@ -113,28 +155,32 @@ in
     '';
   };
 
+  # ========================================
+  # LOCALIZATION & DISPLAY
+  # ========================================
+  
   # Time zone
   time.timeZone = "Africa/Tunis";
 
   # Locale
   i18n.defaultLocale = "en_US.UTF-8";
   
-  # Primary compositor
-  programs.niri.enable = true;
+  # ========================================
+  # PROGRAMS CONFIGURATION
+  # ========================================
   
-  services.autorandr.enable = true;  # Auto display profiles
+  # System programs
+  programs.niri.enable = true;        # Primary compositor
+  programs.fish.enable = true;        # Fish shell system-wide
+  programs.dconf.enable = true;       # GTK settings
 
-  # Camera support
-  hardware.ipu6.enable = true;
-  hardware.ipu6.platform = "ipu6";
-  hardware.enableAllFirmware = true;
-  boot.kernelModules = [ 
-    "kvm-intel"
-    "uvcvideo"
-    "intel-ipu6"
-  ];
-  systemd.services.v4l2-relayd-ipu6.enable = lib.mkForce false;
-
+  # ========================================
+  # SERVICES CONFIGURATION
+  # ========================================
+  
+  # Display & Desktop Services
+  services.autorandr.enable = true;   # Auto display profiles
+  
   # Enable Wayland protocols
   xdg.portal = {
     enable = true;
@@ -149,7 +195,6 @@ in
         "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
         "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
       };
-      # Explicitly set Firefox portal preferences
       firefox = {
         default = [ "gtk" ];
         "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
@@ -158,7 +203,7 @@ in
     wlr.enable = true;
   };
 
-  # Enable sound with PipeWire (modern audio system)
+  # Audio Services
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -168,47 +213,98 @@ in
     pulse.enable = true;
   };
 
-  # Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = false;  # Don't auto-power on boot (saves battery)
-    settings = {
-      General = {
-        Enable = "Source,Sink,Media,Socket";
-        Experimental = true;  # Enable experimental features
-      };
-    };
-  };
-  
-  # Enable Blueman service for GUI management
+  # Bluetooth Services
   services.blueman.enable = true;
 
-  # Fingerprint authentication
+  # Authentication Services
   services.fprintd = {
     enable = true;
-    tod.enable = true;  # Enable Touch OEM Drivers for better hardware support
-    tod.driver = pkgs.libfprint-2-tod1-goodix;  # Common driver, adjust if needed
+    tod.enable = true;
+    tod.driver = pkgs.libfprint-2-tod1-goodix;
   };
 
+  # Power Management Services
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 80;
+      START_CHARGE_THRESH_BAT0 = 40;
+      STOP_CHARGE_THRESH_BAT0 = 80;
+      WIFI_PWR_ON_AC = "off";
+      WIFI_PWR_ON_BAT = "on";
+    };
+  };
+  services.thermald.enable = true;
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "suspend";
+    killUserProcesses = false;
+  };
+
+  # System Services
+  services.printing.enable = lib.mkDefault true;
+  services.avahi.enable = lib.mkDefault true;
+  services.udisks2.enable = true;      # Auto-mount USB drives
+  services.gvfs.enable = true;         # Virtual file system
+
+  # Remote Access Services
+  services.openssh = {
+    enable = lib.mkDefault false;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
+
+  # ========================================
+  # SECURITY CONFIGURATION
+  # ========================================
+  
+  security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  
   # PAM configuration for fingerprint authentication
   security.pam.services = {
-    # Enable fingerprint for login (sddm/display manager)
     sddm.fprintAuth = true;
-    
-    # Enable fingerprint for sudo
     sudo.fprintAuth = true;
-    
-    # Enable fingerprint for screen unlock (swaylock compatible with Niri/Wayland)
     swaylock.fprintAuth = true;
-    
-    # Enable fingerprint for system authentication prompts
     polkit-1.fprintAuth = true;
   };
 
-  # Enable fish shell system-wide
-  programs.fish.enable = true;
+  # ========================================
+  # VIRTUALIZATION & CONTAINERS
+  # ========================================
+  
+  # Docker
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = true;
+    autoPrune.enable = true;
+  };
+  
+  # Podman (disabled, using Docker)
+  virtualisation.podman = {
+    enable = false;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
-  # User account
+  # VirtualBox
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+
+  # ========================================
+  # USER CONFIGURATION
+  # ========================================
+  
   users.users.abbes = {
     isNormalUser = true;
     description = "abbes";
@@ -216,6 +312,7 @@ in
       "networkmanager"
       "wheel"
       "vboxsf"
+      "vboxusers"
       "docker"
       "podman"
       "video"
@@ -224,91 +321,20 @@ in
     shell = pkgs.fish;
     packages = with pkgs; [];
   };
-
-  # Enable dconf for GTK settings
-  programs.dconf.enable = true;
-
-  # Container support
-  virtualisation.docker = {
-    enable = true;
-    enableOnBoot = true;
-    autoPrune.enable = true;
-  };
   
-  # Podman as Docker alternative (lighter weight)
-  virtualisation.podman = {
-    enable = false;
-    dockerCompat = true;  # Docker compatibility layer
-    defaultNetwork.settings.dns_enabled = true;
-  };
-
-  # Power Management for Battery Life
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-      
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-      
-      CPU_MIN_PERF_ON_AC = 0;
-      CPU_MAX_PERF_ON_AC = 100;
-      CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 80;  # Limit CPU to 80% on battery
-      
-      START_CHARGE_THRESH_BAT0 = 40;
-      STOP_CHARGE_THRESH_BAT0 = 80;  # Battery charge limiting
-      
-      WIFI_PWR_ON_AC = "off";
-      WIFI_PWR_ON_BAT = "on";
-    };
-  };
-  services.logind.settings.Login = {
-    HandleLidSwitch = "suspend";
-    HandleLidSwitchExternalPower = "suspend";
-    killUserProcesses = false;
-  };
-
-  # Enable the user service to run when user is not actively logged in
   users.users.abbes.linger = true;
 
-  # Additional power optimizations
-  services.thermald.enable = true;  # Thermal management (compatible with TLP)
-  # services.auto-cpufreq.enable = true;  # DISABLED - conflicts with TLP
+  # ========================================
+  # SYSTEM PACKAGES & ENVIRONMENT
+  # ========================================
   
-  services.printing.enable = lib.mkDefault true;
-  services.avahi.enable = lib.mkDefault true;
-  
-  # File system services
-  services.udisks2.enable = true;  # Auto-mount USB drives
-  services.gvfs.enable = true;     # Virtual file system (for file managers)
-  
-  # Security services
-  security.polkit.enable = true;         # Policy kit for privilege escalation
-  services.gnome.gnome-keyring.enable = true;  # Secret service for passwords
-  
-  # SSH for remote recovery (disabled by default)
-  services.openssh = {
-    enable = lib.mkDefault false;  # Enable when needed: set to true
-    settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-      PermitRootLogin = "no";
-    };
-  };
-
-  environment.sessionVariables = {
-    # Enable Wayland for Chromium-based apps
-    NIXOS_OZONE_WL = "1";
-  };
-
   # System packages (minimal, let home-manager handle user packages)
   environment.systemPackages = with pkgs; [
     vim
     git
     curl
     wget
+    nh                      # NixOS Helper - better CLI for nixos-rebuild
   ];
 
   # Fonts

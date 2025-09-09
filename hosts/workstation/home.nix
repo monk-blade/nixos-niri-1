@@ -4,7 +4,6 @@ let
   locals = import ./locals.nix { inherit pkgs; };
 in
 {
-  # Import modules
   imports = [
     ../../globals.nix 
     ../../modules/shell.nix
@@ -18,181 +17,209 @@ in
   home.homeDirectory = "/home/abbes";
   home.stateVersion = versions.homeManager;
 
-  # Install your packages here (keeping it minimal for fast setup)
+  # ============================================================================
+  # PACKAGE CONFIGURATION
+  # ============================================================================
   home.packages = with pkgs; [
-    # browser
-    # brave
+    
+    # ========================================
+    # WEB BROWSERS
+    # ========================================
     chromium
     inputs.zen-browser.packages."${pkgs.system}".default
 
-    # camera
-    cheese
-    libcamera
-    v4l-utils
+    # ========================================
+    # WAYLAND COMPOSITOR & WINDOW MANAGEMENT
+    # ========================================
+    niri                    # Main compositor
+    fuzzel                  # Application launcher
+    waybar                  # Status bar
+    swww                    # Wallpaper daemon
+    swaybg                  # Backdrop wallpaper in overview mode
+    imagemagick             # Wallpaper blur effects
     
-    # Terminal & Shell
-    ghostty
-    cliphist
-    dysk
+    # Screen utilities
+    grim                    # Screenshot utility
+    slurp                   # Screen area selection
+    wl-clipboard            # Wayland clipboard utilities
     
-    # Wayland & Window Manager
-    niri
-    swww
-    swaybg  # For backdrop wallpaper in overview mode 
-    imagemagick  # For wallpaper blur effects
-    fuzzel  # Application launcher
-    switcheroo
-    localsend
+    # Screen locker & idle management
+    swaylock-effects        # Screen locker with effects
+    swayidle                # Idle management
+    gammastep               # Night light/blue light filter
+    wlsunset                # Alternative sunset utility
+    brightnessctl           # Brightness control
     
-    # mako  # Lightweight notification daemon
+    # Notifications
     swaynotificationcenter  # SwayNC notification daemon
-    libnotify  # Provides notify-send command
-    swaylock-effects  # Screen locker with effects (better for wlroots/Niri)
-    wl-clipboard  # Wayland clipboard utilities
-    grim  # Screenshot utility
-    slurp  # Screen area selection
-    # davinci-resolve
-    
-    # Essential Development
-    fnm  # Fast Node Manager ( install node version with fnm install 24 for eg )
-    windsurf
-    
-    # Languages & Runtimes
-    # nodejs_24
-    nodejs_22
-    libjpeg
-    cairo
-    pango
-    pixman
-    libuuid
-    giflib
-    libimagequant
-    librsvg
-    pkg-config
+    libnotify               # Provides notify-send command
 
-    python3
-    python3Packages.pip
-    python3Packages.virtualenv
-    rustc
-    cargo
-    go
-
-    # npm specific
-    pnpm
-    yarn
-    cairo
-    pango
+    # ========================================
+    # TERMINAL & SHELL UTILITIES
+    # ========================================
+    ghostty                 # Terminal emulator
+    cliphist                # Clipboard history
+    dysk                    # Better disk usage display
     
-    # Container & Cloud tools
-    docker
-    docker-compose
-    kubectl
-    terraform
+    # Performance & system monitoring
+    dust                    # Better du
+    procs                   # Better ps
+    hyperfine               # Benchmarking tool
+    tokei                   # Code statistics
 
-    # Database Management Tools
-    dbeaver-bin         # Universal database tool (80+ databases)
+    # ========================================
+    # DEVELOPMENT ENVIRONMENT
+    # ========================================
     
-    # API & Network tools
-    httpie  # Better curl alternative
-    # bruno  # API testing
-    # postman
-    yaak
-
+    # Editors & IDEs
+    windsurf                # AI-powered editor
+    
+    # Version managers & package managers
+    fnm                     # Fast Node Manager
+    pnpm                    # Fast npm alternative
+    yarn                    # Node package manager
+    
+    # Programming languages & runtimes
+    nodejs_22               # Node.js runtime
+    python3                 # Python interpreter
+    python3Packages.pip     # Python package manager
+    python3Packages.virtualenv  # Python virtual environments
+    rustc                   # Rust compiler
+    cargo                   # Rust package manager
+    go                      # Go programming language
+    
+    # Native development dependencies
+    libjpeg                 # JPEG library
+    cairo                   # 2D graphics library
+    pango                   # Text rendering
+    pixman                  # Pixel manipulation
+    libuuid                 # UUID library
+    giflib                  # GIF library
+    libimagequant           # Image quantization
+    librsvg                 # SVG rendering
+    pkg-config              # Package configuration
+    
+    # C/C++ Development (needed for native modules)
+    gcc                     # GNU Compiler Collection
+    gnumake                 # GNU Make
+    cmake                   # Cross-platform build system
     
     # Code quality & formatting
-    shellcheck  # Shell script linting
-    shfmt  # Shell script formatting
+    shellcheck              # Shell script linting
+    shfmt                   # Shell script formatting
     
-    # Performance & debugging
-    hyperfine  # Benchmarking tool
-    tokei  # Code statistics
-    dust  # Better du
-    procs  # Better ps
-    
-    # C/C++ Development (needed for Neovim plugins)
-    gcc
-    gnumake
-    cmake
+    # System debugging & monitoring
+    strace                  # System call monitoring
+    ltrace                  # Library call monitoring
+    lsof                    # List open files
 
-    # mostly for gaming
-    xwayland-satellite
-
-    # Waybar and related tools
-    waybar
-    pavucontrol
-    jq
-    wlsunset
+    # ========================================
+    # DEVOPS & CLOUD TOOLS
+    # ========================================
+    docker                  # Container runtime
+    docker-compose          # Multi-container orchestration
+    kubectl                 # Kubernetes CLI
+    terraform               # Infrastructure as code
     
-    # Network & Bluetooth Management
-    networkmanagerapplet  # nm-connection-editor
-    blueman  # Bluetooth manager
-    
-    # System Control Tools (for system-controls.sh)
-    gammastep  # Night light/blue light filter
-    swayidle   # Idle management
-    brightnessctl  # Brightness control
-    lm_sensors  # Hardware sensors (temperature, etc.)
-    pulseaudio
+    # API & network testing
+    httpie                  # Better curl alternative
+    yaak                    # API testing tool
 
-    # System Monitoring & Info
-    nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
+    # ========================================
+    # DATABASE & DATA MANAGEMENT
+    # ========================================
+    dbeaver-bin             # Universal database tool (80+ databases)
+
+    # ========================================
+    # DESKTOP APPLICATIONS
+    # ========================================
+    
+    # File management
+    nautilus                # GNOME Files manager
+    
+    # Communication & social
+    slack                   # Team communication
+    discord                 # Gaming/community chat
+    
+    # Document viewers
+    zathura                 # Lightweight PDF viewer with vim-like keybindings
+    
+    # Utilities
+    switcheroo              # App switcher
+    localsend               # Local file sharing
+
+    # ========================================
+    # MULTIMEDIA & CAMERA
+    # ========================================
+    cheese                  # Camera application
+    libcamera               # Camera library
+    v4l-utils               # Video4Linux utilities
+
+    # ========================================
+    # SYSTEM ADMINISTRATION
+    # ========================================
+    
+    
+    # Network management
+    networkmanagerapplet    # nm-connection-editor
+    
+    # Bluetooth management
+    blueman                 # Bluetooth manager
+    
+    # Audio control
+    pavucontrol             # PulseAudio volume control
+    pulseaudio              # Audio system
+    
+    # Hardware monitoring & control
+    lm_sensors              # Hardware sensors (temperature, etc.)
+    powertop                # Power consumption analyzer
+    acpi                    # Battery status
+    tlp                     # Power management (conflicts with auto-cpufreq)
+    
+    # Hardware detection
+    usbutils                # Provides lsusb command
+    pciutils                # Provides lspci command
+    lshw                    # Hardware lister
+    ethtool                 # Ethernet tool
+    
+    # Fingerprint authentication
+    fprintd                 # Fingerprint daemon
+    libfprint               # Fingerprint library
+
+    # ========================================
+    # GRAPHICS & UI FRAMEWORKS
+    # ========================================
     
     # Qt6 support (essential for Qt-based applications)
-    qt6.qtbase   # Core Qt6 framework (includes qtwayland)
-    qt6.qttools  # Qt6 development tools
-
-    # Hardware Detection Tools
-    usbutils  # Provides lsusb command
-    pciutils  # Provides lspci command
-    lshw      # Hardware lister
-    ethtool
+    qt6.qtbase              # Core Qt6 framework (includes qtwayland)
+    qt6.qttools             # Qt6 development tools
     
-    # Fingerprint Authentication
-    fprintd  # Fingerprint daemon
-    libfprint  # Fingerprint library
+    # GTK support
+    adwaita-icon-theme      # Default GNOME icons (required for Nautilus)
+    gtk3                    # GTK3 runtime
+    gtk4                    # GTK4 runtime
+    glib                    # GLib runtime (required for GTK apps)
     
-    # Battery & Power Management Tools
-    powertop  # Power consumption analyzer
-    acpi  # Battery status
-    tlp  # Power management
-    auto-cpufreq  # Automatic CPU frequency scaling
-    
-    # File Management
-    nautilus  # GNOME Files
-    
-    # GTK theming and icon support for Nautilus
-    adwaita-icon-theme    # Default GNOME icons (required for Nautilus)
-    gtk3                  # GTK3 runtime
-    gtk4                  # GTK4 runtime
-    glib                  # GLib runtime (required for GTK apps)
+    # Graphics acceleration
+    vulkan-tools            # Vulkan utilities
 
-    # libreoffice-qt6-fresh
+    # ========================================
+    # GAMING & COMPATIBILITY
+    # ========================================
+    xwayland-satellite      # XWayland integration for gaming
 
-    # Social media apps
-    slack
-    discord
+    # ========================================
+    # ARCHIVE & COMPRESSION
+    # ========================================
+    zip                     # ZIP compression
+    xz                      # XZ compression
+    unzip                   # ZIP extraction
+    p7zip                   # 7-Zip compression
 
-    # PDF viewers and document tools
-    zathura      # Lightweight PDF viewer with vim-like keybindings
-
-    # Graphics and hardware acceleration
-    vulkan-tools # Vulkan utilities
-    
-    # Add to home.packages
-    # gimp        # Image editing
-    # inkscape    # Vector graphics
-    # obs-studio  # Screen recording (you have commented)    
-
-    # Archive & Compression
-    zip
-    xz
-    unzip
-    p7zip
-
-    # System Call Monitoring & Debugging
-    strace                  # system call monitoring
-    ltrace                  # library call monitoring
-    lsof                    # list open files
+    # ========================================
+    # UTILITIES & HELPERS
+    # ========================================
+    jq                      # JSON processor
   ];
 
   home.file = {
