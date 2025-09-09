@@ -262,7 +262,7 @@ layout {
 
 
 spawn-at-startup "sh" "-c" "swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill &" 
-spawn-at-startup "sh" "-c" "sleep 0.1 && swww-daemon && swww img ~/.config/backgrounds/snaky.jpg --transition-type any --transition-fps 60 --transition-duration 2 &"  // Workspace wallpaper
+spawn-at-startup "sh" "-c" "~/.config/niri/scripts/wallpaper-manager.sh &"  // Workspace wallpaper with display change detection
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "sh" "-c" "~/.config/waybar/waybar.sh" // sleep 0.5s in script
 spawn-at-startup "sh" "-c" "sleep 1 && zen &"
@@ -285,13 +285,9 @@ prefer-no-csd
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
 
-// Animation settings.
-// The wiki explains how to configure individual animations:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
     // off
@@ -299,10 +295,6 @@ animations {
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     slowdown 0.9
 }
-
-// Window rules let you adjust behavior for individual windows.
-// Find more information on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
