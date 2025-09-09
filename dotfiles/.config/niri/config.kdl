@@ -262,7 +262,7 @@ layout {
 
 
 spawn-at-startup "sh" "-c" "swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill &" 
-spawn-at-startup "sh" "-c" "~/.config/niri/scripts/wallpaper-manager.sh &"  // Workspace wallpaper with display change detection
+spawn-at-startup "sh" "-c" "swww-daemon && sleep 0.5 && swww img ~/.config/backgrounds/snaky.jpg --transition-type any --transition-fps 60 --transition-duration 1 &"  // Workspace wallpaper with display change detection
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "sh" "-c" "~/.config/waybar/waybar.sh" // sleep 0.5s in script
 spawn-at-startup "sh" "-c" "sleep 1 && zen &"
