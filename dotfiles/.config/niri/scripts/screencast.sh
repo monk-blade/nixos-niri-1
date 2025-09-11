@@ -34,12 +34,12 @@ case "${1:-region}" in
             notify-send "Screen Recording" "Recording already in progress"
             exit 1
         fi
-        
+
         # Area recording without audio
         GEOMETRY=$(slurp 2>/dev/null)
         if [ -n "$GEOMETRY" ]; then
             wf-recorder -g "$GEOMETRY" -f "$RECORDING_DIR/screencast-$(date +%Y%m%d-%H%M%S).mp4" &
-            echo $! > "$PIDFILE"
+            echo $! >"$PIDFILE"
             show_recording_indicator "Region (No Audio)"
         else
             notify-send "Screen Recording" "Region selection cancelled"
@@ -50,10 +50,10 @@ case "${1:-region}" in
             notify-send "Screen Recording" "Recording already in progress"
             exit 1
         fi
-        
+
         # Full screen recording without audio
         wf-recorder -f "$RECORDING_DIR/screencast-$(date +%Y%m%d-%H%M%S).mp4" &
-        echo $! > "$PIDFILE"
+        echo $! >"$PIDFILE"
         show_recording_indicator "Full Screen (No Audio)"
         ;;
     "region-audio")
@@ -61,12 +61,12 @@ case "${1:-region}" in
             notify-send "Screen Recording" "Recording already in progress"
             exit 1
         fi
-        
+
         # Area recording with audio
         GEOMETRY=$(slurp 2>/dev/null)
         if [ -n "$GEOMETRY" ]; then
             wf-recorder -g "$GEOMETRY" --audio -f "$RECORDING_DIR/screencast-$(date +%Y%m%d-%H%M%S).mp4" &
-            echo $! > "$PIDFILE"
+            echo $! >"$PIDFILE"
             show_recording_indicator "Region + Audio"
         else
             notify-send "Screen Recording" "Region selection cancelled"
@@ -77,10 +77,10 @@ case "${1:-region}" in
             notify-send "Screen Recording" "Recording already in progress"
             exit 1
         fi
-        
+
         # Full screen recording with audio
         wf-recorder --audio -f "$RECORDING_DIR/screencast-$(date +%Y%m%d-%H%M%S).mp4" &
-        echo $! > "$PIDFILE"
+        echo $! >"$PIDFILE"
         show_recording_indicator "Full Screen + Audio"
         ;;
     "audio-only")
@@ -88,10 +88,10 @@ case "${1:-region}" in
             notify-send "Audio Recording" "Recording already in progress"
             exit 1
         fi
-        
+
         # Audio-only recording using ffmpeg
         ffmpeg -f pulse -i default -c:a libmp3lame -b:a 128k "$AUDIO_DIR/audio-$(date +%Y%m%d-%H%M%S).mp3" &
-        echo $! > "$PIDFILE"
+        echo $! >"$PIDFILE"
         show_recording_indicator "Audio Only"
         ;;
     "stop")

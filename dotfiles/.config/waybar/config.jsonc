@@ -35,6 +35,7 @@
         "niri/language",
         "backlight",
         "wireplumber",
+        "custom/recording",
         "wireplumber#mic",
         "custom/recording",
         // "network",
