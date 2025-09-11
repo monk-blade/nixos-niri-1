@@ -397,9 +397,23 @@ binds {
     Alt+N { spawn "chromium" "--app=https://notion.so"; }
     Alt+F { spawn "chromium" "--app=https://figma.com"; }
     
-    // Screen Recording
-    Alt+Shift+R { spawn "~/.config/niri/scripts/screencast.sh" "area"; }  // Start area recording
-    Alt+Ctrl+R { spawn "~/.config/niri/scripts/screencast.sh" "stop"; }  // Stop recording
+    // Screenshots
+    // Built-in screenshot fallbacks (basic functionality)
+    Mod+Shift+S { screenshot-screen; }
+    Mod+Shift+V { screenshot-window; }
+    Mod+Print { screenshot; }
+    Print { spawn "~/.config/niri/scripts/screenshot.sh" "region"; }  // Region screenshot with editing
+    Shift+Print { spawn "~/.config/niri/scripts/screenshot.sh" "window"; }  // Window screenshot with editing
+    Ctrl+Print { spawn "~/.config/niri/scripts/screenshot.sh" "screen"; }  // Full screen screenshot with editing
+    
+    // Screen Recording with Audio Support
+    Alt+Print { spawn "~/.config/niri/scripts/screencast.sh" "region"; }  // Record region (no audio)
+    Ctrl+Alt+Print { spawn "~/.config/niri/scripts/screencast.sh" "screen"; }  // Record full screen (no audio)
+    Alt+Shift+Print { spawn "~/.config/niri/scripts/screencast.sh" "region-audio"; }  // Record region with audio
+    Ctrl+Alt+Shift+Print { spawn "~/.config/niri/scripts/screencast.sh" "screen-audio"; }  // Record full screen with audio
+    
+    // Stop any active recording
+    Alt+Ctrl+Shift+R { spawn "~/.config/niri/scripts/screencast.sh" "stop"; }  // Stop recording
     
     // Clipboard Management
     Alt+Ctrl+V { spawn "~/.config/niri/scripts/clipboard-manager.sh"; }  // Show clipboard history
@@ -598,10 +612,6 @@ binds {
     // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
     Mod+Space       { switch-layout "next"; }
     Mod+Shift+Space { switch-layout "prev"; }
-
-    Print { screenshot; }
-    Mod+Shift+S { screenshot-screen; }
-    Mod+Shift+V { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here

@@ -48,6 +48,7 @@ window#waybar {
 #custom-next-prayer,
 #custom-notifications,
 #custom-power,
+#custom-recording,
 #custom-fingerprint {
   background: transparent;
   color: #cdd6f4;
@@ -208,4 +209,34 @@ tooltip label {
   100% {
     opacity: 1;
   }
+}
+
+/* Recording indicator - always visible with different states */
+#custom-recording {
+  font-weight: bold;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+#custom-recording.inactive {
+  color: #cdd6f4;
+}
+
+#custom-recording.recording {
+  animation: pulse 1.5s infinite;
+  color: #ff4757;
+}
+
+#custom-recording.recording-audio {
+  animation: pulse 1s infinite;
+  color: #ff4757;
+}
+
+#custom-recording.inactive:hover {
+  color: #89b4fa;
+}
+
+#custom-recording.recording:hover,
+#custom-recording.recording-audio:hover {
+  color: #89b4fa;
 }
