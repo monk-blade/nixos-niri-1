@@ -35,6 +35,7 @@
         "niri/language",
         "backlight",
         "wireplumber",
+        "custom/recording",
         "wireplumber#mic",
         // "network",
         // "bluetooth",
@@ -371,5 +372,14 @@
         "format-en": "EN",
         "format-fr": "FR",
         "tooltip-format": "Language: {long}"
+    },
+    "custom/recording": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/recording-indicator.sh",
+        "interval": 1,
+        "signal": 8,
+        "tooltip": true,
+        "on-click": "~/.config/niri/scripts/screencast.sh stop"
     }
 }
