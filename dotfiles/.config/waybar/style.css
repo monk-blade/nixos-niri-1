@@ -214,7 +214,7 @@ tooltip label {
 /* Recording indicator - always visible with different states */
 #custom-recording {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
   transition: all 0.2s ease;
 }
 
@@ -232,11 +232,17 @@ tooltip label {
   color: #ff4757;
 }
 
+#custom-recording.recording-audio-only {
+  animation: pulse 0.8s infinite;
+  color: #ff4757;
+}
+
 #custom-recording.inactive:hover {
   color: #89b4fa;
 }
 
 #custom-recording.recording:hover,
+#custom-recording.recording-audio-only:hover,
 #custom-recording.recording-audio:hover {
   color: #89b4fa;
 }

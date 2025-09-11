@@ -42,6 +42,8 @@ in
     grim                    # Screenshot utility
     slurp                   # Screen area selection
     wl-clipboard            # Wayland clipboard utilities
+    wf-recorder             # Screen recording for Wayland
+    satty                   # Screenshot annotation and editing tool
     
     # Screen locker & idle management
     swaylock-effects        # Screen locker with effects
@@ -154,6 +156,11 @@ in
     cheese                  # Camera application
     libcamera               # Camera library
     v4l-utils               # Video4Linux utilities
+    
+    # Audio/Video players and processing
+    mpv                     # Versatile media player (supports MP3, MP4, etc.)
+    vlc                     # VLC media player
+    ffmpeg                  # Audio/video processing and conversion
 
     # ========================================
     # SYSTEM ADMINISTRATION
