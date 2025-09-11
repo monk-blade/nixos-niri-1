@@ -410,13 +410,13 @@ binds {
     Alt+Print { spawn "~/.config/niri/scripts/screencast.sh" "region"; }  // Record region (no audio)
     Ctrl+Alt+Print { spawn "~/.config/niri/scripts/screencast.sh" "screen"; }  // Record full screen (no audio)
     Alt+Shift+Print { spawn "~/.config/niri/scripts/screencast.sh" "region-audio"; }  // Record region with audio
-    Ctrl+Alt+Shift+Print { spawn "~/.config/niri/scripts/screencast.sh" "screen-audio"; }  // Record full screen with audio
+    Ctrl+Shift+Print { spawn "~/.config/niri/scripts/screencast.sh" "screen-audio"; }  // Record full screen with audio
     
     // Audio-only recording
-    Mod+Ctrl+A { spawn "~/.config/niri/scripts/screencast.sh" "audio-only"; }  // Record audio only
+    Alt+Ctrl+A { spawn "~/.config/niri/scripts/screencast.sh" "audio-only"; }  // Record audio only
     
     // Stop any active recording
-    Mod+Alt+Print { spawn "~/.config/niri/scripts/screencast.sh" "stop"; }  // Stop recording
+    Alt+Ctrl+Shift+R { spawn "~/.config/niri/scripts/screencast.sh" "stop"; }  // Stop recording
     
     // Clipboard Management
     Alt+Ctrl+V { spawn "~/.config/niri/scripts/clipboard-manager.sh"; }  // Show clipboard history
