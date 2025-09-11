@@ -20,6 +20,9 @@ if [ -f "$INDICATOR_FILE" ]; then
         "Full Screen + Audio")
             echo '{"text":"󰨜 ","class":"recording-audio","tooltip":"Recording: Full Screen + Audio\nClick to stop recording"}'
             ;;
+        "Audio Only")
+            echo '{"text":"󰍯","class":"recording-audio-only","tooltip":"Recording: Audio Only\nClick to stop recording"}'
+            ;;
         *)
             echo '{"text":" ","class":"recording","tooltip":"Recording in progress\nClick to stop recording"}'
             ;;

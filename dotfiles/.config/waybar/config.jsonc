@@ -35,8 +35,8 @@
         "niri/language",
         "backlight",
         "wireplumber",
-        "custom/recording",
         "wireplumber#mic",
+        "custom/recording",
         // "network",
         // "bluetooth",
         "battery",
@@ -354,7 +354,7 @@
     },
     "wireplumber#mic": {
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-        "format": "󰍬",
+        "format": "",
         "format-source-muted": "<span foreground='#f38ba8'> </span>",
         "tooltip-format": "Mic: {volume}%",
         "max-volume": 1.0
