@@ -20,8 +20,16 @@
     MOZ_ENABLE_WAYLAND = "1";  # Enable Wayland for Firefox
     MOZ_WEBRENDER = "1";
     MOZ_X11_EGL = "1";
+    
+    # Qt configuration
     QT_QPA_PLATFORM = "wayland";
+    QT_QPA_PLATFORMTHEME = "qt5ct";      # Enable Qt theming system
+    QT_AUTO_SCREEN_SCALE_FACTOR = "0";   # Disable auto scaling (let Wayland handle it)
+    
+    # GTK configuration  
     GDK_BACKEND = "wayland";
+    
+    # Other Wayland apps
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
     PIPEWIRE_LATENCY = "128/48000";
@@ -56,10 +64,6 @@
     XDG_CACHE_HOME = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME = "$HOME/.local/share";
-    
-    # GTK and icon theme support
-    GTK_THEME = "Adwaita:dark";
-    ICON_THEME = "Adwaita";
     
     # Path additions
     PATH = "$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:$PATH";

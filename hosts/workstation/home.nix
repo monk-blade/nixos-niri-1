@@ -32,10 +32,6 @@ in
   # - system.nix: System administration and monitoring tools
   
   home.packages = with pkgs; [
-    # ========================================
-    # DATABASE & DATA MANAGEMENT
-    # ========================================
-    # dbeaver-bin             # Universal database tool (80+ databases)
     
     # ========================================
     # ADDITIONAL PACKAGES

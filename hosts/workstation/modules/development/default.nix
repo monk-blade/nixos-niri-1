@@ -31,6 +31,12 @@
         cargo                   # Rust package manager
         go                      # Go programming language
         
+
+        # ========================================
+        # DATABASE & DATA MANAGEMENT
+        # ========================================
+        # dbeaver-bin             # Universal database tool (80+ databases)
+        
         # ========================================
         # NATIVE DEVELOPMENT DEPENDENCIES
         # ========================================

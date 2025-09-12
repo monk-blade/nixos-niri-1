@@ -35,13 +35,18 @@
     # GRAPHICS & UI FRAMEWORKS
     # ========================================
     
-    # Qt6 support (essential for Qt-based applications)
+    # Qt support (both Qt5 and Qt6 for maximum compatibility)
     qt6.qtbase              # Core Qt6 framework (includes qtwayland)
     qt6.qttools             # Qt6 development tools
+    qt6.qtwayland           # Wayland support for Qt6
+    qt5.qtbase              # Core Qt5 framework (many apps still use Qt5)
+    qt5.qtwayland           # Wayland support for Qt5
+    
+    # Qt theming (minimal - Stylix handles the rest)
+    libsForQt5.qt5ct        # Qt5 configuration tool
+    qt6Packages.qt6ct       # Qt6 configuration tool
     
     # GTK support
-    hicolor-icon-theme      # Base icon theme (required)
-    shared-mime-info        # MIME type support for applications
     adwaita-icon-theme      # Default GNOME icons (required for Nautilus)
     papirus-icon-theme      # Comprehensive icon theme with better app coverage
     gtk3                    # GTK3 runtime

@@ -43,6 +43,12 @@ in
     };
   };
   
+  # Qt configuration for Stylix integration
+  stylix.targets = {
+    gtk.enable = true;
+    qt.enable = true;
+  };
+  
   # Override specific colors
   stylix.override = {
     # Base colors - moderately darker variants of Catppuccin Mocha
