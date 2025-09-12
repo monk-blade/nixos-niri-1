@@ -35,7 +35,7 @@
         "niri/language",
         "backlight",
         "wireplumber",
-        "wireplumber#mic",
+        "custom/mic",
         "custom/recording",
         // "network",
         // "bluetooth",
@@ -149,7 +149,7 @@
             "󰃟 ",
             "󰃠 " 
         ],
-        "on-scroll-down": "brightnessctl s 5%-",
+        "on-scroll-down": "current=$(brightnessctl g); max=$(brightnessctl m); min=$((max * 5 / 100)); new=$((current - max * 5 / 100)); [ $new -lt $min ] && new=$min; brightnessctl s $new",
         "on-scroll-up": "brightnessctl s +5%"
     },
     "bluetooth": {
@@ -352,12 +352,12 @@
             ]
         }
     },
-    "wireplumber#mic": {
+    "custom/mic": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/mic-status.sh",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-        "format": "",
-        "format-source-muted": "<span foreground='#f38ba8'> </span>",
-        "tooltip-format": "Mic: {volume}%",
-        "max-volume": 1.0
+        "interval": 1
     },
     "tray": {
         "icon-size": 14,

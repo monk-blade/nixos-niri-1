@@ -120,7 +120,6 @@ main_menu() {
         "  Network Settings"      # nf-fa-wifi
         "  Input Settings"        # nf-fa-keyboard_o
         "  Notification Settings" # nf-fa-bell
-        "  Appearance"            # nf-fa-paint_brush
         "  System Information"    # nf-fa-info_circle
         "  Edit Niri Config"      # nf-fa-cogs
         "  Edit Home Config"      # nf-fa-home
@@ -141,7 +140,6 @@ main_menu() {
         *"Notification Settings"*)
             ghostty -e nvim ~/.config/swaync/config.json &
             ;;
-        *"Appearance"*) ~/.config/niri/scripts/theme-menu.sh ;;
         *"System Information"*) system_info ;;
         *"Edit Niri Config"*) ghostty -e nvim ~/.config/niri/config.kdl & ;;
         *"Edit Home Config"*) ghostty -e nvim ~/nixos-config/hosts/workstation/home.nix & ;;
