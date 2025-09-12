@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Fingerprint Setup Script - Omarchy-like interface for NixOS
+# Fingerprint Setup Script
 # Provides easy fingerprint management with colored output
 
 # Colors for output
@@ -42,7 +42,7 @@ detect_device() {
 
 # Function to enroll fingerprint
 enroll_fingerprint() {
-    print_color $BLUE "🔐 Starting fingerprint enrollment..."
+    print_color $BLUE "󰈷 Starting fingerprint enrollment..."
     print_color $CYAN "Please follow the prompts to scan your finger multiple times."
     
     if fprintd-enroll; then
@@ -92,7 +92,7 @@ test_fingerprint() {
 
 # Function to show help
 show_help() {
-    print_color $PURPLE "🔐 Fingerprint Setup - Omarchy-style Interface"
+    print_color $PURPLE "󰈷 Fingerprint Setup"
     echo
     print_color $CYAN "Usage: $0 [COMMAND]"
     echo
@@ -130,7 +130,7 @@ main() {
     # Handle command line arguments
     case "${1:-help}" in
         "setup")
-            print_color $PURPLE "🔐 Fingerprint Setup"
+            print_color $PURPLE "󰈷 Fingerprint Setup"
             echo
             if detect_device; then
                 enroll_fingerprint

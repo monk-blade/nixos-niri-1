@@ -9,7 +9,7 @@ in
     ../../globals.nix # Import shared settings
     ./hardware-configuration.nix
     ./stylix.nix
-    ./modules/system/dm.nix
+    ./modules/system/display-manager.nix
   ];
 
   # ============================================================================
@@ -219,8 +219,6 @@ in
   # Authentication Services
   services.fprintd = {
     enable = true;
-    tod.enable = true;
-    tod.driver = pkgs.libfprint-2-tod1-goodix;
   };
 
   # Power Management Services
@@ -251,8 +249,7 @@ in
   # System Services
   services.printing.enable = lib.mkDefault true;
   services.avahi.enable = lib.mkDefault true;
-  services.udisks2.enable = true;      # Auto-mount USB drives
-  services.gvfs.enable = true;         # Virtual file system
+  services.udisks2.enable = true;
 
   # Remote Access Services
   services.openssh = {

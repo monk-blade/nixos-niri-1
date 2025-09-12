@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Screenshot script for Niri with Satty integration (Omarchy-inspired)
+# Screenshot script for Niri with Satty integration
 # Usage: screenshot.sh [region|window|screen]
 
 SCREENSHOT_DIR="$HOME/Pictures/Screenshots"

@@ -30,7 +30,7 @@
         //"custom/gammastep"
     ],
     "modules-right": [
-        "custom/fingerprint",
+        // "custom/fingerprint",
         "tray",
         "niri/language",
         "backlight",
@@ -216,7 +216,7 @@
         "return-type": "json",
         "exec": "~/.config/waybar/scripts/fingerprint-status.sh",
         "interval": 30,
-        "on-click": "ghostty --title='Fingerprint Setup' ~/.config/niri/scripts/fingerprint-setup.sh setup",
+        "on-click": "ghostty --title='Fingerprint Setup' -e bash -c '/home/abbes/.config/waybar/scripts/fingerprint-setup.sh setup; read -p \"Press Enter to close...\"'",
         "tooltip": true
     },
     "clock": {

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Screen recording script for Niri with Audio Support and Recording Indicators (Omarchy-inspired)
+# Screen recording script for Niri with Audio Support and Recording Indicators
 # Usage: screencast.sh [region|screen|region-audio|screen-audio|stop]
 
 RECORDING_DIR="$HOME/Videos/Recordings"
