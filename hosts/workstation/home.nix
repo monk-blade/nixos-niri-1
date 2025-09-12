@@ -130,11 +130,12 @@ in
     # ========================================
     # DATABASE & DATA MANAGEMENT
     # ========================================
-    dbeaver-bin             # Universal database tool (80+ databases)
+    # dbeaver-bin             # Universal database tool (80+ databases)
 
     # ========================================
     # DESKTOP APPLICATIONS
     # ========================================
+    # obs-studio
     
     # File management
     nautilus                # GNOME Files manager
@@ -142,6 +143,7 @@ in
     # Communication & social
     slack                   # Team communication
     discord                 # Gaming/community chat
+    # zoom-us
     
     # Document viewers
     zathura                 # Lightweight PDF viewer with vim-like keybindings
