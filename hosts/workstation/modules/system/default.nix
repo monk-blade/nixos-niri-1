@@ -51,18 +51,18 @@
   # ========================================
   home.file = {
     # Shell & Terminal configs
-    ".config/ghostty".source = ../../../dotfiles/.config/ghostty;
-    ".config/starship.toml".source = ../../../dotfiles/.config/starship/starship.toml;
-    ".config/lazygit".source = ../../../dotfiles/.config/lazygit;
+    ".config/ghostty".source = ../../../../dotfiles/.config/ghostty;
+    ".config/starship.toml".source = ../../../../dotfiles/.config/starship/starship.toml;
+    ".config/lazygit".source = ../../../../dotfiles/.config/lazygit;
     
     # Development configs
-    ".config/nvim".source = ../../../dotfiles/.config/nvim;
+    ".config/nvim".source = ../../../../dotfiles/.config/nvim;
     
     # System tools configs
-    ".config/btop".source = ../../../dotfiles/.config/btop;
-    ".config/cava".source = ../../../dotfiles/.config/cava;
-    ".config/fastfetch".source = ../../../dotfiles/.config/fastfetch;
-    ".config/ranger".source = ../../../dotfiles/.config/ranger;
+    ".config/btop".source = ../../../../dotfiles/.config/btop;
+    ".config/cava".source = ../../../../dotfiles/.config/cava;
+    ".config/fastfetch".source = ../../../../dotfiles/.config/fastfetch;
+    ".config/ranger".source = ../../../../dotfiles/.config/ranger;
   };
 
   # ========================================

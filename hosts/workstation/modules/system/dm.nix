@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  locals = import ../hosts/workstation/locals.nix { inherit pkgs; };
+  locals = import ../../locals.nix { inherit pkgs; };
 in
 {
   services.displayManager.autoLogin.enable = false;

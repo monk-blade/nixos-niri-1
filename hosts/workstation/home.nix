@@ -5,18 +5,15 @@ let
 in
 {
   imports = [
-    ../../globals.nix 
-    ../../modules/shell.nix
-    ../../modules/tmux.nix
-    ../../modules/git.nix
+    ../../globals.nix
     ./session-variables.nix
     
     # Home modules
-    ./home-modules/development.nix
-    ./home-modules/desktop.nix
-    ./home-modules/wayland.nix
-    ./home-modules/multimedia.nix
-    ./home-modules/system.nix
+    ./modules/development
+    ./modules/desktop.nix
+    ./modules/wayland.nix
+    ./modules/multimedia.nix
+    ./modules/system
   ];
   
   # Basic info

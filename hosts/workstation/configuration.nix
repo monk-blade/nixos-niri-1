@@ -9,7 +9,7 @@ in
     ../../globals.nix # Import shared settings
     ./hardware-configuration.nix
     ./stylix.nix
-    ../../modules/dm.nix
+    ./modules/system/dm.nix
   ];
 
   # ============================================================================
