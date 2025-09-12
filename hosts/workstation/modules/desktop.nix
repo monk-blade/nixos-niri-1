@@ -40,6 +40,8 @@
     qt6.qttools             # Qt6 development tools
     
     # GTK support
+    hicolor-icon-theme      # Base icon theme (required)
+    shared-mime-info        # MIME type support for applications
     adwaita-icon-theme      # Default GNOME icons (required for Nautilus)
     papirus-icon-theme      # Comprehensive icon theme with better app coverage
     gtk3                    # GTK3 runtime

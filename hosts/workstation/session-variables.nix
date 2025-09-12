@@ -57,6 +57,10 @@
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME = "$HOME/.local/share";
     
+    # GTK and icon theme support
+    GTK_THEME = "Adwaita:dark";
+    ICON_THEME = "Adwaita";
+    
     # Path additions
     PATH = "$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:$PATH";
   };
