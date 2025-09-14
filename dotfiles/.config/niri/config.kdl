@@ -390,7 +390,7 @@ binds {
     Alt+T { spawn "zathura"; }  // Quick PDF viewer launch
     // Web Applications (using Chromium in app mode )
     Alt+A { spawn "chromium" "--app=https://chatgpt.com"; }
-    Alt+C { spawn "chromium" "--app=https://claude.ai/new"; }
+    Alt+Shift+C { spawn "chromium" "--app=https://claude.ai/new"; }
     // Alt+H { spawn "chromium" "--app=https://app.hey.com"; }
     Alt+D { spawn "chromium" "--app=https://discord.com/app"; }
     Alt+W { spawn "chromium" "--app=https://web.whatsapp.com"; }
