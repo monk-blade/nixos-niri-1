@@ -19,19 +19,19 @@
         "niri/window"
     ],
     "modules-center": [
-        "custom/storage",
-        "memory",
-        "cpu",
-        "custom/notifications",
         "clock",
         "niri/workspaces",
-        "custom/next-prayer"
+        "custom/next-prayer",
+        "custom/notifications"
         // "custom/weather"
         //"custom/gammastep"
     ],
     "modules-right": [
         // "custom/fingerprint",
         "tray",
+        "custom/storage",
+        "memory",
+        "cpu",
         "niri/language",
         "backlight",
         "wireplumber",
