@@ -87,7 +87,8 @@ window#waybar {
   border-right: 2px dotted #4a4a64;
   border-left: 2px dotted #4a4a64;
 }
-#cpu {
+#cpu,
+#custom-notifications {
   border-right: 2px dotted #4a4a64;
 }
 #custom-next-prayer {
