@@ -17,6 +17,7 @@
     zoxide
     starship
     fastfetch
+    cmatrix
 
     # Version control & collaboration
     gh  # GitHub CLI
