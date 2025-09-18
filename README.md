@@ -2,6 +2,20 @@
 
 Personal NixOS configuration with reproducible system builds.
 
+## Screenshots
+
+### Desktop Overview
+![Desktop Overview](screenshots/overview.png)
+*Clean desktop with Niri compositor and Waybar*
+
+### Application Launcher
+![Fuzzel Launcher](screenshots/fuzzel.png)
+*Fuzzel application launcher*
+
+### Window Management
+![Floating Windows](screenshots/floating-windows.png)
+*Niri's advanced window management with floating windows*
+
 ## Setup
 
 ### 1. GitHub Authentication

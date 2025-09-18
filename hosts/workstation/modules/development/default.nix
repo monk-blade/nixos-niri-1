@@ -23,7 +23,7 @@
         # ========================================
         # PROGRAMMING LANGUAGES & RUNTIMES
         # ========================================
-        nodejs_22               # Node.js runtime
+        nodejs_24               # Node.js runtime
         python3                 # Python interpreter
         python3Packages.pip     # Python package manager
         python3Packages.virtualenv  # Python virtual environments
