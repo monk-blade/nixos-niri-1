@@ -14,7 +14,6 @@ workspace "communication" {
 input {
     keyboard {
         xkb {
-
             layout "us,fr"
             options "compose:ralt,ctrl:nocaps"
         }
