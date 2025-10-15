@@ -23,6 +23,7 @@
     gh  # GitHub CLI
     delta  # Better git diff
     lazygit  # TUI for git
+    lazydocker  # TUI for docker
 
     tmux
     neovim
