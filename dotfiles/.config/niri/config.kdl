@@ -15,7 +15,7 @@ input {
     keyboard {
         xkb {
             layout "us,fr"
-            options "compose:ralt,ctrl:nocaps"
+            options "compose:ralt"
         }
         numlock
     }
@@ -261,7 +261,8 @@ layout {
 
 
 spawn-at-startup "sh" "-c" "swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill &" 
-spawn-at-startup "sh" "-c" "swww-daemon && sleep 0.5 && swww img ~/.config/backgrounds/snaky.jpg --transition-type any --transition-fps 60 --transition-duration 1 --outputs eDP-1,HDMI-A-1 &"  // Workspace wallpaper with display change detection
+spawn-at-startup "swww-daemon"
+spawn-at-startup "sh" "-c" "sleep 0.5 && swww img ~/.config/backgrounds/snaky.jpg --transition-type any --transition-fps 60 --transition-duration 1"  // Workspace wallpaper - increased sleep for daemon startup
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "sh" "-c" "~/.config/waybar/waybar.sh" // sleep 0.5s in script
 spawn-at-startup "sh" "-c" "sleep 1 && zen &"
