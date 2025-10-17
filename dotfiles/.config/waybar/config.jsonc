@@ -192,7 +192,7 @@
     },
     "custom/notifications": {
         "tooltip": false,
-        "format": "{icon} {}",
+        "format": "{icon} {text}",
         "format-icons": {
             "notification": "<span foreground='#f9e2af'>󰂚</span>",
             "none": "󰂛",
