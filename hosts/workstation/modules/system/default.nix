@@ -40,6 +40,12 @@
     pciutils                # Provides lspci command
     lshw                    # Hardware lister
     ethtool                 # Ethernet tool
+
+    
+    wlr-randr
+    drm_info
+    wayland-utils
+    wdisplays
     
     # Fingerprint authentication
     fprintd                 # Fingerprint daemon

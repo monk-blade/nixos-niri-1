@@ -352,7 +352,7 @@ in
       # Essential fonts
       noto-fonts              # Comprehensive Unicode support
       noto-fonts-cjk-sans     # Chinese, Japanese, Korean
-      noto-fonts-emoji        # Emoji support
+      noto-fonts-color-emoji  # Emoji support
       
       # Arabic/RTL support
       amiri
