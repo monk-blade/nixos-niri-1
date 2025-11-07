@@ -31,7 +31,6 @@
         rustc                   # Rust compiler
         cargo                   # Rust package manager
         go                      # Go programming language
-        
 
         # ========================================
         # DATABASE & DATA MANAGEMENT
@@ -63,6 +62,13 @@
         # ========================================
         shellcheck              # Shell script linting
         shfmt                   # Shell script formatting
+        rustfmt
+        biome
+        stylua
+        taplo
+        prettier
+        black
+        isort
         
         # ========================================
         # SYSTEM DEBUGGING & MONITORING
