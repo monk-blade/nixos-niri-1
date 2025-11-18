@@ -12,6 +12,7 @@
         # EDITORS & IDEs
         # ========================================
         windsurf                # AI-powered editor
+        code-cursor
         
         # ========================================
         # VERSION MANAGERS & PACKAGE MANAGERS
