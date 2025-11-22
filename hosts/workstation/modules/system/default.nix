@@ -50,6 +50,8 @@
     # Fingerprint authentication
     fprintd                 # Fingerprint daemon
     libfprint               # Fingerprint library
+
+    thunderbird
   ];
 
   # ========================================
