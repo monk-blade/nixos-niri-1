@@ -13,6 +13,7 @@
         # ========================================
         windsurf                # AI-powered editor
         code-cursor
+        antigravity
         
         # ========================================
         # VERSION MANAGERS & PACKAGE MANAGERS
