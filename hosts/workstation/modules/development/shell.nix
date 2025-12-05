@@ -25,6 +25,8 @@
     lazygit  # TUI for git
     lazydocker  # TUI for docker
 
+    ngrok
+
     tmux
     neovim
     cava
