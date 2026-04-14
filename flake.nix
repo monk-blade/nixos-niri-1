@@ -12,7 +12,7 @@
     disko.url = "github:nix-community/disko";
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, zen-browser, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, stylix, disko, zen-browser, ... }@inputs: {
     nixosConfigurations = {
       # Workstation configuration
       workstation = nixpkgs.lib.nixosSystem {
