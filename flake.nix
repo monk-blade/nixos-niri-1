@@ -21,6 +21,7 @@
         modules = [
           ./hosts/workstation
           stylix.nixosModules.stylix
+          disko.nixosModules.disko
         ];
       };
     };

@@ -84,8 +84,8 @@
         # ========================================
         docker                  # Container runtime
         docker-compose          # Multi-container orchestration
-        kubectl                 # Kubernetes CLI
-        terraform               # Infrastructure as code
+        # kubectl                 # Kubernetes CLI
+        # terraform               # Infrastructure as code
         
         # ========================================
         # API & NETWORK TESTING
