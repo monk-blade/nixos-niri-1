@@ -1,9 +1,10 @@
 { inputs, ... }:
 {
   imports = [
+    disko.nixosModules.disko
     ./hardware-configuration.nix
     ./configuration.nix
-    
+    ./disk-config.nix
     # Home Manager integration
     inputs.home-manager.nixosModules.home-manager
     {

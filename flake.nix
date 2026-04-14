@@ -9,6 +9,7 @@
     };
     stylix.url = "github:nix-community/stylix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    disko.url = "github:nix-community/disko";
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, zen-browser, ... }@inputs: {
