@@ -34,4 +34,5 @@ in
   services.xserver.enable = true;  # Still needed for XFCE fallback
   services.xserver.desktopManager.xfce.enable = lib.mkDefault false;  # Disabled by default
   services.displayManager.gdm.enable = false;
+  services.xserver.videoDrivers = [ "vmware" ];
 }

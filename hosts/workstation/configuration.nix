@@ -78,34 +78,7 @@ in
 
   # VirtualBox optimizations (disable for real hardware)
   # boot.initrd.checkJournalingFS = false;  # VM-specific
-  # virtualisation.virtualbox.guest.enable = true;  # VM-specific
-
-  # ========================================
-  # HARDWARE CONFIGURATION
-  # ========================================
-  
-  # Graphics and hardware acceleration
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;  # For 32-bit applications and games
-    
-    # Mesa drivers for Intel/AMD/Nouveau graphics
-    extraPackages = with pkgs; [
-      mesa  # Use mesa instead of mesa.drivers
-      # Intel hardware video acceleration
-      intel-media-driver
-      intel-vaapi-driver
-      # VDPAU support
-      libvdpau-va-gl
-    ];
-    
-    # 32-bit driver support
-    extraPackages32 = with pkgs.pkgsi686Linux; [
-      mesa  # Use mesa instead of mesa.drivers
-      intel-media-driver
-      intel-vaapi-driver
-    ];
-  };
+    virtualisation.virtualbox.guest.enable = true;  # VM-specific
 
   # Bluetooth
   hardware.bluetooth = {
@@ -132,12 +105,7 @@ in
   networking.networkmanager.enable = true;
   
   # Firewall configuration
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ ];  # Add ports as needed: 22 80 443
-    allowedUDPPorts = [ ];
-    # allowPing = true;  # Uncomment if needed
-  };
+  networking.useDHCP = true;
   
   # DNS will be handled automatically by NetworkManager
   # Optional: Custom DNS servers (uncomment if you want to override ISP DNS)
